@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pruebasproModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="pruebasproModelStoreContainer">
+    <EntitySet Name="cli_cliente" EntityType="pruebasproModel.Store.cli_cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gen_parametrica" EntityType="pruebasproModel.Store.gen_parametrica" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="pruebasproModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="cli_cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
+    <Property Name="tipdoc" Type="tinyint" Nullable="false" />
+    <Property Name="numdocumento" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="direccion" Type="varchar" MaxLength="80" />
+    <Property Name="telefono" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="gen_parametrica">
+    <Key>
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="consecutivo" />
+    </Key>
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="consecutivo" Type="tinyint" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="valor" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+</Schema>
