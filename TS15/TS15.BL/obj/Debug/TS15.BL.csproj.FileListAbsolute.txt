@@ -1,0 +1,36 @@
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.BL.dll
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.BL.pdb
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\obj\Debug\TS15.BL.dll
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\obj\Debug\TS15.BL.pdb
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.Common.dll
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.DAL.dll
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.Common.pdb
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
+C:\Users\Jaime Aguilar\Documents\Visual Studio 2010\Projects\TS15\TS15.BL\obj\Debug\TS15.BL.csprojResolveAssemblyReference.cache
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.BL.dll
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.BL.pdb
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.Common.dll
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.DAL.dll
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.Common.pdb
+D:\Proyectos VS2010\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
+D:\Proyectos VS2010\TS15\TS15.BL\obj\Debug\TS15.BL.csprojResolveAssemblyReference.cache
+D:\Proyectos VS2010\TS15\TS15.BL\obj\Debug\TS15.BL.dll
+D:\Proyectos VS2010\TS15\TS15.BL\obj\Debug\TS15.BL.pdb
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.BL.dll
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.BL.pdb
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.Common.dll
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.DAL.dll
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.Common.pdb
+D:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
+D:\Desarrollo\TS15\TS15.BL\obj\Debug\ResolveAssemblyReference.cache
+D:\Desarrollo\TS15\TS15.BL\obj\Debug\TS15.BL.dll
+D:\Desarrollo\TS15\TS15.BL\obj\Debug\TS15.BL.pdb
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.BL.dll
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.BL.pdb
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.Common.dll
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.DAL.dll
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.Common.pdb
+E:\Desarrollo\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
+E:\Desarrollo\TS15\TS15.BL\obj\Debug\TS15.BL.csprojResolveAssemblyReference.cache
+E:\Desarrollo\TS15\TS15.BL\obj\Debug\TS15.BL.dll
+E:\Desarrollo\TS15\TS15.BL\obj\Debug\TS15.BL.pdb

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pruebasproModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="pruebasproEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cli_cliente" EntityType="pruebasproModel.cli_cliente" />
+    <EntitySet Name="gen_parametrica" EntityType="pruebasproModel.gen_parametrica" />
+    <EntitySet Name="sysdiagrams" EntityType="pruebasproModel.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="cli_cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="tipdoc" Type="Byte" Nullable="false" />
+    <Property Name="numdocumento" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="direccion" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="gen_parametrica">
+    <Key>
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="consecutivo" />
+    </Key>
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="consecutivo" Type="Byte" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="valor" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>
