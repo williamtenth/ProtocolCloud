@@ -1,0 +1,1 @@
+Esta carpeta es donde se almacena las versiones nuevas terminadas, gestión de bugs.
