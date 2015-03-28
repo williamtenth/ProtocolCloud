@@ -38,5 +38,20 @@ namespace TS15.DAL
                 return null;
             }
         }
+
+        public static object ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
+        {
+            try
+            {
+                return contexto.gen_parametrica.Where(p => p.tipo == tipo && (p.consecutivo == 1 || p.consecutivo == 2)).OrderBy(p => p.tipo).ToList();
+            }
+
+            catch (Exception ex)
+            {
+                error.Message = "Ocurrio un error en : DAOParametrica.ConsultarTipoSolictudSS" + ex.Message;
+                error.Error = true;
+                return null;
+            }
+        }
     }
 }

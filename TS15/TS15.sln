@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS15.BL", "TS15.BL\TS15.BL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS15.DAL", "TS15.DAL\TS15.DAL.csproj", "{8C33849F-7B09-47AC-8351-1B5398924980}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS15V2.UI", "TS15V2.UI\TS15V2.UI.csproj", "{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{8C33849F-7B09-47AC-8351-1B5398924980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C33849F-7B09-47AC-8351-1B5398924980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C33849F-7B09-47AC-8351-1B5398924980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

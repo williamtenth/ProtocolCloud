@@ -26,3 +26,10 @@ E:\Desarrollo\TS15\TS15.DAL\bin\Debug\TS15.Common.pdb
 E:\Desarrollo\TS15\TS15.DAL\obj\Debug\TS15.DAL.csprojResolveAssemblyReference.cache
 E:\Desarrollo\TS15\TS15.DAL\obj\Debug\TS15.DAL.dll
 E:\Desarrollo\TS15\TS15.DAL\obj\Debug\TS15.DAL.pdb
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\bin\Debug\TS15.DAL.dll
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\bin\Debug\TS15.DAL.pdb
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\bin\Debug\TS15.Common.dll
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\bin\Debug\TS15.Common.pdb
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\obj\Debug\TS15.DAL.csprojResolveAssemblyReference.cache
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\obj\Debug\TS15.DAL.dll
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.DAL\obj\Debug\TS15.DAL.pdb

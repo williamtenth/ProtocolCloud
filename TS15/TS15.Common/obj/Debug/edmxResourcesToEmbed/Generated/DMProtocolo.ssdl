@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTS15Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="dbTS15ModelStoreContainer">
+    <EntitySet Name="aspnet_Applications" EntityType="dbTS15Model.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Membership" EntityType="dbTS15Model.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Paths" EntityType="dbTS15Model.Store.aspnet_Paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="dbTS15Model.Store.aspnet_PersonalizationAllUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="dbTS15Model.Store.aspnet_PersonalizationPerUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Profile" EntityType="dbTS15Model.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Roles" EntityType="dbTS15Model.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="dbTS15Model.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_Users" EntityType="dbTS15Model.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="dbTS15Model.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="dbTS15Model.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cli_cliente" EntityType="dbTS15Model.Store.cli_cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cli_peddetalle" EntityType="dbTS15Model.Store.cli_peddetalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cli_pedido" EntityType="dbTS15Model.Store.cli_pedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gen_parametrica" EntityType="dbTS15Model.Store.gen_parametrica" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plantilla_prueba" EntityType="dbTS15Model.Store.plantilla_prueba" store:Type="Tables" store:Schema="dbo" store:Name="plantilla_prueba">
+      <DefiningQuery>SELECT 
+      [plantilla_prueba].[id] AS [id], 
+      [plantilla_prueba].[transformador_id] AS [transformador_id], 
+      [plantilla_prueba].[proceso_id] AS [proceso_id], 
+      [plantilla_prueba].[fecha] AS [fecha], 
+      [plantilla_prueba].[resultado] AS [resultado]
+      FROM [dbo].[plantilla_prueba] AS [plantilla_prueba]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pro_ntc1005" EntityType="dbTS15Model.Store.pro_ntc1005" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc1031" EntityType="dbTS15Model.Store.pro_ntc1031" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc1465" EntityType="dbTS15Model.Store.pro_ntc1465" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc3396" EntityType="dbTS15Model.Store.pro_ntc3396" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc375" EntityType="dbTS15Model.Store.pro_ntc375" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc471" EntityType="dbTS15Model.Store.pro_ntc471" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc471_has_relacion" EntityType="dbTS15Model.Store.pro_ntc471_has_relacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_ntc837" EntityType="dbTS15Model.Store.pro_ntc837" store:Type="Tables" store:Schema="dbo" store:Name="pro_ntc837">
+      <DefiningQuery>SELECT 
+      [pro_ntc837].[id] AS [id], 
+      [pro_ntc837].[transformador_id] AS [transformador_id], 
+      [pro_ntc837].[proceso_id] AS [proceso_id], 
+      [pro_ntc837].[fecha] AS [fecha], 
+      [pro_ntc837].[resultado] AS [resultado]
+      FROM [dbo].[pro_ntc837] AS [pro_ntc837]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pro_proceso" EntityType="dbTS15Model.Store.pro_proceso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pro_proceso_has_prueba" EntityType="dbTS15Model.Store.pro_proceso_has_prueba" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tfr_bodega" EntityType="dbTS15Model.Store.tfr_bodega" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tfr_caracteristicas" EntityType="dbTS15Model.Store.tfr_caracteristicas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tfr_ordentrabajo" EntityType="dbTS15Model.Store.tfr_ordentrabajo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tfr_transf_has_cliente" EntityType="dbTS15Model.Store.tfr_transf_has_cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tfr_transformador" EntityType="dbTS15Model.Store.tfr_transformador" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__123EB7A3" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__123EB7A3">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__1332DBDC" Association="dbTS15Model.Store.FK__aspnet_Me__UserI__1332DBDC">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__4B7734FF" Association="dbTS15Model.Store.FK__aspnet_Pa__Appli__4B7734FF">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__531856C7" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__531856C7">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__58D1301D" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__58D1301D">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__59C55456" Association="dbTS15Model.Store.FK__aspnet_Pe__UserI__59C55456">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__29221CFB" Association="dbTS15Model.Store.FK__aspnet_Pr__UserI__29221CFB">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__3493CFA7" Association="dbTS15Model.Store.FK__aspnet_Ro__Appli__3493CFA7">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__7E37BEF6" Association="dbTS15Model.Store.FK__aspnet_Us__Appli__7E37BEF6">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__3B40CD36" Association="dbTS15Model.Store.FK__aspnet_Us__RoleI__3B40CD36">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__3A4CA8FD" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__3A4CA8FD">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cli_pedido_cli_cliente" Association="dbTS15Model.Store.FK_cli_pedido_cli_cliente">
+      <End Role="cli_cliente" EntitySet="cli_cliente" />
+      <End Role="cli_pedido" EntitySet="cli_pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cli_pedido_tfr_transformador" Association="dbTS15Model.Store.FK_cli_pedido_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="cli_pedido" EntitySet="cli_pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc1005_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc1005_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc1005" EntitySet="pro_ntc1005" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc1031_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc1031_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc1031" EntitySet="pro_ntc1031" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc1465_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc1465_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc1465" EntitySet="pro_ntc1465" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc3396_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc3396_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc3396" EntitySet="pro_ntc3396" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc375_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc375_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc375" EntitySet="pro_ntc375" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc471_has_relacion_pro_ntc471" Association="dbTS15Model.Store.FK_pro_ntc471_has_relacion_pro_ntc471">
+      <End Role="pro_ntc471" EntitySet="pro_ntc471" />
+      <End Role="pro_ntc471_has_relacion" EntitySet="pro_ntc471_has_relacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_ntc471_tfr_transformador" Association="dbTS15Model.Store.FK_pro_ntc471_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="pro_ntc471" EntitySet="pro_ntc471" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_proceso_cli_pedido" Association="dbTS15Model.Store.FK_pro_proceso_cli_pedido">
+      <End Role="cli_pedido" EntitySet="cli_pedido" />
+      <End Role="pro_proceso" EntitySet="pro_proceso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pro_proceso_has_prueba_pro_proceso" Association="dbTS15Model.Store.FK_pro_proceso_has_prueba_pro_proceso">
+      <End Role="pro_proceso" EntitySet="pro_proceso" />
+      <End Role="pro_proceso_has_prueba" EntitySet="pro_proceso_has_prueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tfr_bodega_tfr_transformador" Association="dbTS15Model.Store.FK_tfr_bodega_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="tfr_bodega" EntitySet="tfr_bodega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tfr_caracteristicas_tfr_transformador" Association="dbTS15Model.Store.FK_tfr_caracteristicas_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="tfr_caracteristicas" EntitySet="tfr_caracteristicas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tfr_ordentrabajo_cli_pedido" Association="dbTS15Model.Store.FK_tfr_ordentrabajo_cli_pedido">
+      <End Role="cli_pedido" EntitySet="cli_pedido" />
+      <End Role="tfr_ordentrabajo" EntitySet="tfr_ordentrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tfr_transf_has_cliente_cli_cliente" Association="dbTS15Model.Store.FK_tfr_transf_has_cliente_cli_cliente">
+      <End Role="cli_cliente" EntitySet="cli_cliente" />
+      <End Role="tfr_transf_has_cliente" EntitySet="tfr_transf_has_cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tfr_transf_has_cliente_tfr_transformador" Association="dbTS15Model.Store.FK_tfr_transf_has_cliente_tfr_transformador">
+      <End Role="tfr_transformador" EntitySet="tfr_transformador" />
+      <End Role="tfr_transf_has_cliente" EntitySet="tfr_transf_has_cliente" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" Nullable="false" MaxLength="32" />
+    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="EventTime" Type="datetime" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="EventSequence" Type="decimal" Nullable="false" Precision="19" />
+    <Property Name="EventOccurrence" Type="decimal" Nullable="false" Precision="19" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="EventDetailCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Details" Type="ntext" />
+  </EntityType>
+  <EntityType Name="cli_cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
+    <Property Name="tipdoc" Type="tinyint" Nullable="false" />
+    <Property Name="numdocumento" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="direccion" Type="varchar" MaxLength="80" />
+    <Property Name="telefono" Type="varchar" MaxLength="20" />
+    <Property Name="tiptercero" Type="int" />
+  </EntityType>
+  <EntityType Name="cli_peddetalle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="pedido_id" Type="bigint" />
+    <Property Name="cantidad" Type="bigint" />
+  </EntityType>
+  <EntityType Name="cli_pedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="consecutivo" Type="int" Nullable="false" />
+    <Property Name="cliente_id" Type="int" />
+    <Property Name="fechasolicitud" Type="datetime" Nullable="false" />
+    <Property Name="tipsolicitud" Type="tinyint" Nullable="false" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="tiptransformador" Type="tinyint" />
+    <Property Name="capacidad" Type="tinyint" />
+    <Property Name="volentrada" Type="tinyint" />
+    <Property Name="volsalida" Type="tinyint" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="aprobado" Type="bit" />
+    <Property Name="estado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="gen_parametrica">
+    <Key>
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="consecutivo" />
+    </Key>
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="consecutivo" Type="tinyint" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="valor" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="valor2" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbTS15.dbo.plantilla_prueba' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="plantilla_prueba">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_ntc1005">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="icc" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="ucc" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="perdidas24" Type="numeric" Scale="2" />
+    <Property Name="perdidas85" Type="numeric" Scale="2" />
+    <Property Name="garantiazada85" Type="numeric" Scale="2" />
+    <Property Name="i2r24" Type="numeric" Scale="2" />
+    <Property Name="i2r85" Type="numeric" Scale="2" />
+    <Property Name="i2r85garantia" Type="numeric" Scale="2" />
+    <Property Name="impedancia24" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="impedancia85" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="impedancia85gar" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="regulacion" Type="numeric" Precision="10" Scale="4" />
+    <Property Name="eficiencia" Type="numeric" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="pro_ntc1031">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="ix" Type="numeric" Precision="4" Scale="3" />
+    <Property Name="i2" Type="numeric" Precision="4" Scale="3" />
+    <Property Name="i3" Type="numeric" Precision="4" Scale="3" />
+    <Property Name="promedio" Type="numeric" Precision="4" Scale="3" />
+    <Property Name="garantia" Type="numeric" Precision="4" Scale="3" />
+    <Property Name="po_medida" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="po_garantizado" Type="numeric" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="pro_ntc1465">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="tipaislante" Type="tinyint" />
+    <Property Name="refaislante" Type="tinyint" />
+    <Property Name="ruptura" Type="numeric" Precision="10" />
+    <Property Name="metaislante" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_ntc3396">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" Nullable="false" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="color" Type="varchar" MaxLength="12" />
+    <Property Name="salina1" Type="tinyint" />
+    <Property Name="salina2" Type="tinyint" />
+    <Property Name="impacto" Type="tinyint" />
+    <Property Name="espesorvalor" Type="numeric" Precision="5" />
+    <Property Name="espesor1" Type="tinyint" />
+    <Property Name="espesor2" Type="tinyint" />
+    <Property Name="adherencia" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_ntc375">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="tiempolectura" Type="numeric" />
+    <Property Name="tension" Type="numeric" Scale="2" />
+    <Property Name="at_t" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="bt_t" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="at_bt_t" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="resistencia_uv" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia_vw" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia_wv" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia_promedio" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia2_uv" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia2_vw" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia2_wv" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="resistencia2_promedio" Type="numeric" Precision="6" Scale="3" />
+    <Property Name="matedevanado" Type="tinyint" />
+    <Property Name="metadevanado2" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_ntc471">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="relacion" Type="varchar" MaxLength="50" />
+    <Property Name="fase_fase" Type="varchar" MaxLength="50" />
+    <Property Name="fase_neutro" Type="varchar" MaxLength="50" />
+    <Property Name="polaridad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="pro_ntc471_has_relacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Nullable="false" Precision="10" />
+    <Property Name="ntc471_id" Type="int" />
+    <Property Name="consecutivo" Type="tinyint" />
+    <Property Name="tension" Type="numeric" Scale="2" />
+    <Property Name="fase_u" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="fase_v" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="fase_w" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="nominal" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="minima" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="maxima" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbTS15.dbo.pro_ntc837' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="pro_ntc837">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="proceso_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_proceso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="pedido_id" Type="int" />
+    <Property Name="tipprocesop" Type="tinyint" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="resultado" Type="tinyint" />
+    <Property Name="tempensayo" Type="int" />
+    <Property Name="posconmutador" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="pro_proceso_has_prueba">
+    <Key>
+      <PropertyRef Name="proceso_id" />
+      <PropertyRef Name="pro_prueba_id" />
+    </Key>
+    <Property Name="proceso_id" Type="int" Nullable="false" />
+    <Property Name="pro_prueba_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="resultado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tfr_bodega">
+    <Key>
+      <PropertyRef Name="tipbodega" />
+      <PropertyRef Name="transformador_id" />
+    </Key>
+    <Property Name="tipbodega" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="transformador_id" Type="int" Nullable="false" />
+    <Property Name="fecentrada" Type="date" Nullable="false" />
+    <Property Name="pedido_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tfr_caracteristicas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" />
+    <Property Name="masa" Type="numeric" Precision="10" />
+    <Property Name="volumenliquido" Type="numeric" Precision="10" />
+    <Property Name="frente" Type="numeric" Precision="10" />
+    <Property Name="profundidad" Type="numeric" Precision="10" />
+    <Property Name="altura" Type="numeric" Precision="10" />
+    <Property Name="elementos" Type="tinyint" />
+    <Property Name="elelargo" Type="numeric" Precision="5" />
+    <Property Name="eleancho" Type="numeric" Precision="5" />
+    <Property Name="observaciones" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tfr_ordentrabajo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="consecutivo" Type="int" Nullable="false" />
+    <Property Name="pedido_id" Type="int" />
+    <Property Name="fechacreacion" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tfr_transf_has_cliente">
+    <Key>
+      <PropertyRef Name="cliente_id" />
+      <PropertyRef Name="transformador_id" />
+    </Key>
+    <Property Name="cliente_id" Type="int" Nullable="false" />
+    <Property Name="transformador_id" Type="int" Nullable="false" />
+    <Property Name="fechaasignacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tfr_transformador">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="numserie" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fabricante_id" Type="int" />
+    <Property Name="altura" Type="varchar" MaxLength="6" />
+    <Property Name="tfrestado" Type="tinyint" />
+    <Property Name="tfrtenserieAT" Type="tinyint" />
+    <Property Name="tfrtenserieBT" Type="tinyint" />
+    <Property Name="tfrcapacidad" Type="tinyint" />
+    <Property Name="trffase" Type="tinyint" />
+    <Property Name="fecfabricacion" Type="datetime" />
+    <Property Name="tempdevanado" Type="varchar" MaxLength="3" />
+    <Property Name="trfaislamiento" Type="tinyint" />
+    <Property Name="frecuencia" Type="bigint" />
+    <Property Name="trfrefrigeracion" Type="tinyint" />
+    <Property Name="volentrada" Type="numeric" Precision="10" />
+    <Property Name="volsalida" Type="numeric" Precision="10" />
+    <Property Name="volentrada_der" Type="numeric" Precision="10" />
+    <Property Name="volsalida_der" Type="numeric" Precision="10" />
+    <Property Name="derivaciones" Type="int" />
+    <Property Name="corentrada" Type="numeric" Precision="10" Scale="3" />
+    <Property Name="corsalida" Type="numeric" Precision="10" Scale="3" />
+    <Property Name="corentrada_der" Type="numeric" Precision="10" Scale="3" />
+    <Property Name="corsalida_der" Type="numeric" Precision="10" Scale="3" />
+    <Property Name="trfgrpconex" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__123EB7A3">
+    <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__1332DBDC">
+    <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__4B7734FF">
+    <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__531856C7">
+    <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="dbTS15Model.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__58D1301D">
+    <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__59C55456">
+    <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__29221CFB">
+    <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="dbTS15Model.Store.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__3493CFA7">
+    <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__7E37BEF6">
+    <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__3B40CD36">
+    <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__3A4CA8FD">
+    <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cli_pedido_cli_cliente">
+    <End Role="cli_cliente" Type="dbTS15Model.Store.cli_cliente" Multiplicity="0..1" />
+    <End Role="cli_pedido" Type="dbTS15Model.Store.cli_pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cli_cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cli_pedido">
+        <PropertyRef Name="cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cli_pedido_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="cli_pedido" Type="dbTS15Model.Store.cli_pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cli_pedido">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc1005_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="pro_ntc1005" Type="dbTS15Model.Store.pro_ntc1005" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc1005">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc1031_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="pro_ntc1031" Type="dbTS15Model.Store.pro_ntc1031" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc1031">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc1465_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="pro_ntc1465" Type="dbTS15Model.Store.pro_ntc1465" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc1465">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc3396_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="1" />
+    <End Role="pro_ntc3396" Type="dbTS15Model.Store.pro_ntc3396" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc3396">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc375_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="pro_ntc375" Type="dbTS15Model.Store.pro_ntc375" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc375">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc471_has_relacion_pro_ntc471">
+    <End Role="pro_ntc471" Type="dbTS15Model.Store.pro_ntc471" Multiplicity="0..1" />
+    <End Role="pro_ntc471_has_relacion" Type="dbTS15Model.Store.pro_ntc471_has_relacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pro_ntc471">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc471_has_relacion">
+        <PropertyRef Name="ntc471_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_ntc471_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="pro_ntc471" Type="dbTS15Model.Store.pro_ntc471" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_ntc471">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_proceso_cli_pedido">
+    <End Role="cli_pedido" Type="dbTS15Model.Store.cli_pedido" Multiplicity="0..1" />
+    <End Role="pro_proceso" Type="dbTS15Model.Store.pro_proceso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cli_pedido">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_proceso">
+        <PropertyRef Name="pedido_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pro_proceso_has_prueba_pro_proceso">
+    <End Role="pro_proceso" Type="dbTS15Model.Store.pro_proceso" Multiplicity="1" />
+    <End Role="pro_proceso_has_prueba" Type="dbTS15Model.Store.pro_proceso_has_prueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pro_proceso">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pro_proceso_has_prueba">
+        <PropertyRef Name="proceso_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tfr_bodega_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="1" />
+    <End Role="tfr_bodega" Type="dbTS15Model.Store.tfr_bodega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tfr_bodega">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tfr_caracteristicas_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="0..1" />
+    <End Role="tfr_caracteristicas" Type="dbTS15Model.Store.tfr_caracteristicas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tfr_caracteristicas">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tfr_ordentrabajo_cli_pedido">
+    <End Role="cli_pedido" Type="dbTS15Model.Store.cli_pedido" Multiplicity="0..1" />
+    <End Role="tfr_ordentrabajo" Type="dbTS15Model.Store.tfr_ordentrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cli_pedido">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tfr_ordentrabajo">
+        <PropertyRef Name="pedido_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tfr_transf_has_cliente_cli_cliente">
+    <End Role="cli_cliente" Type="dbTS15Model.Store.cli_cliente" Multiplicity="1" />
+    <End Role="tfr_transf_has_cliente" Type="dbTS15Model.Store.tfr_transf_has_cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cli_cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tfr_transf_has_cliente">
+        <PropertyRef Name="cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tfr_transf_has_cliente_tfr_transformador">
+    <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="1" />
+    <End Role="tfr_transf_has_cliente" Type="dbTS15Model.Store.tfr_transf_has_cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tfr_transformador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tfr_transf_has_cliente">
+        <PropertyRef Name="transformador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

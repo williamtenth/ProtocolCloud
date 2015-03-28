@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
@@ -54,17 +57,45 @@
   <ItemGroup>
     <Content Include="APP\componentes\BuscarCliente.ascx" />
     <Content Include="APP\css\bootstrap-cerulean.min.css" />
+    <Content Include="APP\css\bootstrap-responsive.css" />
+    <Content Include="APP\css\bootstrap-responsive.min.css" />
     <Content Include="APP\css\bootstrap.css" />
     <Content Include="APP\css\bootstrap.min.css" />
     <Content Include="APP\css\charisma-app.css" />
+    <Content Include="APP\css\chosen.css" />
+    <Content Include="APP\css\elfinder.min.css" />
+    <Content Include="APP\css\elfinder.theme.css" />
+    <Content Include="APP\css\font-awesome-ie7.min.css" />
+    <Content Include="APP\css\font-awesome.min.css" />
+    <Content Include="APP\css\fullcalendar.css" />
+    <Content Include="APP\css\general.css" />
+    <Content Include="APP\css\glyphicons.css" />
+    <Content Include="APP\css\halflings.css" />
+    <Content Include="APP\css\ie.css" />
+    <Content Include="APP\css\ie9.css" />
+    <Content Include="APP\css\jquery-ui-1.8.21.custom.css" />
+    <Content Include="APP\css\jquery.cleditor.css" />
+    <Content Include="APP\css\jquery.gritter.css" />
+    <Content Include="APP\css\jquery.iphone.toggle.css" />
+    <Content Include="APP\css\jquery.noty.css" />
+    <Content Include="APP\css\noty_theme_default.css" />
     <Content Include="APP\css\plugins\morris.css" />
     <Content Include="APP\css\sb-admin.css" />
+    <Content Include="APP\css\style-forms.css" />
+    <Content Include="APP\css\style-responsive.css" />
+    <Content Include="APP\css\style.css" />
+    <Content Include="APP\css\uniform.default.css" />
+    <Content Include="APP\css\uploadify.css" />
     <Content Include="APP\font-awesome-4.1.0\css\font-awesome.css" />
     <Content Include="APP\font-awesome-4.1.0\css\font-awesome.min.css" />
     <Content Include="APP\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
     <Content Include="APP\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="APP\img\basica_odd.png" />
     <Content Include="APP\img\bg.jpg" />
     <Content Include="APP\autenticacion\Index.aspx" />
+    <Content Include="APP\img\CheckBox.png" />
+    <Content Include="APP\img\close_link.png" />
+    <Content Include="APP\img\overlay.png" />
     <Content Include="APP\js\bootstrap.js" />
     <Content Include="APP\js\bootstrap.min.js" />
     <Content Include="APP\js\jquery-1.11.0.js" />
@@ -79,6 +110,7 @@
     <Content Include="APP\js\plugins\morris\morris.min.js" />
     <Content Include="APP\js\plugins\morris\raphael.min.js" />
     <Content Include="APP\autenticacion\OlvidoUsuario.aspx" />
+    <Content Include="APP\referencias ext\AjaxControlToolkit.dll" />
     <Content Include="APP\systems\Gestion Cliente\Busqueda Cliente.aspx" />
     <Content Include="APP\systems\Gestion Cliente\ConsultarHistorial.aspx" />
     <Content Include="APP\systems\Gestion Cliente\Crear Solicitud.aspx" />

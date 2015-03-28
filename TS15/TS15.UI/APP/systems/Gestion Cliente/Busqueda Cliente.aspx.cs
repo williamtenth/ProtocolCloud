@@ -9,6 +9,7 @@ using TS15.Common.RawObjects;
 using TS15.BL;
 using System.Data.Objects.DataClasses;
 using System.Web.Security;
+using TS15.UI.APP.componentes;
 
 namespace TS15.UI.APP.systems.Gestion_Cliente
 {
@@ -58,6 +59,7 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
+            BuscarCliente buscaCliente = new BuscarCliente();
 
             gvClientes.DataSource = clienteBO.Consultar(contexto, error);
             gvClientes.DataBind();

@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label>
                     Tipo de Documento</label>
-                <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound1">
+                <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
                 </asp:DropDownList>
                 <label>
                     Número de Documento</label>

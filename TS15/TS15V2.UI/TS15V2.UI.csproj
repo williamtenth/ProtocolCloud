@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22F8C3DF-D6C7-437E-A6EB-8A28BF955223}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TS15V2.UI</RootNamespace>
+    <AssemblyName>TS15V2.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60919.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>APP\Rerefencias\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APP\autenticacion\Index.aspx" />
+    <Content Include="APP\autenticacion\OlvidoUsuario.aspx" />
+    <Content Include="APP\componentes\BuscarCliente.ascx" />
+    <Content Include="APP\css\bootstrap-cerulean.min.css" />
+    <Content Include="APP\css\bootstrap-responsive.css" />
+    <Content Include="APP\css\bootstrap-responsive.min.css" />
+    <Content Include="APP\css\bootstrap.css" />
+    <Content Include="APP\css\bootstrap.min.css" />
+    <Content Include="APP\css\charisma-app.css" />
+    <Content Include="APP\css\chosen.css" />
+    <Content Include="APP\css\elfinder.min.css" />
+    <Content Include="APP\css\elfinder.theme.css" />
+    <Content Include="APP\css\font-awesome-ie7.min.css" />
+    <Content Include="APP\css\font-awesome.min.css" />
+    <Content Include="APP\css\fullcalendar.css" />
+    <Content Include="APP\css\general.css" />
+    <Content Include="APP\css\glyphicons.css" />
+    <Content Include="APP\css\halflings.css" />
+    <Content Include="APP\css\ie.css" />
+    <Content Include="APP\css\ie9.css" />
+    <Content Include="APP\css\jquery-ui-1.8.21.custom.css" />
+    <Content Include="APP\css\jquery.cleditor.css" />
+    <Content Include="APP\css\jquery.gritter.css" />
+    <Content Include="APP\css\jquery.iphone.toggle.css" />
+    <Content Include="APP\css\jquery.noty.css" />
+    <Content Include="APP\css\noty_theme_default.css" />
+    <Content Include="APP\css\plugins\morris.css" />
+    <Content Include="APP\css\sb-admin.css" />
+    <Content Include="APP\css\style-forms.css" />
+    <Content Include="APP\css\style-responsive.css" />
+    <Content Include="APP\css\style.css" />
+    <Content Include="APP\css\uniform.default.css" />
+    <Content Include="APP\css\uploadify.css" />
+    <Content Include="APP\font\glyphicons-regular.svg" />
+    <Content Include="APP\font\glyphiconshalflings-regular.svg" />
+    <Content Include="APP\Gestion Cliente\Busqueda Cliente.aspx" />
+    <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
+    <Content Include="APP\Gestion Cliente\Detalle Cliente.aspx" />
+    <Content Include="APP\Gestion Transformador\Busqueda Transformador.aspx" />
+    <Content Include="APP\Gestion Transformador\Crear Transformador.aspx" />
+    <Content Include="APP\Gestion Transformador\Detalle Transformador.aspx" />
+    <Content Include="APP\img\arrows-active.png" />
+    <Content Include="APP\img\arrows-normal.png" />
+    <Content Include="APP\img\avatar.jpg" />
+    <Content Include="APP\img\basica_odd.png" />
+    <Content Include="APP\img\bg-input-focus.png" />
+    <Content Include="APP\img\bg-input.png" />
+    <Content Include="APP\img\bg-login.jpg" />
+    <Content Include="APP\img\bg.jpg" />
+    <Content Include="APP\img\browser-chrome-big.png" />
+    <Content Include="APP\img\browser-firefox-big.png" />
+    <Content Include="APP\img\browser-ie.png" />
+    <Content Include="APP\img\browser-opera.png" />
+    <Content Include="APP\img\browser-safari.png" />
+    <Content Include="APP\img\buttons.gif" />
+    <Content Include="APP\img\chat-left%402x.png" />
+    <Content Include="APP\img\chat-left-metro%402x.png" />
+    <Content Include="APP\img\chat-left-metro.png" />
+    <Content Include="APP\img\chat-left.png" />
+    <Content Include="APP\img\chat-right%402x.png" />
+    <Content Include="APP\img\chat-right-metro%402x.png" />
+    <Content Include="APP\img\chat-right-metro.png" />
+    <Content Include="APP\img\chat-right.png" />
+    <Content Include="APP\img\CheckBox.png" />
+    <Content Include="APP\img\chosen-sprite.png" />
+    <Content Include="APP\img\close-button-white.png" />
+    <Content Include="APP\img\close-button.png" />
+    <Content Include="APP\img\close_link.png" />
+    <Content Include="APP\img\crop.gif" />
+    <Content Include="APP\img\dialogs.png" />
+    <Content Include="APP\img\gallery\photo1.jpg" />
+    <Content Include="APP\img\gallery\photo10.jpg" />
+    <Content Include="APP\img\gallery\photo11.jpg" />
+    <Content Include="APP\img\gallery\photo12.jpg" />
+    <Content Include="APP\img\gallery\photo13.jpg" />
+    <Content Include="APP\img\gallery\photo2.jpg" />
+    <Content Include="APP\img\gallery\photo3.jpg" />
+    <Content Include="APP\img\gallery\photo4.jpg" />
+    <Content Include="APP\img\gallery\photo5.jpg" />
+    <Content Include="APP\img\gallery\photo6.jpg" />
+    <Content Include="APP\img\gallery\photo7.jpg" />
+    <Content Include="APP\img\gallery\photo8.jpg" />
+    <Content Include="APP\img\gallery\photo9.jpg" />
+    <Content Include="APP\img\glyphicons-halflings-white.png" />
+    <Content Include="APP\img\glyphicons-halflings.png" />
+    <Content Include="APP\img\glyphicons-white.png" />
+    <Content Include="APP\img\glyphicons-white.svg" />
+    <Content Include="APP\img\glyphicons.png" />
+    <Content Include="APP\img\glyphicons.svg" />
+    <Content Include="APP\img\glyphicons_halflings-white.png" />
+    <Content Include="APP\img\glyphicons_halflings-white.svg" />
+    <Content Include="APP\img\glyphicons_halflings.png" />
+    <Content Include="APP\img\glyphicons_halflings.svg" />
+    <Content Include="APP\img\icons-big.png" />
+    <Content Include="APP\img\icons-small.png" />
+    <Content Include="APP\img\iphone-style-checkboxes\off-63584.png" />
+    <Content Include="APP\img\iphone-style-checkboxes\on-63584.png" />
+    <Content Include="APP\img\iphone-style-checkboxes\slider_center-63584.png" />
+    <Content Include="APP\img\iphone-style-checkboxes\slider_left-63584.png" />
+    <Content Include="APP\img\iphone-style-checkboxes\slider_right-63584.png" />
+    <Content Include="APP\img\overlay.png" />
+    <Content Include="APP\img\progress.gif" />
+    <Content Include="APP\img\quicklook-bg.png" />
+    <Content Include="APP\img\quicklook-icons.png" />
+    <Content Include="APP\img\quote.png" />
+    <Content Include="APP\img\resize.png" />
+    <Content Include="APP\img\slider_r8.png" />
+    <Content Include="APP\img\spinner-mini.gif" />
+    <Content Include="APP\img\sprite.png" />
+    <Content Include="APP\img\timeline-bg.png" />
+    <Content Include="APP\img\timeline-left-arrow%402x.png" />
+    <Content Include="APP\img\timeline-left-arrow.png" />
+    <Content Include="APP\img\timeline-right-arrow%402x.png" />
+    <Content Include="APP\img\timeline-right-arrow.png" />
+    <Content Include="APP\img\toolbar.gif" />
+    <Content Include="APP\img\toolbar.png" />
+    <Content Include="APP\img\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="APP\img\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="APP\img\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="APP\img\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="APP\img\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="APP\img\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="APP\img\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="APP\img\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="APP\img\ui-icons_222222_256x240.png" />
+    <Content Include="APP\img\ui-icons_2e83ff_256x240.png" />
+    <Content Include="APP\img\ui-icons_454545_256x240.png" />
+    <Content Include="APP\img\ui-icons_888888_256x240.png" />
+    <Content Include="APP\img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="APP\img\uploadify-cancel.png" />
+    <Content Include="APP\js\bootstrap.js" />
+    <Content Include="APP\js\bootstrap.min.js" />
+    <Content Include="APP\js\counter.js" />
+    <Content Include="APP\js\custom.js" />
+    <Content Include="APP\js\excanvas.js" />
+    <Content Include="APP\js\fullcalendar.min.js" />
+    <Content Include="APP\js\jquery-1.9.1.min.js" />
+    <Content Include="APP\js\jquery-migrate-1.0.0.min.js" />
+    <Content Include="APP\js\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="APP\js\jquery.chosen.min.js" />
+    <Content Include="APP\js\jquery.cleditor.min.js" />
+    <Content Include="APP\js\jquery.cookie.js" />
+    <Content Include="APP\js\jquery.dataTables.min.js" />
+    <Content Include="APP\js\jquery.elfinder.min.js" />
+    <Content Include="APP\js\jquery.flot.js" />
+    <Content Include="APP\js\jquery.flot.pie.js" />
+    <Content Include="APP\js\jquery.flot.resize.min.js" />
+    <Content Include="APP\js\jquery.flot.stack.js" />
+    <Content Include="APP\js\jquery.gritter.min.js" />
+    <Content Include="APP\js\jquery.imagesloaded.js" />
+    <Content Include="APP\js\jquery.iphone.toggle.js" />
+    <Content Include="APP\js\jquery.knob.modified.js" />
+    <Content Include="APP\js\jquery.masonry.min.js" />
+    <Content Include="APP\js\jquery.noty.js" />
+    <Content Include="APP\js\jquery.raty.min.js" />
+    <Content Include="APP\js\jquery.sparkline.min.js" />
+    <Content Include="APP\js\jquery.ui.touch-punch.js" />
+    <Content Include="APP\js\jquery.uniform.min.js" />
+    <Content Include="APP\js\jquery.uploadify-3.1.min.js" />
+    <Content Include="APP\js\modernizr.js" />
+    <Content Include="APP\js\retina.js" />
+    <Content Include="APP\Rerefencias\AjaxControlToolkit.dll" />
+    <Content Include="APP\Gestion Cliente\Crear Solicitud.aspx" />
+    <Content Include="APP\Home.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APP\autenticacion\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\autenticacion\OlvidoUsuario.aspx.cs">
+      <DependentUpon>OlvidoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\componentes\BuscarCliente.ascx.cs">
+      <DependentUpon>BuscarCliente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\componentes\BuscarCliente.ascx.designer.cs">
+      <DependentUpon>BuscarCliente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Busqueda Cliente.aspx.cs">
+      <DependentUpon>Busqueda Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Busqueda Cliente.aspx.designer.cs">
+      <DependentUpon>Busqueda Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Crear Pedido.aspx.cs">
+      <DependentUpon>Crear Pedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Crear Pedido.aspx.designer.cs">
+      <DependentUpon>Crear Pedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Detalle Cliente.aspx.cs">
+      <DependentUpon>Detalle Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Detalle Cliente.aspx.designer.cs">
+      <DependentUpon>Detalle Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.cs">
+      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.designer.cs">
+      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Crear Transformador.aspx.cs">
+      <DependentUpon>Crear Transformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Crear Transformador.aspx.designer.cs">
+      <DependentUpon>Crear Transformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Detalle Transformador.aspx.cs">
+      <DependentUpon>Detalle Transformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Detalle Transformador.aspx.designer.cs">
+      <DependentUpon>Detalle Transformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\master pages\principal.Master.cs">
+      <DependentUpon>principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Crear Solicitud.aspx.cs">
+      <DependentUpon>Crear Solicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Cliente\Crear Solicitud.aspx.designer.cs">
+      <DependentUpon>Crear Solicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APP\master pages\principal.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="APP\Gestion Protocolo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="APP\font\fontawesome-webfont-0.eot" />
+    <None Include="APP\font\fontawesome-webfont-62877.eot" />
+    <None Include="APP\font\fontawesome-webfont-62877.ttf" />
+    <None Include="APP\font\fontawesome-webfont-62877.woff" />
+    <None Include="APP\font\glyphicons-regular-0.eot" />
+    <None Include="APP\font\glyphicons-regular.eot" />
+    <None Include="APP\font\glyphicons-regular.ttf" />
+    <None Include="APP\font\glyphicons-regular.woff" />
+    <None Include="APP\font\glyphiconshalflings-regular-0.eot" />
+    <None Include="APP\font\glyphiconshalflings-regular.eot" />
+    <None Include="APP\font\glyphiconshalflings-regular.ttf" />
+    <None Include="APP\font\glyphiconshalflings-regular.woff" />
+    <None Include="APP\img\gallery\Thumbs.db" />
+    <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TS15.BL\TS15.BL.csproj">
+      <Project>{88422ED0-7C3E-4F5E-8A73-C45D30CA13C3}</Project>
+      <Name>TS15.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TS15.Common\TS15.Common.csproj">
+      <Project>{C22F7BEB-BA0D-4C8B-8F1E-094B51187938}</Project>
+      <Name>TS15.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24079</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -39,6 +39,22 @@ namespace TS15.UI.APP.componentes
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            dbTS15Entities contexto = new dbTS15Entities();
+            RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
+
+            gvClientes.DataSource = clienteBO.Consultar(contexto, error);
+            gvClientes.DataBind();
+            mpeCaficultor.Show();
+        }
+
+        protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void gvClientes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
 
         }
     }
