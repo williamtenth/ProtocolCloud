@@ -30,7 +30,7 @@ namespace TS15.BL
             throw new NotImplementedException();
         }
 
-        public void Crear(dbTS15Entities contexto, RawError error)
+        public void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error)
         {
             throw new NotImplementedException();
         }

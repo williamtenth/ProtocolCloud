@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DAOCliente.cs" />
     <Compile Include="DAOParametrica.cs" />
+    <Compile Include="DAOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

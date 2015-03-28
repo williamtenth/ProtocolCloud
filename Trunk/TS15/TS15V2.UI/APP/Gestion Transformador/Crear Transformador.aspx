@@ -55,14 +55,15 @@
                             <label class="control-label" for="txtNumSerie">
                                 Número de Serie:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="20"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtAltura">
                                 Altura:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtAltura" CssClass="form-control">1000</asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtAltura" CssClass="form-control" ReadOnly="true"
+                                    Enabled="false"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
@@ -115,49 +116,51 @@
                             <label class="control-label" for="txtAislamiento">
                                 Aislamiento:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtAislamiento" CssClass="form-control"></asp:TextBox>
+                                <asp:DropDownList runat="server" ID="ddlAislamiento" CssClass="form-control" OnDataBound="ddlAislamiento_DataBound">
+                                </asp:DropDownList>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtFrecuencia">
                                 Frecuencia:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtFrecuencia" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtFrecuencia" CssClass="form-control" MaxLength="15"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtRefrigeracion">
                                 Refrigeración:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtRefrigeracion" CssClass="form-control"></asp:TextBox>
+                                <asp:DropDownList runat="server" ID="ddlRefrigeracion" CssClass="form-control" OnDataBound="ddlRefrigeracion_DataBound">
+                                </asp:DropDownList>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtVoltajeEntrada">
                                 Voltaje Entrada:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVoltajeEntrada" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtVoltajeEntrada" CssClass="form-control" MaxLength="10"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtVoltajeSalida">
                                 Voltaje Salida:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVoltajeSalida" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtVoltajeSalida" CssClass="form-control" MaxLength="10"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtVoltajeEntDerivada">
                                 Voltaje Entrada Derivada:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVoltajeEntDerivada" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtVoltajeEntDerivada" CssClass="form-control" MaxLength="10"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtVoltajeSalDerivada">
                                 Voltaje Salida Derivada:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVoltajeSalDerivada" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtVoltajeSalDerivada" CssClass="form-control" MaxLength="10"></asp:TextBox>
                             </div>
                         </div>
                         <div class="control-group">
@@ -176,7 +179,8 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <asp:Button runat="server" ID="btnGuardar" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button runat="server" ID="btnGuardar" CssClass="btn btn-primary" Text="Guardar"
+                                OnClick="btnGuardar_Click" />
                         </div>
                     </fieldset>
                 </div>

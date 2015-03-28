@@ -94,13 +94,13 @@ namespace TS15.UI.APP.systems.Gestion_Transformador {
         protected global::System.Web.UI.WebControls.TextBox txtTempDevanado;
         
         /// <summary>
-        /// txtAislamiento control.
+        /// ddlAislamiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAislamiento;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAislamiento;
         
         /// <summary>
         /// txtFrecuencia control.
@@ -112,13 +112,13 @@ namespace TS15.UI.APP.systems.Gestion_Transformador {
         protected global::System.Web.UI.WebControls.TextBox txtFrecuencia;
         
         /// <summary>
-        /// txtRefrigeracion control.
+        /// ddlRefrigeracion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRefrigeracion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRefrigeracion;
         
         /// <summary>
         /// txtVoltajeEntrada control.

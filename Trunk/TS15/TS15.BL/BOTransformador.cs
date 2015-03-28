@@ -10,17 +10,8 @@ using TS15.DAL;
 
 namespace TS15.BL
 {
-    public class BOParametrica : IGestionable
+    public class BOTransformador : IGestionable
     {
-        public static List<gen_parametrica> ConsultarParametros(string tipo, dbTS15Entities contexto, RawError error)
-        {
-            return DAOParametrica.ConsultarParametros(tipo, contexto, error);
-        }
-
-        public static List<gen_parametrica> ConsultarParametrosSuministro(string tipo, dbTS15Entities contexto, RawError error)
-        {
-            return DAOParametrica.ConsultarParametrosSuministro(tipo, contexto, error);
-        }
 
         public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
         {
@@ -39,18 +30,13 @@ namespace TS15.BL
 
         public void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            DAOTransformador transformadorDAO = new DAOTransformador();
+            transformadorDAO.Crear(entidad, contexto, error);
         }
-
 
         public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
             throw new NotImplementedException();
-        }
-
-        public static object ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
-        {
-            return DAOParametrica.ConsultarTipoSolictudSS(tipo, contexto, error);
         }
     }
 }

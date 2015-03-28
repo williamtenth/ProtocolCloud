@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="Busqueda Transformador.aspx.cs" Inherits="TS15.UI.APP.systems.Gestion_Transformador.Busqueda_Transformador" %>
+    AutoEventWireup="true" CodeBehind="Busqueda Transformador.aspx.cs" Inherits="TS15.UI.APP.systems.Gestion_Transformador.Busqueda_Transformador"
+    EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -174,12 +175,15 @@
                                     <ContentTemplate>
                                         <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" DataKeyNames="id,nombre"
                                             AllowPaging="true" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
-                                            OnSelectedIndexChanging="gvTransformadores_SelectedIndexChanging">
+                                            OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
                                             <Columns>
                                                 <asp:BoundField DataField="nombre" HeaderText="Nombre(s)">
                                                     <ItemStyle HorizontalAlign="Justify" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="numdocumento" HeaderText="Número de Identificación">
+                                                    <ItemStyle HorizontalAlign="Justify" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="direccion" HeaderText="Dirección">
                                                     <ItemStyle HorizontalAlign="Justify" />
                                                 </asp:BoundField>
                                             </Columns>
@@ -194,7 +198,7 @@
                                         </asp:GridView>
                                     </ContentTemplate>
                                     <Triggers>
-                                        <asp:PostBackTrigger ControlID="gvClientes" />
+                                        <asp:PostBackTrigger ControlID="gvTransformadores" />
                                     </Triggers>
                                 </asp:UpdatePanel>
                             </td>

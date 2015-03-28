@@ -100,7 +100,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
-        <li><i class="icon-home"></i><a href="index.html">Home</a> <i class="icon-angle-right">
+        <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
         <li><i class="icon-edit"></i><a href="#">Buscar Clientes</a> </li>
     </ul>

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BOCliente.cs" />
     <Compile Include="BOParametrica.cs" />
+    <Compile Include="BOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
