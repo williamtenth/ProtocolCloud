@@ -94,9 +94,13 @@
     <Content Include="APP\Gestion Cliente\Busqueda Cliente.aspx" />
     <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
     <Content Include="APP\Gestion Cliente\Detalle Cliente.aspx" />
+    <Content Include="APP\Gestion Transformador\Asignacion Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Busqueda Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Crear Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Detalle Transformador.aspx" />
+    <Content Include="APP\Gestion Usuarios\Busqueda Usuario.aspx" />
+    <Content Include="APP\Gestion Usuarios\Crear Usuario.aspx" />
+    <Content Include="APP\Gestion Usuarios\Detalle Usuario.aspx" />
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
@@ -287,6 +291,24 @@
     </Compile>
     <Compile Include="APP\Gestion Transformador\Detalle Transformador.aspx.designer.cs">
       <DependentUpon>Detalle Transformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.cs">
+      <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.designer.cs">
+      <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.cs">
+      <DependentUpon>Crear Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.designer.cs">
+      <DependentUpon>Crear Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.cs">
+      <DependentUpon>Detalle Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.designer.cs">
+      <DependentUpon>Detalle Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\master pages\principal.Master.cs">
       <DependentUpon>principal.Master</DependentUpon>
