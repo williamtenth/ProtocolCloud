@@ -47,9 +47,14 @@ namespace TS15.BL.Gestion_Cliente
             return DAOCliente.BuscarCliente(pTipoDocumento, pNumDocumento, contexto, error);
         }
 
-        public static List<cli_cliente> ConsultarFabricantes(dbTS15Entities contexto, RawError error)
+        public List<cli_cliente> ConsultarFabricantes(dbTS15Entities contexto, RawError error)
         {
             return DAOCliente.ConsultarFabricantes(contexto, error);
+        }
+
+        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId, dbTS15Entities contexto, RawError error)
+        {
+            return DAOCliente.ConsultarClienteUser(userId, contexto, error);
         }
     }
 }

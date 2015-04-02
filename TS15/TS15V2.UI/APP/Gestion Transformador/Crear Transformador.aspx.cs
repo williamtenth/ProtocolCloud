@@ -73,8 +73,9 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
 
-            this.ddlFabricante.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
+            this.ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
             this.ddlFabricante.DataValueField = "id";
             this.ddlFabricante.DataTextField = "nombre";
             this.ddlFabricante.DataBind();

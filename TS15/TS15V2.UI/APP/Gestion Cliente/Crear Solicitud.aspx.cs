@@ -22,13 +22,13 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
 
         private void CargarTipoSolicitud()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
+            //dbTS15Entities contexto = new dbTS15Entities();
+            //RawError error = new RawError();
 
-            ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
-            ddlTipoSolicitud.DataValueField = "consecutivo";
-            ddlTipoSolicitud.DataTextField = "valor";
-            ddlTipoSolicitud.DataBind();
+            //ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
+            //ddlTipoSolicitud.DataValueField = "consecutivo";
+            //ddlTipoSolicitud.DataTextField = "valor";
+            //ddlTipoSolicitud.DataBind();
         }
 
         private void CargarListas()
@@ -39,118 +39,119 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
 
         private void CargarTipoDocumento()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            ddlTipDocumento.DataSource = BOParametrica.ConsultarParametros("tipdoc", contexto, error);
+            //dbTS15Entities contexto = new dbTS15Entities();
+            //RawError error = new RawError();
+            //ddlTipDocumento.DataSource = BOParametrica.ConsultarParametros("tipdoc", contexto, error);
 
-            if (!error.Error)
-            {
-                ddlTipDocumento.DataValueField = "tipo";
-                ddlTipDocumento.DataTextField = "descripcion";
-                ddlTipDocumento.DataBind();
-            }
+            //if (!error.Error)
+            //{
+            //    ddlTipDocumento.DataValueField = "tipo";
+            //    ddlTipDocumento.DataTextField = "descripcion";
+            //    ddlTipDocumento.DataBind();
+            //}
         }
 
-        protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
-        {
-            ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
-        }
+        //protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
+        //{
+        //    ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        //}
 
-        protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
-        {
-            ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
-        }
+        //protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
+        //{
+        //    ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        //}
 
-        protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlTipoSolicitud.SelectedValue == "1")
-            {
-                this.pnlServicio.Visible = true;
-                this.pnlSuministro.Visible = false;
-            }
-            else if (ddlTipoSolicitud.SelectedValue == "2")
-            {
-                CargarFabricante();
-                this.pnlServicio.Visible = false;
-                this.pnlSuministro.Visible = true;
-            }
-            else
-            {
-                this.pnlServicio.Visible = false;
-                this.pnlSuministro.Visible = false;
-            }
-        }
+        //protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (ddlTipoSolicitud.SelectedValue == "1")
+        //    {
+        //        this.pnlServicio.Visible = true;
+        //        this.pnlSuministro.Visible = false;
+        //    }
+        //    else if (ddlTipoSolicitud.SelectedValue == "2")
+        //    {
+        //        CargarFabricante();
+        //        this.pnlServicio.Visible = false;
+        //        this.pnlSuministro.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        this.pnlServicio.Visible = false;
+        //        this.pnlSuministro.Visible = false;
+        //    }
+        //}
 
         private void CargarFabricante()
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
 
-            ddlFabricante.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
-            ddlFabricante.DataValueField = "id";
-            ddlFabricante.DataTextField = "nombre";
-            ddlFabricante.DataBind();
+            //ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
+            //ddlFabricante.DataValueField = "id";
+            //ddlFabricante.DataTextField = "nombre";
+            //ddlFabricante.DataBind();
         }
 
         protected void ddlTipoTransformador_DataBound(object sender, EventArgs e)
         {
-            ddlTipoTransformador.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            //ddlTipoTransformador.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
 
         protected void ddlCapacidad_DataBound(object sender, EventArgs e)
         {
-            ddlCapacidad.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            //ddlCapacidad.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
 
         protected void ddlFabricante_DataBound(object sender, EventArgs e)
         {
-            ddlFabricante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            //ddlFabricante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
+        //protected void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    dbTS15Entities contexto = new dbTS15Entities();
+        //    RawError error = new RawError();
+        //    BOCliente clienteBO = new BOCliente();
 
-            gvClientes.DataSource = clienteBO.Consultar(contexto, error);
-            gvClientes.DataBind();
-            mpeCaficultor.Show();
-        }
+        //    gvClientes.DataSource = clienteBO.Consultar(contexto, error);
+        //    gvClientes.DataBind();
+        //    mpeCaficultor.Show();
+        //}
 
-        protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
+        //protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void gvClientes_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
+        //protected void gvClientes_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void gvClientes_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes.Add("OnMouseOver", "this.style.cursor='pointer';this.style.textDecoration='underline';");
-                e.Row.Attributes["OnMouseOut"] = "this.style.textDecoration='none';";
-                e.Row.ToolTip = "Click para seleccionar";
-                e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(gvClientes, "Select$" + e.Row.RowIndex);
-            }
-        }
+        //protected void gvClientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        //    {
+        //        e.Row.Attributes.Add("OnMouseOver", "this.style.cursor='pointer';this.style.textDecoration='underline';");
+        //        e.Row.Attributes["OnMouseOut"] = "this.style.textDecoration='none';";
+        //        e.Row.ToolTip = "Click para seleccionar";
+        //        e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(gvClientes, "Select$" + e.Row.RowIndex);
+        //    }
+        //}
 
-        protected void gvClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string idCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[0].ToString();
-            string nombreCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[1].ToString();
+        //protected void gvClientes_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string idCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[0].ToString();
+        //    string nombreCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[1].ToString();
 
-            this.hfIdCliente.Value = idCliente;
-            this.lblNombreCliente.Text = nombreCliente;
-            this.pnlMsj.CssClass = "alert alert-success";
-            this.pnlMsj.Visible = true;
+        //    this.hfIdCliente.Value = idCliente;
+        //    this.lblNombreCliente.Text = nombreCliente;
+        //    this.pnlMsj.CssClass = "alert alert-success";
+        //    this.pnlMsj.Visible = true;
 
-            CargarTipoSolicitud();
-            this.pnlTipoSolicitud.Visible = true;
-        }
+        //    CargarTipoSolicitud();
+        //    this.pnlTipoSolicitud.Visible = true;
+        //}
     }
 }

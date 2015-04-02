@@ -19,6 +19,15 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__59C55456", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.cli_cliente), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_transf_has_cliente_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.cli_cliente), "tfr_transf_has_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_transf_has_cliente), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
@@ -35,15 +44,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_bodega_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "tfr_bodega", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_bodega), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_caracteristicas_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "tfr_caracteristicas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_caracteristicas), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_transf_has_cliente_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "tfr_transf_has_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_transf_has_cliente), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__59C55456", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "aspnet_UsersInRoles", "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users))]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "cli_cliente_has_usuarios", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_cliente))]
 
@@ -96,6 +96,166 @@ namespace TS15.Common.Generated
         #endregion
     
         #region ObjectSet Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Applications> aspnet_Applications
+        {
+            get
+            {
+                if ((_aspnet_Applications == null))
+                {
+                    _aspnet_Applications = base.CreateObjectSet<aspnet_Applications>("aspnet_Applications");
+                }
+                return _aspnet_Applications;
+            }
+        }
+        private ObjectSet<aspnet_Applications> _aspnet_Applications;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Membership> aspnet_Membership
+        {
+            get
+            {
+                if ((_aspnet_Membership == null))
+                {
+                    _aspnet_Membership = base.CreateObjectSet<aspnet_Membership>("aspnet_Membership");
+                }
+                return _aspnet_Membership;
+            }
+        }
+        private ObjectSet<aspnet_Membership> _aspnet_Membership;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Paths> aspnet_Paths
+        {
+            get
+            {
+                if ((_aspnet_Paths == null))
+                {
+                    _aspnet_Paths = base.CreateObjectSet<aspnet_Paths>("aspnet_Paths");
+                }
+                return _aspnet_Paths;
+            }
+        }
+        private ObjectSet<aspnet_Paths> _aspnet_Paths;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_PersonalizationAllUsers> aspnet_PersonalizationAllUsers
+        {
+            get
+            {
+                if ((_aspnet_PersonalizationAllUsers == null))
+                {
+                    _aspnet_PersonalizationAllUsers = base.CreateObjectSet<aspnet_PersonalizationAllUsers>("aspnet_PersonalizationAllUsers");
+                }
+                return _aspnet_PersonalizationAllUsers;
+            }
+        }
+        private ObjectSet<aspnet_PersonalizationAllUsers> _aspnet_PersonalizationAllUsers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
+        {
+            get
+            {
+                if ((_aspnet_PersonalizationPerUser == null))
+                {
+                    _aspnet_PersonalizationPerUser = base.CreateObjectSet<aspnet_PersonalizationPerUser>("aspnet_PersonalizationPerUser");
+                }
+                return _aspnet_PersonalizationPerUser;
+            }
+        }
+        private ObjectSet<aspnet_PersonalizationPerUser> _aspnet_PersonalizationPerUser;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Profile> aspnet_Profile
+        {
+            get
+            {
+                if ((_aspnet_Profile == null))
+                {
+                    _aspnet_Profile = base.CreateObjectSet<aspnet_Profile>("aspnet_Profile");
+                }
+                return _aspnet_Profile;
+            }
+        }
+        private ObjectSet<aspnet_Profile> _aspnet_Profile;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Roles> aspnet_Roles
+        {
+            get
+            {
+                if ((_aspnet_Roles == null))
+                {
+                    _aspnet_Roles = base.CreateObjectSet<aspnet_Roles>("aspnet_Roles");
+                }
+                return _aspnet_Roles;
+            }
+        }
+        private ObjectSet<aspnet_Roles> _aspnet_Roles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_SchemaVersions> aspnet_SchemaVersions
+        {
+            get
+            {
+                if ((_aspnet_SchemaVersions == null))
+                {
+                    _aspnet_SchemaVersions = base.CreateObjectSet<aspnet_SchemaVersions>("aspnet_SchemaVersions");
+                }
+                return _aspnet_SchemaVersions;
+            }
+        }
+        private ObjectSet<aspnet_SchemaVersions> _aspnet_SchemaVersions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_Users> aspnet_Users
+        {
+            get
+            {
+                if ((_aspnet_Users == null))
+                {
+                    _aspnet_Users = base.CreateObjectSet<aspnet_Users>("aspnet_Users");
+                }
+                return _aspnet_Users;
+            }
+        }
+        private ObjectSet<aspnet_Users> _aspnet_Users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events
+        {
+            get
+            {
+                if ((_aspnet_WebEvent_Events == null))
+                {
+                    _aspnet_WebEvent_Events = base.CreateObjectSet<aspnet_WebEvent_Events>("aspnet_WebEvent_Events");
+                }
+                return _aspnet_WebEvent_Events;
+            }
+        }
+        private ObjectSet<aspnet_WebEvent_Events> _aspnet_WebEvent_Events;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -420,182 +580,118 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<aspnet_Applications> aspnet_Applications
+        public ObjectSet<VW_CLI_USUARIO> VW_CLI_USUARIO
         {
             get
             {
-                if ((_aspnet_Applications == null))
+                if ((_VW_CLI_USUARIO == null))
                 {
-                    _aspnet_Applications = base.CreateObjectSet<aspnet_Applications>("aspnet_Applications");
+                    _VW_CLI_USUARIO = base.CreateObjectSet<VW_CLI_USUARIO>("VW_CLI_USUARIO");
                 }
-                return _aspnet_Applications;
+                return _VW_CLI_USUARIO;
             }
         }
-        private ObjectSet<aspnet_Applications> _aspnet_Applications;
+        private ObjectSet<VW_CLI_USUARIO> _VW_CLI_USUARIO;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<aspnet_Membership> aspnet_Membership
+        public ObjectSet<vw_transformador_cliente> vw_transformador_cliente
         {
             get
             {
-                if ((_aspnet_Membership == null))
+                if ((_vw_transformador_cliente == null))
                 {
-                    _aspnet_Membership = base.CreateObjectSet<aspnet_Membership>("aspnet_Membership");
+                    _vw_transformador_cliente = base.CreateObjectSet<vw_transformador_cliente>("vw_transformador_cliente");
                 }
-                return _aspnet_Membership;
+                return _vw_transformador_cliente;
             }
         }
-        private ObjectSet<aspnet_Membership> _aspnet_Membership;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_Paths> aspnet_Paths
-        {
-            get
-            {
-                if ((_aspnet_Paths == null))
-                {
-                    _aspnet_Paths = base.CreateObjectSet<aspnet_Paths>("aspnet_Paths");
-                }
-                return _aspnet_Paths;
-            }
-        }
-        private ObjectSet<aspnet_Paths> _aspnet_Paths;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_PersonalizationAllUsers> aspnet_PersonalizationAllUsers
-        {
-            get
-            {
-                if ((_aspnet_PersonalizationAllUsers == null))
-                {
-                    _aspnet_PersonalizationAllUsers = base.CreateObjectSet<aspnet_PersonalizationAllUsers>("aspnet_PersonalizationAllUsers");
-                }
-                return _aspnet_PersonalizationAllUsers;
-            }
-        }
-        private ObjectSet<aspnet_PersonalizationAllUsers> _aspnet_PersonalizationAllUsers;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
-        {
-            get
-            {
-                if ((_aspnet_PersonalizationPerUser == null))
-                {
-                    _aspnet_PersonalizationPerUser = base.CreateObjectSet<aspnet_PersonalizationPerUser>("aspnet_PersonalizationPerUser");
-                }
-                return _aspnet_PersonalizationPerUser;
-            }
-        }
-        private ObjectSet<aspnet_PersonalizationPerUser> _aspnet_PersonalizationPerUser;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_Profile> aspnet_Profile
-        {
-            get
-            {
-                if ((_aspnet_Profile == null))
-                {
-                    _aspnet_Profile = base.CreateObjectSet<aspnet_Profile>("aspnet_Profile");
-                }
-                return _aspnet_Profile;
-            }
-        }
-        private ObjectSet<aspnet_Profile> _aspnet_Profile;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_Roles> aspnet_Roles
-        {
-            get
-            {
-                if ((_aspnet_Roles == null))
-                {
-                    _aspnet_Roles = base.CreateObjectSet<aspnet_Roles>("aspnet_Roles");
-                }
-                return _aspnet_Roles;
-            }
-        }
-        private ObjectSet<aspnet_Roles> _aspnet_Roles;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_SchemaVersions> aspnet_SchemaVersions
-        {
-            get
-            {
-                if ((_aspnet_SchemaVersions == null))
-                {
-                    _aspnet_SchemaVersions = base.CreateObjectSet<aspnet_SchemaVersions>("aspnet_SchemaVersions");
-                }
-                return _aspnet_SchemaVersions;
-            }
-        }
-        private ObjectSet<aspnet_SchemaVersions> _aspnet_SchemaVersions;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_Users> aspnet_Users
-        {
-            get
-            {
-                if ((_aspnet_Users == null))
-                {
-                    _aspnet_Users = base.CreateObjectSet<aspnet_Users>("aspnet_Users");
-                }
-                return _aspnet_Users;
-            }
-        }
-        private ObjectSet<aspnet_Users> _aspnet_Users;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events
-        {
-            get
-            {
-                if ((_aspnet_WebEvent_Events == null))
-                {
-                    _aspnet_WebEvent_Events = base.CreateObjectSet<aspnet_WebEvent_Events>("aspnet_WebEvent_Events");
-                }
-                return _aspnet_WebEvent_Events;
-            }
-        }
-        private ObjectSet<aspnet_WebEvent_Events> _aspnet_WebEvent_Events;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<sysdiagram> sysdiagrams
-        {
-            get
-            {
-                if ((_sysdiagrams == null))
-                {
-                    _sysdiagrams = base.CreateObjectSet<sysdiagram>("sysdiagrams");
-                }
-                return _sysdiagrams;
-            }
-        }
-        private ObjectSet<sysdiagram> _sysdiagrams;
+        private ObjectSet<vw_transformador_cliente> _vw_transformador_cliente;
 
         #endregion
 
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Applications EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Applications(aspnet_Applications aspnet_Applications)
+        {
+            base.AddObject("aspnet_Applications", aspnet_Applications);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Membership EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Membership(aspnet_Membership aspnet_Membership)
+        {
+            base.AddObject("aspnet_Membership", aspnet_Membership);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Paths EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Paths(aspnet_Paths aspnet_Paths)
+        {
+            base.AddObject("aspnet_Paths", aspnet_Paths);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_PersonalizationAllUsers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_PersonalizationAllUsers(aspnet_PersonalizationAllUsers aspnet_PersonalizationAllUsers)
+        {
+            base.AddObject("aspnet_PersonalizationAllUsers", aspnet_PersonalizationAllUsers);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_PersonalizationPerUser EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_PersonalizationPerUser(aspnet_PersonalizationPerUser aspnet_PersonalizationPerUser)
+        {
+            base.AddObject("aspnet_PersonalizationPerUser", aspnet_PersonalizationPerUser);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Profile EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Profile(aspnet_Profile aspnet_Profile)
+        {
+            base.AddObject("aspnet_Profile", aspnet_Profile);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Roles(aspnet_Roles aspnet_Roles)
+        {
+            base.AddObject("aspnet_Roles", aspnet_Roles);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_SchemaVersions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_SchemaVersions(aspnet_SchemaVersions aspnet_SchemaVersions)
+        {
+            base.AddObject("aspnet_SchemaVersions", aspnet_SchemaVersions);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_Users(aspnet_Users aspnet_Users)
+        {
+            base.AddObject("aspnet_Users", aspnet_Users);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the aspnet_WebEvent_Events EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaspnet_WebEvent_Events(aspnet_WebEvent_Events aspnet_WebEvent_Events)
+        {
+            base.AddObject("aspnet_WebEvent_Events", aspnet_WebEvent_Events);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the cli_cliente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -758,91 +854,19 @@ namespace TS15.Common.Generated
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Applications EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the VW_CLI_USUARIO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToaspnet_Applications(aspnet_Applications aspnet_Applications)
+        public void AddToVW_CLI_USUARIO(VW_CLI_USUARIO vW_CLI_USUARIO)
         {
-            base.AddObject("aspnet_Applications", aspnet_Applications);
+            base.AddObject("VW_CLI_USUARIO", vW_CLI_USUARIO);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Membership EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the vw_transformador_cliente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToaspnet_Membership(aspnet_Membership aspnet_Membership)
+        public void AddTovw_transformador_cliente(vw_transformador_cliente vw_transformador_cliente)
         {
-            base.AddObject("aspnet_Membership", aspnet_Membership);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Paths EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_Paths(aspnet_Paths aspnet_Paths)
-        {
-            base.AddObject("aspnet_Paths", aspnet_Paths);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_PersonalizationAllUsers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_PersonalizationAllUsers(aspnet_PersonalizationAllUsers aspnet_PersonalizationAllUsers)
-        {
-            base.AddObject("aspnet_PersonalizationAllUsers", aspnet_PersonalizationAllUsers);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_PersonalizationPerUser EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_PersonalizationPerUser(aspnet_PersonalizationPerUser aspnet_PersonalizationPerUser)
-        {
-            base.AddObject("aspnet_PersonalizationPerUser", aspnet_PersonalizationPerUser);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Profile EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_Profile(aspnet_Profile aspnet_Profile)
-        {
-            base.AddObject("aspnet_Profile", aspnet_Profile);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_Roles(aspnet_Roles aspnet_Roles)
-        {
-            base.AddObject("aspnet_Roles", aspnet_Roles);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_SchemaVersions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_SchemaVersions(aspnet_SchemaVersions aspnet_SchemaVersions)
-        {
-            base.AddObject("aspnet_SchemaVersions", aspnet_SchemaVersions);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_Users(aspnet_Users aspnet_Users)
-        {
-            base.AddObject("aspnet_Users", aspnet_Users);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the aspnet_WebEvent_Events EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaspnet_WebEvent_Events(aspnet_WebEvent_Events aspnet_WebEvent_Events)
-        {
-            base.AddObject("aspnet_WebEvent_Events", aspnet_WebEvent_Events);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTosysdiagrams(sysdiagram sysdiagram)
-        {
-            base.AddObject("sysdiagrams", sysdiagram);
+            base.AddObject("vw_transformador_cliente", vw_transformador_cliente);
         }
 
         #endregion
@@ -8192,163 +8216,6 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagram")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class sysdiagram : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new sysdiagram object.
-        /// </summary>
-        /// <param name="name">Initial value of the name property.</param>
-        /// <param name="principal_id">Initial value of the principal_id property.</param>
-        /// <param name="diagram_id">Initial value of the diagram_id property.</param>
-        public static sysdiagram Createsysdiagram(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
-        {
-            sysdiagram sysdiagram = new sysdiagram();
-            sysdiagram.name = name;
-            sysdiagram.principal_id = principal_id;
-            sysdiagram.diagram_id = diagram_id;
-            return sysdiagram;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                OnnameChanging(value);
-                ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("name");
-                OnnameChanged();
-            }
-        }
-        private global::System.String _name;
-        partial void OnnameChanging(global::System.String value);
-        partial void OnnameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 principal_id
-        {
-            get
-            {
-                return _principal_id;
-            }
-            set
-            {
-                Onprincipal_idChanging(value);
-                ReportPropertyChanging("principal_id");
-                _principal_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("principal_id");
-                Onprincipal_idChanged();
-            }
-        }
-        private global::System.Int32 _principal_id;
-        partial void Onprincipal_idChanging(global::System.Int32 value);
-        partial void Onprincipal_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 diagram_id
-        {
-            get
-            {
-                return _diagram_id;
-            }
-            set
-            {
-                if (_diagram_id != value)
-                {
-                    Ondiagram_idChanging(value);
-                    ReportPropertyChanging("diagram_id");
-                    _diagram_id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("diagram_id");
-                    Ondiagram_idChanged();
-                }
-            }
-        }
-        private global::System.Int32 _diagram_id;
-        partial void Ondiagram_idChanging(global::System.Int32 value);
-        partial void Ondiagram_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> version
-        {
-            get
-            {
-                return _version;
-            }
-            set
-            {
-                OnversionChanging(value);
-                ReportPropertyChanging("version");
-                _version = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("version");
-                OnversionChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _version;
-        partial void OnversionChanging(Nullable<global::System.Int32> value);
-        partial void OnversionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] definition
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_definition);
-            }
-            set
-            {
-                OndefinitionChanging(value);
-                ReportPropertyChanging("definition");
-                _definition = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("definition");
-                OndefinitionChanged();
-            }
-        }
-        private global::System.Byte[] _definition;
-        partial void OndefinitionChanging(global::System.Byte[] value);
-        partial void OndefinitionChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="tfr_bodega")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -10085,6 +9952,443 @@ namespace TS15.Common.Generated
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="VW_CLI_USUARIO")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class VW_CLI_USUARIO : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new VW_CLI_USUARIO object.
+        /// </summary>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="cliente_id">Initial value of the cliente_id property.</param>
+        /// <param name="nombre">Initial value of the nombre property.</param>
+        /// <param name="numdocumento">Initial value of the numdocumento property.</param>
+        /// <param name="tipdoc">Initial value of the tipdoc property.</param>
+        public static VW_CLI_USUARIO CreateVW_CLI_USUARIO(global::System.Guid userId, global::System.Int32 cliente_id, global::System.String nombre, global::System.String numdocumento, global::System.Byte tipdoc)
+        {
+            VW_CLI_USUARIO vW_CLI_USUARIO = new VW_CLI_USUARIO();
+            vW_CLI_USUARIO.UserId = userId;
+            vW_CLI_USUARIO.cliente_id = cliente_id;
+            vW_CLI_USUARIO.nombre = nombre;
+            vW_CLI_USUARIO.numdocumento = numdocumento;
+            vW_CLI_USUARIO.tipdoc = tipdoc;
+            return vW_CLI_USUARIO;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 cliente_id
+        {
+            get
+            {
+                return _cliente_id;
+            }
+            set
+            {
+                if (_cliente_id != value)
+                {
+                    Oncliente_idChanging(value);
+                    ReportPropertyChanging("cliente_id");
+                    _cliente_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("cliente_id");
+                    Oncliente_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _cliente_id;
+        partial void Oncliente_idChanging(global::System.Int32 value);
+        partial void Oncliente_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                if (_nombre != value)
+                {
+                    OnnombreChanging(value);
+                    ReportPropertyChanging("nombre");
+                    _nombre = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("nombre");
+                    OnnombreChanged();
+                }
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String numdocumento
+        {
+            get
+            {
+                return _numdocumento;
+            }
+            set
+            {
+                if (_numdocumento != value)
+                {
+                    OnnumdocumentoChanging(value);
+                    ReportPropertyChanging("numdocumento");
+                    _numdocumento = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("numdocumento");
+                    OnnumdocumentoChanged();
+                }
+            }
+        }
+        private global::System.String _numdocumento;
+        partial void OnnumdocumentoChanging(global::System.String value);
+        partial void OnnumdocumentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte tipdoc
+        {
+            get
+            {
+                return _tipdoc;
+            }
+            set
+            {
+                if (_tipdoc != value)
+                {
+                    OntipdocChanging(value);
+                    ReportPropertyChanging("tipdoc");
+                    _tipdoc = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("tipdoc");
+                    OntipdocChanged();
+                }
+            }
+        }
+        private global::System.Byte _tipdoc;
+        partial void OntipdocChanging(global::System.Byte value);
+        partial void OntipdocChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                OndireccionChanging(value);
+                ReportPropertyChanging("direccion");
+                _direccion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("direccion");
+                OndireccionChanged();
+            }
+        }
+        private global::System.String _direccion;
+        partial void OndireccionChanging(global::System.String value);
+        partial void OndireccionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                OntelefonoChanging(value);
+                ReportPropertyChanging("telefono");
+                _telefono = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telefono");
+                OntelefonoChanged();
+            }
+        }
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
+        partial void OntelefonoChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_transformador_cliente")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_transformador_cliente : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_transformador_cliente object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="nombre">Initial value of the nombre property.</param>
+        /// <param name="tipdoc">Initial value of the tipdoc property.</param>
+        /// <param name="numdocumento">Initial value of the numdocumento property.</param>
+        public static vw_transformador_cliente Createvw_transformador_cliente(global::System.Int32 id, global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento)
+        {
+            vw_transformador_cliente vw_transformador_cliente = new vw_transformador_cliente();
+            vw_transformador_cliente.id = id;
+            vw_transformador_cliente.nombre = nombre;
+            vw_transformador_cliente.tipdoc = tipdoc;
+            vw_transformador_cliente.numdocumento = numdocumento;
+            return vw_transformador_cliente;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                if (_nombre != value)
+                {
+                    OnnombreChanging(value);
+                    ReportPropertyChanging("nombre");
+                    _nombre = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("nombre");
+                    OnnombreChanged();
+                }
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte tipdoc
+        {
+            get
+            {
+                return _tipdoc;
+            }
+            set
+            {
+                if (_tipdoc != value)
+                {
+                    OntipdocChanging(value);
+                    ReportPropertyChanging("tipdoc");
+                    _tipdoc = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("tipdoc");
+                    OntipdocChanged();
+                }
+            }
+        }
+        private global::System.Byte _tipdoc;
+        partial void OntipdocChanging(global::System.Byte value);
+        partial void OntipdocChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String numdocumento
+        {
+            get
+            {
+                return _numdocumento;
+            }
+            set
+            {
+                if (_numdocumento != value)
+                {
+                    OnnumdocumentoChanging(value);
+                    ReportPropertyChanging("numdocumento");
+                    _numdocumento = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("numdocumento");
+                    OnnumdocumentoChanged();
+                }
+            }
+        }
+        private global::System.String _numdocumento;
+        partial void OnnumdocumentoChanging(global::System.String value);
+        partial void OnnumdocumentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                OndireccionChanging(value);
+                ReportPropertyChanging("direccion");
+                _direccion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("direccion");
+                OndireccionChanged();
+            }
+        }
+        private global::System.String _direccion;
+        partial void OndireccionChanging(global::System.String value);
+        partial void OndireccionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                OntelefonoChanging(value);
+                ReportPropertyChanging("telefono");
+                _telefono = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telefono");
+                OntelefonoChanged();
+            }
+        }
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
+        partial void OntelefonoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> tiptercero
+        {
+            get
+            {
+                return _tiptercero;
+            }
+            set
+            {
+                OntipterceroChanging(value);
+                ReportPropertyChanging("tiptercero");
+                _tiptercero = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiptercero");
+                OntipterceroChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _tiptercero;
+        partial void OntipterceroChanging(Nullable<global::System.Int32> value);
+        partial void OntipterceroChanged();
+
+        #endregion
+
+    
     }
 
     #endregion

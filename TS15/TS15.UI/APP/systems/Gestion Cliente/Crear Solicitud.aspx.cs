@@ -103,8 +103,9 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
 
-            ddlFabricante.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
+            ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
             ddlFabricante.DataValueField = "id";
             ddlFabricante.DataTextField = "nombre";
             ddlFabricante.DataBind();

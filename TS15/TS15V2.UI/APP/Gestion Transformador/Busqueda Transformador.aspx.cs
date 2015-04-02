@@ -17,28 +17,49 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
     {
         protected void Page_Init(object sender, EventArgs e)
         {
-            ValidarRoles();
+            //ValidarRoles();
         }
 
         private void ValidarRoles()
         {
             MembershipUser user = Membership.GetUser(true);
+            Guid userId = (Guid)user.ProviderUserKey;
             string[] userRoles = Roles.GetRolesForUser(user.UserName);
 
             if (userRoles.Count() == 0)
                 Response.Redirect("~/APP/AccesoDenegado.aspx");
 
             else if (Roles.FindUsersInRole(Enums.Roles.Cliente.ToString(), user.UserName).Count() > 0)
-                ddlFabricante.Enabled = false;
+                CargarCliente(userId);
 
             //else if(Roles.FindUsersInRole(Enums.Roles.ResponsableCliente.ToString(), user.UserName).Count() > 0)
+
+        }
+
+        private void CargarCliente(Guid userId)
+        {
+            dbTS15Entities contexto = new dbTS15Entities();
+            RawError error = new RawError();
+
+            BOCliente clienteBO = new BOCliente();
+            VW_CLI_USUARIO cliUserEntity = clienteBO.ConsultarClienteUser(userId, contexto, error);
+
+            this.txtNombre.Text = cliUserEntity.nombre;
+            this.txtNumDoc.Text = cliUserEntity.numdocumento;
+            this.ddlTipDocumento.SelectedValue = cliUserEntity.tipdoc.ToString();
 
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
+                MembershipUser user = Membership.GetUser(true);
+                Guid userId = (Guid)user.ProviderUserKey;
+
                 CargarListas();
+                CargarCliente(userId);
+            }
         }
 
         private void CargarListas()
@@ -50,8 +71,9 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
 
-            ddlFabricante.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
+            ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
             ddlFabricante.DataValueField = "id";
             ddlFabricante.DataTextField = "nombre";
             ddlFabricante.DataBind();
@@ -61,9 +83,9 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+            BOCliente clienteBO = new BOCliente();
 
-
-            gvTransformadores.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
+            gvTransformadores.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
             gvTransformadores.DataBind();
 
             mpeTransformadores.Show();
@@ -97,6 +119,11 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
             //CargarTipoSolicitud();
             //this.pnlTipoSolicitud.Visible = true;
+        }
+
+        protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
+        {
+            ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
     }
 }

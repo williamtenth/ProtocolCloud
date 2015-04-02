@@ -77,5 +77,10 @@ namespace TS15.DAL.Gestion_Cliente
                 return null;
             }
         }
+
+        public static VW_CLI_USUARIO ConsultarClienteUser(Guid userId, dbTS15Entities contexto, RawError error)
+        {
+            return contexto.VW_CLI_USUARIO.Where(p => p.UserId == userId).SingleOrDefault();
+        }
     }
 }
