@@ -56,6 +56,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="APP\AccesoDenegado.aspx" />
     <Content Include="APP\autenticacion\Index.aspx" />
     <Content Include="APP\autenticacion\OlvidoUsuario.aspx" />
     <Content Include="APP\componentes\BuscarCliente.ascx" />
@@ -235,6 +236,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APP\AccesoDenegado.aspx.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\AccesoDenegado.aspx.designer.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="APP\autenticacion\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,18 +302,21 @@
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.cs">
       <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.designer.cs">
       <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.cs">
       <DependentUpon>Crear Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.designer.cs">
       <DependentUpon>Crear Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.cs">
       <DependentUpon>Detalle Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.designer.cs">
       <DependentUpon>Detalle Usuario.aspx</DependentUpon>

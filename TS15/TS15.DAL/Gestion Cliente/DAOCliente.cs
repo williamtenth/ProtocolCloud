@@ -5,7 +5,7 @@ using System.Text;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 
-namespace TS15.DAL
+namespace TS15.DAL.Gestion_Cliente
 {
     public class DAOCliente
     {
@@ -69,7 +69,7 @@ namespace TS15.DAL
         {
             try
             {
-                return contexto.cli_cliente.Where(p => p.tipdoc == 2 || p.tipdoc == 3).ToList();
+                return contexto.cli_cliente.Where(p => p.tiptercero == 2 || p.tiptercero == 3).ToList();
             }
 
             catch (Exception ex)

@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
+using TS15.BL.Gestion_Cliente;
+using TS15.BL.Gestion_Transformador;
+using System.Web.Security;
 
 namespace TS15.UI.APP.systems.Gestion_Transformador
 {
@@ -194,6 +197,8 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
             BOTransformador transformadorBO = new BOTransformador();
             transformadorBO.Crear(transformadorEntity, contexto, error);
+
+            Response.Redirect("~/APP/Gestion Transformador/Detalle Transformador.aspx?idTransformador=" + transformadorEntity.id);
         }
 
         private void ObtenerValores(tfr_transformador transformadorEntity)

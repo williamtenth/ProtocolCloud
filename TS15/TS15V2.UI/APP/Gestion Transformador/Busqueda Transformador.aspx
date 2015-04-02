@@ -118,6 +118,29 @@
                 </div>
             </div>
             <div class="box-content">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            Tipo de Documento</label>
+                        <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
+                        </asp:DropDownList>
+                    </div>
+                    <div class="span3">
+                        <label>
+                            Número de Documento</label>
+                        <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="span3">
+                        <label>
+                            Nombre</label>
+                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="span3">
+                        <br />
+                        <%--<asp:Button runat="server" ID="btnConsultar" Text="Consultar" CssClass="btn btn-success"
+                            OnClick="btnBuscar_Click" />--%>
+                    </div>
+                </div>
                 <div class="form-horizontal">
                     <fieldset>
                         <div class="span5">

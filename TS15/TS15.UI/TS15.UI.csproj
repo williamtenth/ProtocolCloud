@@ -115,6 +115,7 @@
     <Content Include="APP\systems\Gestion Cliente\ConsultarHistorial.aspx" />
     <Content Include="APP\systems\Gestion Cliente\Crear Solicitud.aspx" />
     <Content Include="APP\systems\Gestion Cliente\Detalle Cliente.aspx" />
+    <Content Include="APP\systems\Gestion Transformador\Busqueda Transformador.aspx" />
     <Content Include="APP\systems\Home.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -183,6 +184,13 @@
     <Compile Include="APP\systems\Gestion Cliente\Detalle Cliente.aspx.designer.cs">
       <DependentUpon>Detalle Cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="APP\systems\Gestion Transformador\Busqueda Transformador.aspx.cs">
+      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\systems\Gestion Transformador\Busqueda Transformador.aspx.designer.cs">
+      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="APP\systems\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -242,7 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="APP\systems\Gestion Protocolo\" />
-    <Folder Include="APP\systems\Gestion Transformador\" />
     <Folder Include="APP\systems\Gestion Usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

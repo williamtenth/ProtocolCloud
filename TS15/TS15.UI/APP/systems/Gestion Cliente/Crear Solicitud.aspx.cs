@@ -8,6 +8,7 @@ using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
 using System.Data.Objects.DataClasses;
+using TS15.BL.Gestion_Cliente;
 
 namespace TS15.UI.APP.systems.Gestion_Cliente
 {

@@ -29,12 +29,14 @@ namespace TS15.DAL
 
         public void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            tfr_transformador transformadorEntity = entidad as tfr_transformador;
+            contexto.tfr_transformador.AddObject(transformadorEntity);
+            contexto.SaveChanges();
         }
 
         public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            return contexto.tfr_transformador.Where(p => p.id == id).SingleOrDefault();
         }
     }
 }

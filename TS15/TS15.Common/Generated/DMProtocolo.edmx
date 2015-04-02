@@ -18,6 +18,7 @@
           <EntitySet Name="aspnet_UsersInRoles" EntityType="dbTS15Model.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_WebEvent_Events" EntityType="dbTS15Model.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cli_cliente" EntityType="dbTS15Model.Store.cli_cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cli_cliente_has_usuarios" EntityType="dbTS15Model.Store.cli_cliente_has_usuarios" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cli_peddetalle" EntityType="dbTS15Model.Store.cli_peddetalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="cli_pedido" EntityType="dbTS15Model.Store.cli_pedido" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="gen_parametrica" EntityType="dbTS15Model.Store.gen_parametrica" store:Type="Tables" Schema="dbo" />
@@ -48,6 +49,7 @@
           </EntitySet>
           <EntitySet Name="pro_proceso" EntityType="dbTS15Model.Store.pro_proceso" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="pro_proceso_has_prueba" EntityType="dbTS15Model.Store.pro_proceso_has_prueba" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_bodega" EntityType="dbTS15Model.Store.tfr_bodega" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_caracteristicas" EntityType="dbTS15Model.Store.tfr_caracteristicas" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_ordentrabajo" EntityType="dbTS15Model.Store.tfr_ordentrabajo" store:Type="Tables" Schema="dbo" />
@@ -96,6 +98,14 @@
           <AssociationSet Name="FK__aspnet_Us__UserI__3A4CA8FD" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__3A4CA8FD">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cli_cliente_has_usuarios_aspnet_Users" Association="dbTS15Model.Store.FK_cli_cliente_has_usuarios_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="cli_cliente_has_usuarios" EntitySet="cli_cliente_has_usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cli_cliente_has_usuarios_cli_cliente" Association="dbTS15Model.Store.FK_cli_cliente_has_usuarios_cli_cliente">
+            <End Role="cli_cliente" EntitySet="cli_cliente" />
+            <End Role="cli_cliente_has_usuarios" EntitySet="cli_cliente_has_usuarios" />
           </AssociationSet>
           <AssociationSet Name="FK_cli_pedido_cli_cliente" Association="dbTS15Model.Store.FK_cli_pedido_cli_cliente">
             <End Role="cli_cliente" EntitySet="cli_cliente" />
@@ -304,6 +314,14 @@
           <Property Name="direccion" Type="varchar" MaxLength="80" />
           <Property Name="telefono" Type="varchar" MaxLength="20" />
           <Property Name="tiptercero" Type="int" />
+        </EntityType>
+        <EntityType Name="cli_cliente_has_usuarios">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="cliente_id" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="cliente_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="cli_peddetalle">
           <Key>
@@ -516,6 +534,16 @@
           <Property Name="fecha" Type="datetime" />
           <Property Name="resultado" Type="tinyint" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="tfr_bodega">
           <Key>
             <PropertyRef Name="tipbodega" />
@@ -565,7 +593,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="numserie" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="fabricante_id" Type="int" />
           <Property Name="altura" Type="varchar" MaxLength="6" />
@@ -719,6 +747,30 @@
             </Principal>
             <Dependent Role="aspnet_UsersInRoles">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cli_cliente_has_usuarios_aspnet_Users">
+          <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="cli_cliente_has_usuarios" Type="dbTS15Model.Store.cli_cliente_has_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="cli_cliente_has_usuarios">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cli_cliente_has_usuarios_cli_cliente">
+          <End Role="cli_cliente" Type="dbTS15Model.Store.cli_cliente" Multiplicity="1" />
+          <End Role="cli_cliente_has_usuarios" Type="dbTS15Model.Store.cli_cliente_has_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cli_cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cli_cliente_has_usuarios">
+              <PropertyRef Name="cliente_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1053,6 +1105,11 @@
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.sysdiagram" />
+          <AssociationSet Name="cli_cliente_has_usuarios" Association="dbTS15Model.cli_cliente_has_usuarios">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="cli_cliente" EntitySet="cli_cliente" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="cli_cliente">
           <Key>
@@ -1067,6 +1124,7 @@
           <Property Name="tiptercero" Type="Int32" />
           <NavigationProperty Name="cli_pedido" Relationship="dbTS15Model.FK_cli_pedido_cli_cliente" FromRole="cli_cliente" ToRole="cli_pedido" />
           <NavigationProperty Name="tfr_transf_has_cliente" Relationship="dbTS15Model.FK_tfr_transf_has_cliente_cli_cliente" FromRole="cli_cliente" ToRole="tfr_transf_has_cliente" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.cli_cliente_has_usuarios" FromRole="cli_cliente" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="cli_peddetalle">
           <Key>
@@ -1691,6 +1749,7 @@
           <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__59C55456" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
           <NavigationProperty Name="aspnet_Profile" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__29221CFB" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
           <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="cli_cliente" Relationship="dbTS15Model.cli_cliente_has_usuarios" FromRole="aspnet_Users" ToRole="cli_cliente" />
         </EntityType>
         <EntityType Name="aspnet_WebEvent_Events">
           <Key>
@@ -1823,6 +1882,20 @@
         <Association Name="aspnet_UsersInRoles">
           <End Type="dbTS15Model.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="cli_cliente_has_usuarios">
+          <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+          <End Type="dbTS15Model.cli_cliente" Role="cli_cliente" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -2277,6 +2350,25 @@
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="dbTS15Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="cli_cliente_has_usuarios" TypeName="dbTS15Model.cli_cliente_has_usuarios" StoreEntitySet="cli_cliente_has_usuarios">
+            <EndProperty Name="cli_cliente">
+              <ScalarProperty Name="id" ColumnName="cliente_id" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2319,12 +2411,12 @@
         <EntityTypeShape EntityType="dbTS15Model.tfr_transf_has_cliente" Width="1.5" PointX="3" PointY="23.375" Height="1.9802864583333388" IsExpanded="true" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_transformador" Width="1.5" PointX="0.75" PointY="20.5" Height="7.5570279947916674" IsExpanded="true" />
         <AssociationConnector Association="dbTS15Model.FK_cli_pedido_cli_cliente" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="20.374746093749998" />
-          <ConnectorPoint PointX="6.75" PointY="20.374746093749998" />
+          <ConnectorPoint PointX="5.25" PointY="20.470896809895834" />
+          <ConnectorPoint PointX="6.75" PointY="20.470896809895834" />
           <ConnectorPoint PointX="6.75" PointY="22.25" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_transf_has_cliente_cli_cliente" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.125" PointY="21.749492187499996" />
+          <ConnectorPoint PointX="4.125" PointY="21.941793619791667" />
           <ConnectorPoint PointX="4.125" PointY="23.375" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_cli_pedido_tfr_transformador" ManuallyRouted="false">
@@ -2437,8 +2529,8 @@
           <ConnectorPoint PointX="10.25" PointY="14.53125" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__1332DBDC" >
-          <ConnectorPoint PointX="11.75" PointY="16.405742187500003" />
-          <ConnectorPoint PointX="14.28125" PointY="16.405742187500003" />
+          <ConnectorPoint PointX="11.75" PointY="16.501892903645832" />
+          <ConnectorPoint PointX="14.28125" PointY="16.501892903645832" />
           <ConnectorPoint PointX="14.28125" PointY="11.941712239583339" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__531856C7" >
@@ -2463,8 +2555,14 @@
           <ConnectorPoint PointX="12.5" PointY="14.961293945312498" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.aspnet_UsersInRoles" >
-          <ConnectorPoint PointX="9.5" PointY="16.225698242187505" />
-          <ConnectorPoint PointX="10.25" PointY="16.225698242187505" />
+          <ConnectorPoint PointX="9.5" PointY="16.321848958333334" />
+          <ConnectorPoint PointX="10.25" PointY="16.321848958333334" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="dbTS15Model.sysdiagram" Width="1.5" PointX="9.375" PointY="0.75" Height="1.9802864583333246" />
+        <AssociationConnector Association="dbTS15Model.cli_cliente_has_usuarios" >
+          <ConnectorPoint PointX="10.34375" PointY="16.893697916666667" />
+          <ConnectorPoint PointX="10.34375" PointY="19.704195904947916" />
+          <ConnectorPoint PointX="5.25" PointY="19.704195904947916" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

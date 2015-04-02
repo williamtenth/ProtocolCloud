@@ -7,8 +7,9 @@ using TS15.DAL;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.Common.RawObjects;
+using TS15.DAL.Gestion_Cliente;
 
-namespace TS15.BL
+namespace TS15.BL.Gestion_Cliente
 {
     public class BOCliente : IGestionable
     {

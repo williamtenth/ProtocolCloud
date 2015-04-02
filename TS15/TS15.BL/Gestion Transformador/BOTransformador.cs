@@ -8,7 +8,7 @@ using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.DAL;
 
-namespace TS15.BL
+namespace TS15.BL.Gestion_Transformador
 {
     public class BOTransformador : IGestionable
     {
@@ -36,7 +36,8 @@ namespace TS15.BL
 
         public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            DAOTransformador transformadorDAO = new DAOTransformador();
+            return transformadorDAO.ConsultarXId(id, contexto, error);
         }
     }
 }

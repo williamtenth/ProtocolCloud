@@ -7,11 +7,34 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
+using TS15.BL.Gestion_Cliente;
+using System.Web.Security;
+using TS15.Common;
 
 namespace TS15.UI.APP.systems.Gestion_Transformador
 {
     public partial class Busqueda_Transformador : System.Web.UI.Page
     {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            ValidarRoles();
+        }
+
+        private void ValidarRoles()
+        {
+            MembershipUser user = Membership.GetUser(true);
+            string[] userRoles = Roles.GetRolesForUser(user.UserName);
+
+            if (userRoles.Count() == 0)
+                Response.Redirect("~/APP/AccesoDenegado.aspx");
+
+            else if (Roles.FindUsersInRole(Enums.Roles.Cliente.ToString(), user.UserName).Count() > 0)
+                ddlFabricante.Enabled = false;
+
+            //else if(Roles.FindUsersInRole(Enums.Roles.ResponsableCliente.ToString(), user.UserName).Count() > 0)
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -38,6 +61,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
         {
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
+
 
             gvTransformadores.DataSource = BOCliente.ConsultarFabricantes(contexto, error);
             gvTransformadores.DataBind();

@@ -10,6 +10,7 @@ using TS15.BL;
 using System.Data.Objects.DataClasses;
 using System.Web.Security;
 using TS15.UI.APP.componentes;
+using TS15.BL.Gestion_Cliente;
 
 namespace TS15.UI.APP.systems.Gestion_Cliente
 {

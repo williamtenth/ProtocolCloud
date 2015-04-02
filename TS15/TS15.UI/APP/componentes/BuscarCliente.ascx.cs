@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
+using TS15.BL.Gestion_Cliente;
 
 namespace TS15.UI.APP.componentes
 {
