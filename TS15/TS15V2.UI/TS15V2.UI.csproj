@@ -95,7 +95,7 @@
     <Content Include="APP\Gestion Cliente\Busqueda Cliente.aspx" />
     <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
     <Content Include="APP\Gestion Cliente\Detalle Cliente.aspx" />
-    <Content Include="APP\Gestion Transformador\Asignacion Transformador.aspx" />
+    <Content Include="APP\Gestion Transformador\Asignar Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Busqueda Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Crear Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Detalle Transformador.aspx" />
@@ -278,6 +278,13 @@
     </Compile>
     <Compile Include="APP\Gestion Cliente\Detalle Cliente.aspx.designer.cs">
       <DependentUpon>Detalle Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Asignar Transformador.aspx.cs">
+      <DependentUpon>Asignar Transformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Gestion Transformador\Asignar Transformador.aspx.designer.cs">
+      <DependentUpon>Asignar Transformador.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.cs">
       <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
