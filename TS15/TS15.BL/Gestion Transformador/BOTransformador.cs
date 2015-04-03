@@ -39,5 +39,19 @@ namespace TS15.BL.Gestion_Transformador
             DAOTransformador transformadorDAO = new DAOTransformador();
             return transformadorDAO.ConsultarXId(id, contexto, error);
         }
+
+        /// <summary>
+        /// Este método permite obtener el cliente que tiene asignado el transformador seleccionado.
+        /// *Consulta en la vista vw_transformador_cliente
+        /// </summary>
+        /// <param name="trafo_id">Identificador del transformador</param>
+        /// <param name="contexto">Contexto</param>
+        /// <param name="error">Error</param>
+        /// <returns>Objeto de tipo cliente, si no tiene asignado un cliente retorna un objeto nulo</returns>
+        public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
+        {   
+            DAOTransformador transformadorDAO = new DAOTransformador();
+            return transformadorDAO.ConsultarXId(trafo_id, contexto, error);
+        }
     }
 }

@@ -38,5 +38,12 @@ namespace TS15.DAL
         {
             return contexto.tfr_transformador.Where(p => p.id == id).SingleOrDefault();
         }
+
+        public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
+        {
+            return null;
+            //return contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
+        }
+
     }
 }
