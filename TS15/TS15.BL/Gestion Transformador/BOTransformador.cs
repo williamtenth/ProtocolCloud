@@ -52,7 +52,7 @@ namespace TS15.BL.Gestion_Transformador
         public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
         {   
             DAOTransformador transformadorDAO = new DAOTransformador();
-            return transformadorDAO.ConsultarXId(trafo_id, contexto, error);
+            return transformadorDAO.ConsultarClienteXTrafoId(trafo_id, contexto, error);
         }
     }
 }
