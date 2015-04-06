@@ -7,28 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TS15.UI.APP.componentes {
+namespace TS15V2.UI.APP.componentes {
     
     
-    public partial class BuscarCliente {
+    public partial class BuscarTransformador {
         
         /// <summary>
-        /// ddlTipDocumento control.
+        /// ddlFabricante control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipDocumento;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFabricante;
         
         /// <summary>
-        /// txtNumDoc control.
+        /// txtNumSerie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumDoc;
+        protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
         
         /// <summary>
         /// UpdatePanel2 control.
@@ -40,85 +40,58 @@ namespace TS15.UI.APP.componentes {
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// btnBuscar control.
+        /// btnBuscarTranformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.Button btnBuscarTranformador;
         
         /// <summary>
-        /// pnlMsj control.
+        /// Up_pnlTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMsj;
+        protected global::System.Web.UI.UpdatePanel Up_pnlTransformador;
         
         /// <summary>
-        /// hfIdCliente control.
+        /// pnlTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfIdCliente;
+        protected global::System.Web.UI.WebControls.Panel pnlTransformador;
         
         /// <summary>
-        /// lblNombreCliente control.
+        /// mpeTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreCliente;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeTransformador;
         
         /// <summary>
-        /// Up_pnlClientes control.
+        /// lblTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel Up_pnlClientes;
+        protected global::System.Web.UI.WebControls.Label lblTransformador;
         
         /// <summary>
-        /// pnlClientes control.
+        /// btnCerrarTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlClientes;
-        
-        /// <summary>
-        /// mpeClientes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeClientes;
-        
-        /// <summary>
-        /// lblClientes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClientes;
-        
-        /// <summary>
-        /// btnCerrarClientes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCerrarClientes;
+        protected global::System.Web.UI.WebControls.ImageButton btnCerrarTransformador;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -130,12 +103,12 @@ namespace TS15.UI.APP.componentes {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// gvClientes control.
+        /// gvTransformadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvClientes;
+        protected global::System.Web.UI.WebControls.GridView gvTransformadores;
     }
 }

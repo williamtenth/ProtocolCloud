@@ -38,15 +38,15 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
         private void CargarCliente(Guid userId)
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
+            //dbTS15Entities contexto = new dbTS15Entities();
+            //RawError error = new RawError();
 
-            BOCliente clienteBO = new BOCliente();
-            VW_CLI_USUARIO cliUserEntity = clienteBO.ConsultarClienteUser(userId, contexto, error);
+            //BOCliente clienteBO = new BOCliente();
+            //VW_CLI_USUARIO cliUserEntity = clienteBO.ConsultarClienteUser(userId, contexto, error);
 
-            this.txtNombre.Text = cliUserEntity.nombre;
-            this.txtNumDoc.Text = cliUserEntity.numdocumento;
-            this.ddlTipDocumento.SelectedValue = cliUserEntity.tipdoc.ToString();
+            //this.txtNombre.Text = cliUserEntity.nombre;
+            //this.txtNumDoc.Text = cliUserEntity.numdocumento;
+            //this.ddlTipDocumento.SelectedValue = cliUserEntity.tipdoc.ToString();
 
         }
 
@@ -54,11 +54,11 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
         {
             if (!Page.IsPostBack)
             {
-                MembershipUser user = Membership.GetUser(true);
-                Guid userId = (Guid)user.ProviderUserKey;
+                //MembershipUser user = Membership.GetUser(true);
+                //Guid userId = (Guid)user.ProviderUserKey;
 
                 CargarListas();
-                CargarCliente(userId);
+                //CargarCliente(userId);
             }
         }
 
@@ -69,48 +69,48 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
         private void CargarFabricantes()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
+            //dbTS15Entities contexto = new dbTS15Entities();
+            //RawError error = new RawError();
+            //BOCliente clienteBO = new BOCliente();
 
-            ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
-            ddlFabricante.DataValueField = "id";
-            ddlFabricante.DataTextField = "nombre";
-            ddlFabricante.DataBind();
+            //ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
+            //ddlFabricante.DataValueField = "id";
+            //ddlFabricante.DataTextField = "nombre";
+            //ddlFabricante.DataBind();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
+            //dbTS15Entities contexto = new dbTS15Entities();
+            //RawError error = new RawError();
+            //BOCliente clienteBO = new BOCliente();
 
-            gvTransformadores.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
-            gvTransformadores.DataBind();
+            //gvTransformadores.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
+            //gvTransformadores.DataBind();
 
-            mpeTransformadores.Show();
+            //mpeTransformadores.Show();
         }
 
         protected void ddlFabricante_DataBound(object sender, EventArgs e)
         {
-            this.ddlFabricante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            //this.ddlFabricante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes.Add("OnMouseOver", "this.style.cursor='pointer';this.style.textDecoration='underline';");
-                e.Row.Attributes["OnMouseOut"] = "this.style.textDecoration='none';";
-                e.Row.ToolTip = "Click para seleccionar";
-                e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(gvTransformadores, "Select$" + e.Row.RowIndex);
-            }
+            //if (e.Row.RowType == DataControlRowType.DataRow)
+            //{
+            //    e.Row.Attributes.Add("OnMouseOver", "this.style.cursor='pointer';this.style.textDecoration='underline';");
+            //    e.Row.Attributes["OnMouseOut"] = "this.style.textDecoration='none';";
+            //    e.Row.ToolTip = "Click para seleccionar";
+            //    e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(gvTransformadores, "Select$" + e.Row.RowIndex);
+            //}
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
-            string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
+            //string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
+            //string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
 
             //this.hfIdCliente.Value = idCliente;
             //this.lblNombreCliente.Text = nombreCliente;
@@ -123,7 +123,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
         protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
         {
-            ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            //ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
     }
 }

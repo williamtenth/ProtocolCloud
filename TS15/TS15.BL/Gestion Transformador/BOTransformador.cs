@@ -15,7 +15,8 @@ namespace TS15.BL.Gestion_Transformador
 
         public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            DAOTransformador transformadorDAO = new DAOTransformador();
+            return transformadorDAO.Consultar(contexto, error);
         }
 
         public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)

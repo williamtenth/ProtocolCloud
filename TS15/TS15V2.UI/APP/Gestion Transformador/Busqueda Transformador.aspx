@@ -3,6 +3,9 @@
     EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Src="../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
+    TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -107,130 +110,11 @@
         <li><i class="icon-edit"></i><a href="#">Buscar Transformador</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <div class="box span12">
-            <div data-original-title="" class="box-header">
-                <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Form Elements</h2>
-                <div class="box-icon">
-                    <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a><a class="btn-minimize"
-                        href="#"><i class="halflings-icon chevron-up"></i></a><a class="btn-close" href="#">
-                            <i class="halflings-icon remove"></i></a>
-                </div>
-            </div>
-            <div class="box-content">
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Tipo de Documento</label>
-                        <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
-                        </asp:DropDownList>
-                    </div>
-                    <div class="span3">
-                        <label>
-                            Número de Documento</label>
-                        <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="span3">
-                        <label>
-                            Nombre</label>
-                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="span3">
-                        <br />
-                        <%--<asp:Button runat="server" ID="btnConsultar" Text="Consultar" CssClass="btn btn-success"
-                            OnClick="btnBuscar_Click" />--%>
-                    </div>
-                </div>
-                <div class="form-horizontal">
-                    <fieldset>
-                        <div class="span5">
-                            <div class="control-group">
-                                <label class="control-label" for="ddlTipDocumento">
-                                    Nombre Fabricante:
-                                </label>
-                                <div class="controls">
-                                    <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span5">
-                            <div class="control-group">
-                                <label class="control-label" for="txtNumDoc">
-                                    Número de Serie:
-                                </label>
-                                <div class="controls">
-                                    <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="30"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span2">
-                            <asp:UpdatePanel runat="server">
-                                <ContentTemplate>
-                                    <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click" />
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
+        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
     </div>
-    <asp:UpdatePanel runat="server" ID="Up_pnlTransformadores" UpdateMode="Conditional">
-        <ContentTemplate>
-            <asp:Panel runat="server" ID="pnlTransformadores" CssClass="modalPopup" BackImageUrl="~/APP/img/basica_odd.png"
-                DefaultButton="btnCloseTransformadores" Style="display: none;">
-                <asp:ModalPopupExtender runat="server" ID="mpeTransformadores" PopupControlID="pnlTransformadores"
-                    TargetControlID="lblPopTransformadores" BackgroundCssClass="modalBackGround"
-                    CancelControlID="btnCloseTransformadores">
-                </asp:ModalPopupExtender>
-                <asp:Label runat="server" ID="lblPopTransformadores"></asp:Label>
-                <div class="cerrar">
-                    <asp:ImageButton ID="btnCloseTransformadores" runat="server" ImageUrl="~/APP/img/close_link.png" />
-                </div>
-                <h3 style="color: #72c014; border-bottom: 1px dotted black; padding-bottom: 5px;">
-                    Seleccione</h3>
-                <div style="text-align: left">
-                    <table width="100%">
-                        <tr>
-                            <td>
-                                <asp:UpdatePanel runat="server">
-                                    <ContentTemplate>
-                                        <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" DataKeyNames="id,nombre"
-                                            AllowPaging="true" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
-                                            OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
-                                            <Columns>
-                                                <asp:BoundField DataField="nombre" HeaderText="Nombre(s)">
-                                                    <ItemStyle HorizontalAlign="Justify" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="numdocumento" HeaderText="Número de Identificación">
-                                                    <ItemStyle HorizontalAlign="Justify" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="direccion" HeaderText="Dirección">
-                                                    <ItemStyle HorizontalAlign="Justify" />
-                                                </asp:BoundField>
-                                            </Columns>
-                                            <EmptyDataTemplate>
-                                                <asp:Label runat="server" ID="lblMensaje" Text="No se encontraron datos." ForeColor="Red"
-                                                    Font-Bold="true" Style="text-align: center"></asp:Label>
-                                            </EmptyDataTemplate>
-                                            <PagerStyle HorizontalAlign="Center" CssClass="pager" BorderWidth="0px" />
-                                            <AlternatingRowStyle BackColor="#ebf3de" />
-                                            <HeaderStyle CssClass="grilla" />
-                                            <RowStyle CssClass="grilla" />
-                                        </asp:GridView>
-                                    </ContentTemplate>
-                                    <Triggers>
-                                        <asp:PostBackTrigger ControlID="gvTransformadores" />
-                                    </Triggers>
-                                </asp:UpdatePanel>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </asp:Panel>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    <div class="row-fluid sortable ui-sortable">
+        <uc2:BuscarTransformador ID="ucBsuquedaTransformador" runat="server" />
+    </div>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../js/jquery-migrate-1.0.0.min.js"></script>

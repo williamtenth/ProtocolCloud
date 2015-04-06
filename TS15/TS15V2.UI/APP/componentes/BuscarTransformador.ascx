@@ -1,10 +1,10 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BuscarCliente.ascx.cs"
-    Inherits="TS15.UI.APP.componentes.BuscarCliente" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BuscarTransformador.ascx.cs"
+    Inherits="TS15V2.UI.APP.componentes.BuscarTransformador" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <div class="box span12">
     <div class="box-header" data-original-title>
         <h2>
-            <i class="halflings-icon edit"></i><span class="break"></span>Buscar Clientes</h2>
+            <i class="halflings-icon edit"></i><span class="break"></span>Buscar Transformador</h2>
         <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
@@ -17,10 +17,10 @@
                 <div class="span5">
                     <div class="control-group">
                         <label class="control-label" for="ddlTipDocumento">
-                            Tipo de Documento:
+                            Nombre Fabricante:
                         </label>
                         <div class="controls">
-                            <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
+                            <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -28,39 +28,34 @@
                 <div class="span5">
                     <div class="control-group">
                         <label class="control-label" for="txtNumDoc">
-                            Número de Documento:
+                            Número de Serie:
                         </label>
                         <div class="controls">
-                            <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="30"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="span2">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                            <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click" />
+                            <asp:Button runat="server" ID="btnBuscarTranformador" class="btn btn-success" Text="Buscar"
+                                OnClick="btnBuscarTranformador_Click" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
             </fieldset>
         </div>
-        <div class="form-horizontal">
-            <asp:Panel runat="server" ID="pnlMsj" Visible="false">
-                <asp:HiddenField runat="server" ID="hfIdCliente" />
-                <asp:Label runat="server" ID="lblNombreCliente"></asp:Label>
-            </asp:Panel>
-        </div>
     </div>
-    <asp:UpdatePanel runat="server" ID="Up_pnlClientes" UpdateMode="Conditional">
+    <asp:UpdatePanel runat="server" ID="Up_pnlTransformador" UpdateMode="Conditional">
         <ContentTemplate>
-            <asp:Panel runat="server" ID="pnlClientes" CssClass="modalPopup" BackImageUrl="~/APP/img/basica_odd.png"
-                DefaultButton="btnCerrarClientes" Style="display: none;">
-                <asp:ModalPopupExtender runat="server" ID="mpeClientes" PopupControlID="pnlClientes"
-                    TargetControlID="lblClientes" BackgroundCssClass="modalBackGround" CancelControlID="btnCerrarClientes">
+            <asp:Panel runat="server" ID="pnlTransformador" CssClass="modalPopup" BackImageUrl="~/APP/img/basica_odd.png"
+                DefaultButton="btnCerrarTransformador" Style="display: none;">
+                <asp:ModalPopupExtender runat="server" ID="mpeTransformador" PopupControlID="pnlTransformador"
+                    TargetControlID="lblTransformador" BackgroundCssClass="modalBackGround" CancelControlID="btnCerrarTransformador">
                 </asp:ModalPopupExtender>
-                <asp:Label runat="server" ID="lblClientes"></asp:Label>
+                <asp:Label runat="server" ID="lblTransformador"></asp:Label>
                 <div class="cerrar">
-                    <asp:ImageButton ID="btnCerrarClientes" runat="server" ImageUrl="~/APP/img/close_link.png" />
+                    <asp:ImageButton ID="btnCerrarTransformador" runat="server" ImageUrl="~/APP/img/close_link.png" />
                 </div>
                 <h3 style="color: #72c014; border-bottom: 1px dotted black; padding-bottom: 5px;">
                     Seleccione</h3>
@@ -70,13 +65,19 @@
                             <td>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView runat="server" ID="gvClientes" AutoGenerateColumns="false" DataKeyNames="id,nombre,tipdoc,numdocumento"
-                                            AllowPaging="true" PageSize="10" OnRowDataBound="gvClientes_RowDataBound" OnSelectedIndexChanged="gvClientes_SelectedIndexChanged">
+                                        <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="id,numserie,fabricante_id"
+                                            PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound" OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
                                             <Columns>
-                                                <asp:BoundField DataField="nombre" HeaderText="Nombre(s)">
+                                                <asp:BoundField DataField="numserie" HeaderText="Número de Serie">
                                                     <ItemStyle HorizontalAlign="Justify" />
                                                 </asp:BoundField>
-                                                <asp:BoundField DataField="numdocumento" HeaderText="Número de Identificación">
+                                                <asp:BoundField DataField="fecfabricacion" HeaderText="Fecha de Fabricación" DataFormatString="{0:d}">
+                                                    <ItemStyle HorizontalAlign="Justify" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="volentrada" HeaderText="Voltaje Entrada">
+                                                    <ItemStyle HorizontalAlign="Justify" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="volsalida" HeaderText="Voltaje Salida">
                                                     <ItemStyle HorizontalAlign="Justify" />
                                                 </asp:BoundField>
                                             </Columns>
@@ -91,7 +92,7 @@
                                         </asp:GridView>
                                     </ContentTemplate>
                                     <Triggers>
-                                        <asp:PostBackTrigger ControlID="gvClientes" />
+                                        <asp:PostBackTrigger ControlID="gvTransformadores" />
                                     </Triggers>
                                 </asp:UpdatePanel>
                             </td>

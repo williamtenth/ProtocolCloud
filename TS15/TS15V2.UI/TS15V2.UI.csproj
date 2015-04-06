@@ -60,6 +60,7 @@
     <Content Include="APP\autenticacion\Index.aspx" />
     <Content Include="APP\autenticacion\OlvidoUsuario.aspx" />
     <Content Include="APP\componentes\BuscarCliente.ascx" />
+    <Content Include="APP\componentes\BuscarTransformador.ascx" />
     <Content Include="APP\css\bootstrap-cerulean.min.css" />
     <Content Include="APP\css\bootstrap-responsive.css" />
     <Content Include="APP\css\bootstrap-responsive.min.css" />
@@ -258,6 +259,13 @@
     <Compile Include="APP\componentes\BuscarCliente.ascx.designer.cs">
       <DependentUpon>BuscarCliente.ascx</DependentUpon>
     </Compile>
+    <Compile Include="APP\componentes\BuscarTransformador.ascx.cs">
+      <DependentUpon>BuscarTransformador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\componentes\BuscarTransformador.ascx.designer.cs">
+      <DependentUpon>BuscarTransformador.ascx</DependentUpon>
+    </Compile>
     <Compile Include="APP\Gestion Cliente\Busqueda Cliente.aspx.cs">
       <DependentUpon>Busqueda Cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -385,7 +393,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>24079</DevelopmentServerPort>
+          <DevelopmentServerPort>31777</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

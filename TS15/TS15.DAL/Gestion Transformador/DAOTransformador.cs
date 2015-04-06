@@ -14,7 +14,8 @@ namespace TS15.DAL
 
         public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
         {
-            throw new NotImplementedException();
+            List<EntityObject> lstTransformadores = contexto.tfr_transformador.ToList().Cast<EntityObject>().ToList();
+            return lstTransformadores;
         }
 
         public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)
