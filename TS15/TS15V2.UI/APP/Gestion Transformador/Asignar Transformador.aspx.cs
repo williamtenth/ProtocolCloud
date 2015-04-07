@@ -12,14 +12,16 @@ namespace TS15V2.UI.APP.Gestion_Transformador
 {
     public partial class Asignar_Transformador : System.Web.UI.Page
     {
-        private int transformador_id;
+        private tfr_transformador _transformador;
 
-        public int Transformador_id
+        public tfr_transformador _Transformador
         {
-            get { return transformador_id; }
-            set { transformador_id = value; }
+            get { return _transformador; }
+            set { _transformador = value; }
         }
 
+        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             iniciar(1);
@@ -27,8 +29,8 @@ namespace TS15V2.UI.APP.Gestion_Transformador
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            transformador_id = 1;
-            iniciar(transformador_id);
+            _transformador.id = 1;
+            iniciar(_transformador.id);
         }
 
         protected void iniciar(int trafo_id)
@@ -37,7 +39,7 @@ namespace TS15V2.UI.APP.Gestion_Transformador
             RawError error = new RawError();
             BOTransformador transforamdorBO = new BOTransformador();
 
-            cli_cliente cliente = (cli_cliente)transforamdorBO.ConsultarClienteXTrafoId(transformador_id, contexto, error);
+            cli_cliente cliente = (cli_cliente)transforamdorBO.ConsultarClienteXTrafoId(trafo_id, contexto, error);
             txtNumDoc.Text = cliente.numdocumento;
             txtNombre.Text = cliente.nombre;
             txtNumDoc.DataBind();
@@ -46,7 +48,11 @@ namespace TS15V2.UI.APP.Gestion_Transformador
 
         protected void btnRetirar_Click(object sender, EventArgs e)
         {
+            dbTS15Entities contexto = new dbTS15Entities();
+            RawError error = new RawError();
+            BOTransformador transforamdorBO = new BOTransformador();
 
+            transforamdorBO.RetirarTranfoDeCliente(_transformador.id, contexto, error);
         }
     }
 }

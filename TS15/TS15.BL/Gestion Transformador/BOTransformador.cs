@@ -50,9 +50,25 @@ namespace TS15.BL.Gestion_Transformador
         /// <param name="error">Error</param>
         /// <returns>Objeto de tipo cliente, si no tiene asignado un cliente retorna un objeto nulo</returns>
         public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
-        {   
+        {
             DAOTransformador transformadorDAO = new DAOTransformador();
             return transformadorDAO.ConsultarClienteXTrafoId(trafo_id, contexto, error);
+        }
+
+        /// <summary>
+        /// Este método elimina de la tabla "tfr_transf_has_cliente" la tupla que contenga el transformador seleccionado.
+        /// </summary>
+        /// <param name="trafo_id">Identificador del transformador</param>
+        /// <param name="contexto">contexto</param>
+        /// <param name="error">error</param>
+        /// <returns>
+        /// <b>- 0 se elimina exitosamente la relación transformador - cliente<b>
+        /// <b>- 1 no exite la relación transformador - cliente<b>
+        /// </returns>
+        public int RetirarTranfoDeCliente(int trafo_id, dbTS15Entities contexto, RawError error)
+        {
+            DAOTransformador transformadorDAO = new DAOTransformador();
+            return transformadorDAO.RetirarTranfoDeCliente(trafo_id, contexto, error);
         }
     }
 }
