@@ -10385,6 +10385,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Int32> _tiptercero;
         partial void OntipterceroChanging(Nullable<global::System.Int32> value);
         partial void OntipterceroChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> transformador_id
+        {
+            get
+            {
+                return _transformador_id;
+            }
+            set
+            {
+                Ontransformador_idChanging(value);
+                ReportPropertyChanging("transformador_id");
+                _transformador_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("transformador_id");
+                Ontransformador_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _transformador_id;
+        partial void Ontransformador_idChanging(Nullable<global::System.Int32> value);
+        partial void Ontransformador_idChanged();
 
         #endregion
 

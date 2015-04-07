@@ -36,10 +36,17 @@ namespace TS15.BL.Gestion_Cliente
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Este método permite realizar la búsqueda de un cliente por Id.
+        /// </summary>
+        /// <param name="cliente_id">Identificador del cliente</param>
+        /// <param name="contexto">contexto</param>
+        /// <param name="error">error</param>
+        /// <returns>El objeto Cliente, si no hay resultado se retorna un objeto vacío</returns>
         public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
             cli_cliente entityCliente = DAOCliente.ConsultarXId(id, contexto, error);
-            return entityCliente as EntityObject;
+            return entityCliente != null ? entityCliente as EntityObject : new cli_cliente();
         }
 
         public cli_cliente BuscarCliente(string pTipoDocumento, string pNumDocumento, dbTS15Entities contexto, RawError error)

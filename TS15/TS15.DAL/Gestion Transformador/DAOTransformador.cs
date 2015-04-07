@@ -6,6 +6,7 @@ using TS15.Common.IService;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using System.Data.Objects.DataClasses;
+using TS15.DAL.Gestion_Cliente;
 
 namespace TS15.DAL
 {
@@ -42,8 +43,30 @@ namespace TS15.DAL
 
         public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
         {
-            return null;
-            //return contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
+            vw_transformador_cliente vw = contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
+            if (vw != null)
+            {
+                cli_cliente cliente = (cli_cliente) DAOCliente.ConsultarXId(vw.id, contexto, error);
+                return cliente != null ? cliente : new cli_cliente();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public int RetirarTranfoDeCliente(int trafo_id, dbTS15Entities contexto, RawError error)
+        {   
+            vw_transformador_cliente vw = contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
+            try
+            {
+                contexto.vw_transformador_cliente.DeleteObject(vw);
+                return 0;
+            }
+            catch(NullReferenceException)
+            {
+                return 1;
+            }
         }
 
     }

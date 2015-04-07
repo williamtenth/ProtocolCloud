@@ -120,17 +120,17 @@
                     <div class="span3">
                         <label>
                             Tipo de Documento</label>
-                        <asp:TextBox runat="server" ID="txtTipDoc" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtTipDoc" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                     <div class="span3">
                         <label>
                             Número de Documento</label>
-                        <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                     <div class="span3">
                         <label>
                             Nombre</label>
-                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                     <div class="span3">
                         <br />
