@@ -4,6 +4,8 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Src="../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
+    TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -109,10 +111,31 @@
     <div class="row-fluid sortable ui-sortable">
         <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
     </div>
-    <asp:Panel runat="server" ID="pnlRow" Visible="false" CssClass="row-fluid sortable ui-sortable">
+    <div class="row-fluid sortable ui-sortable">
+        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
+    </div>
+    <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
-            <%--SUMINISTRO--%>
+            <%--TIPO SOLICITUD--%>
             <div class="box-content">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <div class="span5">
+                            <div class="control-group">
+                                <label class="control-label" for="ddlFabricante">
+                                    Tipo de Solicitud:</label>
+                                <div class="controls">
+                                    <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
+                                        OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <%--SUMINISTRO--%>
+            <%--<div class="box-content">
                 <asp:Panel runat="server" ID="pnlSuministro" CssClass="form-horizontal" Visible="false">
                     <fieldset>
                         <div class="span5">
@@ -140,7 +163,7 @@
                         </div>
                     </fieldset>
                 </asp:Panel>
-            </div>
+            </div>--%>
             <%--SERVICIO--%>
             <div class="box-content">
                 <asp:Panel runat="server" ID="pnlServicio" CssClass="form-horizontal" Visible="false">
@@ -186,8 +209,20 @@
                     </fieldset>
                 </asp:Panel>
             </div>
+            <div class="box-content">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <div class="form-actions">
+                            <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
+                                OnClick="btnCrearSolicitud_Click" Visible="false" />
+                            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
+                                OnClick="btnCancelar_Click" Visible="false" />
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
         </div>
-    </asp:Panel>
+    </div>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../js/jquery-migrate-1.0.0.min.js"></script>

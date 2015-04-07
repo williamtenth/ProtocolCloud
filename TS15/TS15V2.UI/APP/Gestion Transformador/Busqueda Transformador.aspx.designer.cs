@@ -22,12 +22,12 @@ namespace TS15.UI.APP.systems.Gestion_Transformador {
         protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
         
         /// <summary>
-        /// ucBsuquedaTransformador control.
+        /// ucBusquedaTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBsuquedaTransformador;
+        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
     }
 }

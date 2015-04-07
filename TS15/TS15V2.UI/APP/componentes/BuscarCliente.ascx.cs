@@ -14,6 +14,8 @@ namespace TS15.UI.APP.componentes
 {
     public partial class BuscarCliente : System.Web.UI.UserControl
     {
+        public event EventHandler OnPatientChange;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -80,6 +82,13 @@ namespace TS15.UI.APP.componentes
 
             this.ddlTipDocumento.SelectedValue = tipDocumento;
             this.txtNumDoc.Text = numDocumento;
+
+            if (this.OnPatientChange != null) this.OnPatientChange(sender, e);
+        }
+
+        public string IdCliente
+        {
+            get { return hfIdCliente.Value; }
         }
     }
 }

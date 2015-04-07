@@ -22,49 +22,22 @@ namespace TS15.UI.APP.systems.Gestion_Cliente {
         protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
         
         /// <summary>
-        /// pnlRow control.
+        /// ucBusquedaTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRow;
+        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
         
         /// <summary>
-        /// pnlSuministro control.
+        /// ddlTipoSolicitud control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSuministro;
-        
-        /// <summary>
-        /// ddlFabricante control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFabricante;
-        
-        /// <summary>
-        /// txtNumeroSerie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroSerie;
-        
-        /// <summary>
-        /// btnBuscarTransformador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarTransformador;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoSolicitud;
         
         /// <summary>
         /// pnlServicio control.
@@ -119,5 +92,23 @@ namespace TS15.UI.APP.systems.Gestion_Cliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVolSalida;
+        
+        /// <summary>
+        /// btnCrearSolicitud control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCrearSolicitud;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

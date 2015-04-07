@@ -113,7 +113,7 @@
         <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
     </div>
     <div class="row-fluid sortable ui-sortable">
-        <uc2:BuscarTransformador ID="ucBsuquedaTransformador" runat="server" />
+        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
     </div>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>

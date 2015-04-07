@@ -39,7 +39,7 @@ namespace TS15.DAL
             }
         }
 
-        public static object ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
+        public static List<gen_parametrica> ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
         {
             try
             {

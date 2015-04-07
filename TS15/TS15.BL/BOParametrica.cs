@@ -48,7 +48,7 @@ namespace TS15.BL
             throw new NotImplementedException();
         }
 
-        public static object ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
+        public static List<gen_parametrica> ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
         {
             return DAOParametrica.ConsultarTipoSolictudSS(tipo, contexto, error);
         }

@@ -9,32 +9,53 @@ using TS15.Common.RawObjects;
 using TS15.BL;
 using System.Data.Objects.DataClasses;
 using TS15.BL.Gestion_Cliente;
+using TS15.UI.APP.componentes;
 
 namespace TS15.UI.APP.systems.Gestion_Cliente
 {
     public partial class Crear_Solicitud : System.Web.UI.Page
     {
+        //override protected void OnInit(EventArgs e)
+        //{
+        //    InitializeComponent();
+        //    base.OnInit(e);
+        //}
+
+        //private void InitializeComponent()
+        //{
+        //    this.Load += new System.EventHandler(this.Page_Load);
+
+        //}
+
+        protected void OnPatientChange(object sender, EventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente))
+            //    pnlServicio.Visible = true;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            ucBusquedaCliente.OnPatientChange += new EventHandler(OnPatientChange);
             if (!Page.IsPostBack)
                 CargarListas();
         }
 
         private void CargarTipoSolicitud()
         {
-            //dbTS15Entities contexto = new dbTS15Entities();
-            //RawError error = new RawError();
+            dbTS15Entities contexto = new dbTS15Entities();
+            RawError error = new RawError();
 
-            //ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
-            //ddlTipoSolicitud.DataValueField = "consecutivo";
-            //ddlTipoSolicitud.DataTextField = "valor";
-            //ddlTipoSolicitud.DataBind();
+            ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
+            ddlTipoSolicitud.DataValueField = "consecutivo";
+            ddlTipoSolicitud.DataTextField = "valor";
+            ddlTipoSolicitud.DataBind();
         }
 
         private void CargarListas()
         {
             CargarTipoDocumento();
             CargarFabricante();
+            CargarTipoSolicitud();
         }
 
         private void CargarTipoDocumento()
@@ -56,30 +77,32 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         //    ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         //}
 
-        //protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
-        //{
-        //    ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
-        //}
+        protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
+        {
+            ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        }
 
-        //protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (ddlTipoSolicitud.SelectedValue == "1")
-        //    {
-        //        this.pnlServicio.Visible = true;
-        //        this.pnlSuministro.Visible = false;
-        //    }
-        //    else if (ddlTipoSolicitud.SelectedValue == "2")
-        //    {
-        //        CargarFabricante();
-        //        this.pnlServicio.Visible = false;
-        //        this.pnlSuministro.Visible = true;
-        //    }
-        //    else
-        //    {
-        //        this.pnlServicio.Visible = false;
-        //        this.pnlSuministro.Visible = false;
-        //    }
-        //}
+        protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlTipoSolicitud.SelectedValue == "1")
+            {
+                this.pnlServicio.Visible = true;
+                this.btnCrearSolicitud.Visible = true;
+                this.btnCancelar.Visible = true;
+            }
+            else if (ddlTipoSolicitud.SelectedValue == "2")
+            {
+                this.pnlServicio.Visible = false;
+                this.btnCrearSolicitud.Visible = true;
+                this.btnCancelar.Visible = true;
+            }
+            else
+            {
+                this.pnlServicio.Visible = false;
+                this.btnCrearSolicitud.Visible = false;
+                this.btnCancelar.Visible = false;
+            }
+        }
 
         private void CargarFabricante()
         {
@@ -106,6 +129,16 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         protected void ddlFabricante_DataBound(object sender, EventArgs e)
         {
             //ddlFabricante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCrearSolicitud_Click(object sender, EventArgs e)
+        {
+
         }
 
         //protected void btnBuscar_Click(object sender, EventArgs e)
@@ -153,5 +186,6 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         //    CargarTipoSolicitud();
         //    this.pnlTipoSolicitud.Visible = true;
         //}
+
     }
 }
