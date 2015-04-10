@@ -12,7 +12,7 @@
 <body style="background-image: url('../img/bg.jpg')">
     <form id="form1" runat="server">
     <asp:Login runat="server" ID="loginSystem" FailureText="* Por favor valide su nombre de usuario y contraseña."
-        FailureTextStyle-Font-Bold="true" FailureTextStyle-ForeColor="Red" DestinationPageUrl="~/APP/systems/Home.aspx">
+        FailureTextStyle-Font-Bold="true" FailureTextStyle-ForeColor="Red" DestinationPageUrl="~/APP/Home.aspx">
         <LayoutTemplate>
             <div class="ch-container">
                 <div class="row">

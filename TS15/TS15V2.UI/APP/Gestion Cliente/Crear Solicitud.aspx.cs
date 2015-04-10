@@ -10,16 +10,27 @@ using TS15.BL;
 using System.Data.Objects.DataClasses;
 using TS15.BL.Gestion_Cliente;
 using TS15.UI.APP.componentes;
+using System.Web.Security;
+using TS15.Common;
+using System.Web.Configuration;
 
 namespace TS15.UI.APP.systems.Gestion_Cliente
 {
     public partial class Crear_Solicitud : System.Web.UI.Page
     {
-        //override protected void OnInit(EventArgs e)
-        //{
-        //    InitializeComponent();
-        //    base.OnInit(e);
-        //}
+        override protected void OnInit(EventArgs e)
+        {
+            ValidarUsuario();
+        }
+
+        private void ValidarUsuario()
+        {
+            MembershipUser user = Membership.GetUser(true);
+            string[] roles = Roles.GetRolesForUser(user.UserName);
+
+            if (!roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+                Response.Redirect("~/APP/AccesoDenegado.aspx");
+        }
 
         //private void InitializeComponent()
         //{

@@ -374,6 +374,7 @@
     <None Include="APP\font\glyphiconshalflings-regular.woff" />
     <None Include="APP\img\gallery\Thumbs.db" />
     <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
+    <Content Include="APP\Gestion Cliente\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TS15.BL\TS15.BL.csproj">

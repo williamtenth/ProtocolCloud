@@ -70,5 +70,10 @@ namespace TS15.BL.Gestion_Transformador
             DAOTransformador transformadorDAO = new DAOTransformador();
             return transformadorDAO.RetirarTranfoDeCliente(trafo_id, contexto, error);
         }
+
+        public object ConsultarTransformadoresCliente(string idCliente, dbTS15Entities contexto, RawError error)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

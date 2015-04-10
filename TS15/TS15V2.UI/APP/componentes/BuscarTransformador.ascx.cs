@@ -8,11 +8,33 @@ using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL.Gestion_Cliente;
 using TS15.BL.Gestion_Transformador;
+using System.Web.Security;
+using System.Web.Configuration;
 
 namespace TS15V2.UI.APP.componentes
 {
     public partial class BuscarTransformador : System.Web.UI.UserControl
     {
+        private void ValidarRoles()
+        {
+            MembershipUser user = Membership.GetUser(true);
+            string[] roles = Roles.GetRolesForUser(user.UserName);
+
+            if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableTransformador"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableProtocolo"]))
+                ActivarControles();
+
+            else if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
+                ActivarControles();
+        }
+
+        private void ActivarControles()
+        {
+            this.ddlFabricante.Enabled = true;
+            this.txtNumSerie.Enabled = true;
+            this.txtNumSerie.ReadOnly = false;
+            this.btnBuscarTranformador.Enabled = true;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -46,10 +68,14 @@ namespace TS15V2.UI.APP.componentes
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
             BOTransformador transformadorBO = new BOTransformador();
+            string idCliente = ucBusquedaCliente.IdCliente;
 
-            gvTransformadores.DataSource = transformadorBO.Consultar(contexto, error);
-            gvTransformadores.DataBind();
-            mpeTransformador.Show();
+            if (!string.IsNullOrEmpty(idCliente))
+            {
+                gvTransformadores.DataSource = transformadorBO.ConsultarTransformadoresCliente(idCliente, contexto, error);
+                gvTransformadores.DataBind();
+                mpeTransformador.Show();
+            }
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)

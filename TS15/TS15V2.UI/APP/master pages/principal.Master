@@ -157,20 +157,26 @@
                         <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">
                             Gestión Cliente</span><span class="label label-important"> 3 </span></a>
                             <ul>
-                                <li><a class="submenu" href="../Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Busqueda Cliente</span></a></li>
-                                <li><a class="submenu" href="../Gestion Cliente/Crear Pedido.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Crear Pedido</span></a></li>
-                                <li><a class="submenu" href="../Gestion Cliente/Crear Solicitud.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Crear Soliciud</span></a></li>
+                                <li>
+                                    <asp:LinkButton ID="LinkButton0" runat="server" CssClass="submenu" PostBackUrl="~/APP/Gestion Cliente/Crear Solicitud.aspx"><i class="icon-file-alt">
+                                </i><span class="hidden-tablet">Crear Solicitud</span></asp:LinkButton></li>
+                                <%--<li>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="submenu" PostBackUrl="~/APP/Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
+                                </i><span class="hidden-tablet">Busqueda Cliente</span></asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="submenu" PostBackUrl="~/APP/Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
+                                </i><span class="hidden-tablet">Busqueda Cliente</span></asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="LinkButton3" runat="server" CssClass="submenu" PostBackUrl="~/APP/Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
+                                </i><span class="hidden-tablet">Busqueda Cliente</span></asp:LinkButton></li>--%>
                             </ul>
                         </li>
                         <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">
                             Gestión Usuarios</span><span class="label label-important"> 2 </span></a>
                             <ul>
-                                <li><a class="submenu" href="../Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
+                                <li><a class="submenu" href="~/APP/Gestion Cliente/Busqueda Cliente.aspx"><i class="icon-file-alt">
                                 </i><span class="hidden-tablet">Crear Usuario</span></a></li>
-                                <li><a class="submenu" href="../Gestion Cliente/Crear Pedido.aspx"><i class="icon-file-alt">
+                                <li><a class="submenu" href="~/APP/Gestion Cliente/Crear Pedido.aspx"><i class="icon-file-alt">
                                 </i><span class="hidden-tablet">Buscar Usuarios</span></a></li>
                             </ul>
                         </li>

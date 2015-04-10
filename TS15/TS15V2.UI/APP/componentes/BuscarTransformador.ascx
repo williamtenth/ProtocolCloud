@@ -1,7 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BuscarTransformador.ascx.cs"
     Inherits="TS15V2.UI.APP.componentes.BuscarTransformador" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
 <div class="box span12">
+    <div class="row-fluid sortable ui-sortable">
+        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+    </div>
     <div class="box-header" data-original-title>
         <h2>
             <i class="halflings-icon edit"></i><span class="break"></span>Buscar Transformador</h2>
@@ -20,7 +24,8 @@
                             Nombre Fabricante:
                         </label>
                         <div class="controls">
-                            <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound">
+                            <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound"
+                                Enabled="false">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -31,7 +36,8 @@
                             Número de Serie:
                         </label>
                         <div class="controls">
-                            <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="30"
+                                Enabled="false" ReadOnly="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -39,7 +45,7 @@
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
                             <asp:Button runat="server" ID="btnBuscarTranformador" class="btn btn-success" Text="Buscar"
-                                OnClick="btnBuscarTranformador_Click" />
+                                OnClick="btnBuscarTranformador_Click" Enabled="false" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
@@ -65,8 +71,9 @@
                             <td>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true" DataKeyNames="id,numserie,fabricante_id"
-                                            PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound" OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
+                                        <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true"
+                                            DataKeyNames="id,numserie,fabricante_id" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
+                                            OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
                                             <Columns>
                                                 <asp:BoundField DataField="numserie" HeaderText="Número de Serie">
                                                     <ItemStyle HorizontalAlign="Justify" />

@@ -13,6 +13,15 @@ namespace TS15V2.UI.APP.componentes {
     public partial class BuscarTransformador {
         
         /// <summary>
+        /// ucBusquedaCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
+        
+        /// <summary>
         /// ddlFabricante control.
         /// </summary>
         /// <remarks>

@@ -20,7 +20,8 @@
                             Tipo de Documento:
                         </label>
                         <div class="controls">
-                            <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
+                            <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound"
+                                Enabled="false">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -31,14 +32,16 @@
                             Número de Documento:
                         </label>
                         <div class="controls">
-                            <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" MaxLength="30"
+                                Enabled="false" ReadOnly="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="span2">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                            <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click" />
+                            <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click"
+                                Enabled="false" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
