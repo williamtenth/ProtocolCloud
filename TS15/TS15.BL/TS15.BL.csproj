@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gestion Cliente\BOCliente.cs" />
+    <Compile Include="abstractBL\BOGenerico.cs" />
+    <Compile Include="gestion_cliente\BOCliente.cs" />
     <Compile Include="BOParametrica.cs" />
-    <Compile Include="Gestion Transformador\BOTransformador.cs" />
+    <Compile Include="gestion_transformador\BOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,8 +58,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gestion Protocolo\" />
-    <Folder Include="Gestion Usuarios\" />
+    <Folder Include="gestion_protocolo\" />
+    <Folder Include="gestion_usuario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

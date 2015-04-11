@@ -1,6 +1,80 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BuscarCliente.ascx.cs"
     Inherits="TS15.UI.APP.componentes.BuscarCliente" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<style>
+    /************** Modal PopUp *****************************************************************************************************/
+    .cerrar
+    {
+        float: right;
+        margin-right: -30px;
+        margin-top: -20px;
+        z-index: 20;
+    }
+    
+    .detalles
+    {
+        width: 320px;
+        margin: auto;
+        height: 55px;
+        padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
+    }
+    
+    .detalles p
+    {
+        font-size: 35px;
+        text-align: center;
+        font-family: 'Museo' , Arial, sans-serif;
+        height: auto;
+        margin: auto;
+    }
+    
+    
+    .modalPopup
+    {
+        font-size: 10pt;
+        border-radius: 10px;
+        -ms-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        z-index: 10001;
+        padding: 10px 20px;
+        width: 500px;
+    }
+    .modalPopup2
+    {
+        font-size: 10pt;
+        border-radius: 10px;
+        -ms-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        z-index: 25;
+        padding: 10px 20px;
+        width: 600px;
+        z-index: 10001 !important;
+    }
+    
+    .modalBackGround
+    {
+        background: url(../../img/overlay.png) repeat 0 0;
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+    }
+    
+    .modalBackgroundCargando
+    {
+        background-color: Black;
+        filter: alpha(opacity=55);
+        opacity: 0.50;
+        z-index: 10100 !important;
+    }
+    
+    .imgFinca
+    {
+        max-width: 100%;
+        max-height: 300px;
+    }
+    /***********************************************************************************************************************/
+</style>
 <div class="box span12">
     <div class="box-header" data-original-title>
         <h2>

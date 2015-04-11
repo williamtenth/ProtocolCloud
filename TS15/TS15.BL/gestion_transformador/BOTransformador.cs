@@ -7,16 +7,22 @@ using TS15.Common.RawObjects;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.DAL;
+using TS15.BL.abstractBL;
+using TS15.DAL.gestion_transformador;
 
-namespace TS15.BL.Gestion_Transformador
+namespace TS15.BL.gestion_transformador
 {
-    public class BOTransformador : IGestionable
+    public class BOTransformador : BOGenerico, IGestionable
     {
+        public BOTransformador()
+        {
+            GenericoDAO = new DAOTransformador();
+        }
 
-        public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
+        public List<EntityObject> Consultar()
         {
             DAOTransformador transformadorDAO = new DAOTransformador();
-            return transformadorDAO.Consultar(contexto, error);
+            return transformadorDAO.Consultar();
         }
 
         public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)

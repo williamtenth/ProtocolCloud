@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
-using TS15.BL.Gestion_Transformador;
+using TS15.BL.gestion_transformador;
 
 namespace TS15.UI.APP.systems.Gestion_Transformador
 {

@@ -4,32 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
+using System.Web.Configuration;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
-using System.Data.Objects.DataClasses;
 using TS15.BL.gestion_cliente;
-using TS15.UI.APP.componentes;
-using System.Web.Security;
-using TS15.Common;
-using System.Web.Configuration;
 
-namespace TS15.UI.APP.systems.Gestion_Cliente
+namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class Crear_Solicitud : System.Web.UI.Page
+    public partial class CrearSolicitud : System.Web.UI.Page
     {
         override protected void OnInit(EventArgs e)
         {
-            ValidarUsuario();
+            //ValidarUsuario();
         }
 
         private void ValidarUsuario()
         {
-            MembershipUser user = Membership.GetUser(true);
-            string[] roles = Roles.GetRolesForUser(user.UserName);
+            //MembershipUser user = Membership.GetUser(true);
+            //string[] roles = Roles.GetRolesForUser(user.UserName);
 
-            if (!roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
-                Response.Redirect("~/APP/AccesoDenegado.aspx");
+            //if (!roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+            //    Response.Redirect("~/APP/AccesoDenegado.aspx");
         }
 
         //private void InitializeComponent()
@@ -197,6 +194,5 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         //    CargarTipoSolicitud();
         //    this.pnlTipoSolicitud.Visible = true;
         //}
-
     }
 }

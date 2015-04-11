@@ -19,7 +19,7 @@ namespace TS15.UI.APP.systems.Gestion_Cliente {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
+        protected global::System.Web.UI.UserControl ucBusquedaCliente;
         
         /// <summary>
         /// ucBusquedaTransformador control.
@@ -28,7 +28,7 @@ namespace TS15.UI.APP.systems.Gestion_Cliente {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
+        protected global::System.Web.UI.UserControl ucBusquedaTransformador;
         
         /// <summary>
         /// ddlTipoSolicitud control.

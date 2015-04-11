@@ -91,9 +91,12 @@
     <Content Include="APP\css\style.css" />
     <Content Include="APP\css\uniform.default.css" />
     <Content Include="APP\css\uploadify.css" />
+    <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
+    <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
+    <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
+    <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\font\glyphicons-regular.svg" />
     <Content Include="APP\font\glyphiconshalflings-regular.svg" />
-    <Content Include="APP\Gestion Cliente\Busqueda Cliente.aspx" />
     <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
     <Content Include="APP\Gestion Cliente\Detalle Cliente.aspx" />
     <Content Include="APP\Gestion Transformador\Asignar Transformador.aspx" />
@@ -237,6 +240,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APP\abstractUI\ControladorComponentes.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\abstractUI\ControladorPaginas.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\abstractUI\GenericoControlador.cs" />
+    <Compile Include="APP\abstractUI\SingletonControlador.cs" />
+    <Compile Include="APP\abstractUI\ValidadorRol.cs" />
+    <Compile Include="APP\abstractUI\ValidadorCliente.cs" />
     <Compile Include="APP\AccesoDenegado.aspx.cs">
       <DependentUpon>AccesoDenegado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,12 +279,33 @@
     <Compile Include="APP\componentes\BuscarTransformador.ascx.designer.cs">
       <DependentUpon>BuscarTransformador.ascx</DependentUpon>
     </Compile>
-    <Compile Include="APP\Gestion Cliente\Busqueda Cliente.aspx.cs">
-      <DependentUpon>Busqueda Cliente.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionCliente\BusquedaCliente.aspx.cs">
+      <DependentUpon>BusquedaCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\Gestion Cliente\Busqueda Cliente.aspx.designer.cs">
-      <DependentUpon>Busqueda Cliente.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionCliente\BusquedaCliente.aspx.designer.cs">
+      <DependentUpon>BusquedaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\CrearSolicitud.aspx.cs">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\CrearSolicitud.aspx.designer.cs">
+      <DependentUpon>CrearSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx.cs">
+      <DependentUpon>BusquedaTransformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx.designer.cs">
+      <DependentUpon>BusquedaTransformador.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\Gestion Cliente\Crear Pedido.aspx.cs">
       <DependentUpon>Crear Pedido.aspx</DependentUpon>
@@ -336,6 +370,7 @@
     <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.designer.cs">
       <DependentUpon>Detalle Usuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="APP\abstractUI\IControlable.cs" />
     <Compile Include="APP\master pages\principal.Master.cs">
       <DependentUpon>principal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -351,15 +386,19 @@
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="APP\util\Parametros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="APP\master pages\principal.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="APP\Gestion Protocolo\" />
+    <Folder Include="APP\dev\GestionProtocolo\" />
+    <Folder Include="APP\dev\GestionUsuarios\" />
+    <Folder Include="APP\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="APP\dev\Web.config" />
     <None Include="APP\font\fontawesome-webfont-0.eot" />
     <None Include="APP\font\fontawesome-webfont-62877.eot" />
     <None Include="APP\font\fontawesome-webfont-62877.ttf" />

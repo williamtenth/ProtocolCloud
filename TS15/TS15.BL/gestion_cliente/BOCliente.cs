@@ -7,15 +7,22 @@ using TS15.DAL;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.Common.RawObjects;
-using TS15.DAL.Gestion_Cliente;
+using TS15.DAL.gestion_cliente;
+using TS15.DAL.abstractDAL;
+using TS15.BL.abstractBL;
 
-namespace TS15.BL.Gestion_Cliente
+namespace TS15.BL.gestion_cliente
 {
-    public class BOCliente : IGestionable
+    public class BOCliente : BOGenerico, IGestionable
     {
-        public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
+        public BOCliente()
         {
-            List<cli_cliente> lstEntityCliente = DAOCliente.ConsultarClientes(contexto, error);
+            GenericoDAO = new DAOCliente();
+        }
+
+        public List<EntityObject> Consultar()
+        {
+            List<cli_cliente> lstEntityCliente = ((DAOCliente)GenericoDAO).ConsultarClientes();
             List<EntityObject> lstEntityObjects = lstEntityCliente.Cast<EntityObject>().ToList();
             return lstEntityObjects;
         }
@@ -59,9 +66,9 @@ namespace TS15.BL.Gestion_Cliente
             return DAOCliente.ConsultarFabricantes(contexto, error);
         }
 
-        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId, dbTS15Entities contexto, RawError error)
+        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
         {
-            return DAOCliente.ConsultarClienteUser(userId, contexto, error);
+            return ((DAOCliente)GenericoDAO).ConsultarClienteUser(userId);
         }
     }
 }

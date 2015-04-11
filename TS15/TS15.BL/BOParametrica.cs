@@ -7,14 +7,21 @@ using TS15.Common.RawObjects;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.DAL;
+using TS15.BL.abstractBL;
 
 namespace TS15.BL
 {
-    public class BOParametrica : IGestionable
+    public class BOParametrica : BOGenerico, IGestionable
     {
-        public static List<gen_parametrica> ConsultarParametros(string tipo, dbTS15Entities contexto, RawError error)
+
+        public BOParametrica()
         {
-            return DAOParametrica.ConsultarParametros(tipo, contexto, error);
+            GenericoDAO = new DAOParametrica();
+        }
+
+        public List<gen_parametrica> ConsultarParametros(string tipo)
+        {
+            return ((DAOParametrica)GenericoDAO).ConsultarParametros(tipo);
         }
 
         public static List<gen_parametrica> ConsultarParametrosSuministro(string tipo, dbTS15Entities contexto, RawError error)
@@ -22,7 +29,7 @@ namespace TS15.BL
             return DAOParametrica.ConsultarParametrosSuministro(tipo, contexto, error);
         }
 
-        public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
+        public List<EntityObject> Consultar()
         {
             throw new NotImplementedException();
         }
@@ -42,7 +49,6 @@ namespace TS15.BL
             throw new NotImplementedException();
         }
 
-
         public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
             throw new NotImplementedException();
@@ -52,5 +58,6 @@ namespace TS15.BL
         {
             return DAOParametrica.ConsultarTipoSolictudSS(tipo, contexto, error);
         }
+
     }
 }

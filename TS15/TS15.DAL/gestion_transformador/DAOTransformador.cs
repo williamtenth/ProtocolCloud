@@ -6,16 +6,17 @@ using TS15.Common.IService;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using System.Data.Objects.DataClasses;
-using TS15.DAL.Gestion_Cliente;
+using TS15.DAL.gestion_cliente;
+using TS15.DAL.abstractDAL;
 
-namespace TS15.DAL
+namespace TS15.DAL.gestion_transformador
 {
-    public class DAOTransformador : IGestionable
+    public class DAOTransformador : DAOGenerico, IGestionable
     {
 
-        public List<EntityObject> Consultar(dbTS15Entities contexto, RawError error)
+        public List<EntityObject> Consultar()
         {
-            List<EntityObject> lstTransformadores = contexto.tfr_transformador.ToList().Cast<EntityObject>().ToList();
+            List<EntityObject> lstTransformadores = SingletonDatos.Contexto.tfr_transformador.ToList().Cast<EntityObject>().ToList();
             return lstTransformadores;
         }
 

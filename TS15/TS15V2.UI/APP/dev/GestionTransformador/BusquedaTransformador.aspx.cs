@@ -4,16 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TS15.Common.Generated;
-using TS15.Common.RawObjects;
-using TS15.BL;
-using TS15.BL.gestion_cliente;
 using System.Web.Security;
 using TS15.Common;
 
-namespace TS15.UI.APP.systems.Gestion_Transformador
+namespace TS15V2.UI.APP.dev.GestionTransformador
 {
-    public partial class Busqueda_Transformador : System.Web.UI.Page
+    public partial class BusquedaTransformador : System.Web.UI.Page
     {
         protected void Page_Init(object sender, EventArgs e)
         {

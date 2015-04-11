@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
+using TS15.DAL.abstractDAL;
 
 namespace TS15.DAL
 {
-    public class DAOParametrica
+    public class DAOParametrica : DAOGenerico
     {
-        public static List<gen_parametrica> ConsultarParametros(string tipo, dbTS15Entities contexto, RawError error)
+        public List<gen_parametrica> ConsultarParametros(string tipo)
         {
             try
             {
-                return contexto.gen_parametrica.Where(p => p.tipo == tipo).OrderBy(p => p.tipo).ToList();
+                return SingletonDatos.Contexto.gen_parametrica.Where(p => p.tipo == tipo).OrderBy(p => p.tipo).ToList();
             }
 
             catch (Exception ex)
             {
-                error.Message = "Ocurrio un error en : DAOParametrica.ConsultarParametros" + ex.Message;
-                error.Error = true;
                 return null;
             }
         }

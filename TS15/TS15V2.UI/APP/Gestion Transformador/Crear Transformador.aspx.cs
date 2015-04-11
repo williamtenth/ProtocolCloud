@@ -7,9 +7,10 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
-using TS15.BL.Gestion_Cliente;
-using TS15.BL.Gestion_Transformador;
+using TS15.BL.gestion_cliente;
+using TS15.BL.gestion_transformador;
 using System.Web.Security;
+using TS15V2.UI.APP.util;
 
 namespace TS15.UI.APP.systems.Gestion_Transformador
 {
@@ -83,10 +84,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
         private void CargarSerieAT()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-
-            this.ddlSerieAT.DataSource = BOParametrica.ConsultarParametros("tfrtenserie", contexto, error);
+            this.ddlSerieAT.DataSource = Parametros.ConsultarParametros("tfrtenserie");
             this.ddlSerieAT.DataValueField = "consecutivo";
             this.ddlSerieAT.DataTextField = "valor";
             this.ddlSerieAT.DataBind();
@@ -97,7 +95,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlSerieBT.DataSource = BOParametrica.ConsultarParametros("tfrtenserie", contexto, error);
+            this.ddlSerieBT.DataSource = Parametros.ConsultarParametros("tfrtenserie");
             this.ddlSerieBT.DataValueField = "consecutivo";
             this.ddlSerieBT.DataTextField = "valor";
             this.ddlSerieBT.DataBind();
@@ -108,7 +106,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlCapacidad.DataSource = BOParametrica.ConsultarParametros("tfrcapacidad", contexto, error);
+            this.ddlCapacidad.DataSource = Parametros.ConsultarParametros("tfrcapacidad");
             this.ddlCapacidad.DataValueField = "consecutivo";
             this.ddlCapacidad.DataTextField = "valor";
             this.ddlCapacidad.DataBind();
@@ -119,7 +117,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlFase.DataSource = BOParametrica.ConsultarParametros("tfrfase", contexto, error);
+            this.ddlFase.DataSource = Parametros.ConsultarParametros("tfrfase");
             this.ddlFase.DataValueField = "consecutivo";
             this.ddlFase.DataTextField = "valor";
             this.ddlFase.DataBind();
@@ -130,7 +128,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlAislamiento.DataSource = BOParametrica.ConsultarParametros("trfaislamiento", contexto, error);
+            this.ddlAislamiento.DataSource = Parametros.ConsultarParametros("trfaislamiento");
             this.ddlAislamiento.DataValueField = "consecutivo";
             this.ddlAislamiento.DataTextField = "valor";
             this.ddlAislamiento.DataBind();
@@ -141,7 +139,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlRefrigeracion.DataSource = BOParametrica.ConsultarParametros("trfrefrigeracion", contexto, error);
+            this.ddlRefrigeracion.DataSource = Parametros.ConsultarParametros("trfrefrigeracion");
             this.ddlRefrigeracion.DataValueField = "consecutivo";
             this.ddlRefrigeracion.DataTextField = "valor";
             this.ddlRefrigeracion.DataBind();
@@ -152,7 +150,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
 
-            this.ddlGrupoConexion.DataSource = BOParametrica.ConsultarParametros("trfgrpconex", contexto, error);
+            this.ddlGrupoConexion.DataSource = Parametros.ConsultarParametros("trfgrpconex");
             this.ddlGrupoConexion.DataValueField = "consecutivo";
             this.ddlGrupoConexion.DataTextField = "valor";
             this.ddlGrupoConexion.DataBind();

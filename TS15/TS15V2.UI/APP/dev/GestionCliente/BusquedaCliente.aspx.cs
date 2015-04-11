@@ -6,17 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
-using TS15.BL;
-using System.Data.Objects.DataClasses;
-using System.Web.Security;
-using TS15.UI.APP.componentes;
 using TS15.BL.gestion_cliente;
+using System.Data.Objects.DataClasses;
+using TS15.BL;
 using TS15V2.UI.APP.abstractUI;
 
-namespace TS15.UI.APP.systems.Gestion_Cliente
+namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class Busqueda_Cliente : ControladorComponentes
+    public partial class BusquedaCliente : ControladorComponentes
     {
+        BusquedaCliente()
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //MembershipUser user = Membership.GetUser(true);
@@ -34,17 +37,10 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
 
         private void CargarTipoDocumento()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-
-            ddlTipDocumento.DataSource = TS15V2.UI.APP.util.Parametros.ObtenerParametros("tipdoc", SingletonControlador.Contexto, SingletonControlador.Error);
-
-            if (!error.Error)
-            {
-                ddlTipDocumento.DataValueField = "consecutivo";
-                ddlTipDocumento.DataTextField = "descripcion";
-                ddlTipDocumento.DataBind();
-            }
+            ddlTipDocumento.DataSource = util.Parametros.ConsultarParametros("tipdoc");
+            ddlTipDocumento.DataValueField = "";
+            ddlTipDocumento.DataTextField = "";
+            ddlTipDocumento.DataBind();
         }
 
         static gen_parametrica PersonToEmployee(EntityObject person)
@@ -63,7 +59,7 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
 
-            gvClientes.DataSource = clienteBO.Consultar(contexto, error);
+            gvClientes.DataSource = clienteBO.Consultar();
             gvClientes.DataBind();
 
         }

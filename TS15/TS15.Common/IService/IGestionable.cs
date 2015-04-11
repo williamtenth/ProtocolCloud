@@ -10,7 +10,7 @@ namespace TS15.Common.IService
 {
     public interface IGestionable
     {
-        List<EntityObject> Consultar(dbTS15Entities contexto, RawError error);
+        List<EntityObject> Consultar();
         void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error);
         void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error);
         void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error);

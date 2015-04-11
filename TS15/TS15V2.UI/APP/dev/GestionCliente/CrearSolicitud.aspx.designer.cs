@@ -7,108 +7,108 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TS15V2.UI.APP.componentes {
+namespace TS15V2.UI.APP.dev.GestionCliente {
     
     
-    public partial class BuscarTransformador {
+    public partial class CrearSolicitud {
         
         /// <summary>
-        /// ddlFabricante control.
+        /// ucBusquedaCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFabricante;
+        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
         
         /// <summary>
-        /// txtNumSerie control.
+        /// ucBusquedaTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
+        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
         
         /// <summary>
-        /// UpdatePanel2 control.
+        /// ddlTipoSolicitud control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoSolicitud;
         
         /// <summary>
-        /// btnBuscarTranformador control.
+        /// pnlServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarTranformador;
+        protected global::System.Web.UI.WebControls.Panel pnlServicio;
         
         /// <summary>
-        /// Up_pnlTransformador control.
+        /// txtCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel Up_pnlTransformador;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
         
         /// <summary>
-        /// pnlTransformador control.
+        /// ddlTipoTransformador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlTransformador;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoTransformador;
         
         /// <summary>
-        /// mpeTransformador control.
+        /// ddlCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeTransformador;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCapacidad;
         
         /// <summary>
-        /// lblTransformador control.
+        /// txtVolEntrada control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTransformador;
+        protected global::System.Web.UI.WebControls.TextBox txtVolEntrada;
         
         /// <summary>
-        /// btnCerrarTransformador control.
+        /// txtVolSalida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCerrarTransformador;
+        protected global::System.Web.UI.WebControls.TextBox txtVolSalida;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// btnCrearSolicitud control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button btnCrearSolicitud;
         
         /// <summary>
-        /// gvTransformadores control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTransformadores;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

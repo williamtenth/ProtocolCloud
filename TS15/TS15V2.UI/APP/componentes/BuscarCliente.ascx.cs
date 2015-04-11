@@ -8,69 +8,64 @@ using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
 using AjaxControlToolkit;
-using TS15.BL.Gestion_Cliente;
+using TS15.BL.gestion_cliente;
 using System.Web.Security;
 using TS15.Common;
 using System.Web.Configuration;
+using TS15V2.UI.APP.abstractUI;
 
 namespace TS15.UI.APP.componentes
 {
-    public partial class BuscarCliente : System.Web.UI.UserControl
+    public partial class BuscarCliente : ControladorComponentes
     {
+        public event EventHandler OnPatientChange;
 
-        private void ValidarRoles()
-        {
-            MembershipUser user = Membership.GetUser(true);
-            string[] roles = Roles.GetRolesForUser(user.UserName);
+        //private void ValidarRoles()
+        //{
+        //    MembershipUser user = Membership.GetUser(true);
+        //    string[] roles = Roles.GetRolesForUser(user.UserName);
 
-            if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
-                ActivarControles();
+        //    if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+        //        ActivarControles();
 
-            else if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
-            {
-                ActivarControles();
-                CargarCliente();
-            }
+        //    else if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
+        //    {
+        //        ActivarControles();
+        //        CargarCliente();
+        //    }
 
-            else
-            {
-                this.hfIdCliente.Value = string.Empty;
-                this.lblNombreCliente.Text = "No se puede realizar la busqueda de clientes, por favor valide sus permisos.";
-                this.pnlMsj.CssClass = "alert alert-error";
-                this.pnlMsj.Visible = true;
-            }
-        }
+        //    else
+        //    {
+        //        this.hfIdCliente.Value = string.Empty;
+        //        this.lblNombreCliente.Text = "No se puede realizar la busqueda de clientes, por favor valide sus permisos.";
+        //        this.pnlMsj.CssClass = "alert alert-error";
+        //        this.pnlMsj.Visible = true;
+        //    }
+        //}
 
-        private void ActivarControles()
-        {
-            this.ddlTipDocumento.Enabled = true;
-            this.txtNumDoc.Enabled = true;
-            this.txtNumDoc.ReadOnly = false;
-            this.btnBuscar.Enabled = true;
-        }
+        //private void ActivarControles()
+        //{
+        //    this.ddlTipDocumento.Enabled = true;
+        //    this.txtNumDoc.Enabled = true;
+        //    this.txtNumDoc.ReadOnly = false;
+        //    this.btnBuscar.Enabled = true;
+        //}
 
         private void CargarCliente()
         {
-            MembershipUser user = Membership.GetUser(true);
-            dbTS15Entities contexto = new dbTS15Entities();
-            Guid userID = (Guid)user.ProviderUserKey;
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
 
-            VW_CLI_USUARIO cliente = clienteBO.ConsultarClienteUser(userID, contexto, error);
+            VW_CLI_USUARIO cliente = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
 
             this.ddlTipDocumento.SelectedValue = cliente.tipdoc.ToString();
             this.txtNumDoc.Text = cliente.numdocumento;
         }
-
-        public event EventHandler OnPatientChange;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 CargarListas();
-                ValidarRoles();
+                //ValidarRoles();
             }
         }
 
@@ -81,16 +76,10 @@ namespace TS15.UI.APP.componentes
 
         private void CargarTipoDocumento()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            ddlTipDocumento.DataSource = BOParametrica.ConsultarParametros("tipdoc", contexto, error);
-
-            if (!error.Error)
-            {
-                ddlTipDocumento.DataValueField = "consecutivo";
-                ddlTipDocumento.DataTextField = "descripcion";
-                ddlTipDocumento.DataBind();
-            }
+            ddlTipDocumento.DataSource = TS15V2.UI.APP.util.Parametros.ConsultarParametros("tipdoc");
+            ddlTipDocumento.DataValueField = "consecutivo";
+            ddlTipDocumento.DataTextField = "descripcion";
+            ddlTipDocumento.DataBind();
         }
 
         protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
@@ -104,7 +93,7 @@ namespace TS15.UI.APP.componentes
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
 
-            gvClientes.DataSource = clienteBO.Consultar(contexto, error);
+            gvClientes.DataSource = clienteBO.Consultar();
             gvClientes.DataBind();
             mpeClientes.Show();
         }

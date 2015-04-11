@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
+using TS15.DAL.abstractDAL;
 
-namespace TS15.DAL.Gestion_Cliente
+namespace TS15.DAL.gestion_cliente
 {
-    public class DAOCliente
+    public class DAOCliente : DAOGenerico
     {
-        public static List<cli_cliente> ConsultarClientes(dbTS15Entities contexto, RawError error)
+        public List<cli_cliente> ConsultarClientes()
         {
             try
             {
-                return contexto.cli_cliente.ToList();
+                return SingletonDatos.Contexto.cli_cliente.ToList();
             }
 
             catch (Exception ex)
             {
-
                 return null;
             }
         }
 
         public static cli_cliente ConsultarXId(int id, dbTS15Entities contexto, RawError error)
         {
+            dbTS15Entities _contexto = new dbTS15Entities();
+            RawError _error = new RawError();
             try
             {
                 return contexto.cli_cliente.Where(p => p.id == id).SingleOrDefault();
@@ -78,9 +79,9 @@ namespace TS15.DAL.Gestion_Cliente
             }
         }
 
-        public static VW_CLI_USUARIO ConsultarClienteUser(Guid userId, dbTS15Entities contexto, RawError error)
+        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
         {
-            return contexto.VW_CLI_USUARIO.Where(p => p.UserId == userId).SingleOrDefault();
+            return SingletonDatos.Contexto.VW_CLI_USUARIO.Where(p => p.UserId == userId).SingleOrDefault();
         }
     }
 }

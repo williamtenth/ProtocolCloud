@@ -6,8 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
-using TS15.BL.Gestion_Cliente;
-using TS15.BL.Gestion_Transformador;
+using TS15.BL.gestion_cliente;
+using TS15.BL.gestion_transformador;
 using System.Web.Security;
 using System.Web.Configuration;
 
@@ -15,6 +15,11 @@ namespace TS15V2.UI.APP.componentes
 {
     public partial class BuscarTransformador : System.Web.UI.UserControl
     {
+        public BuscarTransformador()
+        {
+ 
+        }
+
         private void ValidarRoles()
         {
             MembershipUser user = Membership.GetUser(true);
@@ -68,14 +73,14 @@ namespace TS15V2.UI.APP.componentes
             dbTS15Entities contexto = new dbTS15Entities();
             RawError error = new RawError();
             BOTransformador transformadorBO = new BOTransformador();
-            string idCliente = ucBusquedaCliente.IdCliente;
+            //string idCliente = ucBusquedaCliente.IdCliente;
 
-            if (!string.IsNullOrEmpty(idCliente))
-            {
-                gvTransformadores.DataSource = transformadorBO.ConsultarTransformadoresCliente(idCliente, contexto, error);
-                gvTransformadores.DataBind();
-                mpeTransformador.Show();
-            }
+            //if (!string.IsNullOrEmpty(idCliente))
+            //{
+            //    gvTransformadores.DataSource = transformadorBO.ConsultarTransformadoresCliente(idCliente, contexto, error);
+            //    gvTransformadores.DataBind();
+            //    mpeTransformador.Show();
+            //}
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)

@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gestion Cliente\DAOCliente.cs" />
+    <Compile Include="abstractDAL\DAOGenerico.cs" />
+    <Compile Include="abstractDAL\DAOSingleton.cs" />
+    <Compile Include="gestion_cliente\DAOCliente.cs" />
     <Compile Include="DAOParametrica.cs" />
-    <Compile Include="Gestion Transformador\DAOTransformador.cs" />
+    <Compile Include="gestion_transformador\DAOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Gestion Protocolo\" />
-    <Folder Include="Gestion Usuarios\" />
+    <Folder Include="gestion_usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
