@@ -54,7 +54,7 @@ namespace TS15.UI.APP.componentes
 
         private void CargarCliente()
         {
-
+            pro_proceso
             VW_CLI_USUARIO cliente = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
 
             this.ddlTipDocumento.SelectedValue = cliente.tipdoc.ToString();
