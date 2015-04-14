@@ -106,7 +106,6 @@
     <Content Include="APP\Gestion Usuarios\Busqueda Usuario.aspx" />
     <Content Include="APP\Gestion Usuarios\Crear Usuario.aspx" />
     <Content Include="APP\Gestion Usuarios\Detalle Usuario.aspx" />
-    <Content Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx" />
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
@@ -248,16 +247,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\abstractUI\SingletonControlador.cs" />
-    <Compile Include="APP\gestion_protocolo\GenericoProtocolo.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx.cs">
-      <DependentUpon>Protocolo_NTC3396.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx.designer.cs">
-      <DependentUpon>Protocolo_NTC3396.aspx</DependentUpon>
-    </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
     <Compile Include="APP\AccesoDenegado.aspx.cs">
