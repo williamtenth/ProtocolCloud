@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TS15V2.UI.APP.util;
 using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class Prueba : ControladorPaginas
+    public partial class Prueba : UIGenericoPagina
     {
         protected void Page_Load(object sender, EventArgs e)
         {

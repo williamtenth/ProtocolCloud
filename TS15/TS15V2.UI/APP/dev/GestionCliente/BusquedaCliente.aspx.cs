@@ -9,11 +9,12 @@ using TS15.Common.RawObjects;
 using TS15.BL.gestion_cliente;
 using System.Data.Objects.DataClasses;
 using TS15.BL;
+using TS15V2.UI.APP.util;
 using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class BusquedaCliente : ControladorComponentes
+    public partial class BusquedaCliente : UIGenericoComponente
     {
         BusquedaCliente()
         {

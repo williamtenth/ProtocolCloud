@@ -7,7 +7,7 @@ using TS15.BL.gestion_cliente;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 
-namespace TS15V2.UI.APP.abstractUI
+namespace TS15V2.UI.APP.util
 {
     public class ValidadorCliente
     {

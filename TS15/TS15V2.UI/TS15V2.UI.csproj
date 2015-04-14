@@ -240,16 +240,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APP\abstractUI\ControladorComponentes.cs">
+    <Compile Include="APP\abstractUI\UIGenericoComponente.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\abstractUI\ControladorPaginas.cs">
+    <Compile Include="APP\abstractUI\UIGenericoPagina.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\abstractUI\GenericoControlador.cs" />
     <Compile Include="APP\abstractUI\SingletonControlador.cs" />
-    <Compile Include="APP\abstractUI\ValidadorRol.cs" />
-    <Compile Include="APP\abstractUI\ValidadorCliente.cs" />
+    <Compile Include="APP\util\ValidadorRol.cs" />
+    <Compile Include="APP\util\ValidadorCliente.cs" />
     <Compile Include="APP\AccesoDenegado.aspx.cs">
       <DependentUpon>AccesoDenegado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

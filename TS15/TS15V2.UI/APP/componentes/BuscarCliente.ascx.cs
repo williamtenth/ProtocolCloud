@@ -12,11 +12,12 @@ using TS15.BL.gestion_cliente;
 using System.Web.Security;
 using TS15.Common;
 using System.Web.Configuration;
+using TS15V2.UI.APP.util;
 using TS15V2.UI.APP.abstractUI;
 
 namespace TS15.UI.APP.componentes
 {
-    public partial class BuscarCliente : ControladorComponentes
+    public partial class BuscarCliente : UIGenericoComponente
     {
         public event EventHandler OnPatientChange;
 

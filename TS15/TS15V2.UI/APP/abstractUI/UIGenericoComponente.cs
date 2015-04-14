@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TS15V2.UI.APP.util;
 
 namespace TS15V2.UI.APP.abstractUI
 {
-    public class ControladorComponentes : System.Web.UI.UserControl, IControlable
+    public abstract class UIGenericoComponente : System.Web.UI.UserControl, IControlable
     {
         private SingletonControlador _singletonControlador = SingletonControlador.GetInstance();
         private ValidadorRol _validadorRol;
         private ValidadorCliente _validadorCliente;
 
-        public ValidadorCliente ValidadorCliente
+        public UIGenericoComponente()
         {
-            get { return _validadorCliente; }
-            set { _validadorCliente = value; }
-        }
-
-        public ControladorComponentes()
-        {
-            
             _validadorRol = new ValidadorRol();
+            _validadorCliente = new ValidadorCliente();
         }
 
         public SingletonControlador SingletonControlador
@@ -35,6 +30,11 @@ namespace TS15V2.UI.APP.abstractUI
             set { _validadorRol = value; }
         }
 
+        public ValidadorCliente ValidadorCliente
+        {
+            get { return _validadorCliente; }
+            set { _validadorCliente = value; }
+        }
 
         public void ActivarControles()
         {
@@ -45,7 +45,6 @@ namespace TS15V2.UI.APP.abstractUI
         {
             throw new NotImplementedException();
         }
-
 
         public void CargarListas()
         {
