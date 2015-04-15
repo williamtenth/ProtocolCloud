@@ -8,12 +8,12 @@ namespace TS15.BL.abstractBL
 {
     public abstract class BOGenerico
     {
-        private DAOGenerico genericoDAO;
+        private DAOGenerico _genericoDAO;
 
         public DAOGenerico GenericoDAO
         {
-            get { return genericoDAO; }
-            set { genericoDAO = value; }
+            get { return _genericoDAO; }
+            set { _genericoDAO = value; }
         }
     }
 }

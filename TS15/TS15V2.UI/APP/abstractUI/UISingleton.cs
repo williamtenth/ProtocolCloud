@@ -5,11 +5,11 @@ using System.Web;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 
-namespace TS15V2.UI.APP.util
+namespace TS15V2.UI.APP.abstractUI
 {
-    public class SingletonControlador
+    public class UISingleton
     {
-        private static SingletonControlador _singletonControlador = null;
+        private static UISingleton _singletonControlador = null;
         private RawError _error;
 
         public RawError Error
@@ -18,7 +18,7 @@ namespace TS15V2.UI.APP.util
             set { _error = value; }
         }
 
-        private SingletonControlador()
+        private UISingleton()
         {
             _error = new RawError();
         }
@@ -27,10 +27,10 @@ namespace TS15V2.UI.APP.util
         /// Retorna un Singleton_Controller si no se ha creado
         /// </summary>
         /// <returns></returns>
-        public static SingletonControlador GetInstance()
+        public static UISingleton GetInstance()
         {
             if (_singletonControlador == null)
-                _singletonControlador = new SingletonControlador();
+                _singletonControlador = new UISingleton();
 
             return _singletonControlador;
         }

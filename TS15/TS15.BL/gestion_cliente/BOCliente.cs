@@ -70,5 +70,26 @@ namespace TS15.BL.gestion_cliente
         {
             return ((DAOCliente)GenericoDAO).ConsultarClienteUser(userId);
         }
+
+
+        public bool Modificar(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Eliminar(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Crear(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntityObject ConsultarXId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

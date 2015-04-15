@@ -8,7 +8,7 @@ namespace TS15V2.UI.APP.abstractUI
 {
     public abstract class UIGenericoComponente : System.Web.UI.UserControl, IControlable
     {
-        private SingletonControlador _singletonControlador = SingletonControlador.GetInstance();
+        private UISingleton _singletonControlador = UISingleton.GetInstance();
         private ValidadorRol _validadorRol;
         private ValidadorCliente _validadorCliente;
 
@@ -18,7 +18,7 @@ namespace TS15V2.UI.APP.abstractUI
             _validadorCliente = new ValidadorCliente();
         }
 
-        public SingletonControlador SingletonControlador
+        public UISingleton SingletonControlador
         {
             get { return _singletonControlador; }
             set { _singletonControlador = value; }

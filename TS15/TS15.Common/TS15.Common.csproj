@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="IService\IEntidad.cs" />
     <Compile Include="IService\IGestionable.cs" />
+    <Compile Include="IService\ITerminable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawObjects\RawError.cs" />
   </ItemGroup>

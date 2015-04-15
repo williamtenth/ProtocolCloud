@@ -59,5 +59,26 @@ namespace TS15.BL
             return DAOParametrica.ConsultarTipoSolictudSS(tipo, contexto, error);
         }
 
+
+
+        public bool Modificar(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Eliminar(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Crear(EntityObject entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntityObject ConsultarXId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
