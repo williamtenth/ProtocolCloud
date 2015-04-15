@@ -44,7 +44,8 @@
       [pro_ntc837].[transformador_id] AS [transformador_id], 
       [pro_ntc837].[proceso_id] AS [proceso_id], 
       [pro_ntc837].[fecha] AS [fecha], 
-      [pro_ntc837].[resultado] AS [resultado]
+      [pro_ntc837].[resultado] AS [resultado], 
+      [pro_ntc837].[estado] AS [estado]
       FROM [dbo].[pro_ntc837] AS [pro_ntc837]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="pro_proceso" EntityType="dbTS15Model.Store.pro_proceso" store:Type="Tables" Schema="dbo" />
@@ -417,6 +418,7 @@
           <Property Name="impedancia85gar" Type="numeric" Precision="10" Scale="2" />
           <Property Name="regulacion" Type="numeric" Precision="10" Scale="4" />
           <Property Name="eficiencia" Type="numeric" Precision="10" Scale="4" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc1031">
           <Key>
@@ -434,6 +436,7 @@
           <Property Name="garantia" Type="numeric" Precision="4" Scale="3" />
           <Property Name="po_medida" Type="numeric" Precision="5" Scale="2" />
           <Property Name="po_garantizado" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc1465">
           <Key>
@@ -448,6 +451,7 @@
           <Property Name="refaislante" Type="tinyint" />
           <Property Name="ruptura" Type="numeric" Precision="10" />
           <Property Name="metaislante" Type="tinyint" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc3396">
           <Key>
@@ -466,6 +470,7 @@
           <Property Name="espesor1" Type="tinyint" />
           <Property Name="espesor2" Type="tinyint" />
           <Property Name="adherencia" Type="tinyint" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc375">
           <Key>
@@ -490,6 +495,7 @@
           <Property Name="resistencia2_promedio" Type="numeric" Precision="6" Scale="3" />
           <Property Name="matedevanado" Type="tinyint" />
           <Property Name="metadevanado2" Type="tinyint" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc471">
           <Key>
@@ -504,6 +510,7 @@
           <Property Name="fase_fase" Type="varchar" MaxLength="50" />
           <Property Name="fase_neutro" Type="varchar" MaxLength="50" />
           <Property Name="polaridad" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_ntc471_has_relacion">
           <Key>
@@ -532,6 +539,7 @@
           <Property Name="proceso_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
           <Property Name="resultado" Type="tinyint" />
+          <Property Name="estado" Type="tinyint" />
         </EntityType>
         <EntityType Name="pro_proceso">
           <Key>
@@ -1395,6 +1403,7 @@
           <Property Type="Decimal" Name="regulacion" Precision="10" Scale="4" />
           <Property Type="Decimal" Name="eficiencia" Precision="10" Scale="4" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc1005_tfr_transformador" FromRole="pro_ntc1005" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc1031">
           <Key>
@@ -1413,6 +1422,7 @@
           <Property Type="Decimal" Name="po_medida" Precision="5" Scale="2" />
           <Property Type="Decimal" Name="po_garantizado" Precision="5" Scale="2" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc1031_tfr_transformador" FromRole="pro_ntc1031" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc1465">
           <Key>
@@ -1428,6 +1438,7 @@
           <Property Type="Decimal" Name="ruptura" Precision="10" Scale="0" />
           <Property Type="Byte" Name="metaislante" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc1465_tfr_transformador" FromRole="pro_ntc1465" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc3396">
           <Key>
@@ -1447,6 +1458,7 @@
           <Property Type="Byte" Name="espesor2" />
           <Property Type="Byte" Name="adherencia" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc3396_tfr_transformador" FromRole="pro_ntc3396" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc375">
           <Key>
@@ -1472,6 +1484,7 @@
           <Property Type="Byte" Name="matedevanado" />
           <Property Type="Byte" Name="metadevanado2" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc375_tfr_transformador" FromRole="pro_ntc375" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc471">
           <Key>
@@ -1488,6 +1501,7 @@
           <Property Type="String" Name="polaridad" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="pro_ntc471_has_relacion" Relationship="dbTS15Model.FK_pro_ntc471_has_relacion_pro_ntc471" FromRole="pro_ntc471" ToRole="pro_ntc471_has_relacion" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc471_tfr_transformador" FromRole="pro_ntc471" ToRole="tfr_transformador" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_ntc471_has_relacion">
           <Key>
@@ -1514,6 +1528,7 @@
           <Property Type="Int32" Name="proceso_id" />
           <Property Type="DateTime" Name="fecha" />
           <Property Type="Byte" Name="resultado" />
+          <Property Type="Byte" Name="estado" />
         </EntityType>
         <EntityType Name="pro_proceso">
           <Key>
@@ -2174,6 +2189,7 @@
           <EntitySetMapping Name="pro_ntc1005">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc1005">
               <MappingFragment StoreEntitySet="pro_ntc1005">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="eficiencia" ColumnName="eficiencia" />
                 <ScalarProperty Name="regulacion" ColumnName="regulacion" />
                 <ScalarProperty Name="impedancia85gar" ColumnName="impedancia85gar" />
@@ -2198,6 +2214,7 @@
           <EntitySetMapping Name="pro_ntc1031">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc1031">
               <MappingFragment StoreEntitySet="pro_ntc1031">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="po_garantizado" ColumnName="po_garantizado" />
                 <ScalarProperty Name="po_medida" ColumnName="po_medida" />
                 <ScalarProperty Name="garantia" ColumnName="garantia" />
@@ -2216,6 +2233,7 @@
           <EntitySetMapping Name="pro_ntc1465">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc1465">
               <MappingFragment StoreEntitySet="pro_ntc1465">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="metaislante" ColumnName="metaislante" />
                 <ScalarProperty Name="ruptura" ColumnName="ruptura" />
                 <ScalarProperty Name="refaislante" ColumnName="refaislante" />
@@ -2231,6 +2249,7 @@
           <EntitySetMapping Name="pro_ntc3396">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc3396">
               <MappingFragment StoreEntitySet="pro_ntc3396">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="adherencia" ColumnName="adherencia" />
                 <ScalarProperty Name="espesor2" ColumnName="espesor2" />
                 <ScalarProperty Name="espesor1" ColumnName="espesor1" />
@@ -2250,6 +2269,7 @@
           <EntitySetMapping Name="pro_ntc375">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc375">
               <MappingFragment StoreEntitySet="pro_ntc375">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="metadevanado2" ColumnName="metadevanado2" />
                 <ScalarProperty Name="matedevanado" ColumnName="matedevanado" />
                 <ScalarProperty Name="resistencia2_promedio" ColumnName="resistencia2_promedio" />
@@ -2275,6 +2295,7 @@
           <EntitySetMapping Name="pro_ntc471">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc471">
               <MappingFragment StoreEntitySet="pro_ntc471">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="polaridad" ColumnName="polaridad" />
                 <ScalarProperty Name="fase_neutro" ColumnName="fase_neutro" />
                 <ScalarProperty Name="fase_fase" ColumnName="fase_fase" />
@@ -2306,6 +2327,7 @@
           <EntitySetMapping Name="pro_ntc837">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc837">
               <MappingFragment StoreEntitySet="pro_ntc837">
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="resultado" ColumnName="resultado" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="proceso_id" ColumnName="proceso_id" />
