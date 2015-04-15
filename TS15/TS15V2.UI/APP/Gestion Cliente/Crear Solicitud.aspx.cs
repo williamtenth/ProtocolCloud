@@ -53,10 +53,8 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
 
         private void CargarTipoSolicitud()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-
-            ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
+            BOParametrica parametricaBO = new BOParametrica();
+            ddlTipoSolicitud.DataSource = parametricaBO.ConsultarTipoSolictudSS("tipsolicitud");
             ddlTipoSolicitud.DataValueField = "consecutivo";
             ddlTipoSolicitud.DataTextField = "valor";
             ddlTipoSolicitud.DataBind();

@@ -21,36 +21,37 @@ namespace TS15.UI.APP.componentes
     {
         public event EventHandler OnPatientChange;
 
-        //private void ValidarRoles()
-        //{
-        //    MembershipUser user = Membership.GetUser(true);
-        //    string[] roles = Roles.GetRolesForUser(user.UserName);
+        private void ValidarRoles()
+        {
+            string[] roles = ValidadorRol.ValidarRoles();
 
-        //    if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
-        //        ActivarControles();
+            if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
+            {
+                ActivarControles();
+                CargarCliente();
+            }
 
-        //    else if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
-        //    {
-        //        ActivarControles();
-        //        CargarCliente();
-        //    }
+            if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+                ActivarControles();
 
-        //    else
-        //    {
-        //        this.hfIdCliente.Value = string.Empty;
-        //        this.lblNombreCliente.Text = "No se puede realizar la busqueda de clientes, por favor valide sus permisos.";
-        //        this.pnlMsj.CssClass = "alert alert-error";
-        //        this.pnlMsj.Visible = true;
-        //    }
-        //}
+            else
+            {
+                this.hfIdCliente.Value = string.Empty;
+                this.txtCliente.Text = string.Empty;
+                this.pnlCliente.Visible = false;
+                //this.lblNombreCliente.Text = "No se puede realizar la busqueda de clientes, por favor valide sus permisos.";
+                //this.pnlMsj.CssClass = "alert alert-error";
+                //this.pnlMsj.Visible = true;
+            }
+        }
 
-        //private void ActivarControles()
-        //{
-        //    this.ddlTipDocumento.Enabled = true;
-        //    this.txtNumDoc.Enabled = true;
-        //    this.txtNumDoc.ReadOnly = false;
-        //    this.btnBuscar.Enabled = true;
-        //}
+        private void ActivarControles()
+        {
+            this.ddlTipDocumento.Enabled = true;
+            this.txtNumDoc.Enabled = true;
+            this.txtNumDoc.ReadOnly = false;
+            this.btnBuscar.Enabled = true;
+        }
 
         private void CargarCliente()
         {
@@ -66,7 +67,7 @@ namespace TS15.UI.APP.componentes
             if (!Page.IsPostBack)
             {
                 CargarListas();
-                //ValidarRoles();
+                ValidarRoles();
             }
         }
 
@@ -77,7 +78,7 @@ namespace TS15.UI.APP.componentes
 
         private void CargarTipoDocumento()
         {
-            ddlTipDocumento.DataSource = TS15V2.UI.APP.util.Parametros.ConsultarParametros("tipdoc");
+            ddlTipDocumento.DataSource = Parametros.ConsultarParametros("tipdoc");
             ddlTipDocumento.DataValueField = "consecutivo";
             ddlTipDocumento.DataTextField = "descripcion";
             ddlTipDocumento.DataBind();
@@ -118,9 +119,12 @@ namespace TS15.UI.APP.componentes
             string numDocumento = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[3].ToString();
 
             this.hfIdCliente.Value = idCliente;
-            this.lblNombreCliente.Text = nombreCliente;
-            this.pnlMsj.CssClass = "alert alert-success";
-            this.pnlMsj.Visible = true;
+            this.txtCliente.Text = nombreCliente;
+            this.pnlCliente.Visible = true;
+
+            //this.lblNombreCliente.Text = nombreCliente;
+            //this.pnlMsj.CssClass = "alert alert-success";
+            //this.pnlContentMsj.Visible = true;
 
             this.ddlTipDocumento.SelectedValue = tipDocumento;
             this.txtNumDoc.Text = numDocumento;

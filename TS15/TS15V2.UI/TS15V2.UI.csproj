@@ -59,6 +59,11 @@
     <Content Include="APP\AccesoDenegado.aspx" />
     <Content Include="APP\autenticacion\Index.aspx" />
     <Content Include="APP\autenticacion\OlvidoUsuario.aspx" />
+    <Content Include="APP\bootstrap\css\bootstrap.css" />
+    <Content Include="APP\bootstrap\css\bootstrap.min.css" />
+    <Content Include="APP\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="APP\bootstrap\js\bootstrap.js" />
+    <Content Include="APP\bootstrap\js\bootstrap.min.js" />
     <Content Include="APP\componentes\BuscarCliente.ascx" />
     <Content Include="APP\componentes\BuscarTransformador.ascx" />
     <Content Include="APP\css\bootstrap-cerulean.min.css" />
@@ -95,6 +100,9 @@
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
+    <Content Include="APP\font-awesome\css\font-awesome.css" />
+    <Content Include="APP\font-awesome\css\font-awesome.min.css" />
+    <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="APP\font\glyphicons-regular.svg" />
     <Content Include="APP\font\glyphiconshalflings-regular.svg" />
     <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
@@ -202,6 +210,7 @@
     <Content Include="APP\js\custom.js" />
     <Content Include="APP\js\excanvas.js" />
     <Content Include="APP\js\fullcalendar.min.js" />
+    <Content Include="APP\js\jquery-1.10.2.min.js" />
     <Content Include="APP\js\jquery-1.9.1.min.js" />
     <Content Include="APP\js\jquery-migrate-1.0.0.min.js" />
     <Content Include="APP\js\jquery-ui-1.10.0.custom.min.js" />
@@ -227,6 +236,7 @@
     <Content Include="APP\js\jquery.uploadify-3.1.min.js" />
     <Content Include="APP\js\modernizr.js" />
     <Content Include="APP\js\retina.js" />
+    <Content Include="APP\Login.aspx" />
     <Content Include="APP\Rerefencias\AjaxControlToolkit.dll" />
     <Content Include="APP\Gestion Cliente\Crear Solicitud.aspx" />
     <Content Include="APP\Home.aspx" />
@@ -259,6 +269,13 @@
     </Compile>
     <Compile Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx.designer.cs">
       <DependentUpon>Protocolo_NTC3396.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
@@ -410,6 +427,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="APP\dev\Web.config" />
+    <None Include="APP\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="APP\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="APP\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="APP\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="APP\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="APP\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="APP\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="APP\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="APP\font-awesome\less\bordered-pulled.less" />
+    <None Include="APP\font-awesome\less\core.less" />
+    <None Include="APP\font-awesome\less\fixed-width.less" />
+    <None Include="APP\font-awesome\less\font-awesome.less" />
+    <None Include="APP\font-awesome\less\icons.less" />
+    <None Include="APP\font-awesome\less\larger.less" />
+    <None Include="APP\font-awesome\less\list.less" />
+    <None Include="APP\font-awesome\less\mixins.less" />
+    <None Include="APP\font-awesome\less\path.less" />
+    <None Include="APP\font-awesome\less\rotated-flipped.less" />
+    <None Include="APP\font-awesome\less\spinning.less" />
+    <None Include="APP\font-awesome\less\stacked.less" />
+    <None Include="APP\font-awesome\less\variables.less" />
+    <None Include="APP\font-awesome\scss\font-awesome.scss" />
+    <None Include="APP\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="APP\font-awesome\scss\_core.scss" />
+    <None Include="APP\font-awesome\scss\_fixed-width.scss" />
+    <None Include="APP\font-awesome\scss\_icons.scss" />
+    <None Include="APP\font-awesome\scss\_larger.scss" />
+    <None Include="APP\font-awesome\scss\_list.scss" />
+    <None Include="APP\font-awesome\scss\_mixins.scss" />
+    <None Include="APP\font-awesome\scss\_path.scss" />
+    <None Include="APP\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="APP\font-awesome\scss\_spinning.scss" />
+    <None Include="APP\font-awesome\scss\_stacked.scss" />
+    <None Include="APP\font-awesome\scss\_variables.scss" />
     <None Include="APP\font\fontawesome-webfont-0.eot" />
     <None Include="APP\font\fontawesome-webfont-62877.eot" />
     <None Include="APP\font\fontawesome-webfont-62877.ttf" />

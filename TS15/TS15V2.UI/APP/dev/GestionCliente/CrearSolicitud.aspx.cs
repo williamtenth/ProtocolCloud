@@ -10,31 +10,13 @@ using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.BL;
 using TS15.BL.gestion_cliente;
+using TS15V2.UI.APP.util;
+using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class CrearSolicitud : System.Web.UI.Page
+    public partial class CrearSolicitud : UIGenericoPagina
     {
-        override protected void OnInit(EventArgs e)
-        {
-            //ValidarUsuario();
-        }
-
-        private void ValidarUsuario()
-        {
-            //MembershipUser user = Membership.GetUser(true);
-            //string[] roles = Roles.GetRolesForUser(user.UserName);
-
-            //if (!roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
-            //    Response.Redirect("~/APP/AccesoDenegado.aspx");
-        }
-
-        //private void InitializeComponent()
-        //{
-        //    this.Load += new System.EventHandler(this.Page_Load);
-
-        //}
-
         protected void OnPatientChange(object sender, EventArgs e)
         {
             //if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente))
@@ -50,10 +32,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void CargarTipoSolicitud()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-
-            ddlTipoSolicitud.DataSource = BOParametrica.ConsultarTipoSolictudSS("tipsolicitud", contexto, error);
+            BOParametrica parametricaBO = new BOParametrica();
+            ddlTipoSolicitud.DataSource = parametricaBO.ConsultarTipoSolictudSS("tipsolicitud");
             ddlTipoSolicitud.DataValueField = "consecutivo";
             ddlTipoSolicitud.DataTextField = "valor";
             ddlTipoSolicitud.DataBind();
@@ -61,55 +41,17 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void CargarListas()
         {
-            CargarTipoDocumento();
             CargarFabricante();
             CargarTipoSolicitud();
+            CargarCapacidadTransformador();
         }
 
-        private void CargarTipoDocumento()
+        private void CargarCapacidadTransformador()
         {
-            //dbTS15Entities contexto = new dbTS15Entities();
-            //RawError error = new RawError();
-            //ddlTipDocumento.DataSource = BOParametrica.ConsultarParametros("tipdoc", contexto, error);
-
-            //if (!error.Error)
-            //{
-            //    ddlTipDocumento.DataValueField = "tipo";
-            //    ddlTipDocumento.DataTextField = "descripcion";
-            //    ddlTipDocumento.DataBind();
-            //}
-        }
-
-        //protected void ddlTipDocumento_DataBound(object sender, EventArgs e)
-        //{
-        //    ddlTipDocumento.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
-        //}
-
-        protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
-        {
-            ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
-        }
-
-        protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlTipoSolicitud.SelectedValue == "1")
-            {
-                this.pnlServicio.Visible = true;
-                this.btnCrearSolicitud.Visible = true;
-                this.btnCancelar.Visible = true;
-            }
-            else if (ddlTipoSolicitud.SelectedValue == "2")
-            {
-                this.pnlServicio.Visible = false;
-                this.btnCrearSolicitud.Visible = true;
-                this.btnCancelar.Visible = true;
-            }
-            else
-            {
-                this.pnlServicio.Visible = false;
-                this.btnCrearSolicitud.Visible = false;
-                this.btnCancelar.Visible = false;
-            }
+            this.ddlCapacidad.DataSource = Parametros.ConsultarParametros("tfrcapacidad");
+            this.ddlCapacidad.DataValueField = "consecutivo";
+            this.ddlCapacidad.DataTextField = "valor";
+            this.ddlCapacidad.DataBind();
         }
 
         private void CargarFabricante()
@@ -124,6 +66,36 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             //ddlFabricante.DataBind();
         }
 
+        protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)
+        {
+            ddlTipoSolicitud.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        }
+
+        protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlTipoSolicitud.SelectedValue == "1")
+                OcultarControlesSuministro();
+
+            if (ddlTipoSolicitud.SelectedValue == "2")
+                MostrarControlesSuministro();
+        }
+
+        private void MostrarControlesSuministro()
+        {
+            pnlCantidad.Visible = true;
+            pnlCapacidad.Visible = true;
+            pnlVolEntrada.Visible = true;
+            pnlVolSalida.Visible = true;
+        }
+
+        private void OcultarControlesSuministro()
+        {
+            pnlCantidad.Visible = false;
+            pnlCapacidad.Visible = false;
+            pnlVolEntrada.Visible = false;
+            pnlVolSalida.Visible = false;
+        }
+
         protected void ddlTipoTransformador_DataBound(object sender, EventArgs e)
         {
             //ddlTipoTransformador.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
@@ -131,7 +103,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         protected void ddlCapacidad_DataBound(object sender, EventArgs e)
         {
-            //ddlCapacidad.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            ddlCapacidad.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
 
         protected void ddlFabricante_DataBound(object sender, EventArgs e)

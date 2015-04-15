@@ -10,26 +10,32 @@ using TS15.BL.gestion_cliente;
 using TS15.BL.gestion_transformador;
 using System.Web.Security;
 using System.Web.Configuration;
+using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.componentes
 {
-    public partial class BuscarTransformador : System.Web.UI.UserControl
+    public partial class BuscarTransformador : UIGenericoComponente
     {
         public BuscarTransformador()
         {
- 
+
         }
 
         private void ValidarRoles()
         {
-            MembershipUser user = Membership.GetUser(true);
-            string[] roles = Roles.GetRolesForUser(user.UserName);
+            string[] roles = ValidadorRol.ValidarRoles();
+
+            if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
+            { }
+
+            if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+                ActivarControles();
 
             if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableTransformador"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableProtocolo"]))
-                ActivarControles();
+            { }
 
-            else if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
-                ActivarControles();
+            else
+                DesactivarControles();
         }
 
         private void ActivarControles()
@@ -43,7 +49,10 @@ namespace TS15V2.UI.APP.componentes
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
                 CargarListas();
+                ValidarRoles();
+            }
         }
 
         private void CargarListas()

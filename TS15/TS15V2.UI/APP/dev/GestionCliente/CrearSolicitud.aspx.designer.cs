@@ -40,13 +40,13 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoSolicitud;
         
         /// <summary>
-        /// pnlServicio control.
+        /// pnlCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlServicio;
+        protected global::System.Web.UI.WebControls.Panel pnlCantidad;
         
         /// <summary>
         /// txtCantidad control.
@@ -58,13 +58,13 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
         
         /// <summary>
-        /// ddlTipoTransformador control.
+        /// pnlCapacidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoTransformador;
+        protected global::System.Web.UI.WebControls.Panel pnlCapacidad;
         
         /// <summary>
         /// ddlCapacidad control.
@@ -76,6 +76,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.DropDownList ddlCapacidad;
         
         /// <summary>
+        /// pnlVolEntrada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlVolEntrada;
+        
+        /// <summary>
         /// txtVolEntrada control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVolEntrada;
+        
+        /// <summary>
+        /// pnlVolSalida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlVolSalida;
         
         /// <summary>
         /// txtVolSalida control.

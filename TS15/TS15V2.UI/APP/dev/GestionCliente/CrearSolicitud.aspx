@@ -45,103 +45,49 @@
             <div class="box-content">
                 <div class="form-horizontal">
                     <fieldset>
-                        <div class="span5">
-                            <div class="control-group">
-                                <label class="control-label" for="ddlFabricante">
-                                    Tipo de Solicitud:</label>
-                                <div class="controls">
-                                    <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
-                                        OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-            <%--SUMINISTRO--%>
-            <%--<div class="box-content">
-                <asp:Panel runat="server" ID="pnlSuministro" CssClass="form-horizontal" Visible="false">
-                    <fieldset>
-                        <div class="span5">
-                            <div class="control-group">
-                                <label class="control-label" for="ddlFabricante">
-                                    Fabricante:</label>
-                                <div class="controls">
-                                    <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span5">
-                            <div class="control-group">
-                                <label class="control-label" for="txtNumeroSerie">
-                                    Número de Serie:</label>
-                                <div class="controls">
-                                    <asp:TextBox runat="server" ID="txtNumeroSerie" CssClass="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span2">
-                            <asp:Button runat="server" ID="btnBuscarTransformador" CssClass="btn btn-success"
-                                Text="Buscar" />
-                        </div>
-                    </fieldset>
-                </asp:Panel>
-            </div>--%>
-            <%--SERVICIO--%>
-            <div class="box-content">
-                <asp:Panel runat="server" ID="pnlServicio" CssClass="form-horizontal" Visible="false">
-                    <fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="txtCantidad">
-                                Cantidad:</label>
+                            <label class="control-label" for="ddlFabricante">
+                                Tipo de Solicitud:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="ddlTipoTransformador">
-                                Fase:</label>
-                            <div class="controls">
-                                <asp:DropDownList runat="server" ID="ddlTipoTransformador" CssClass="form-control"
-                                    OnDataBound="ddlTipoTransformador_DataBound">
+                                <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
+                                    OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
                                 </asp:DropDownList>
                             </div>
                         </div>
-                        <div class="control-group">
+                        <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group" Visible="false">
+                            <label class="control-label" for="txtCantidad">
+                                Cantidad:</label>
+                            <div class="controls">
+                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
                             <label class="control-label" for="ddlCapacidad">
                                 Capacidad:</label>
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
                                 </asp:DropDownList>
                             </div>
-                        </div>
-                        <div class="control-group">
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
                             <label class="control-label" for="txtVolEntrada">
                                 Voltaje de Entrada:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control"></asp:TextBox>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="txtVolSalida">
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
+                            <label class="control-label" for="txtVolSalida" runat="server">
                                 Voltaje de Salida:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control"></asp:TextBox>
                             </div>
-                        </div>
-                    </fieldset>
-                </asp:Panel>
-            </div>
-            <div class="box-content">
-                <div class="form-horizontal">
-                    <fieldset>
+                        </asp:Panel>
                         <div class="form-actions">
                             <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
-                                OnClick="btnCrearSolicitud_Click" Visible="false" />
+                                OnClick="btnCrearSolicitud_Click" />
                             <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
-                                OnClick="btnCancelar_Click" Visible="false" />
+                                OnClick="btnCancelar_Click" />
                         </div>
                     </fieldset>
                 </div>

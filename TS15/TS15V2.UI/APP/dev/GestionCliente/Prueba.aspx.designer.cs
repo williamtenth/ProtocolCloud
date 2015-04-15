@@ -13,12 +13,21 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
     public partial class Prueba {
         
         /// <summary>
-        /// ddlTipDocumento control.
+        /// ucBusquedaCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipDocumento;
+        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
+        
+        /// <summary>
+        /// ucBusquedaTransformador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
     }
 }

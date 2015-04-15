@@ -23,32 +23,28 @@ namespace TS15.DAL
             }
         }
 
-        public static List<gen_parametrica> ConsultarParametrosSuministro(string tipo, dbTS15Entities contexto, RawError error)
+        public List<gen_parametrica> ConsultarTipoSolictudSS(string tipo)
         {
             try
             {
-                return contexto.gen_parametrica.Where(p => p.tipo == tipo && (p.consecutivo == 1 || p.consecutivo == 2)).OrderBy(p => p.tipo).ToList();
+                return SingletonDatos.Contexto.gen_parametrica.Where(p => p.tipo == tipo && (p.consecutivo == 1 || p.consecutivo == 2)).OrderBy(p => p.tipo).ToList();
             }
 
             catch (Exception ex)
             {
-                error.Message = "Ocurrio un error en : DAOParametrica.ConsultarParametrosSuministro" + ex.Message;
-                error.Error = true;
                 return null;
             }
         }
 
-        public static List<gen_parametrica> ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
+        public List<gen_parametrica> ConsultarParametrosSuministro(string tipo)
         {
             try
             {
-                return contexto.gen_parametrica.Where(p => p.tipo == tipo && (p.consecutivo == 1 || p.consecutivo == 2)).OrderBy(p => p.tipo).ToList();
+                return SingletonDatos.Contexto.gen_parametrica.Where(p => p.tipo == tipo && (p.consecutivo == 1 || p.consecutivo == 2)).OrderBy(p => p.tipo).ToList();
             }
 
             catch (Exception ex)
             {
-                error.Message = "Ocurrio un error en : DAOParametrica.ConsultarTipoSolictudSS" + ex.Message;
-                error.Error = true;
                 return null;
             }
         }

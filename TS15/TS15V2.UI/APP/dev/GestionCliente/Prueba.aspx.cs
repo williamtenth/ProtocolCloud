@@ -20,10 +20,10 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void CargarControl()
         {
-            ddlTipDocumento.DataSource = TS15V2.UI.APP.util.Parametros.ConsultarParametros("tipdoc");
-            ddlTipDocumento.DataValueField = "consecutivo";
-            ddlTipDocumento.DataTextField = "descripcion";
-            ddlTipDocumento.DataBind();
+            //ddlTipDocumento.DataSource = TS15V2.UI.APP.util.Parametros.ConsultarParametros("tipdoc");
+            //ddlTipDocumento.DataValueField = "consecutivo";
+            //ddlTipDocumento.DataTextField = "descripcion";
+            //ddlTipDocumento.DataBind();
         }
 
         protected void ddlTipDocumento_DataBound(object sender, EventArgs e)

@@ -10,9 +10,9 @@ namespace TS15.Common.IService
 {
     public interface IGestionable
     {
-        void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error);
-        void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error);
-        void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error);
+        //void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error);
+        //void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error);
+        //void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error);
         EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error);
         Boolean Modificar(EntityObject entidad);
         Boolean Eliminar(EntityObject entidad);

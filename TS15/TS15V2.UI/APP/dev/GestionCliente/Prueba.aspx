@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="Prueba.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.Prueba" %>
+    AutoEventWireup="true" CodeBehind="Prueba.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.Prueba"
+    EnableEventValidation="false" %>
 
 <%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
+    TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,10 +26,93 @@
     <!-- start: Favicon -->
     <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- end: Favicon -->
+    <style>
+        /************** Modal PopUp *****************************************************************************************************/
+        .cerrar
+        {
+            float: right;
+            margin-right: -30px;
+            margin-top: -20px;
+            z-index: 20;
+        }
+        
+        .detalles
+        {
+            width: 320px;
+            margin: auto;
+            height: 55px;
+            padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
+        }
+        
+        .detalles p
+        {
+            font-size: 35px;
+            text-align: center;
+            font-family: 'Museo' , Arial, sans-serif;
+            height: auto;
+            margin: auto;
+        }
+        
+        
+        .modalPopup
+        {
+            font-size: 10pt;
+            border-radius: 10px;
+            -ms-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            z-index: 10001;
+            padding: 10px 20px;
+            width: 500px;
+        }
+        .modalPopup2
+        {
+            font-size: 10pt;
+            border-radius: 10px;
+            -ms-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            z-index: 25;
+            padding: 10px 20px;
+            width: 600px;
+            z-index: 10001 !important;
+        }
+        
+        .modalBackGround
+        {
+            background: url(../../img/overlay.png) repeat 0 0;
+            filter: alpha(opacity=70);
+            opacity: 0.7;
+        }
+        
+        .modalBackgroundCargando
+        {
+            background-color: Black;
+            filter: alpha(opacity=55);
+            opacity: 0.50;
+            z-index: 10100 !important;
+        }
+        
+        .imgFinca
+        {
+            max-width: 100%;
+            max-height: 300px;
+        }
+        /***********************************************************************************************************************/
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
-    <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
-    </asp:DropDownList>
+    <ul class="breadcrumb">
+        <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
+        </i></li>
+        <li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>
+    </ul>
+    <div class="row-fluid sortable ui-sortable">
+        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+    </div>
+    <div class="row-fluid sortable ui-sortable">
+        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
+    </div>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

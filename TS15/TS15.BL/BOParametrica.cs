@@ -24,27 +24,12 @@ namespace TS15.BL
             return ((DAOParametrica)GenericoDAO).ConsultarParametros(tipo);
         }
 
-        public static List<gen_parametrica> ConsultarParametrosSuministro(string tipo, dbTS15Entities contexto, RawError error)
+        public List<gen_parametrica> ConsultarParametrosSuministro(string tipo)
         {
-            return DAOParametrica.ConsultarParametrosSuministro(tipo, contexto, error);
+            return ((DAOParametrica)GenericoDAO).ConsultarParametrosSuministro(tipo);
         }
 
         public List<EntityObject> Consultar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Crear(EntityObject entidad, dbTS15Entities contexto, RawError error)
         {
             throw new NotImplementedException();
         }
@@ -54,13 +39,11 @@ namespace TS15.BL
             throw new NotImplementedException();
         }
 
-        public static List<gen_parametrica> ConsultarTipoSolictudSS(string tipo, dbTS15Entities contexto, RawError error)
+        public List<gen_parametrica> ConsultarTipoSolictudSS(string tipo)
         {
-            return DAOParametrica.ConsultarTipoSolictudSS(tipo, contexto, error);
+            return ((DAOParametrica)GenericoDAO).ConsultarTipoSolictudSS(tipo);
         }
-
-
-
+        
         public bool Modificar(EntityObject entidad)
         {
             throw new NotImplementedException();
