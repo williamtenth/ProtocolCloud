@@ -80,7 +80,7 @@ namespace TS15.BL.gestion_protocolo
 
         public override EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
         {
-            pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).obtenerUltimaPrueba();
+            pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).obtenerUltimaPrueba(transformador);
             return resultado != null ? resultado : new pro_ntc3396();
         }
     }
