@@ -17,14 +17,14 @@ namespace TS15V2.UI.APP.gestion_protocolo
         // Constructores
         public Protocolo_NTC3396()
         {
-            
             CargarListas();
         }
 
         // Init
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Transformador = new tfr_transformador();
+            Transformador.id = 1;
         }
 
         // Métodos

@@ -51,6 +51,7 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.espesor2 = entidad.espesor2;
                 resultado.adherencia = entidad.adherencia;
                 resultado.fecha = new DateTime();
+                SingletonDatos.Contexto.SaveChanges();
                 return true;
             }
             
@@ -67,21 +68,25 @@ namespace TS15.DAL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public bool Terminar(int resultado)
+        public bool Terminar(pro_ntc3396 entidad)
         {
-            throw new NotImplementedException();
+            pro_ntc3396 resultado = ConsultarXId(entidad.id);
+
+            if (resultado != null && entidad != null)
+            {
+                resultado.estado = 2;
+                SingletonDatos.Contexto.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
-
-
+        
         public pro_ntc3396 ConsultarXId(int id)
         {
             pro_ntc3396 resultado = SingletonDatos.Contexto.pro_ntc3396.Where(p => p.id == id).SingleOrDefault();
             return resultado != null ? resultado : null;
         }
-
-
-
-
 
         public bool Modificar(EntityObject entidad)
         {
@@ -91,6 +96,12 @@ namespace TS15.DAL.gestion_protocolo
         EntityObject IGestionable.ConsultarXId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public override EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
+        {
+            pro_ntc3396 resultado = SingletonDatos.Contexto.pro_ntc3396.Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
+            return resultado != null ? resultado : null;
         }
     }
 }

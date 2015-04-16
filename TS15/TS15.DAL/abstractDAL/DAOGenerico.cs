@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Objects.DataClasses;
+using TS15.Common.Generated;
 
 namespace TS15.DAL.abstractDAL
 {
@@ -19,5 +21,7 @@ namespace TS15.DAL.abstractDAL
         {
             
         }
+
+        public abstract EntityObject obtenerUltimaPrueba(tfr_transformador transformador);
     }
 }

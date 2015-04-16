@@ -6,6 +6,7 @@ using TS15.BL.abstractBL;
 using TS15.Common.IService;
 using TS15.Common.Generated;
 using TS15.DAL.gestion_protocolo;
+using System.Data.Objects.DataClasses;
 
 namespace TS15.BL.gestion_protocolo 
 {
@@ -59,15 +60,27 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public bool Terminar(int resultado)
+        public bool Terminar(pro_ntc3396 entidad)
         {
-            throw new NotImplementedException();
+            // Valida que el resultado fuera exitosa.
+            if (entidad.salina1 == 1 && entidad.salina2 == 1 && entidad.impacto == 1 && entidad.espesor1 == 1
+                && entidad.espesor2 == 1 && entidad.adherencia == 1)
+            {
+                return ((DAOProtocolo_NTC3396)GenericoDAO).Terminar(entidad);
+            }
+            return false;
+            
         }
-
 
         public System.Data.Objects.DataClasses.EntityObject ConsultarXId(int id)
         {
             pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).ConsultarXId(id);
+            return resultado != null ? resultado : new pro_ntc3396();
+        }
+
+        public override EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
+        {
+            pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).obtenerUltimaPrueba();
             return resultado != null ? resultado : new pro_ntc3396();
         }
     }
