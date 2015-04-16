@@ -5343,6 +5343,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Decimal> _eficiencia;
         partial void OneficienciaChanging(Nullable<global::System.Decimal> value);
         partial void OneficienciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -5706,6 +5730,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Decimal> _po_garantizado;
         partial void Onpo_garantizadoChanging(Nullable<global::System.Decimal> value);
         partial void Onpo_garantizadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -5997,6 +6045,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _metaislante;
         partial void OnmetaislanteChanging(Nullable<global::System.Byte> value);
         partial void OnmetaislanteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -6388,6 +6460,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _adherencia;
         partial void OnadherenciaChanging(Nullable<global::System.Byte> value);
         partial void OnadherenciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -6919,6 +7015,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _metadevanado2;
         partial void Onmetadevanado2Changing(Nullable<global::System.Byte> value);
         partial void Onmetadevanado2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -7210,6 +7330,30 @@ namespace TS15.Common.Generated
         private global::System.String _polaridad;
         partial void OnpolaridadChanging(global::System.String value);
         partial void OnpolaridadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -7742,6 +7886,30 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _resultado;
         partial void OnresultadoChanging(Nullable<global::System.Byte> value);
         partial void OnresultadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
