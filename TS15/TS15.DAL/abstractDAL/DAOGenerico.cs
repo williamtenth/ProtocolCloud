@@ -22,6 +22,6 @@ namespace TS15.DAL.abstractDAL
             
         }
 
-        public abstract EntityObject obtenerUltimaPrueba(tfr_transformador transformador);
+        
     }
 }

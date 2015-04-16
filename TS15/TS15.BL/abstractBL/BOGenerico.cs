@@ -18,6 +18,5 @@ namespace TS15.BL.abstractBL
             set { _genericoDAO = value; }
         }
 
-        public abstract EntityObject obtenerUltimaPrueba(tfr_transformador transformador);
     }
 }

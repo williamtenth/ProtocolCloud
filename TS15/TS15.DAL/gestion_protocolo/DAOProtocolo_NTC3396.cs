@@ -9,7 +9,7 @@ using TS15.Common.Generated;
 
 namespace TS15.DAL.gestion_protocolo
 {
-    public class DAOProtocolo_NTC3396 : DAOGenerico, IGestionable, ITerminable
+    public class DAOProtocolo_NTC3396 : DAOGenerico, IGestionable, IProbable
     {
 
         public List<System.Data.Objects.DataClasses.EntityObject> Consultar()
@@ -68,9 +68,9 @@ namespace TS15.DAL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public bool Terminar(pro_ntc3396 entidad)
+        public bool Terminar(EntityObject entidad)
         {
-            pro_ntc3396 resultado = ConsultarXId(entidad.id);
+            pro_ntc3396 resultado = ConsultarXId((entidad as pro_ntc3396).id);
 
             if (resultado != null && entidad != null)
             {
@@ -98,10 +98,11 @@ namespace TS15.DAL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public override EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
+        public EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
         {
-            pro_ntc3396 resultado = SingletonDatos.Contexto.pro_ntc3396.Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
-            return resultado != null ? resultado : null;
+            pro_ntc3396 resultado = SingletonDatos.Contexto.pro_ntc3396
+                .Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
+            return resultado != null ? resultado : new pro_ntc3396();
         }
     }
 }

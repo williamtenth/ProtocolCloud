@@ -10,7 +10,7 @@ using System.Data.Objects.DataClasses;
 
 namespace TS15.BL.gestion_protocolo 
 {
-    class BOProtocolo_NTC3396 : BOGenerico, IGestionable, ITerminable
+    class BOProtocolo_NTC3396 : BOGenerico, IGestionable, IProbable
     {
         // Constructores
         public BOProtocolo_NTC3396() 
@@ -60,11 +60,12 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public bool Terminar(pro_ntc3396 entidad)
+        public bool Terminar(EntityObject entidad)
         {
             // Valida que el resultado fuera exitosa.
-            if (entidad.salina1 == 1 && entidad.salina2 == 1 && entidad.impacto == 1 && entidad.espesor1 == 1
-                && entidad.espesor2 == 1 && entidad.adherencia == 1)
+            pro_ntc3396 prueba = (pro_ntc3396) entidad;
+            if (prueba.salina1 == 1 && prueba.salina2 == 1 && prueba.impacto == 1 && prueba.espesor1 == 1
+                && prueba.espesor2 == 1 && prueba.adherencia == 1)
             {
                 return ((DAOProtocolo_NTC3396)GenericoDAO).Terminar(entidad);
             }
@@ -78,7 +79,7 @@ namespace TS15.BL.gestion_protocolo
             return resultado != null ? resultado : new pro_ntc3396();
         }
 
-        public override EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
+        public EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
         {
             pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).obtenerUltimaPrueba(transformador);
             return resultado != null ? resultado : new pro_ntc3396();
