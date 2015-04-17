@@ -119,24 +119,32 @@
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Color</label>
-                        <asp:TextBox runat="server" ID="txtColor" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                            Color
+                        </label>
+                        <asp:DropDownList ID="lbColor" runat="server" Enabled="Enable">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                     <div class="span3">
                         <label>
-                            Color Salina Ambiente 1</label>
-                        <asp:TextBox runat="server" ID="txtSalAmb1" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                            Color Salina Ambiente 1
+                        </label>
+                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                     <div class="span3">
                         <label>
-                            Color Salina Ambiente 2</label>
-                        <asp:TextBox runat="server" ID="txtSalAmb2" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                            Color Salina Ambiente 2
+                        </label>
+                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                     <div class="span3">
                         <label>
-                            Impacto</label>
-                        <asp:TextBox runat="server" ID="txtImpacto" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                            Impacto
+                        </label>
+                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
@@ -146,14 +154,18 @@
                     </div>
                     <div class="span3">
                         <label>
-                            Espesor Ambiente 1 </label>
-                        <asp:TextBox runat="server" ID="txtEspAmb1" CssClass="form-control" Enabled="false"></asp:TextBox>
+                            Espesor Ambiente 1
+                        </label>
+                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False">
+                        </asp:DropDownList>
                     </div>
                     <div class="span3">
                         <label>
-                            Espesor Ambiente 2</label>
-                        <asp:TextBox runat="server" ID="txtEspAmb2" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                            Espesor Ambiente 2
+                        </label>
+                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                     <div class="span3">
                         <label>
                             Adherencia</label>

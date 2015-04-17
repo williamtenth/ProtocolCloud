@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15V2.UI.APP.util;
+using TS15.BL.gestion_protocolo;
 
 namespace TS15V2.UI.APP.gestion_protocolo
 {
@@ -13,18 +14,21 @@ namespace TS15V2.UI.APP.gestion_protocolo
     {   
         // Datos
         private List<gen_parametrica> _listaColores;
+        private BOProtocolo_NTC3396 _BObject;
 
         // Constructores
         public Protocolo_NTC3396()
         {
             CargarListas();
+            _BObject = new BOProtocolo_NTC3396();
+            Transformador = new tfr_transformador();
+            Transformador.id = 1;
         }
 
         // Init
         protected void Page_Load(object sender, EventArgs e)
         {
-            Transformador = new tfr_transformador();
-            Transformador.id = 1;
+            
         }
 
         // Métodos
@@ -41,7 +45,7 @@ namespace TS15V2.UI.APP.gestion_protocolo
 
         void Modificar()
         {
-
+            
         }
 
         void Guardar()

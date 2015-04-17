@@ -13,40 +13,40 @@ namespace TS15V2.UI.APP.gestion_protocolo {
     public partial class Protocolo_NTC3396 {
         
         /// <summary>
-        /// txtColor control.
+        /// lbColor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtColor;
+        protected global::System.Web.UI.WebControls.DropDownList lbColor;
         
         /// <summary>
-        /// txtSalAmb1 control.
+        /// lbSalina1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalAmb1;
+        protected global::System.Web.UI.WebControls.DropDownList lbSalina1;
         
         /// <summary>
-        /// txtSalAmb2 control.
+        /// lbSalina2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalAmb2;
+        protected global::System.Web.UI.WebControls.DropDownList lbSalina2;
         
         /// <summary>
-        /// txtImpacto control.
+        /// lbImpacto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImpacto;
+        protected global::System.Web.UI.WebControls.DropDownList lbImpacto;
         
         /// <summary>
         /// txtEspesor control.
@@ -58,22 +58,22 @@ namespace TS15V2.UI.APP.gestion_protocolo {
         protected global::System.Web.UI.WebControls.TextBox txtEspesor;
         
         /// <summary>
-        /// txtEspAmb1 control.
+        /// lbEspesor1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEspAmb1;
+        protected global::System.Web.UI.WebControls.DropDownList lbEspesor1;
         
         /// <summary>
-        /// txtEspAmb2 control.
+        /// lbEspesor2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEspAmb2;
+        protected global::System.Web.UI.WebControls.DropDownList lbEspesor2;
         
         /// <summary>
         /// txtAdherencia control.

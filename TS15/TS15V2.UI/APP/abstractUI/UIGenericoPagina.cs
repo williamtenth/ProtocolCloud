@@ -11,6 +11,7 @@ namespace TS15V2.UI.APP.abstractUI
         private UISingleton _singletonControlador = UISingleton.GetInstance();
         private ValidadorRol _validadorRol;
         private ValidadorCliente _validadorCliente;
+        private Boolean _enable;
 
         public UIGenericoPagina()
         {
@@ -50,5 +51,12 @@ namespace TS15V2.UI.APP.abstractUI
         {
             throw new NotImplementedException();
         }
+
+        public Boolean Enable
+        {
+            get { return _enable; }
+            set { _enable = value; }
+        }
+                
     }
 }

@@ -10,7 +10,7 @@ using System.Data.Objects.DataClasses;
 
 namespace TS15.BL.gestion_protocolo 
 {
-    class BOProtocolo_NTC3396 : BOGenerico, IGestionable, IProbable
+    public class BOProtocolo_NTC3396 : BOGenerico, IGestionable, IProbable
     {
         // Constructores
         public BOProtocolo_NTC3396() 

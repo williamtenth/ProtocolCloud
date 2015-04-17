@@ -1,13 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
     AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TS15.UI.APP.systems.Home" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Src="componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
+    TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- end: Mobile Specific -->
+    <!-- start: CSS -->
     <link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link id="base-style" href="css/style.css" rel="stylesheet" />
-    <link id="base-style-responsive" href="../css/style-responsive.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
-        rel='stylesheet' type='text/css' />
+    <link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet" />
     <!-- end: CSS -->
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -17,8 +23,16 @@
     <!--[if IE 9]>
 		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
 	<![endif]-->
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <!-- end: Favicon -->
 </asp:Content>
-<asp:Content ID="contentContenido" ContentPlaceHolderID="cphPrincipal" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
+    <ul class="breadcrumb">
+        <li><i class="icon-home"></i><a href="#">Home</a> <i class="icon-angle-right"></i>
+        </li>
+        <%--<li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>--%>
+    </ul>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.0.0.min.js"></script>
@@ -27,7 +41,7 @@
     <script type="text/javascript" src="js/modernizr.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
-    <script type="text/javascript" src='js/fullcalendar.min.js'></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
     <script type="text/javascript" src='js/jquery.dataTables.min.js'></script>
     <script type="text/javascript" src="js/excanvas.js"></script>
     <script type="text/javascript" src="js/jquery.flot.js"></script>
