@@ -20,18 +20,24 @@ namespace TS15.UI.APP.componentes
     public partial class BuscarCliente : UIGenericoComponente
     {
         public event EventHandler OnPatientChange;
+        private cli_cliente _cliente;
+        private BOCliente _BOClienteObject;
+
+        BuscarCliente()
+        {
+            _BOClienteObject = new BOCliente();
+        }
 
         private void ValidarRoles()
         {
-            string[] roles = ValidadorRol.ValidarRoles();
 
-            if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
+            if (ValidadorRol.ContieneRol(ValidadorRol.ROL_CLIENTE))
             {
                 ActivarControles();
                 CargarCliente();
             }
 
-            if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
+            if (ValidadorRol.ContieneRol(ValidadorRol.ROL_RESPONSABLECLIENTE))
                 ActivarControles();
 
             else
@@ -39,9 +45,7 @@ namespace TS15.UI.APP.componentes
                 this.hfIdCliente.Value = string.Empty;
                 this.txtCliente.Text = string.Empty;
                 this.pnlCliente.Visible = false;
-                //this.lblNombreCliente.Text = "No se puede realizar la busqueda de clientes, por favor valide sus permisos.";
-                //this.pnlMsj.CssClass = "alert alert-error";
-                //this.pnlMsj.Visible = true;
+                Session.Remove("Cliente");
             }
         }
 
@@ -56,10 +60,16 @@ namespace TS15.UI.APP.componentes
         private void CargarCliente()
         {
 
-            VW_CLI_USUARIO cliente = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
+            VW_CLI_USUARIO vw_cli_usuario = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
 
-            this.ddlTipDocumento.SelectedValue = cliente.tipdoc.ToString();
-            this.txtNumDoc.Text = cliente.numdocumento;
+            this.ddlTipDocumento.SelectedValue = vw_cli_usuario.tipdoc.ToString();
+            this.txtNumDoc.Text = vw_cli_usuario.numdocumento;
+            this.hfIdCliente.Value = vw_cli_usuario.cliente_id.ToString();
+
+            _cliente = (cli_cliente)_BOClienteObject.ConsultarXId(vw_cli_usuario.cliente_id);
+
+            //CARGA EL CLIENTE EN LA SESION
+            Session["Cliente"] = _cliente;
         }
 
         protected void Page_Load(object sender, EventArgs e)

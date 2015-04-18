@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TS15V2.UI.APP.dev.GestionCliente {
+namespace TS15V2.UI.APP.componentes {
     
     
-    public partial class Prueba {
+    public partial class ModalMsj {
         
         /// <summary>
-        /// ucBusquedaCliente control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// ucBusquedaTransformador control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.componentes.BuscarTransformador ucBusquedaTransformador;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// btnEnviar control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// ModalMsj1 control.
+        /// lblMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.componentes.ModalMsj ModalMsj1;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

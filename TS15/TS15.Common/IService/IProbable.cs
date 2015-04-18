@@ -10,7 +10,7 @@ namespace TS15.Common.IService
     public interface IProbable
     {
         Boolean Terminar(EntityObject entidad);
-        EntityObject obtenerUltimaPrueba(tfr_transformador transformador);
+        EntityObject ObtenerUltimaPrueba(tfr_transformador transformador);
 
     }
 }

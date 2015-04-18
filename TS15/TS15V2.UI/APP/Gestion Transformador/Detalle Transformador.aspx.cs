@@ -26,7 +26,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 
             BOTransformador transformadorBO = new BOTransformador();
             int idTransformador = Convert.ToInt32(pIdTransformador);
-            tfr_transformador transformadorEntity = transformadorBO.ConsultarXId(idTransformador, contexto, error) as tfr_transformador;
+            tfr_transformador transformadorEntity = transformadorBO.ConsultarXId(idTransformador) as tfr_transformador;
         }
     }
 }

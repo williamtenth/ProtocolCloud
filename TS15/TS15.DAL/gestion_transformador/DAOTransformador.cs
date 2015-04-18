@@ -13,6 +13,12 @@ namespace TS15.DAL.gestion_transformador
 {
     public class DAOTransformador : DAOGenerico, IGestionable
     {
+        private DAOCliente DAOObjectCliente;
+
+        public DAOTransformador()
+        {
+            DAOObjectCliente = new DAOCliente();
+        }
 
         public List<EntityObject> Consultar()
         {
@@ -37,9 +43,9 @@ namespace TS15.DAL.gestion_transformador
             contexto.SaveChanges();
         }
 
-        public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
+        public EntityObject ConsultarXId(int id)
         {
-            return contexto.tfr_transformador.Where(p => p.id == id).SingleOrDefault();
+            return SingletonDatos.Contexto.tfr_transformador.Where(p => p.id == id).SingleOrDefault();
         }
 
         public EntityObject ConsultarClienteXTrafoId(int trafo_id, dbTS15Entities contexto, RawError error)
@@ -47,7 +53,7 @@ namespace TS15.DAL.gestion_transformador
             vw_transformador_cliente vw = contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
             if (vw != null)
             {
-                cli_cliente cliente = (cli_cliente) DAOCliente.ConsultarXId(vw.id, contexto, error);
+                cli_cliente cliente = (cli_cliente)DAOObjectCliente.ConsultarXId(vw.id);
                 return cliente != null ? cliente : new cli_cliente();
             }
             else
@@ -57,20 +63,18 @@ namespace TS15.DAL.gestion_transformador
         }
 
         public int RetirarTranfoDeCliente(int trafo_id, dbTS15Entities contexto, RawError error)
-        {   
+        {
             vw_transformador_cliente vw = contexto.vw_transformador_cliente.Where(p => p.transformador_id == trafo_id).SingleOrDefault();
             try
             {
                 contexto.vw_transformador_cliente.DeleteObject(vw);
                 return 0;
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
                 return 1;
             }
         }
-
-
 
         public bool Modificar(EntityObject entidad)
         {
@@ -87,9 +91,10 @@ namespace TS15.DAL.gestion_transformador
             throw new NotImplementedException();
         }
 
-        public EntityObject ConsultarXId(int id)
+        public List<tfr_transformador> ConsultarTransformadoresCliente(int idCliente)
         {
-            throw new NotImplementedException();
+            return null;
+            //return SingletonDatos.Contexto.tr
         }
     }
 }

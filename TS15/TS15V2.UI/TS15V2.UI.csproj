@@ -975,6 +975,7 @@
     <Content Include="APP\bootstrap\js\bootstrap.min.js" />
     <Content Include="APP\componentes\BuscarCliente.ascx" />
     <Content Include="APP\componentes\BuscarTransformador.ascx" />
+    <Content Include="APP\componentes\ModalMsj.ascx" />
     <Content Include="APP\css\animate.min.css" />
     <Content Include="APP\css\bootstrap-cerulean.min.css" />
     <Content Include="APP\css\bootstrap-responsive.css" />
@@ -1009,6 +1010,7 @@
     <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
@@ -1024,7 +1026,6 @@
     <Content Include="APP\Gestion Usuarios\Busqueda Usuario.aspx" />
     <Content Include="APP\Gestion Usuarios\Crear Usuario.aspx" />
     <Content Include="APP\Gestion Usuarios\Detalle Usuario.aspx" />
-    <Content Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx" />
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
@@ -1176,15 +1177,21 @@
     <Compile Include="APP\autenticacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\gestion_protocolo\GenericoProtocolo.cs">
+    <Compile Include="APP\componentes\ModalMsj.ascx.cs">
+      <DependentUpon>ModalMsj.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
+      <DependentUpon>ModalMsj.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\GenericoProtocolo.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx.cs">
-      <DependentUpon>Protocolo_NTC3396.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.cs">
+      <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\gestion_protocolo\Protocolo_NTC3396.aspx.designer.cs">
-      <DependentUpon>Protocolo_NTC3396.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.designer.cs">
+      <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
@@ -1331,7 +1338,6 @@
     <Content Include="APP\master pages\principal.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="APP\dev\GestionProtocolo\" />
     <Folder Include="APP\dev\GestionUsuarios\" />
   </ItemGroup>
   <ItemGroup>

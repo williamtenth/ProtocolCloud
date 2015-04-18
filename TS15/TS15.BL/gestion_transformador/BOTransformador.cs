@@ -41,10 +41,10 @@ namespace TS15.BL.gestion_transformador
             transformadorDAO.Crear(entidad, contexto, error);
         }
 
-        public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
+        public EntityObject ConsultarXId(int id)
         {
             DAOTransformador transformadorDAO = new DAOTransformador();
-            return transformadorDAO.ConsultarXId(id, contexto, error);
+            return transformadorDAO.ConsultarXId(id);
         }
 
         /// <summary>
@@ -77,9 +77,9 @@ namespace TS15.BL.gestion_transformador
             return transformadorDAO.RetirarTranfoDeCliente(trafo_id, contexto, error);
         }
 
-        public object ConsultarTransformadoresCliente(string idCliente, dbTS15Entities contexto, RawError error)
+        public List<tfr_transformador> ConsultarTransformadoresCliente(int idCliente)
         {
-            throw new NotImplementedException();
+            return ((DAOTransformador)GenericoDAO).ConsultarTransformadoresCliente(idCliente);
         }
 
 
@@ -94,11 +94,6 @@ namespace TS15.BL.gestion_transformador
         }
 
         public bool Crear(EntityObject entidad)
-        {
-            throw new NotImplementedException();
-        }
-
-        public EntityObject ConsultarXId(int id)
         {
             throw new NotImplementedException();
         }

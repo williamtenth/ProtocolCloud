@@ -12,9 +12,10 @@ using TS15V2.UI.APP.util;
 using System.Collections.Generic;
 using System;
 
-namespace TS15V2.UI.APP.gestion_protocolo
+namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-	public abstract class GenericoProtocolo : UIGenericoPagina, IGestionable, ITerminable {
+    public abstract class GenericoProtocolo : UIGenericoPagina, IGestionable, ITerminable
+    {
 
         // Datos
         private List<gen_parametrica> _listaParResultados;
@@ -22,11 +23,12 @@ namespace TS15V2.UI.APP.gestion_protocolo
         private tfr_transformador _transformador;
 
         // Constructores
-        public GenericoProtocolo(){
+        public GenericoProtocolo()
+        {
             _proceso = new pro_proceso();
             _transformador = new tfr_transformador();
             CargarListas();
-		}
+        }
 
         // Métodos
         /// <summary>
@@ -37,11 +39,12 @@ namespace TS15V2.UI.APP.gestion_protocolo
         {
             _listaParResultados = Parametros.ConsultarParametros("resultado");
         }
-        
+
         // Métodos Set & Get
         public List<gen_parametrica> ListaParResultados
         {
-            get {
+            get
+            {
                 if (_listaParResultados == null)
                     Console.Write("Lista de paramétrica vacía. No existen valores para 'resultado'");
                 return _listaParResultados;

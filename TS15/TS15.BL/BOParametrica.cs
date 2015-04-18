@@ -34,7 +34,7 @@ namespace TS15.BL
             throw new NotImplementedException();
         }
 
-        public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
+        public EntityObject ConsultarXId(int id)
         {
             throw new NotImplementedException();
         }
@@ -55,11 +55,6 @@ namespace TS15.BL
         }
 
         public bool Crear(EntityObject entidad)
-        {
-            throw new NotImplementedException();
-        }
-
-        public EntityObject ConsultarXId(int id)
         {
             throw new NotImplementedException();
         }

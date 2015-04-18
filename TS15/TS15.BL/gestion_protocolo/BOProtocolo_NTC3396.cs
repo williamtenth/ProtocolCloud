@@ -40,11 +40,6 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public System.Data.Objects.DataClasses.EntityObject ConsultarXId(int id, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Modificar(System.Data.Objects.DataClasses.EntityObject entidad)
         {
             return ((DAOProtocolo_NTC3396)GenericoDAO).Modificar((pro_ntc3396)entidad);
@@ -73,15 +68,15 @@ namespace TS15.BL.gestion_protocolo
             
         }
 
-        public System.Data.Objects.DataClasses.EntityObject ConsultarXId(int id)
+        public EntityObject ConsultarXId(int id)
         {
             pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).ConsultarXId(id);
             return resultado != null ? resultado : new pro_ntc3396();
         }
 
-        public EntityObject obtenerUltimaPrueba(tfr_transformador transformador)
+        public EntityObject ObtenerUltimaPrueba(tfr_transformador transformador)
         {
-            pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).obtenerUltimaPrueba(transformador);
+            pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).ObtenerUltimaPrueba(transformador);
             return resultado != null ? resultado : new pro_ntc3396();
         }
     }

@@ -27,10 +27,10 @@ namespace TS15.BL.gestion_cliente
             return lstEntityObjects;
         }
 
-        public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)
+        public void Actualizar(EntityObject entidad)
         {
             cli_cliente entityCliente = entidad as cli_cliente;
-            DAOCliente.Actualizar(entityCliente, contexto, error);
+            ((DAOCliente)GenericoDAO).Actualizar(entityCliente);
         }
 
         public void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error)
@@ -50,20 +50,19 @@ namespace TS15.BL.gestion_cliente
         /// <param name="contexto">contexto</param>
         /// <param name="error">error</param>
         /// <returns>El objeto Cliente, si no hay resultado se retorna un objeto vacío</returns>
-        public EntityObject ConsultarXId(int id, dbTS15Entities contexto, RawError error)
+        public EntityObject ConsultarXId(int idCliente)
         {
-            cli_cliente entityCliente = DAOCliente.ConsultarXId(id, contexto, error);
-            return entityCliente != null ? entityCliente as EntityObject : new cli_cliente();
+            return ((DAOCliente)GenericoDAO).ConsultarXId(idCliente);
         }
 
-        public cli_cliente BuscarCliente(string pTipoDocumento, string pNumDocumento, dbTS15Entities contexto, RawError error)
+        public cli_cliente BuscarCliente(string pTipoDocumento, string pNumDocumento)
         {
-            return DAOCliente.BuscarCliente(pTipoDocumento, pNumDocumento, contexto, error);
+            return ((DAOCliente)GenericoDAO).BuscarCliente(pTipoDocumento, pNumDocumento);
         }
 
-        public List<cli_cliente> ConsultarFabricantes(dbTS15Entities contexto, RawError error)
+        public List<cli_cliente> ConsultarFabricantes()
         {
-            return DAOCliente.ConsultarFabricantes(contexto, error);
+            return ((DAOCliente)GenericoDAO).ConsultarFabricantes();
         }
 
         public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
@@ -87,9 +86,9 @@ namespace TS15.BL.gestion_cliente
             throw new NotImplementedException();
         }
 
-        public EntityObject ConsultarXId(int id)
+        public object ConsultarPedidosCliente(int intIdCliente)
         {
-            throw new NotImplementedException();
+            return ((DAOCliente)GenericoDAO).ConsultarPedidosCliente(intIdCliente);
         }
     }
 }

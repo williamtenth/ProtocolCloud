@@ -16,6 +16,13 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
 {
     public partial class Crear_Transformador : System.Web.UI.Page
     {
+        private BOCliente _BOClienteObject;
+
+        public Crear_Transformador()
+        {
+            _BOClienteObject = new BOCliente();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -76,7 +83,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
 
-            this.ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
+            this.ddlFabricante.DataSource = _BOClienteObject.ConsultarFabricantes();
             this.ddlFabricante.DataValueField = "id";
             this.ddlFabricante.DataTextField = "nombre";
             this.ddlFabricante.DataBind();

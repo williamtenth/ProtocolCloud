@@ -41,7 +41,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void CargarListas()
         {
-            CargarFabricante();
             CargarTipoSolicitud();
             CargarCapacidadTransformador();
         }
@@ -52,18 +51,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             this.ddlCapacidad.DataValueField = "consecutivo";
             this.ddlCapacidad.DataTextField = "valor";
             this.ddlCapacidad.DataBind();
-        }
-
-        private void CargarFabricante()
-        {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
-
-            //ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
-            //ddlFabricante.DataValueField = "id";
-            //ddlFabricante.DataTextField = "nombre";
-            //ddlFabricante.DataBind();
         }
 
         protected void ddlTipoSolicitud_DataBound(object sender, EventArgs e)

@@ -1,11 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="Prueba.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.Prueba"
-    EnableEventValidation="false" %>
+    AutoEventWireup="true" CodeBehind="GestionarPedidos.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.GestionarPedidos" %>
 
-<%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
-<%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
-    TagPrefix="uc2" %>
-<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,91 +22,50 @@
     <!-- start: Favicon -->
     <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- end: Favicon -->
-    <style>
-        /************** Modal PopUp *****************************************************************************************************/.cerrar
-        {
-            float: right;
-            margin-right: -30px;
-            margin-top: -20px;
-            z-index: 20;
-        }
-        .detalles
-        {
-            width: 320px;
-            margin: auto;
-            height: 55px;
-            padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
-        }
-        .detalles p
-        {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'Museo' , Arial, sans-serif;
-            height: auto;
-            margin: auto;
-        }
-        .modalPopup
-        {
-            font-size: 10pt;
-            border-radius: 10px;
-            -ms-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            z-index: 10001;
-            padding: 10px 20px;
-            width: 500px;
-        }
-        .modalPopup2
-        {
-            font-size: 10pt;
-            border-radius: 10px;
-            -ms-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            z-index: 25;
-            padding: 10px 20px;
-            width: 600px;
-            z-index: 10001 !important;
-        }
-        .modalBackGround
-        {
-            background: url(../../img/overlay.png) repeat 0 0;
-            filter: alpha(opacity=70);
-            opacity: 0.7;
-        }
-        .modalBackgroundCargando
-        {
-            background-color: Black;
-            filter: alpha(opacity=55);
-            opacity: 0.50;
-            z-index: 10100 !important;
-        }
-        .imgFinca
-        {
-            max-width: 100%;
-            max-height: 300px;
-        }
-        /***********************************************************************************************************************/
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Gestionar Pedidos</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+        <div class="box span12">
+            <div class="box-header" data-original-title="">
+                <h2>
+                    <i class="halflings-icon user"></i><span class="break"></span>Clientes</h2>
+                <%--<div class="box-icon">
+                    <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
+                        class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
+                            <i class="halflings-icon remove"></i></a>
+                </div>--%>
+            </div>
+            <asp:GridView runat="server" ID="gvPedidosCliente" CssClass="table table-striped"
+                AutoGenerateColumns="false" OnRowCommand="gvPedidosCliente_RowCommand" DataKeyNames="id"
+                OnRowDataBound="gvPedidosCliente_RowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="Consecutivo" HeaderText="Consecutivo" />
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                    <asp:BoundField DataField="Tipo de Solicitud" HeaderText="Tipo de Solicitud" />
+                    <asp:BoundField DataField="Aprobado" HeaderText="Aprobado" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton runat="server" ID="lbtnVer" CommandName="Ver" CssClass="btn btn-success"
+                                ToolTip="Ver Detalle">
+                                <i class="halflings-icon white zoom-in"></i> </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="ltbnEditar" CommandName="Editar" CssClass="btn btn-info"
+                                ToolTip="Editar">
+                                <i class="halflings-icon white edit"></i></asp:LinkButton>
+                            <%--<asp:LinkButton runat="server" ID="lbtnEliminar" CommandName="Eliminar" CssClass="btn btn-danger"
+                                    OnClientClick="return confirm('¿Realmente deseas eliminar este registro?');">
+                                <i class="glyphicon glyphicon-trash icon-white">Eliminar</i>
+                                </asp:LinkButton>--%>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
     </div>
-    <div class="row-fluid sortable ui-sortable">
-        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
-    </div>
-    <asp:UpdatePanel runat="server">
-        <ContentTemplate>
-            <asp:Button runat="server" ID="btnEnviar" Text="Prueba" OnClick="btnEnviar_Click" />
-        </ContentTemplate>
-    </asp:UpdatePanel>
-    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

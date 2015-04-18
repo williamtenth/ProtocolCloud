@@ -5,19 +5,19 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TS15.Common.Generated;
-using TS15V2.UI.APP.util;
 using TS15.BL.gestion_protocolo;
+using TS15V2.UI.APP.util;
 
-namespace TS15V2.UI.APP.gestion_protocolo
+namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class Protocolo_NTC3396 : GenericoProtocolo
-    {   
-        // Datos
+    public partial class ProtocoloNTC3396 : GenericoProtocolo
+    {
+         // Datos
         private List<gen_parametrica> _listaColores;
         private BOProtocolo_NTC3396 _BObject;
 
         // Constructores
-        public Protocolo_NTC3396()
+        public ProtocoloNTC3396()
         {
             CargarListas();
             _BObject = new BOProtocolo_NTC3396();
@@ -62,6 +62,5 @@ namespace TS15V2.UI.APP.gestion_protocolo
         {
 
         }
-
     }
 }

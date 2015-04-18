@@ -35,7 +35,7 @@
                 </div>
                 <asp:Panel runat="server" ID="pnlCliente" CssClass="control-group" Visible="false">
                     <label class="control-label" for="txtCliente">
-                        Nombre Cliente:
+                        Nombre / Razón Social:
                     </label>
                     <div class="controls">
                         <asp:TextBox runat="server" ID="txtCliente" CssClass="form-control" MaxLength="30"

@@ -16,9 +16,16 @@ namespace TS15V2.UI.APP.componentes
 {
     public partial class BuscarTransformador : UIGenericoComponente
     {
+        private cli_cliente _cliente;
+        private List<tfr_transformador> lstTransformadores;
+        private BOTransformador _BOTransformadorObject;
+        private BOCliente _BOClienteObject;
+
         public BuscarTransformador()
         {
-
+            _BOTransformadorObject = new BOTransformador();
+            _BOClienteObject = new BOCliente();
+            _cliente = (cli_cliente)Session["Cliente"];
         }
 
         private void ValidarRoles()
@@ -66,7 +73,7 @@ namespace TS15V2.UI.APP.componentes
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
 
-            this.ddlFabricante.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
+            this.ddlFabricante.DataSource = _BOClienteObject.ConsultarFabricantes();
             this.ddlFabricante.DataValueField = "id";
             this.ddlFabricante.DataTextField = "nombre";
             this.ddlFabricante.DataBind();
@@ -79,17 +86,13 @@ namespace TS15V2.UI.APP.componentes
 
         protected void btnBuscarTranformador_Click(object sender, EventArgs e)
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOTransformador transformadorBO = new BOTransformador();
-            //string idCliente = ucBusquedaCliente.IdCliente;
-
-            //if (!string.IsNullOrEmpty(idCliente))
-            //{
-            //    gvTransformadores.DataSource = transformadorBO.ConsultarTransformadoresCliente(idCliente, contexto, error);
-            //    gvTransformadores.DataBind();
-            //    mpeTransformador.Show();
-            //}
+            if (_cliente != null)
+            {
+                //lstTransformadores = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id);
+                gvTransformadores.DataSource = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id); ;
+                gvTransformadores.DataBind();
+                mpeTransformador.Show();
+            }
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,13 +100,7 @@ namespace TS15V2.UI.APP.componentes
             string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
             string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
 
-            //this.hfIdCliente.Value = idCliente;
-            //this.lblNombreCliente.Text = nombreCliente;
-            //this.pnlMsj.CssClass = "alert alert-success";
-            //this.pnlMsj.Visible = true;
 
-            //CargarTipoSolicitud();
-            //this.pnlTipoSolicitud.Visible = true;
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)

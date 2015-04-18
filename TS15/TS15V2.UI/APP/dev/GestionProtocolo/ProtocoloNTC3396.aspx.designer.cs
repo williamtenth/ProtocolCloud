@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TS15V2.UI.APP.gestion_protocolo {
+namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class Protocolo_NTC3396 {
+    public partial class ProtocoloNTC3396 {
         
         /// <summary>
         /// lbColor control.

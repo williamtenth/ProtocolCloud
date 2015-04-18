@@ -30,5 +30,12 @@ namespace TS15V2.UI.APP.dev.GestionCliente
         {
 
         }
+
+        protected void btnEnviar_Click(object sender, EventArgs e)
+        {
+            ModalMsj1.TituloModal = "Prueba Titulo";
+            ModalMsj1.MensajeModal = "Este es un menjaje de prueba";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+        }
     }
 }

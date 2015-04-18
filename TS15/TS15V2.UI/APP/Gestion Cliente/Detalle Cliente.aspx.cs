@@ -14,6 +14,13 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
 {
     public partial class Detalle_Cliente : System.Web.UI.Page
     {
+        private BOCliente _BOClienteObject;
+
+        public Detalle_Cliente()
+        {
+            _BOClienteObject = new BOCliente();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack && Request.QueryString["IdCliente"] != null && Request.QueryString["OP"] != null)
@@ -29,7 +36,7 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
             RawError error = new RawError();
             BOCliente clienteBO = new BOCliente();
 
-            EntityObject objectCliente = clienteBO.ConsultarXId(idCliente, contexto, error);
+            EntityObject objectCliente = clienteBO.ConsultarXId(idCliente);
             cli_cliente EntityCliente = objectCliente as cli_cliente;
 
             //ASIGNAR EL VALOR DE LOS CAMPOS
@@ -62,18 +69,15 @@ namespace TS15.UI.APP.systems.Gestion_Cliente
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             //ACTUALIZA LA TABLA CLI_CLIENTE
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
 
-            EntityObject objectCliente = clienteBO.ConsultarXId(Convert.ToInt32(hfIdCliente.Value), contexto, error);
+            EntityObject objectCliente = _BOClienteObject.ConsultarXId(Convert.ToInt32(hfIdCliente.Value));
             cli_cliente EntityCliente = objectCliente as cli_cliente;
 
             EntityCliente.direccion = txtDireccion.Text.Trim();
             EntityCliente.telefono = txtTelefono.Text.Trim();
 
             objectCliente = EntityCliente as EntityObject;
-            clienteBO.Actualizar(objectCliente, contexto, error);
+            _BOClienteObject.Actualizar(objectCliente);
 
             Response.Redirect("~/APP/systems/Gestion Cliente/Detalle Cliente.aspx?IdCliente=" + hfIdCliente.Value + "&OP=V");
         }

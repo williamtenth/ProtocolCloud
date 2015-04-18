@@ -4,6 +4,7 @@ using System.Linq;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
 using TS15.DAL.abstractDAL;
+using System.Data.Objects.DataClasses;
 
 namespace TS15.DAL.gestion_cliente
 {
@@ -22,26 +23,16 @@ namespace TS15.DAL.gestion_cliente
             }
         }
 
-        public static cli_cliente ConsultarXId(int id, dbTS15Entities contexto, RawError error)
+        public EntityObject ConsultarXId(int idCliente)
         {
-            dbTS15Entities _contexto = new dbTS15Entities();
-            RawError _error = new RawError();
-            try
-            {
-                return contexto.cli_cliente.Where(p => p.id == id).SingleOrDefault();
-            }
-
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return SingletonDatos.Contexto.cli_cliente.Where(p => p.id == idCliente).SingleOrDefault();
         }
 
-        public static void Actualizar(cli_cliente entityCliente, dbTS15Entities contexto, RawError error)
+        public void Actualizar(cli_cliente entityCliente)
         {
             try
             {
-                contexto.SaveChanges();
+                SingletonDatos.Contexto.SaveChanges();
             }
 
             catch (Exception ex)
@@ -50,12 +41,12 @@ namespace TS15.DAL.gestion_cliente
             }
         }
 
-        public static cli_cliente BuscarCliente(string pTipoDocumento, string pNumDocumento, dbTS15Entities contexto, RawError error)
+        public cli_cliente BuscarCliente(string pTipoDocumento, string pNumDocumento)
         {
             try
             {
-                if (contexto.cli_cliente.Where(p => p.numdocumento == pNumDocumento).ToList().Count > 0)
-                    return contexto.cli_cliente.Where(p => p.numdocumento == pNumDocumento).SingleOrDefault();
+                if (SingletonDatos.Contexto.cli_cliente.Where(p => p.numdocumento == pNumDocumento).ToList().Count > 0)
+                    return SingletonDatos.Contexto.cli_cliente.Where(p => p.numdocumento == pNumDocumento).SingleOrDefault();
                 else
                     return null;
             }
@@ -66,11 +57,11 @@ namespace TS15.DAL.gestion_cliente
             }
         }
 
-        public static List<cli_cliente> ConsultarFabricantes(dbTS15Entities contexto, RawError error)
+        public List<cli_cliente> ConsultarFabricantes()
         {
             try
             {
-                return contexto.cli_cliente.Where(p => p.tiptercero == 2 || p.tiptercero == 3).ToList();
+                return SingletonDatos.Contexto.cli_cliente.Where(p => p.tiptercero == 2 || p.tiptercero == 3).ToList();
             }
 
             catch (Exception ex)
@@ -82,6 +73,12 @@ namespace TS15.DAL.gestion_cliente
         public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
         {
             return SingletonDatos.Contexto.VW_CLI_USUARIO.Where(p => p.UserId == userId).SingleOrDefault();
+        }
+
+        public object ConsultarPedidosCliente(int intIdCliente)
+        {
+            //return SingletonDatos.Contexto.
+            return null;
         }
     }
 }

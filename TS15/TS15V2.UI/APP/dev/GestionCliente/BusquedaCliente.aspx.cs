@@ -14,12 +14,8 @@ using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
-    public partial class BusquedaCliente : UIGenericoComponente
+    public partial class BusquedaCliente : UIGenericoPagina
     {
-        BusquedaCliente()
-        {
-
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,8 +35,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
         private void CargarTipoDocumento()
         {
             ddlTipDocumento.DataSource = util.Parametros.ConsultarParametros("tipdoc");
-            ddlTipDocumento.DataValueField = "";
-            ddlTipDocumento.DataTextField = "";
+            ddlTipDocumento.DataValueField = "consecutivo";
+            ddlTipDocumento.DataTextField = "valor";
             ddlTipDocumento.DataBind();
         }
 
