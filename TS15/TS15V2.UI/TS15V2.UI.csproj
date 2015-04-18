@@ -1179,6 +1179,7 @@
     </Compile>
     <Compile Include="APP\componentes\ModalMsj.ascx.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
