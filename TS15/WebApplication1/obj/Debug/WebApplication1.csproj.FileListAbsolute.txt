@@ -1,6 +1,0 @@
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\bin\WebApplication1.dll
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\bin\WebApplication1.pdb
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\bin\AjaxControlToolkit.dll
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\obj\Debug\WebApplication1.dll
-E:\RepositorioSVN\ProtocolCloud\TS15\WebApplication1\obj\Debug\WebApplication1.pdb
