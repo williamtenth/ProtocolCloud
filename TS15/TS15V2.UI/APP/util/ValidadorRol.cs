@@ -9,9 +9,6 @@ namespace TS15V2.UI.APP.util
 {
     public class ValidadorRol
     {
-        private string[] roles;
-
-
         /// <summary>
         /// 
         /// </summary>
