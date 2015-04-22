@@ -60,7 +60,7 @@ namespace TS15.UI.APP.componentes
         private void CargarCliente()
         {
 
-            VW_CLI_USUARIO vw_cli_usuario = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
+            vw_cli_usuario vw_cli_usuario = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
 
             this.ddlTipDocumento.SelectedValue = vw_cli_usuario.tipdoc.ToString();
             this.txtNumDoc.Text = vw_cli_usuario.numdocumento;

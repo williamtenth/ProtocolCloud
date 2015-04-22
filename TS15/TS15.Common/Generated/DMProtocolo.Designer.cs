@@ -580,22 +580,6 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<VW_CLI_USUARIO> VW_CLI_USUARIO
-        {
-            get
-            {
-                if ((_VW_CLI_USUARIO == null))
-                {
-                    _VW_CLI_USUARIO = base.CreateObjectSet<VW_CLI_USUARIO>("VW_CLI_USUARIO");
-                }
-                return _VW_CLI_USUARIO;
-            }
-        }
-        private ObjectSet<VW_CLI_USUARIO> _VW_CLI_USUARIO;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<vw_transformador_cliente> vw_transformador_cliente
         {
             get
@@ -608,6 +592,22 @@ namespace TS15.Common.Generated
             }
         }
         private ObjectSet<vw_transformador_cliente> _vw_transformador_cliente;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_cli_usuario> vw_cli_usuario
+        {
+            get
+            {
+                if ((_vw_cli_usuario == null))
+                {
+                    _vw_cli_usuario = base.CreateObjectSet<vw_cli_usuario>("vw_cli_usuario");
+                }
+                return _vw_cli_usuario;
+            }
+        }
+        private ObjectSet<vw_cli_usuario> _vw_cli_usuario;
 
         #endregion
 
@@ -854,19 +854,19 @@ namespace TS15.Common.Generated
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the VW_CLI_USUARIO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToVW_CLI_USUARIO(VW_CLI_USUARIO vW_CLI_USUARIO)
-        {
-            base.AddObject("VW_CLI_USUARIO", vW_CLI_USUARIO);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the vw_transformador_cliente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTovw_transformador_cliente(vw_transformador_cliente vw_transformador_cliente)
         {
             base.AddObject("vw_transformador_cliente", vw_transformador_cliente);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_cli_usuario EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_cli_usuario(vw_cli_usuario vw_cli_usuario)
+        {
+            base.AddObject("vw_cli_usuario", vw_cli_usuario);
         }
 
         #endregion
@@ -6442,7 +6442,7 @@ namespace TS15.Common.Generated
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Byte> adherencia
+        public Nullable<global::System.Decimal> adherencia
         {
             get
             {
@@ -6457,8 +6457,8 @@ namespace TS15.Common.Generated
                 OnadherenciaChanged();
             }
         }
-        private Nullable<global::System.Byte> _adherencia;
-        partial void OnadherenciaChanging(Nullable<global::System.Byte> value);
+        private Nullable<global::System.Decimal> _adherencia;
+        partial void OnadherenciaChanging(Nullable<global::System.Decimal> value);
         partial void OnadherenciaChanged();
     
         /// <summary>
@@ -10125,30 +10125,30 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="VW_CLI_USUARIO")]
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_cli_usuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class VW_CLI_USUARIO : EntityObject
+    public partial class vw_cli_usuario : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new VW_CLI_USUARIO object.
+        /// Create a new vw_cli_usuario object.
         /// </summary>
         /// <param name="userId">Initial value of the UserId property.</param>
         /// <param name="cliente_id">Initial value of the cliente_id property.</param>
         /// <param name="nombre">Initial value of the nombre property.</param>
         /// <param name="numdocumento">Initial value of the numdocumento property.</param>
         /// <param name="tipdoc">Initial value of the tipdoc property.</param>
-        public static VW_CLI_USUARIO CreateVW_CLI_USUARIO(global::System.Guid userId, global::System.Int32 cliente_id, global::System.String nombre, global::System.String numdocumento, global::System.Byte tipdoc)
+        public static vw_cli_usuario Createvw_cli_usuario(global::System.Guid userId, global::System.Int32 cliente_id, global::System.String nombre, global::System.String numdocumento, global::System.Byte tipdoc)
         {
-            VW_CLI_USUARIO vW_CLI_USUARIO = new VW_CLI_USUARIO();
-            vW_CLI_USUARIO.UserId = userId;
-            vW_CLI_USUARIO.cliente_id = cliente_id;
-            vW_CLI_USUARIO.nombre = nombre;
-            vW_CLI_USUARIO.numdocumento = numdocumento;
-            vW_CLI_USUARIO.tipdoc = tipdoc;
-            return vW_CLI_USUARIO;
+            vw_cli_usuario vw_cli_usuario = new vw_cli_usuario();
+            vw_cli_usuario.UserId = userId;
+            vw_cli_usuario.cliente_id = cliente_id;
+            vw_cli_usuario.nombre = nombre;
+            vw_cli_usuario.numdocumento = numdocumento;
+            vw_cli_usuario.tipdoc = tipdoc;
+            return vw_cli_usuario;
         }
 
         #endregion

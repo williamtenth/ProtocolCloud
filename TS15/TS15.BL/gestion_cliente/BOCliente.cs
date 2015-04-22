@@ -65,7 +65,7 @@ namespace TS15.BL.gestion_cliente
             return ((DAOCliente)GenericoDAO).ConsultarFabricantes();
         }
 
-        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
+        public vw_cli_usuario ConsultarClienteUser(Guid userId)
         {
             return ((DAOCliente)GenericoDAO).ConsultarClienteUser(userId);
         }

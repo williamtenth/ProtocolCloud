@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using TS15.Common.Generated;
 using TS15.BL.gestion_protocolo;
 using TS15V2.UI.APP.util;
+using util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
@@ -40,7 +41,36 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void CargarListas()
         {
             _listaColores = Parametros.ConsultarParametros("rtrfcolor");
-            Console.Out.Write("Colores: " + _listaColores.Count);
+            // carga lista colores
+            this.lbColor.DataSource = Parametros.ConsultarParametros("rtrfcolor");
+            this.lbColor.DataValueField = "valor";
+            this.lbColor.DataTextField = "valor";
+            this.lbColor.DataBind();
+            // carga lista salina Ambiente 1
+            this.lbSalina1.DataSource = ListaParResultados;
+            this.lbSalina1.DataValueField = "consecutivo";
+            this.lbSalina1.DataTextField = "valor";
+            this.lbSalina1.DataBind();
+            // carga lista salina Ambiente 2
+            this.lbSalina2.DataSource = ListaParResultados;
+            this.lbSalina2.DataValueField = "consecutivo";
+            this.lbSalina2.DataTextField = "valor";
+            this.lbSalina2.DataBind();
+            // carga lista impacto
+            this.lbImpacto.DataSource = ListaParResultados;
+            this.lbImpacto.DataValueField = "consecutivo";
+            this.lbImpacto.DataTextField = "valor";
+            this.lbImpacto.DataBind();
+            // carga lista espesor Ambiente 1
+            this.lbEspesor1.DataSource = ListaParResultados;
+            this.lbEspesor1.DataValueField = "consecutivo";
+            this.lbEspesor1.DataTextField = "valor";
+            this.lbEspesor1.DataBind();
+            // carga lista espesor Ambiente 1
+            this.lbEspesor2.DataSource = ListaParResultados;
+            this.lbEspesor2.DataValueField = "consecutivo";
+            this.lbEspesor2.DataTextField = "valor";
+            this.lbEspesor2.DataBind();
         }
 
 
@@ -52,8 +82,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void Guardar(object sender, EventArgs e)
         {
-            _prueba.espesorvalor = Decimal.Parse(txtEspesor.Text);
-            
+            _prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
+            _prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
+            ActivarControles(false);
         }
 
         public void Cancelar(object sender, EventArgs e)
@@ -67,7 +98,8 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 Console.Out.Write("Error al Terminar Prueba");
         }
 
-        public void ActivarControles(Boolean valorEnable){
+        public void ActivarControles(Boolean valorEnable)
+        {
             this.lbColor.Enabled = valorEnable;
             this.lbEspesor1.Enabled = valorEnable;
             this.lbEspesor2.Enabled = valorEnable;
@@ -85,12 +117,34 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             if (Transformador != null)
             {
                 _prueba = (pro_ntc3396)_BOntc3396Object.ObtenerUltimaPrueba(Transformador);
+                CargarEntidad();
             }
             else
             {
                 _prueba = new pro_ntc3396();
                 _prueba.fecha = new DateTime();
             }
+        }
+
+        public void CargarEntidad()
+        {
+            if (_prueba != null)
+            {
+                this.lbColor.SelectedValue = _prueba.color;
+                this.lbEspesor1.SelectedValue = Convert.ToString(_prueba.espesor1);
+                this.lbEspesor2.SelectedValue = Convert.ToString(_prueba.espesor2);
+                this.lbImpacto.SelectedValue = Convert.ToString(_prueba.impacto);
+                this.lbSalina1.SelectedValue = Convert.ToString(_prueba.salina1);
+                this.lbSalina2.SelectedValue = Convert.ToString(_prueba.salina2);
+                this.txtAdherencia.Text = Convert.ToString(_prueba.adherencia);
+                this.txtEspesor.Text = Convert.ToString(_prueba.espesorvalor);
+            }
+        }
+
+        public void UpdateEntidad()
+        {
+            _prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
+            _prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
         }
     }
 }
