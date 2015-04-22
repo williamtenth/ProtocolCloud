@@ -23,7 +23,7 @@ namespace TS15.UI.APP.componentes
         private cli_cliente _cliente;
         private BOCliente _BOClienteObject;
 
-        BuscarCliente()
+        public BuscarCliente()
         {
             _BOClienteObject = new BOCliente();
         }

@@ -16,6 +16,9 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 {
     public partial class BusquedaCliente : UIGenericoPagina
     {
+        public BusquedaCliente()
+        {
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -12,23 +12,23 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
     public partial class ProtocoloNTC3396 : GenericoProtocolo
     {
-         // Datos
+        // Datos
         private List<gen_parametrica> _listaColores;
-        private BOProtocolo_NTC3396 _BObject;
+        private BOProtocolo_NTC3396 _BOntc3396Object;
+        private pro_ntc3396 _prueba;
 
         // Constructores
         public ProtocoloNTC3396()
         {
+            _BOntc3396Object = new BOProtocolo_NTC3396();
             CargarListas();
-            _BObject = new BOProtocolo_NTC3396();
-            Transformador = new tfr_transformador();
-            Transformador.id = 1;
+            CargarPrueba();
         }
 
         // Init
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            TextBox1.Text = Transformador.numserie;
         }
 
         // Métodos
@@ -40,27 +40,57 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void CargarListas()
         {
             _listaColores = Parametros.ConsultarParametros("rtrfcolor");
+            Console.Out.Write("Colores: " + _listaColores.Count);
         }
-        
 
-        void Modificar()
+
+        public void Modificar(object sender, EventArgs e)
         {
+            ActivarControles(true);
+
+        }
+
+        public void Guardar(object sender, EventArgs e)
+        {
+            _prueba.espesorvalor = Decimal.Parse(txtEspesor.Text);
             
         }
 
-        void Guardar()
+        public void Cancelar(object sender, EventArgs e)
         {
-
+            ActivarControles(false);
         }
 
-        void Cancelar()
+        public void Terminar(object sender, EventArgs e)
         {
-
+            if (!_BOntc3396Object.Terminar(_prueba))
+                Console.Out.Write("Error al Terminar Prueba");
         }
 
-        public void Terminar()
-        {
+        public void ActivarControles(Boolean valorEnable){
+            this.lbColor.Enabled = valorEnable;
+            this.lbEspesor1.Enabled = valorEnable;
+            this.lbEspesor2.Enabled = valorEnable;
+            this.lbImpacto.Enabled = valorEnable;
+            this.lbSalina1.Enabled = valorEnable;
+            this.lbSalina2.Enabled = valorEnable;
+            this.txtAdherencia.Enabled = valorEnable;
+            this.txtEspesor.Enabled = valorEnable;
+            pnlInicial.Visible = !valorEnable;
+            pnlGuardar.Visible = valorEnable;
+        }
 
+        public override void CargarPrueba()
+        {
+            if (Transformador != null)
+            {
+                _prueba = (pro_ntc3396)_BOntc3396Object.ObtenerUltimaPrueba(Transformador);
+            }
+            else
+            {
+                _prueba = new pro_ntc3396();
+                _prueba.fecha = new DateTime();
+            }
         }
     }
 }
