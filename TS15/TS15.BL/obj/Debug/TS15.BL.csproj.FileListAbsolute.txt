@@ -43,12 +43,3 @@ E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.BL\obj\Debug\TS15.BL.csprojResolveAssemblyReference.cache
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.BL\obj\Debug\TS15.BL.dll
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.BL\obj\Debug\TS15.BL.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.BL.dll
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.BL.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.Common.dll
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.DAL.dll
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.Common.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\bin\Debug\TS15.DAL.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\obj\Debug\TS15.BL.csprojResolveAssemblyReference.cache
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\obj\Debug\TS15.BL.dll
-C:\GitHub\ProtocolCloud\TS15\TS15.BL\obj\Debug\TS15.BL.pdb

@@ -10,15 +10,3 @@ E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15V2.UI\bin\TS15.DAL.pdb
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.csprojResolveAssemblyReference.cache
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.dll
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15V2.UI.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15V2.UI.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\AjaxControlToolkit.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.BL.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.Common.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.DAL.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.BL.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.Common.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\bin\TS15.DAL.pdb
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.csprojResolveAssemblyReference.cache
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.dll
-C:\GitHub\ProtocolCloud\TS15\TS15V2.UI\obj\Debug\TS15V2.UI.pdb
