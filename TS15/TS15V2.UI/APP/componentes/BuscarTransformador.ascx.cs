@@ -11,6 +11,7 @@ using TS15.BL.gestion_transformador;
 using System.Web.Security;
 using System.Web.Configuration;
 using TS15V2.UI.APP.abstractUI;
+using TS15V2.UI.APP.util;
 
 namespace TS15V2.UI.APP.componentes
 {
@@ -108,6 +109,9 @@ namespace TS15V2.UI.APP.componentes
         {
             string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
             string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
+            int idTransformador = Convert.ToInt32(gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[3].ToString());
+
+            Session[VariablesGlobales.SESSION_TRANSFORMADOR] = _BOTransformadorObject.ConsultarXId(idTransformador);
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)

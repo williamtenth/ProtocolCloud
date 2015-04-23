@@ -65,7 +65,7 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true"
-                                        DataKeyNames="id,numserie,fabricante_id" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
+                                        DataKeyNames="id,numserie,fabricante_id,IdTransformador" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
                                         OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="numserie" HeaderText="Número de Serie">

@@ -88,6 +88,10 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             //_prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
             //_prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
+
+            if (Session[VariablesGlobales.SESION_PRUEBA_NTC3396] != null)
+                _prueba = (pro_ntc3396)Session[VariablesGlobales.SESION_PRUEBA_NTC3396];
+
             if (_prueba != null)
             {
                 ActualizarEntidad();
@@ -146,6 +150,8 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 this.lbSalina2.SelectedValue = Convert.ToString(_prueba.salina2);
                 this.txtAdherencia.Text = Convert.ToString(_prueba.adherencia);
                 this.txtEspesor.Text = Convert.ToString(_prueba.espesorvalor);
+
+                Session[VariablesGlobales.SESION_PRUEBA_NTC3396] = _prueba;
             }
         }
 

@@ -31,8 +31,8 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Modificar(pro_ntc3396 entidad)
         {
-            pro_ntc3396 resultado = (pro_ntc3396)ConsultarXId(entidad.id);
-            
+            pro_ntc3396 resultado = (pro_ntc3396)ConsultarXId(entidad.id); 
+
             if (resultado != null && entidad != null)
             {
                 resultado.color = entidad.color;
@@ -42,7 +42,7 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.espesor1 = entidad.espesor1;
                 resultado.espesor2 = entidad.espesor2;
                 resultado.adherencia = entidad.adherencia;
-                resultado.fecha = new DateTime();
+                resultado.fecha = DateTime.Now;
                 SingletonDatos.Contexto.SaveChanges();
                 return true;
             }
