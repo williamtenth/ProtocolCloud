@@ -77,9 +77,6 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            //dbTS15Entities contexto = new dbTS15Entities();
-            //RawError error = new RawError();
-            //BOCliente clienteBO = new BOCliente();
 
             //gvTransformadores.DataSource = clienteBO.ConsultarFabricantes(contexto, error);
             //gvTransformadores.DataBind();

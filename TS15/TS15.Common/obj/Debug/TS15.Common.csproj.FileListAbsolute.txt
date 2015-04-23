@@ -28,3 +28,8 @@ E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.Common\bin\Debug\TS15.Common.pdb
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.Common\obj\Debug\TS15.Common.csprojResolveAssemblyReference.cache
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.Common\obj\Debug\TS15.Common.dll
 E:\RepositorioSVN\ProtocolCloud\Trunk\TS15\TS15.Common\obj\Debug\TS15.Common.pdb
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.Common\bin\Debug\TS15.Common.dll.config
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.Common\bin\Debug\TS15.Common.dll
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.Common\bin\Debug\TS15.Common.pdb
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.Common\obj\Debug\TS15.Common.dll
+E:\RepositorioSVN\ProtocolCloud\TS15\TS15.Common\obj\Debug\TS15.Common.pdb

@@ -2,8 +2,8 @@
     AutoEventWireup="true" CodeBehind="CrearSolicitud.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.CrearSolicitud"
     EnableEventValidation="false" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
     TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

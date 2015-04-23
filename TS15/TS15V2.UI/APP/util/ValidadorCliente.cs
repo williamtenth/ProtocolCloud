@@ -11,7 +11,7 @@ namespace TS15V2.UI.APP.util
 {
     public class ValidadorCliente
     {
-        public VW_CLI_USUARIO ValidarCliente(RawError error)
+        public vw_cli_usuario ValidarCliente(RawError error)
         {
             MembershipUser user = Membership.GetUser(true);
             Guid userID = (Guid)user.ProviderUserKey;

@@ -91,10 +91,14 @@ namespace TS15.DAL.gestion_transformador
             throw new NotImplementedException();
         }
 
-        public List<tfr_transformador> ConsultarTransformadoresCliente(int idCliente)
+        public List<vw_transformador_fabricante> ConsultarTransformadoresCliente(int idCliente)
         {
-            return null;
-            //return SingletonDatos.Contexto.tr
+            return SingletonDatos.Contexto.vw_transformador_fabricante.Where(p => p.id == idCliente).ToList();
+        }
+
+        public List<vw_transformador_fabricante> ConsultarTransformadoresFabricante()
+        {
+            return SingletonDatos.Contexto.vw_transformador_fabricante.ToList();
         }
     }
 }

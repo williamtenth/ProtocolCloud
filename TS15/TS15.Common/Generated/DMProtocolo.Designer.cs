@@ -19,15 +19,15 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__59C55456", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.cli_cliente), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_transf_has_cliente_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.cli_cliente), "tfr_transf_has_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_transf_has_cliente), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
@@ -500,6 +500,22 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<sysdiagram> sysdiagrams
+        {
+            get
+            {
+                if ((_sysdiagrams == null))
+                {
+                    _sysdiagrams = base.CreateObjectSet<sysdiagram>("sysdiagrams");
+                }
+                return _sysdiagrams;
+            }
+        }
+        private ObjectSet<sysdiagram> _sysdiagrams;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<tfr_bodega> tfr_bodega
         {
             get
@@ -580,18 +596,162 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<VW_CLI_USUARIO> VW_CLI_USUARIO
+        public ObjectSet<vw_aspnet_Applications> vw_aspnet_Applications
         {
             get
             {
-                if ((_VW_CLI_USUARIO == null))
+                if ((_vw_aspnet_Applications == null))
                 {
-                    _VW_CLI_USUARIO = base.CreateObjectSet<VW_CLI_USUARIO>("VW_CLI_USUARIO");
+                    _vw_aspnet_Applications = base.CreateObjectSet<vw_aspnet_Applications>("vw_aspnet_Applications");
                 }
-                return _VW_CLI_USUARIO;
+                return _vw_aspnet_Applications;
             }
         }
-        private ObjectSet<VW_CLI_USUARIO> _VW_CLI_USUARIO;
+        private ObjectSet<vw_aspnet_Applications> _vw_aspnet_Applications;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_MembershipUsers> vw_aspnet_MembershipUsers
+        {
+            get
+            {
+                if ((_vw_aspnet_MembershipUsers == null))
+                {
+                    _vw_aspnet_MembershipUsers = base.CreateObjectSet<vw_aspnet_MembershipUsers>("vw_aspnet_MembershipUsers");
+                }
+                return _vw_aspnet_MembershipUsers;
+            }
+        }
+        private ObjectSet<vw_aspnet_MembershipUsers> _vw_aspnet_MembershipUsers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_Profiles> vw_aspnet_Profiles
+        {
+            get
+            {
+                if ((_vw_aspnet_Profiles == null))
+                {
+                    _vw_aspnet_Profiles = base.CreateObjectSet<vw_aspnet_Profiles>("vw_aspnet_Profiles");
+                }
+                return _vw_aspnet_Profiles;
+            }
+        }
+        private ObjectSet<vw_aspnet_Profiles> _vw_aspnet_Profiles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_Roles> vw_aspnet_Roles
+        {
+            get
+            {
+                if ((_vw_aspnet_Roles == null))
+                {
+                    _vw_aspnet_Roles = base.CreateObjectSet<vw_aspnet_Roles>("vw_aspnet_Roles");
+                }
+                return _vw_aspnet_Roles;
+            }
+        }
+        private ObjectSet<vw_aspnet_Roles> _vw_aspnet_Roles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_Users> vw_aspnet_Users
+        {
+            get
+            {
+                if ((_vw_aspnet_Users == null))
+                {
+                    _vw_aspnet_Users = base.CreateObjectSet<vw_aspnet_Users>("vw_aspnet_Users");
+                }
+                return _vw_aspnet_Users;
+            }
+        }
+        private ObjectSet<vw_aspnet_Users> _vw_aspnet_Users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_UsersInRoles> vw_aspnet_UsersInRoles
+        {
+            get
+            {
+                if ((_vw_aspnet_UsersInRoles == null))
+                {
+                    _vw_aspnet_UsersInRoles = base.CreateObjectSet<vw_aspnet_UsersInRoles>("vw_aspnet_UsersInRoles");
+                }
+                return _vw_aspnet_UsersInRoles;
+            }
+        }
+        private ObjectSet<vw_aspnet_UsersInRoles> _vw_aspnet_UsersInRoles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_WebPartState_Paths> vw_aspnet_WebPartState_Paths
+        {
+            get
+            {
+                if ((_vw_aspnet_WebPartState_Paths == null))
+                {
+                    _vw_aspnet_WebPartState_Paths = base.CreateObjectSet<vw_aspnet_WebPartState_Paths>("vw_aspnet_WebPartState_Paths");
+                }
+                return _vw_aspnet_WebPartState_Paths;
+            }
+        }
+        private ObjectSet<vw_aspnet_WebPartState_Paths> _vw_aspnet_WebPartState_Paths;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_WebPartState_Shared> vw_aspnet_WebPartState_Shared
+        {
+            get
+            {
+                if ((_vw_aspnet_WebPartState_Shared == null))
+                {
+                    _vw_aspnet_WebPartState_Shared = base.CreateObjectSet<vw_aspnet_WebPartState_Shared>("vw_aspnet_WebPartState_Shared");
+                }
+                return _vw_aspnet_WebPartState_Shared;
+            }
+        }
+        private ObjectSet<vw_aspnet_WebPartState_Shared> _vw_aspnet_WebPartState_Shared;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_aspnet_WebPartState_User> vw_aspnet_WebPartState_User
+        {
+            get
+            {
+                if ((_vw_aspnet_WebPartState_User == null))
+                {
+                    _vw_aspnet_WebPartState_User = base.CreateObjectSet<vw_aspnet_WebPartState_User>("vw_aspnet_WebPartState_User");
+                }
+                return _vw_aspnet_WebPartState_User;
+            }
+        }
+        private ObjectSet<vw_aspnet_WebPartState_User> _vw_aspnet_WebPartState_User;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_cli_usuario> vw_cli_usuario
+        {
+            get
+            {
+                if ((_vw_cli_usuario == null))
+                {
+                    _vw_cli_usuario = base.CreateObjectSet<vw_cli_usuario>("vw_cli_usuario");
+                }
+                return _vw_cli_usuario;
+            }
+        }
+        private ObjectSet<vw_cli_usuario> _vw_cli_usuario;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -608,6 +768,22 @@ namespace TS15.Common.Generated
             }
         }
         private ObjectSet<vw_transformador_cliente> _vw_transformador_cliente;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_transformador_fabricante> vw_transformador_fabricante
+        {
+            get
+            {
+                if ((_vw_transformador_fabricante == null))
+                {
+                    _vw_transformador_fabricante = base.CreateObjectSet<vw_transformador_fabricante>("vw_transformador_fabricante");
+                }
+                return _vw_transformador_fabricante;
+            }
+        }
+        private ObjectSet<vw_transformador_fabricante> _vw_transformador_fabricante;
 
         #endregion
 
@@ -814,6 +990,14 @@ namespace TS15.Common.Generated
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTosysdiagrams(sysdiagram sysdiagram)
+        {
+            base.AddObject("sysdiagrams", sysdiagram);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the tfr_bodega EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotfr_bodega(tfr_bodega tfr_bodega)
@@ -854,11 +1038,83 @@ namespace TS15.Common.Generated
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the VW_CLI_USUARIO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the vw_aspnet_Applications EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToVW_CLI_USUARIO(VW_CLI_USUARIO vW_CLI_USUARIO)
+        public void AddTovw_aspnet_Applications(vw_aspnet_Applications vw_aspnet_Applications)
         {
-            base.AddObject("VW_CLI_USUARIO", vW_CLI_USUARIO);
+            base.AddObject("vw_aspnet_Applications", vw_aspnet_Applications);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_MembershipUsers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_MembershipUsers(vw_aspnet_MembershipUsers vw_aspnet_MembershipUsers)
+        {
+            base.AddObject("vw_aspnet_MembershipUsers", vw_aspnet_MembershipUsers);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_Profiles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_Profiles(vw_aspnet_Profiles vw_aspnet_Profiles)
+        {
+            base.AddObject("vw_aspnet_Profiles", vw_aspnet_Profiles);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_Roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_Roles(vw_aspnet_Roles vw_aspnet_Roles)
+        {
+            base.AddObject("vw_aspnet_Roles", vw_aspnet_Roles);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_Users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_Users(vw_aspnet_Users vw_aspnet_Users)
+        {
+            base.AddObject("vw_aspnet_Users", vw_aspnet_Users);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_UsersInRoles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_UsersInRoles(vw_aspnet_UsersInRoles vw_aspnet_UsersInRoles)
+        {
+            base.AddObject("vw_aspnet_UsersInRoles", vw_aspnet_UsersInRoles);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_WebPartState_Paths EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_WebPartState_Paths(vw_aspnet_WebPartState_Paths vw_aspnet_WebPartState_Paths)
+        {
+            base.AddObject("vw_aspnet_WebPartState_Paths", vw_aspnet_WebPartState_Paths);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_WebPartState_Shared EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_WebPartState_Shared(vw_aspnet_WebPartState_Shared vw_aspnet_WebPartState_Shared)
+        {
+            base.AddObject("vw_aspnet_WebPartState_Shared", vw_aspnet_WebPartState_Shared);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_aspnet_WebPartState_User EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_aspnet_WebPartState_User(vw_aspnet_WebPartState_User vw_aspnet_WebPartState_User)
+        {
+            base.AddObject("vw_aspnet_WebPartState_User", vw_aspnet_WebPartState_User);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_cli_usuario EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_cli_usuario(vw_cli_usuario vw_cli_usuario)
+        {
+            base.AddObject("vw_cli_usuario", vw_cli_usuario);
         }
     
         /// <summary>
@@ -867,6 +1123,14 @@ namespace TS15.Common.Generated
         public void AddTovw_transformador_cliente(vw_transformador_cliente vw_transformador_cliente)
         {
             base.AddObject("vw_transformador_cliente", vw_transformador_cliente);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_transformador_fabricante EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_transformador_fabricante(vw_transformador_fabricante vw_transformador_fabricante)
+        {
+            base.AddObject("vw_transformador_fabricante", vw_transformador_fabricante);
         }
 
         #endregion
@@ -1016,18 +1280,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__123EB7A3", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership")]
         public EntityCollection<aspnet_Membership> aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership", value);
                 }
             }
         }
@@ -1038,18 +1302,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths")]
         public EntityCollection<aspnet_Paths> aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths", value);
                 }
             }
         }
@@ -1060,18 +1324,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Roles")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles")]
         public EntityCollection<aspnet_Roles> aspnet_Roles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Roles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Roles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles", value);
                 }
             }
         }
@@ -1082,18 +1346,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Users")]
         public EntityCollection<aspnet_Users> aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Users", value);
                 }
             }
         }
@@ -1673,16 +1937,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1694,13 +1958,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__123EB7A3", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications", value);
                 }
             }
         }
@@ -1711,16 +1975,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -1732,13 +1996,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users", value);
                 }
             }
         }
@@ -1888,16 +2152,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1909,13 +2173,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__4B7734FF", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications", value);
                 }
             }
         }
@@ -1926,16 +2190,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__531856C7", "aspnet_PersonalizationAllUsers")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers")]
         public aspnet_PersonalizationAllUsers aspnet_PersonalizationAllUsers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_PersonalizationAllUsers").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_PersonalizationAllUsers").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers").Value = value;
             }
         }
         /// <summary>
@@ -1947,13 +2211,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_PersonalizationAllUsers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_PersonalizationAllUsers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers", value);
                 }
             }
         }
@@ -1964,18 +2228,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__58D1301D", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -2099,16 +2363,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2120,13 +2384,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__531856C7", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths", value);
                 }
             }
         }
@@ -2298,16 +2562,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2319,13 +2583,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__58D1301D", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths", value);
                 }
             }
         }
@@ -2336,16 +2600,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__59C55456", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2357,13 +2621,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users", value);
                 }
             }
         }
@@ -2539,16 +2803,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2560,13 +2824,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users", value);
                 }
             }
         }
@@ -2740,16 +3004,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2761,13 +3025,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__3493CFA7", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications", value);
                 }
             }
         }
@@ -3127,16 +3391,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -3148,13 +3412,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E37BEF6", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications", value);
                 }
             }
         }
@@ -3165,16 +3429,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__1332DBDC", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Membership")]
         public aspnet_Membership aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Membership").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Membership").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership").Value = value;
             }
         }
         /// <summary>
@@ -3186,13 +3450,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__1332DBDC", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership", value);
                 }
             }
         }
@@ -3203,18 +3467,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__59C55456", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__59C55456", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -3225,16 +3489,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__29221CFB", "aspnet_Profile")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile")]
         public aspnet_Profile aspnet_Profile
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Profile").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Profile").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile").Value = value;
             }
         }
         /// <summary>
@@ -3246,13 +3510,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Profile");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__29221CFB", "aspnet_Profile", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile", value);
                 }
             }
         }
@@ -8384,6 +8648,163 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagram")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class sysdiagram : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new sysdiagram object.
+        /// </summary>
+        /// <param name="name">Initial value of the name property.</param>
+        /// <param name="principal_id">Initial value of the principal_id property.</param>
+        /// <param name="diagram_id">Initial value of the diagram_id property.</param>
+        public static sysdiagram Createsysdiagram(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
+        {
+            sysdiagram sysdiagram = new sysdiagram();
+            sysdiagram.name = name;
+            sysdiagram.principal_id = principal_id;
+            sysdiagram.diagram_id = diagram_id;
+            return sysdiagram;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 principal_id
+        {
+            get
+            {
+                return _principal_id;
+            }
+            set
+            {
+                Onprincipal_idChanging(value);
+                ReportPropertyChanging("principal_id");
+                _principal_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("principal_id");
+                Onprincipal_idChanged();
+            }
+        }
+        private global::System.Int32 _principal_id;
+        partial void Onprincipal_idChanging(global::System.Int32 value);
+        partial void Onprincipal_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 diagram_id
+        {
+            get
+            {
+                return _diagram_id;
+            }
+            set
+            {
+                if (_diagram_id != value)
+                {
+                    Ondiagram_idChanging(value);
+                    ReportPropertyChanging("diagram_id");
+                    _diagram_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("diagram_id");
+                    Ondiagram_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _diagram_id;
+        partial void Ondiagram_idChanging(global::System.Int32 value);
+        partial void Ondiagram_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> version
+        {
+            get
+            {
+                return _version;
+            }
+            set
+            {
+                OnversionChanging(value);
+                ReportPropertyChanging("version");
+                _version = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("version");
+                OnversionChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _version;
+        partial void OnversionChanging(Nullable<global::System.Int32> value);
+        partial void OnversionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] definition
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_definition);
+            }
+            set
+            {
+                OndefinitionChanging(value);
+                ReportPropertyChanging("definition");
+                _definition = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("definition");
+                OndefinitionChanged();
+            }
+        }
+        private global::System.Byte[] _definition;
+        partial void OndefinitionChanging(global::System.Byte[] value);
+        partial void OndefinitionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="tfr_bodega")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -10125,30 +10546,1802 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="VW_CLI_USUARIO")]
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_Applications")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class VW_CLI_USUARIO : EntityObject
+    public partial class vw_aspnet_Applications : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new VW_CLI_USUARIO object.
+        /// Create a new vw_aspnet_Applications object.
+        /// </summary>
+        /// <param name="applicationName">Initial value of the ApplicationName property.</param>
+        /// <param name="loweredApplicationName">Initial value of the LoweredApplicationName property.</param>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        public static vw_aspnet_Applications Createvw_aspnet_Applications(global::System.String applicationName, global::System.String loweredApplicationName, global::System.Guid applicationId)
+        {
+            vw_aspnet_Applications vw_aspnet_Applications = new vw_aspnet_Applications();
+            vw_aspnet_Applications.ApplicationName = applicationName;
+            vw_aspnet_Applications.LoweredApplicationName = loweredApplicationName;
+            vw_aspnet_Applications.ApplicationId = applicationId;
+            return vw_aspnet_Applications;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ApplicationName
+        {
+            get
+            {
+                return _ApplicationName;
+            }
+            set
+            {
+                if (_ApplicationName != value)
+                {
+                    OnApplicationNameChanging(value);
+                    ReportPropertyChanging("ApplicationName");
+                    _ApplicationName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("ApplicationName");
+                    OnApplicationNameChanged();
+                }
+            }
+        }
+        private global::System.String _ApplicationName;
+        partial void OnApplicationNameChanging(global::System.String value);
+        partial void OnApplicationNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LoweredApplicationName
+        {
+            get
+            {
+                return _LoweredApplicationName;
+            }
+            set
+            {
+                if (_LoweredApplicationName != value)
+                {
+                    OnLoweredApplicationNameChanging(value);
+                    ReportPropertyChanging("LoweredApplicationName");
+                    _LoweredApplicationName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("LoweredApplicationName");
+                    OnLoweredApplicationNameChanged();
+                }
+            }
+        }
+        private global::System.String _LoweredApplicationName;
+        partial void OnLoweredApplicationNameChanging(global::System.String value);
+        partial void OnLoweredApplicationNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Guid value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_MembershipUsers")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_MembershipUsers : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_MembershipUsers object.
+        /// </summary>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="passwordFormat">Initial value of the PasswordFormat property.</param>
+        /// <param name="isApproved">Initial value of the IsApproved property.</param>
+        /// <param name="isLockedOut">Initial value of the IsLockedOut property.</param>
+        /// <param name="createDate">Initial value of the CreateDate property.</param>
+        /// <param name="lastLoginDate">Initial value of the LastLoginDate property.</param>
+        /// <param name="lastPasswordChangedDate">Initial value of the LastPasswordChangedDate property.</param>
+        /// <param name="lastLockoutDate">Initial value of the LastLockoutDate property.</param>
+        /// <param name="failedPasswordAttemptCount">Initial value of the FailedPasswordAttemptCount property.</param>
+        /// <param name="failedPasswordAttemptWindowStart">Initial value of the FailedPasswordAttemptWindowStart property.</param>
+        /// <param name="failedPasswordAnswerAttemptCount">Initial value of the FailedPasswordAnswerAttemptCount property.</param>
+        /// <param name="failedPasswordAnswerAttemptWindowStart">Initial value of the FailedPasswordAnswerAttemptWindowStart property.</param>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        /// <param name="userName">Initial value of the UserName property.</param>
+        /// <param name="isAnonymous">Initial value of the IsAnonymous property.</param>
+        /// <param name="lastActivityDate">Initial value of the LastActivityDate property.</param>
+        public static vw_aspnet_MembershipUsers Createvw_aspnet_MembershipUsers(global::System.Guid userId, global::System.Int32 passwordFormat, global::System.Boolean isApproved, global::System.Boolean isLockedOut, global::System.DateTime createDate, global::System.DateTime lastLoginDate, global::System.DateTime lastPasswordChangedDate, global::System.DateTime lastLockoutDate, global::System.Int32 failedPasswordAttemptCount, global::System.DateTime failedPasswordAttemptWindowStart, global::System.Int32 failedPasswordAnswerAttemptCount, global::System.DateTime failedPasswordAnswerAttemptWindowStart, global::System.Guid applicationId, global::System.String userName, global::System.Boolean isAnonymous, global::System.DateTime lastActivityDate)
+        {
+            vw_aspnet_MembershipUsers vw_aspnet_MembershipUsers = new vw_aspnet_MembershipUsers();
+            vw_aspnet_MembershipUsers.UserId = userId;
+            vw_aspnet_MembershipUsers.PasswordFormat = passwordFormat;
+            vw_aspnet_MembershipUsers.IsApproved = isApproved;
+            vw_aspnet_MembershipUsers.IsLockedOut = isLockedOut;
+            vw_aspnet_MembershipUsers.CreateDate = createDate;
+            vw_aspnet_MembershipUsers.LastLoginDate = lastLoginDate;
+            vw_aspnet_MembershipUsers.LastPasswordChangedDate = lastPasswordChangedDate;
+            vw_aspnet_MembershipUsers.LastLockoutDate = lastLockoutDate;
+            vw_aspnet_MembershipUsers.FailedPasswordAttemptCount = failedPasswordAttemptCount;
+            vw_aspnet_MembershipUsers.FailedPasswordAttemptWindowStart = failedPasswordAttemptWindowStart;
+            vw_aspnet_MembershipUsers.FailedPasswordAnswerAttemptCount = failedPasswordAnswerAttemptCount;
+            vw_aspnet_MembershipUsers.FailedPasswordAnswerAttemptWindowStart = failedPasswordAnswerAttemptWindowStart;
+            vw_aspnet_MembershipUsers.ApplicationId = applicationId;
+            vw_aspnet_MembershipUsers.UserName = userName;
+            vw_aspnet_MembershipUsers.IsAnonymous = isAnonymous;
+            vw_aspnet_MembershipUsers.LastActivityDate = lastActivityDate;
+            return vw_aspnet_MembershipUsers;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PasswordFormat
+        {
+            get
+            {
+                return _PasswordFormat;
+            }
+            set
+            {
+                if (_PasswordFormat != value)
+                {
+                    OnPasswordFormatChanging(value);
+                    ReportPropertyChanging("PasswordFormat");
+                    _PasswordFormat = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("PasswordFormat");
+                    OnPasswordFormatChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PasswordFormat;
+        partial void OnPasswordFormatChanging(global::System.Int32 value);
+        partial void OnPasswordFormatChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MobilePIN
+        {
+            get
+            {
+                return _MobilePIN;
+            }
+            set
+            {
+                OnMobilePINChanging(value);
+                ReportPropertyChanging("MobilePIN");
+                _MobilePIN = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MobilePIN");
+                OnMobilePINChanged();
+            }
+        }
+        private global::System.String _MobilePIN;
+        partial void OnMobilePINChanging(global::System.String value);
+        partial void OnMobilePINChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String LoweredEmail
+        {
+            get
+            {
+                return _LoweredEmail;
+            }
+            set
+            {
+                OnLoweredEmailChanging(value);
+                ReportPropertyChanging("LoweredEmail");
+                _LoweredEmail = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("LoweredEmail");
+                OnLoweredEmailChanged();
+            }
+        }
+        private global::System.String _LoweredEmail;
+        partial void OnLoweredEmailChanging(global::System.String value);
+        partial void OnLoweredEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PasswordQuestion
+        {
+            get
+            {
+                return _PasswordQuestion;
+            }
+            set
+            {
+                OnPasswordQuestionChanging(value);
+                ReportPropertyChanging("PasswordQuestion");
+                _PasswordQuestion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PasswordQuestion");
+                OnPasswordQuestionChanged();
+            }
+        }
+        private global::System.String _PasswordQuestion;
+        partial void OnPasswordQuestionChanging(global::System.String value);
+        partial void OnPasswordQuestionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PasswordAnswer
+        {
+            get
+            {
+                return _PasswordAnswer;
+            }
+            set
+            {
+                OnPasswordAnswerChanging(value);
+                ReportPropertyChanging("PasswordAnswer");
+                _PasswordAnswer = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PasswordAnswer");
+                OnPasswordAnswerChanged();
+            }
+        }
+        private global::System.String _PasswordAnswer;
+        partial void OnPasswordAnswerChanging(global::System.String value);
+        partial void OnPasswordAnswerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsApproved
+        {
+            get
+            {
+                return _IsApproved;
+            }
+            set
+            {
+                if (_IsApproved != value)
+                {
+                    OnIsApprovedChanging(value);
+                    ReportPropertyChanging("IsApproved");
+                    _IsApproved = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IsApproved");
+                    OnIsApprovedChanged();
+                }
+            }
+        }
+        private global::System.Boolean _IsApproved;
+        partial void OnIsApprovedChanging(global::System.Boolean value);
+        partial void OnIsApprovedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsLockedOut
+        {
+            get
+            {
+                return _IsLockedOut;
+            }
+            set
+            {
+                if (_IsLockedOut != value)
+                {
+                    OnIsLockedOutChanging(value);
+                    ReportPropertyChanging("IsLockedOut");
+                    _IsLockedOut = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IsLockedOut");
+                    OnIsLockedOutChanged();
+                }
+            }
+        }
+        private global::System.Boolean _IsLockedOut;
+        partial void OnIsLockedOutChanging(global::System.Boolean value);
+        partial void OnIsLockedOutChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CreateDate
+        {
+            get
+            {
+                return _CreateDate;
+            }
+            set
+            {
+                if (_CreateDate != value)
+                {
+                    OnCreateDateChanging(value);
+                    ReportPropertyChanging("CreateDate");
+                    _CreateDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CreateDate");
+                    OnCreateDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _CreateDate;
+        partial void OnCreateDateChanging(global::System.DateTime value);
+        partial void OnCreateDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastLoginDate
+        {
+            get
+            {
+                return _LastLoginDate;
+            }
+            set
+            {
+                if (_LastLoginDate != value)
+                {
+                    OnLastLoginDateChanging(value);
+                    ReportPropertyChanging("LastLoginDate");
+                    _LastLoginDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastLoginDate");
+                    OnLastLoginDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastLoginDate;
+        partial void OnLastLoginDateChanging(global::System.DateTime value);
+        partial void OnLastLoginDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastPasswordChangedDate
+        {
+            get
+            {
+                return _LastPasswordChangedDate;
+            }
+            set
+            {
+                if (_LastPasswordChangedDate != value)
+                {
+                    OnLastPasswordChangedDateChanging(value);
+                    ReportPropertyChanging("LastPasswordChangedDate");
+                    _LastPasswordChangedDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastPasswordChangedDate");
+                    OnLastPasswordChangedDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastPasswordChangedDate;
+        partial void OnLastPasswordChangedDateChanging(global::System.DateTime value);
+        partial void OnLastPasswordChangedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastLockoutDate
+        {
+            get
+            {
+                return _LastLockoutDate;
+            }
+            set
+            {
+                if (_LastLockoutDate != value)
+                {
+                    OnLastLockoutDateChanging(value);
+                    ReportPropertyChanging("LastLockoutDate");
+                    _LastLockoutDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastLockoutDate");
+                    OnLastLockoutDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastLockoutDate;
+        partial void OnLastLockoutDateChanging(global::System.DateTime value);
+        partial void OnLastLockoutDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FailedPasswordAttemptCount
+        {
+            get
+            {
+                return _FailedPasswordAttemptCount;
+            }
+            set
+            {
+                if (_FailedPasswordAttemptCount != value)
+                {
+                    OnFailedPasswordAttemptCountChanging(value);
+                    ReportPropertyChanging("FailedPasswordAttemptCount");
+                    _FailedPasswordAttemptCount = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("FailedPasswordAttemptCount");
+                    OnFailedPasswordAttemptCountChanged();
+                }
+            }
+        }
+        private global::System.Int32 _FailedPasswordAttemptCount;
+        partial void OnFailedPasswordAttemptCountChanging(global::System.Int32 value);
+        partial void OnFailedPasswordAttemptCountChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FailedPasswordAttemptWindowStart
+        {
+            get
+            {
+                return _FailedPasswordAttemptWindowStart;
+            }
+            set
+            {
+                if (_FailedPasswordAttemptWindowStart != value)
+                {
+                    OnFailedPasswordAttemptWindowStartChanging(value);
+                    ReportPropertyChanging("FailedPasswordAttemptWindowStart");
+                    _FailedPasswordAttemptWindowStart = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("FailedPasswordAttemptWindowStart");
+                    OnFailedPasswordAttemptWindowStartChanged();
+                }
+            }
+        }
+        private global::System.DateTime _FailedPasswordAttemptWindowStart;
+        partial void OnFailedPasswordAttemptWindowStartChanging(global::System.DateTime value);
+        partial void OnFailedPasswordAttemptWindowStartChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FailedPasswordAnswerAttemptCount
+        {
+            get
+            {
+                return _FailedPasswordAnswerAttemptCount;
+            }
+            set
+            {
+                if (_FailedPasswordAnswerAttemptCount != value)
+                {
+                    OnFailedPasswordAnswerAttemptCountChanging(value);
+                    ReportPropertyChanging("FailedPasswordAnswerAttemptCount");
+                    _FailedPasswordAnswerAttemptCount = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("FailedPasswordAnswerAttemptCount");
+                    OnFailedPasswordAnswerAttemptCountChanged();
+                }
+            }
+        }
+        private global::System.Int32 _FailedPasswordAnswerAttemptCount;
+        partial void OnFailedPasswordAnswerAttemptCountChanging(global::System.Int32 value);
+        partial void OnFailedPasswordAnswerAttemptCountChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime FailedPasswordAnswerAttemptWindowStart
+        {
+            get
+            {
+                return _FailedPasswordAnswerAttemptWindowStart;
+            }
+            set
+            {
+                if (_FailedPasswordAnswerAttemptWindowStart != value)
+                {
+                    OnFailedPasswordAnswerAttemptWindowStartChanging(value);
+                    ReportPropertyChanging("FailedPasswordAnswerAttemptWindowStart");
+                    _FailedPasswordAnswerAttemptWindowStart = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("FailedPasswordAnswerAttemptWindowStart");
+                    OnFailedPasswordAnswerAttemptWindowStartChanged();
+                }
+            }
+        }
+        private global::System.DateTime _FailedPasswordAnswerAttemptWindowStart;
+        partial void OnFailedPasswordAnswerAttemptWindowStartChanging(global::System.DateTime value);
+        partial void OnFailedPasswordAnswerAttemptWindowStartChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Comment
+        {
+            get
+            {
+                return _Comment;
+            }
+            set
+            {
+                OnCommentChanging(value);
+                ReportPropertyChanging("Comment");
+                _Comment = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Comment");
+                OnCommentChanged();
+            }
+        }
+        private global::System.String _Comment;
+        partial void OnCommentChanging(global::System.String value);
+        partial void OnCommentChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Guid value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                if (_UserName != value)
+                {
+                    OnUserNameChanging(value);
+                    ReportPropertyChanging("UserName");
+                    _UserName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("UserName");
+                    OnUserNameChanged();
+                }
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MobileAlias
+        {
+            get
+            {
+                return _MobileAlias;
+            }
+            set
+            {
+                OnMobileAliasChanging(value);
+                ReportPropertyChanging("MobileAlias");
+                _MobileAlias = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MobileAlias");
+                OnMobileAliasChanged();
+            }
+        }
+        private global::System.String _MobileAlias;
+        partial void OnMobileAliasChanging(global::System.String value);
+        partial void OnMobileAliasChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsAnonymous
+        {
+            get
+            {
+                return _IsAnonymous;
+            }
+            set
+            {
+                if (_IsAnonymous != value)
+                {
+                    OnIsAnonymousChanging(value);
+                    ReportPropertyChanging("IsAnonymous");
+                    _IsAnonymous = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IsAnonymous");
+                    OnIsAnonymousChanged();
+                }
+            }
+        }
+        private global::System.Boolean _IsAnonymous;
+        partial void OnIsAnonymousChanging(global::System.Boolean value);
+        partial void OnIsAnonymousChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastActivityDate
+        {
+            get
+            {
+                return _LastActivityDate;
+            }
+            set
+            {
+                if (_LastActivityDate != value)
+                {
+                    OnLastActivityDateChanging(value);
+                    ReportPropertyChanging("LastActivityDate");
+                    _LastActivityDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastActivityDate");
+                    OnLastActivityDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastActivityDate;
+        partial void OnLastActivityDateChanging(global::System.DateTime value);
+        partial void OnLastActivityDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_Profiles")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_Profiles : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_Profiles object.
+        /// </summary>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="lastUpdatedDate">Initial value of the LastUpdatedDate property.</param>
+        public static vw_aspnet_Profiles Createvw_aspnet_Profiles(global::System.Guid userId, global::System.DateTime lastUpdatedDate)
+        {
+            vw_aspnet_Profiles vw_aspnet_Profiles = new vw_aspnet_Profiles();
+            vw_aspnet_Profiles.UserId = userId;
+            vw_aspnet_Profiles.LastUpdatedDate = lastUpdatedDate;
+            return vw_aspnet_Profiles;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastUpdatedDate
+        {
+            get
+            {
+                return _LastUpdatedDate;
+            }
+            set
+            {
+                if (_LastUpdatedDate != value)
+                {
+                    OnLastUpdatedDateChanging(value);
+                    ReportPropertyChanging("LastUpdatedDate");
+                    _LastUpdatedDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastUpdatedDate");
+                    OnLastUpdatedDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastUpdatedDate;
+        partial void OnLastUpdatedDateChanging(global::System.DateTime value);
+        partial void OnLastUpdatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> DataSize
+        {
+            get
+            {
+                return _DataSize;
+            }
+            set
+            {
+                OnDataSizeChanging(value);
+                ReportPropertyChanging("DataSize");
+                _DataSize = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DataSize");
+                OnDataSizeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _DataSize;
+        partial void OnDataSizeChanging(Nullable<global::System.Int32> value);
+        partial void OnDataSizeChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_Roles")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_Roles : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_Roles object.
+        /// </summary>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        /// <param name="roleId">Initial value of the RoleId property.</param>
+        /// <param name="roleName">Initial value of the RoleName property.</param>
+        /// <param name="loweredRoleName">Initial value of the LoweredRoleName property.</param>
+        public static vw_aspnet_Roles Createvw_aspnet_Roles(global::System.Guid applicationId, global::System.Guid roleId, global::System.String roleName, global::System.String loweredRoleName)
+        {
+            vw_aspnet_Roles vw_aspnet_Roles = new vw_aspnet_Roles();
+            vw_aspnet_Roles.ApplicationId = applicationId;
+            vw_aspnet_Roles.RoleId = roleId;
+            vw_aspnet_Roles.RoleName = roleName;
+            vw_aspnet_Roles.LoweredRoleName = loweredRoleName;
+            return vw_aspnet_Roles;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Guid value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid RoleId
+        {
+            get
+            {
+                return _RoleId;
+            }
+            set
+            {
+                if (_RoleId != value)
+                {
+                    OnRoleIdChanging(value);
+                    ReportPropertyChanging("RoleId");
+                    _RoleId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("RoleId");
+                    OnRoleIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _RoleId;
+        partial void OnRoleIdChanging(global::System.Guid value);
+        partial void OnRoleIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String RoleName
+        {
+            get
+            {
+                return _RoleName;
+            }
+            set
+            {
+                if (_RoleName != value)
+                {
+                    OnRoleNameChanging(value);
+                    ReportPropertyChanging("RoleName");
+                    _RoleName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("RoleName");
+                    OnRoleNameChanged();
+                }
+            }
+        }
+        private global::System.String _RoleName;
+        partial void OnRoleNameChanging(global::System.String value);
+        partial void OnRoleNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LoweredRoleName
+        {
+            get
+            {
+                return _LoweredRoleName;
+            }
+            set
+            {
+                if (_LoweredRoleName != value)
+                {
+                    OnLoweredRoleNameChanging(value);
+                    ReportPropertyChanging("LoweredRoleName");
+                    _LoweredRoleName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("LoweredRoleName");
+                    OnLoweredRoleNameChanged();
+                }
+            }
+        }
+        private global::System.String _LoweredRoleName;
+        partial void OnLoweredRoleNameChanging(global::System.String value);
+        partial void OnLoweredRoleNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_Users")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_Users : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_Users object.
+        /// </summary>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="userName">Initial value of the UserName property.</param>
+        /// <param name="loweredUserName">Initial value of the LoweredUserName property.</param>
+        /// <param name="isAnonymous">Initial value of the IsAnonymous property.</param>
+        /// <param name="lastActivityDate">Initial value of the LastActivityDate property.</param>
+        public static vw_aspnet_Users Createvw_aspnet_Users(global::System.Guid applicationId, global::System.Guid userId, global::System.String userName, global::System.String loweredUserName, global::System.Boolean isAnonymous, global::System.DateTime lastActivityDate)
+        {
+            vw_aspnet_Users vw_aspnet_Users = new vw_aspnet_Users();
+            vw_aspnet_Users.ApplicationId = applicationId;
+            vw_aspnet_Users.UserId = userId;
+            vw_aspnet_Users.UserName = userName;
+            vw_aspnet_Users.LoweredUserName = loweredUserName;
+            vw_aspnet_Users.IsAnonymous = isAnonymous;
+            vw_aspnet_Users.LastActivityDate = lastActivityDate;
+            return vw_aspnet_Users;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Guid value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                if (_UserName != value)
+                {
+                    OnUserNameChanging(value);
+                    ReportPropertyChanging("UserName");
+                    _UserName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("UserName");
+                    OnUserNameChanged();
+                }
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LoweredUserName
+        {
+            get
+            {
+                return _LoweredUserName;
+            }
+            set
+            {
+                if (_LoweredUserName != value)
+                {
+                    OnLoweredUserNameChanging(value);
+                    ReportPropertyChanging("LoweredUserName");
+                    _LoweredUserName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("LoweredUserName");
+                    OnLoweredUserNameChanged();
+                }
+            }
+        }
+        private global::System.String _LoweredUserName;
+        partial void OnLoweredUserNameChanging(global::System.String value);
+        partial void OnLoweredUserNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MobileAlias
+        {
+            get
+            {
+                return _MobileAlias;
+            }
+            set
+            {
+                OnMobileAliasChanging(value);
+                ReportPropertyChanging("MobileAlias");
+                _MobileAlias = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MobileAlias");
+                OnMobileAliasChanged();
+            }
+        }
+        private global::System.String _MobileAlias;
+        partial void OnMobileAliasChanging(global::System.String value);
+        partial void OnMobileAliasChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsAnonymous
+        {
+            get
+            {
+                return _IsAnonymous;
+            }
+            set
+            {
+                if (_IsAnonymous != value)
+                {
+                    OnIsAnonymousChanging(value);
+                    ReportPropertyChanging("IsAnonymous");
+                    _IsAnonymous = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IsAnonymous");
+                    OnIsAnonymousChanged();
+                }
+            }
+        }
+        private global::System.Boolean _IsAnonymous;
+        partial void OnIsAnonymousChanging(global::System.Boolean value);
+        partial void OnIsAnonymousChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastActivityDate
+        {
+            get
+            {
+                return _LastActivityDate;
+            }
+            set
+            {
+                if (_LastActivityDate != value)
+                {
+                    OnLastActivityDateChanging(value);
+                    ReportPropertyChanging("LastActivityDate");
+                    _LastActivityDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastActivityDate");
+                    OnLastActivityDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastActivityDate;
+        partial void OnLastActivityDateChanging(global::System.DateTime value);
+        partial void OnLastActivityDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_UsersInRoles")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_UsersInRoles : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_UsersInRoles object.
+        /// </summary>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="roleId">Initial value of the RoleId property.</param>
+        public static vw_aspnet_UsersInRoles Createvw_aspnet_UsersInRoles(global::System.Guid userId, global::System.Guid roleId)
+        {
+            vw_aspnet_UsersInRoles vw_aspnet_UsersInRoles = new vw_aspnet_UsersInRoles();
+            vw_aspnet_UsersInRoles.UserId = userId;
+            vw_aspnet_UsersInRoles.RoleId = roleId;
+            return vw_aspnet_UsersInRoles;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid RoleId
+        {
+            get
+            {
+                return _RoleId;
+            }
+            set
+            {
+                if (_RoleId != value)
+                {
+                    OnRoleIdChanging(value);
+                    ReportPropertyChanging("RoleId");
+                    _RoleId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("RoleId");
+                    OnRoleIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _RoleId;
+        partial void OnRoleIdChanging(global::System.Guid value);
+        partial void OnRoleIdChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_WebPartState_Paths")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_WebPartState_Paths : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_WebPartState_Paths object.
+        /// </summary>
+        /// <param name="applicationId">Initial value of the ApplicationId property.</param>
+        /// <param name="pathId">Initial value of the PathId property.</param>
+        /// <param name="path">Initial value of the Path property.</param>
+        /// <param name="loweredPath">Initial value of the LoweredPath property.</param>
+        public static vw_aspnet_WebPartState_Paths Createvw_aspnet_WebPartState_Paths(global::System.Guid applicationId, global::System.Guid pathId, global::System.String path, global::System.String loweredPath)
+        {
+            vw_aspnet_WebPartState_Paths vw_aspnet_WebPartState_Paths = new vw_aspnet_WebPartState_Paths();
+            vw_aspnet_WebPartState_Paths.ApplicationId = applicationId;
+            vw_aspnet_WebPartState_Paths.PathId = pathId;
+            vw_aspnet_WebPartState_Paths.Path = path;
+            vw_aspnet_WebPartState_Paths.LoweredPath = loweredPath;
+            return vw_aspnet_WebPartState_Paths;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ApplicationId
+        {
+            get
+            {
+                return _ApplicationId;
+            }
+            set
+            {
+                if (_ApplicationId != value)
+                {
+                    OnApplicationIdChanging(value);
+                    ReportPropertyChanging("ApplicationId");
+                    _ApplicationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ApplicationId");
+                    OnApplicationIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ApplicationId;
+        partial void OnApplicationIdChanging(global::System.Guid value);
+        partial void OnApplicationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid PathId
+        {
+            get
+            {
+                return _PathId;
+            }
+            set
+            {
+                if (_PathId != value)
+                {
+                    OnPathIdChanging(value);
+                    ReportPropertyChanging("PathId");
+                    _PathId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("PathId");
+                    OnPathIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _PathId;
+        partial void OnPathIdChanging(global::System.Guid value);
+        partial void OnPathIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Path
+        {
+            get
+            {
+                return _Path;
+            }
+            set
+            {
+                if (_Path != value)
+                {
+                    OnPathChanging(value);
+                    ReportPropertyChanging("Path");
+                    _Path = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Path");
+                    OnPathChanged();
+                }
+            }
+        }
+        private global::System.String _Path;
+        partial void OnPathChanging(global::System.String value);
+        partial void OnPathChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LoweredPath
+        {
+            get
+            {
+                return _LoweredPath;
+            }
+            set
+            {
+                if (_LoweredPath != value)
+                {
+                    OnLoweredPathChanging(value);
+                    ReportPropertyChanging("LoweredPath");
+                    _LoweredPath = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("LoweredPath");
+                    OnLoweredPathChanged();
+                }
+            }
+        }
+        private global::System.String _LoweredPath;
+        partial void OnLoweredPathChanging(global::System.String value);
+        partial void OnLoweredPathChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_WebPartState_Shared")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_WebPartState_Shared : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_WebPartState_Shared object.
+        /// </summary>
+        /// <param name="pathId">Initial value of the PathId property.</param>
+        /// <param name="lastUpdatedDate">Initial value of the LastUpdatedDate property.</param>
+        public static vw_aspnet_WebPartState_Shared Createvw_aspnet_WebPartState_Shared(global::System.Guid pathId, global::System.DateTime lastUpdatedDate)
+        {
+            vw_aspnet_WebPartState_Shared vw_aspnet_WebPartState_Shared = new vw_aspnet_WebPartState_Shared();
+            vw_aspnet_WebPartState_Shared.PathId = pathId;
+            vw_aspnet_WebPartState_Shared.LastUpdatedDate = lastUpdatedDate;
+            return vw_aspnet_WebPartState_Shared;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid PathId
+        {
+            get
+            {
+                return _PathId;
+            }
+            set
+            {
+                if (_PathId != value)
+                {
+                    OnPathIdChanging(value);
+                    ReportPropertyChanging("PathId");
+                    _PathId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("PathId");
+                    OnPathIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _PathId;
+        partial void OnPathIdChanging(global::System.Guid value);
+        partial void OnPathIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> DataSize
+        {
+            get
+            {
+                return _DataSize;
+            }
+            set
+            {
+                OnDataSizeChanging(value);
+                ReportPropertyChanging("DataSize");
+                _DataSize = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DataSize");
+                OnDataSizeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _DataSize;
+        partial void OnDataSizeChanging(Nullable<global::System.Int32> value);
+        partial void OnDataSizeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastUpdatedDate
+        {
+            get
+            {
+                return _LastUpdatedDate;
+            }
+            set
+            {
+                if (_LastUpdatedDate != value)
+                {
+                    OnLastUpdatedDateChanging(value);
+                    ReportPropertyChanging("LastUpdatedDate");
+                    _LastUpdatedDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastUpdatedDate");
+                    OnLastUpdatedDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastUpdatedDate;
+        partial void OnLastUpdatedDateChanging(global::System.DateTime value);
+        partial void OnLastUpdatedDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_aspnet_WebPartState_User")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_aspnet_WebPartState_User : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_aspnet_WebPartState_User object.
+        /// </summary>
+        /// <param name="lastUpdatedDate">Initial value of the LastUpdatedDate property.</param>
+        public static vw_aspnet_WebPartState_User Createvw_aspnet_WebPartState_User(global::System.DateTime lastUpdatedDate)
+        {
+            vw_aspnet_WebPartState_User vw_aspnet_WebPartState_User = new vw_aspnet_WebPartState_User();
+            vw_aspnet_WebPartState_User.LastUpdatedDate = lastUpdatedDate;
+            return vw_aspnet_WebPartState_User;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> PathId
+        {
+            get
+            {
+                return _PathId;
+            }
+            set
+            {
+                OnPathIdChanging(value);
+                ReportPropertyChanging("PathId");
+                _PathId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PathId");
+                OnPathIdChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _PathId;
+        partial void OnPathIdChanging(Nullable<global::System.Guid> value);
+        partial void OnPathIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                OnUserIdChanging(value);
+                ReportPropertyChanging("UserId");
+                _UserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserId");
+                OnUserIdChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _UserId;
+        partial void OnUserIdChanging(Nullable<global::System.Guid> value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> DataSize
+        {
+            get
+            {
+                return _DataSize;
+            }
+            set
+            {
+                OnDataSizeChanging(value);
+                ReportPropertyChanging("DataSize");
+                _DataSize = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DataSize");
+                OnDataSizeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _DataSize;
+        partial void OnDataSizeChanging(Nullable<global::System.Int32> value);
+        partial void OnDataSizeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastUpdatedDate
+        {
+            get
+            {
+                return _LastUpdatedDate;
+            }
+            set
+            {
+                if (_LastUpdatedDate != value)
+                {
+                    OnLastUpdatedDateChanging(value);
+                    ReportPropertyChanging("LastUpdatedDate");
+                    _LastUpdatedDate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("LastUpdatedDate");
+                    OnLastUpdatedDateChanged();
+                }
+            }
+        }
+        private global::System.DateTime _LastUpdatedDate;
+        partial void OnLastUpdatedDateChanging(global::System.DateTime value);
+        partial void OnLastUpdatedDateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_cli_usuario")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_cli_usuario : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_cli_usuario object.
         /// </summary>
         /// <param name="userId">Initial value of the UserId property.</param>
         /// <param name="cliente_id">Initial value of the cliente_id property.</param>
         /// <param name="nombre">Initial value of the nombre property.</param>
         /// <param name="numdocumento">Initial value of the numdocumento property.</param>
         /// <param name="tipdoc">Initial value of the tipdoc property.</param>
-        public static VW_CLI_USUARIO CreateVW_CLI_USUARIO(global::System.Guid userId, global::System.Int32 cliente_id, global::System.String nombre, global::System.String numdocumento, global::System.Byte tipdoc)
+        public static vw_cli_usuario Createvw_cli_usuario(global::System.Guid userId, global::System.Int32 cliente_id, global::System.String nombre, global::System.String numdocumento, global::System.Byte tipdoc)
         {
-            VW_CLI_USUARIO vW_CLI_USUARIO = new VW_CLI_USUARIO();
-            vW_CLI_USUARIO.UserId = userId;
-            vW_CLI_USUARIO.cliente_id = cliente_id;
-            vW_CLI_USUARIO.nombre = nombre;
-            vW_CLI_USUARIO.numdocumento = numdocumento;
-            vW_CLI_USUARIO.tipdoc = tipdoc;
-            return vW_CLI_USUARIO;
+            vw_cli_usuario vw_cli_usuario = new vw_cli_usuario();
+            vw_cli_usuario.UserId = userId;
+            vw_cli_usuario.cliente_id = cliente_id;
+            vw_cli_usuario.nombre = nombre;
+            vw_cli_usuario.numdocumento = numdocumento;
+            vw_cli_usuario.tipdoc = tipdoc;
+            return vw_cli_usuario;
         }
 
         #endregion
@@ -10356,50 +12549,23 @@ namespace TS15.Common.Generated
         /// <summary>
         /// Create a new vw_transformador_cliente object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
         /// <param name="nombre">Initial value of the nombre property.</param>
         /// <param name="tipdoc">Initial value of the tipdoc property.</param>
         /// <param name="numdocumento">Initial value of the numdocumento property.</param>
-        public static vw_transformador_cliente Createvw_transformador_cliente(global::System.Int32 id, global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento)
+        /// <param name="id">Initial value of the id property.</param>
+        public static vw_transformador_cliente Createvw_transformador_cliente(global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento, global::System.Int32 id)
         {
             vw_transformador_cliente vw_transformador_cliente = new vw_transformador_cliente();
-            vw_transformador_cliente.id = id;
             vw_transformador_cliente.nombre = nombre;
             vw_transformador_cliente.tipdoc = tipdoc;
             vw_transformador_cliente.numdocumento = numdocumento;
+            vw_transformador_cliente.id = id;
             return vw_transformador_cliente;
         }
 
         #endregion
 
         #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -10577,6 +12743,767 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Int32> _transformador_id;
         partial void Ontransformador_idChanging(Nullable<global::System.Int32> value);
         partial void Ontransformador_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_transformador_fabricante")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_transformador_fabricante : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_transformador_fabricante object.
+        /// </summary>
+        /// <param name="idTransformador">Initial value of the IdTransformador property.</param>
+        /// <param name="numserie">Initial value of the numserie property.</param>
+        public static vw_transformador_fabricante Createvw_transformador_fabricante(global::System.Int32 idTransformador, global::System.String numserie)
+        {
+            vw_transformador_fabricante vw_transformador_fabricante = new vw_transformador_fabricante();
+            vw_transformador_fabricante.IdTransformador = idTransformador;
+            vw_transformador_fabricante.numserie = numserie;
+            return vw_transformador_fabricante;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                OnidChanging(value);
+                ReportPropertyChanging("id");
+                _id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("id");
+                OnidChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _id;
+        partial void OnidChanging(Nullable<global::System.Int32> value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                OnnombreChanging(value);
+                ReportPropertyChanging("nombre");
+                _nombre = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nombre");
+                OnnombreChanged();
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tipdoc
+        {
+            get
+            {
+                return _tipdoc;
+            }
+            set
+            {
+                OntipdocChanging(value);
+                ReportPropertyChanging("tipdoc");
+                _tipdoc = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tipdoc");
+                OntipdocChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tipdoc;
+        partial void OntipdocChanging(Nullable<global::System.Byte> value);
+        partial void OntipdocChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String numdocumento
+        {
+            get
+            {
+                return _numdocumento;
+            }
+            set
+            {
+                OnnumdocumentoChanging(value);
+                ReportPropertyChanging("numdocumento");
+                _numdocumento = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("numdocumento");
+                OnnumdocumentoChanged();
+            }
+        }
+        private global::System.String _numdocumento;
+        partial void OnnumdocumentoChanging(global::System.String value);
+        partial void OnnumdocumentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> fechaasignacion
+        {
+            get
+            {
+                return _fechaasignacion;
+            }
+            set
+            {
+                OnfechaasignacionChanging(value);
+                ReportPropertyChanging("fechaasignacion");
+                _fechaasignacion = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fechaasignacion");
+                OnfechaasignacionChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _fechaasignacion;
+        partial void OnfechaasignacionChanging(Nullable<global::System.DateTime> value);
+        partial void OnfechaasignacionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTransformador
+        {
+            get
+            {
+                return _IdTransformador;
+            }
+            set
+            {
+                if (_IdTransformador != value)
+                {
+                    OnIdTransformadorChanging(value);
+                    ReportPropertyChanging("IdTransformador");
+                    _IdTransformador = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTransformador");
+                    OnIdTransformadorChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTransformador;
+        partial void OnIdTransformadorChanging(global::System.Int32 value);
+        partial void OnIdTransformadorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String numserie
+        {
+            get
+            {
+                return _numserie;
+            }
+            set
+            {
+                if (_numserie != value)
+                {
+                    OnnumserieChanging(value);
+                    ReportPropertyChanging("numserie");
+                    _numserie = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("numserie");
+                    OnnumserieChanged();
+                }
+            }
+        }
+        private global::System.String _numserie;
+        partial void OnnumserieChanging(global::System.String value);
+        partial void OnnumserieChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> fabricante_id
+        {
+            get
+            {
+                return _fabricante_id;
+            }
+            set
+            {
+                Onfabricante_idChanging(value);
+                ReportPropertyChanging("fabricante_id");
+                _fabricante_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fabricante_id");
+                Onfabricante_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _fabricante_id;
+        partial void Onfabricante_idChanging(Nullable<global::System.Int32> value);
+        partial void Onfabricante_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String altura
+        {
+            get
+            {
+                return _altura;
+            }
+            set
+            {
+                OnalturaChanging(value);
+                ReportPropertyChanging("altura");
+                _altura = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("altura");
+                OnalturaChanged();
+            }
+        }
+        private global::System.String _altura;
+        partial void OnalturaChanging(global::System.String value);
+        partial void OnalturaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tfrestado
+        {
+            get
+            {
+                return _tfrestado;
+            }
+            set
+            {
+                OntfrestadoChanging(value);
+                ReportPropertyChanging("tfrestado");
+                _tfrestado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tfrestado");
+                OntfrestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tfrestado;
+        partial void OntfrestadoChanging(Nullable<global::System.Byte> value);
+        partial void OntfrestadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tfrtenserieAT
+        {
+            get
+            {
+                return _tfrtenserieAT;
+            }
+            set
+            {
+                OntfrtenserieATChanging(value);
+                ReportPropertyChanging("tfrtenserieAT");
+                _tfrtenserieAT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tfrtenserieAT");
+                OntfrtenserieATChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tfrtenserieAT;
+        partial void OntfrtenserieATChanging(Nullable<global::System.Byte> value);
+        partial void OntfrtenserieATChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tfrtenserieBT
+        {
+            get
+            {
+                return _tfrtenserieBT;
+            }
+            set
+            {
+                OntfrtenserieBTChanging(value);
+                ReportPropertyChanging("tfrtenserieBT");
+                _tfrtenserieBT = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tfrtenserieBT");
+                OntfrtenserieBTChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tfrtenserieBT;
+        partial void OntfrtenserieBTChanging(Nullable<global::System.Byte> value);
+        partial void OntfrtenserieBTChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tfrcapacidad
+        {
+            get
+            {
+                return _tfrcapacidad;
+            }
+            set
+            {
+                OntfrcapacidadChanging(value);
+                ReportPropertyChanging("tfrcapacidad");
+                _tfrcapacidad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tfrcapacidad");
+                OntfrcapacidadChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tfrcapacidad;
+        partial void OntfrcapacidadChanging(Nullable<global::System.Byte> value);
+        partial void OntfrcapacidadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> trffase
+        {
+            get
+            {
+                return _trffase;
+            }
+            set
+            {
+                OntrffaseChanging(value);
+                ReportPropertyChanging("trffase");
+                _trffase = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("trffase");
+                OntrffaseChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _trffase;
+        partial void OntrffaseChanging(Nullable<global::System.Byte> value);
+        partial void OntrffaseChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> fecfabricacion
+        {
+            get
+            {
+                return _fecfabricacion;
+            }
+            set
+            {
+                OnfecfabricacionChanging(value);
+                ReportPropertyChanging("fecfabricacion");
+                _fecfabricacion = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecfabricacion");
+                OnfecfabricacionChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _fecfabricacion;
+        partial void OnfecfabricacionChanging(Nullable<global::System.DateTime> value);
+        partial void OnfecfabricacionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tempdevanado
+        {
+            get
+            {
+                return _tempdevanado;
+            }
+            set
+            {
+                OntempdevanadoChanging(value);
+                ReportPropertyChanging("tempdevanado");
+                _tempdevanado = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tempdevanado");
+                OntempdevanadoChanged();
+            }
+        }
+        private global::System.String _tempdevanado;
+        partial void OntempdevanadoChanging(global::System.String value);
+        partial void OntempdevanadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> trfaislamiento
+        {
+            get
+            {
+                return _trfaislamiento;
+            }
+            set
+            {
+                OntrfaislamientoChanging(value);
+                ReportPropertyChanging("trfaislamiento");
+                _trfaislamiento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("trfaislamiento");
+                OntrfaislamientoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _trfaislamiento;
+        partial void OntrfaislamientoChanging(Nullable<global::System.Byte> value);
+        partial void OntrfaislamientoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> frecuencia
+        {
+            get
+            {
+                return _frecuencia;
+            }
+            set
+            {
+                OnfrecuenciaChanging(value);
+                ReportPropertyChanging("frecuencia");
+                _frecuencia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("frecuencia");
+                OnfrecuenciaChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _frecuencia;
+        partial void OnfrecuenciaChanging(Nullable<global::System.Int64> value);
+        partial void OnfrecuenciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> trfrefrigeracion
+        {
+            get
+            {
+                return _trfrefrigeracion;
+            }
+            set
+            {
+                OntrfrefrigeracionChanging(value);
+                ReportPropertyChanging("trfrefrigeracion");
+                _trfrefrigeracion = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("trfrefrigeracion");
+                OntrfrefrigeracionChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _trfrefrigeracion;
+        partial void OntrfrefrigeracionChanging(Nullable<global::System.Byte> value);
+        partial void OntrfrefrigeracionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volentrada
+        {
+            get
+            {
+                return _volentrada;
+            }
+            set
+            {
+                OnvolentradaChanging(value);
+                ReportPropertyChanging("volentrada");
+                _volentrada = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volentrada");
+                OnvolentradaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolentradaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volsalida
+        {
+            get
+            {
+                return _volsalida;
+            }
+            set
+            {
+                OnvolsalidaChanging(value);
+                ReportPropertyChanging("volsalida");
+                _volsalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volsalida");
+                OnvolsalidaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volsalida;
+        partial void OnvolsalidaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolsalidaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volentrada_der
+        {
+            get
+            {
+                return _volentrada_der;
+            }
+            set
+            {
+                Onvolentrada_derChanging(value);
+                ReportPropertyChanging("volentrada_der");
+                _volentrada_der = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volentrada_der");
+                Onvolentrada_derChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volentrada_der;
+        partial void Onvolentrada_derChanging(Nullable<global::System.Decimal> value);
+        partial void Onvolentrada_derChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volsalida_der
+        {
+            get
+            {
+                return _volsalida_der;
+            }
+            set
+            {
+                Onvolsalida_derChanging(value);
+                ReportPropertyChanging("volsalida_der");
+                _volsalida_der = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volsalida_der");
+                Onvolsalida_derChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volsalida_der;
+        partial void Onvolsalida_derChanging(Nullable<global::System.Decimal> value);
+        partial void Onvolsalida_derChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> derivaciones
+        {
+            get
+            {
+                return _derivaciones;
+            }
+            set
+            {
+                OnderivacionesChanging(value);
+                ReportPropertyChanging("derivaciones");
+                _derivaciones = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("derivaciones");
+                OnderivacionesChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _derivaciones;
+        partial void OnderivacionesChanging(Nullable<global::System.Int32> value);
+        partial void OnderivacionesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> corentrada
+        {
+            get
+            {
+                return _corentrada;
+            }
+            set
+            {
+                OncorentradaChanging(value);
+                ReportPropertyChanging("corentrada");
+                _corentrada = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("corentrada");
+                OncorentradaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _corentrada;
+        partial void OncorentradaChanging(Nullable<global::System.Decimal> value);
+        partial void OncorentradaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> corsalida
+        {
+            get
+            {
+                return _corsalida;
+            }
+            set
+            {
+                OncorsalidaChanging(value);
+                ReportPropertyChanging("corsalida");
+                _corsalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("corsalida");
+                OncorsalidaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _corsalida;
+        partial void OncorsalidaChanging(Nullable<global::System.Decimal> value);
+        partial void OncorsalidaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> corentrada_der
+        {
+            get
+            {
+                return _corentrada_der;
+            }
+            set
+            {
+                Oncorentrada_derChanging(value);
+                ReportPropertyChanging("corentrada_der");
+                _corentrada_der = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("corentrada_der");
+                Oncorentrada_derChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _corentrada_der;
+        partial void Oncorentrada_derChanging(Nullable<global::System.Decimal> value);
+        partial void Oncorentrada_derChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> corsalida_der
+        {
+            get
+            {
+                return _corsalida_der;
+            }
+            set
+            {
+                Oncorsalida_derChanging(value);
+                ReportPropertyChanging("corsalida_der");
+                _corsalida_der = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("corsalida_der");
+                Oncorsalida_derChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _corsalida_der;
+        partial void Oncorsalida_derChanging(Nullable<global::System.Decimal> value);
+        partial void Oncorsalida_derChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> trfgrpconex
+        {
+            get
+            {
+                return _trfgrpconex;
+            }
+            set
+            {
+                OntrfgrpconexChanging(value);
+                ReportPropertyChanging("trfgrpconex");
+                _trfgrpconex = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("trfgrpconex");
+                OntrfgrpconexChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _trfgrpconex;
+        partial void OntrfgrpconexChanging(Nullable<global::System.Byte> value);
+        partial void OntrfgrpconexChanged();
 
         #endregion
 

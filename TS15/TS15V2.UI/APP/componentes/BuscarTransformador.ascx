@@ -37,7 +37,7 @@
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
                             <asp:Button runat="server" ID="btnBuscarTranformador" class="btn btn-success" Text="Buscar"
-                                OnClick="btnBuscarTranformador_Click" Enabled="false" />
+                                OnClick="btnBuscarTranformador_Click" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>

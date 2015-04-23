@@ -8,11 +8,13 @@ using TS15.Common.Generated;
 using TS15.BL;
 using TS15.Common.RawObjects;
 using System.Data.Objects.DataClasses;
+using TS15V2.UI.APP.abstractUI;
 
 namespace TS15.UI.APP.systems
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Home : UIGenericoPagina
     {
-        
+        public Home()
+        { }
     }
 }

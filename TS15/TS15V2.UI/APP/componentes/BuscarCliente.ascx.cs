@@ -19,11 +19,11 @@ namespace TS15.UI.APP.componentes
 {
     public partial class BuscarCliente : UIGenericoComponente
     {
-        public event EventHandler OnPatientChange;
+        //public event EventHandler OnPatientChange;
         private cli_cliente _cliente;
         private BOCliente _BOClienteObject;
 
-        BuscarCliente()
+        public BuscarCliente()
         {
             _BOClienteObject = new BOCliente();
         }
@@ -38,7 +38,10 @@ namespace TS15.UI.APP.componentes
             }
 
             if (ValidadorRol.ContieneRol(ValidadorRol.ROL_RESPONSABLECLIENTE))
+            {
                 ActivarControles();
+                Session["Cliente"] = null;
+            }
 
             else
             {
@@ -60,7 +63,7 @@ namespace TS15.UI.APP.componentes
         private void CargarCliente()
         {
 
-            VW_CLI_USUARIO vw_cli_usuario = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
+            vw_cli_usuario vw_cli_usuario = ValidadorCliente.ValidarCliente(SingletonControlador.Error);
 
             this.ddlTipDocumento.SelectedValue = vw_cli_usuario.tipdoc.ToString();
             this.txtNumDoc.Text = vw_cli_usuario.numdocumento;
@@ -76,6 +79,7 @@ namespace TS15.UI.APP.componentes
         {
             if (!Page.IsPostBack)
             {
+                Session["Cliente"] = null;
                 CargarListas();
                 ValidarRoles();
             }
@@ -139,7 +143,7 @@ namespace TS15.UI.APP.componentes
             this.ddlTipDocumento.SelectedValue = tipDocumento;
             this.txtNumDoc.Text = numDocumento;
 
-            if (this.OnPatientChange != null) this.OnPatientChange(sender, e);
+            //if (this.OnPatientChange != null) this.OnPatientChange(sender, e);
         }
 
         public string IdCliente

@@ -152,8 +152,10 @@
     <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
+    <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
+    <Content Include="APP\dev\GestionUsuarios\CrearUsuario.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
     <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -326,6 +328,13 @@
     <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
     </Compile>
+    <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="APP\dev\GestionProtocolo\GenericoProtocolo.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -335,6 +344,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.designer.cs">
       <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
@@ -480,9 +496,7 @@
   <ItemGroup>
     <Content Include="APP\master pages\principal.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="APP\dev\GestionUsuarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="APP\dev\Web.config" />
     <None Include="APP\autenticacion\fonts\glyphicons-halflings-regular.eot" />
@@ -534,6 +548,7 @@
     <None Include="APP\font\glyphiconshalflings-regular.eot" />
     <None Include="APP\font\glyphiconshalflings-regular.ttf" />
     <None Include="APP\font\glyphiconshalflings-regular.woff" />
+    <Content Include="APP\Gestion Transformador\Web.config" />
     <None Include="APP\img\gallery\Thumbs.db" />
     <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
     <Content Include="APP\Gestion Cliente\Web.config" />

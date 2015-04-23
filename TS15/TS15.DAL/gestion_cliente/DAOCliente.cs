@@ -70,9 +70,9 @@ namespace TS15.DAL.gestion_cliente
             }
         }
 
-        public VW_CLI_USUARIO ConsultarClienteUser(Guid userId)
+        public vw_cli_usuario ConsultarClienteUser(Guid userId)
         {
-            return SingletonDatos.Contexto.VW_CLI_USUARIO.Where(p => p.UserId == userId).SingleOrDefault();
+            return SingletonDatos.Contexto.vw_cli_usuario.Where(p => p.UserId == userId).SingleOrDefault();
         }
 
         public object ConsultarPedidosCliente(int intIdCliente)

@@ -17,7 +17,7 @@ namespace TS15V2.UI.APP.componentes
     public partial class BuscarTransformador : UIGenericoComponente
     {
         private cli_cliente _cliente;
-        private List<tfr_transformador> lstTransformadores;
+        private List<vw_transformador_fabricante> lstTransformadoresFabricante;
         private BOTransformador _BOTransformadorObject;
         private BOCliente _BOClienteObject;
 
@@ -25,7 +25,6 @@ namespace TS15V2.UI.APP.componentes
         {
             _BOTransformadorObject = new BOTransformador();
             _BOClienteObject = new BOCliente();
-            _cliente = (cli_cliente)Session["Cliente"];
         }
 
         private void ValidarRoles()
@@ -57,6 +56,9 @@ namespace TS15V2.UI.APP.componentes
         {
             if (!Page.IsPostBack)
             {
+                if (Session["Cliente"] != null)
+                    _cliente = (cli_cliente)Session["Cliente"];
+
                 CargarListas();
                 ValidarRoles();
             }
@@ -88,8 +90,15 @@ namespace TS15V2.UI.APP.componentes
         {
             if (_cliente != null)
             {
-                //lstTransformadores = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id);
-                gvTransformadores.DataSource = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id); ;
+                lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id);
+                gvTransformadores.DataSource = lstTransformadoresFabricante;
+                gvTransformadores.DataBind();
+                mpeTransformador.Show();
+            }
+            else
+            {
+                lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresFabricante();
+                gvTransformadores.DataSource = lstTransformadoresFabricante;
                 gvTransformadores.DataBind();
                 mpeTransformador.Show();
             }
@@ -99,8 +108,6 @@ namespace TS15V2.UI.APP.componentes
         {
             string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
             string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
-
-
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)
