@@ -11,6 +11,8 @@ using TS15V2.UI.APP.abstractUI;
 using TS15V2.UI.APP.util;
 using System.Collections.Generic;
 using System;
+using System.Data.Objects.DataClasses;
+using TS15.BL.gestion_transformador;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
@@ -21,14 +23,35 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private List<gen_parametrica> _listaParResultados;
         private pro_proceso _proceso;
         private tfr_transformador _transformador;
+        // BO
+        private BOTransformador _BOTransformadorObjet;
 
         // Constructores
         public GenericoProtocolo()
         {
             _proceso = new pro_proceso();
-            _transformador = new tfr_transformador();
+            _BOTransformadorObjet = new BOTransformador();
+            CargarTransformador();
             CargarListas();
         }
+
+        private void CargarTransformador()
+        {
+            //if (Session[VariableGlobales.SESSION_TRANSFORMADOR] != null)
+            //{
+            //    _transformador = (tfr_transformador)Session[VariableGlobales.SESSION_TRANSFORMADOR];
+
+            //}
+            //else
+            //{
+            //    _transformador = (tfr_transformador)_BOTransformadorObjet.ConsultarXId(1);
+            //}
+
+            _transformador = (tfr_transformador)_BOTransformadorObjet.ConsultarXId(0);
+
+        }
+
+        public abstract void CargarPrueba();
 
         // Métodos
         /// <summary>
@@ -52,6 +75,38 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             set { _listaParResultados = value; }
         }
 
+        public void Terminar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Crear(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Eliminar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Modificar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Guardar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Cancelar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        
+
+        // Set y Get
         public TS15.Common.Generated.pro_proceso Proceso
         {
             get { return _proceso; }
@@ -64,36 +119,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             set { _transformador = value; }
         }
 
-
-        public void Terminar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Crear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Modificar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Guardar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Cancelar()
-        {
-            throw new NotImplementedException();
-        }
     }//end GenericoProtocolo
 
 }//end namespace gestion_protocolo

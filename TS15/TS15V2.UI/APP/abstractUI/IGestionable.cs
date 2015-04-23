@@ -9,19 +9,21 @@
 
 
 
+
+using System;
 namespace TS15V2.UI.APP.abstractUI
 {
 	public interface IGestionable  {
 
-		void Crear();
+        void Crear(object sender, EventArgs e);
 
-		void Eliminar();
+        void Eliminar(object sender, EventArgs e);
 
-		void Modificar();
+        void Modificar(object sender, EventArgs e);
 
-		void Guardar();
+        void Guardar(object sender, EventArgs e);
 
-		void Cancelar();
+        void Cancelar(object sender, EventArgs e);
 	}//end IGestionable
 
 }//end namespace abstracUI

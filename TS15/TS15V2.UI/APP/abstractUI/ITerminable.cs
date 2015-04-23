@@ -9,11 +9,12 @@
 
 
 
+using System;
 namespace TS15V2.UI.APP.abstractUI
 {
 	public interface ITerminable  {
 
-		void Terminar();
+        void Terminar(object sender, EventArgs e);
 	}//end ITerminable
 
 }//end namespace abstracUI
