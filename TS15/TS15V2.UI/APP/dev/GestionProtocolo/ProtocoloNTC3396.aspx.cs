@@ -22,14 +22,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public ProtocoloNTC3396()
         {
             _BOntc3396Object = new BOProtocolo_NTC3396();
-            CargarListas();
-            CargarPrueba();
+
         }
 
         // Init
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = Transformador.numserie;
+            if (!Page.IsPostBack)
+            {
+                TextBox1.Text = Transformador.numserie;
+                CargarListas();
+                CargarPrueba();
+            }
         }
 
         // Métodos
@@ -40,9 +44,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public void CargarListas()
         {
-            _listaColores = Parametros.ConsultarParametros("rtrfcolor");
+            _listaColores = Parametros.ConsultarParametros("trfcolor");
             // carga lista colores
-            this.lbColor.DataSource = Parametros.ConsultarParametros("rtrfcolor");
+            this.lbColor.DataSource = _listaColores;
             this.lbColor.DataValueField = "valor";
             this.lbColor.DataTextField = "valor";
             this.lbColor.DataBind();
@@ -82,9 +86,14 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void Guardar(object sender, EventArgs e)
         {
-            _prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
-            _prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
-            ActivarControles(false);
+            //_prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
+            //_prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
+            if (_prueba != null)
+            {
+                ActualizarEntidad();
+                _BOntc3396Object.Modificar(_prueba);
+                ActivarControles(false);
+            }
         }
 
         public void Cancelar(object sender, EventArgs e)
@@ -100,7 +109,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void ActivarControles(Boolean valorEnable)
         {
-            this.lbColor.Enabled = valorEnable;
             this.lbEspesor1.Enabled = valorEnable;
             this.lbEspesor2.Enabled = valorEnable;
             this.lbImpacto.Enabled = valorEnable;
@@ -141,10 +149,30 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             }
         }
 
-        public void UpdateEntidad()
+        public void ActualizarEntidad()
         {
+            _prueba.espesor1 = UtilNumeros.StringToBytes(lbEspesor1.SelectedValue);
+            _prueba.espesor2 = UtilNumeros.StringToBytes(lbEspesor2.SelectedValue);
+            _prueba.impacto = UtilNumeros.StringToBytes(lbImpacto.SelectedValue);
+            _prueba.salina1 = UtilNumeros.StringToBytes(lbSalina1.SelectedValue);
+            _prueba.salina2 = UtilNumeros.StringToBytes(lbSalina2.SelectedValue);
             _prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
             _prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
+
+        }
+
+        protected void iniciarComponenteLista(object sender, EventArgs e)
+        {
+            if (sender == lbEspesor1)
+                lbEspesor1.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbEspesor2)
+                lbEspesor2.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbImpacto)
+                lbImpacto.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbSalina1)
+                lbSalina1.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbSalina2)
+                lbSalina2.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
     }
 }

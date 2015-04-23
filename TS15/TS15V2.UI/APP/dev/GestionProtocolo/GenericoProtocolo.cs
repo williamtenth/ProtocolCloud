@@ -44,7 +44,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             //}
             //else
             //{
-            //    _transformador = (tfr_transformador) _BOTransformadorObjet.ConsultarXId(1);
+            //    _transformador = (tfr_transformador)_BOTransformadorObjet.ConsultarXId(1);
             //}
 
             _transformador = (tfr_transformador)_BOTransformadorObjet.ConsultarXId(0);

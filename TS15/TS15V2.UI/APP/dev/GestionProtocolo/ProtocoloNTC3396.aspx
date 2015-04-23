@@ -119,7 +119,7 @@
                         <label>
                             Color
                         </label>
-                        <asp:DropDownList ID="lbColor" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbColor" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
@@ -128,7 +128,7 @@
                         <label>
                             Color Salina Ambiente 1
                         </label>
-                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
@@ -137,7 +137,7 @@
                         <label>
                             Color Salina Ambiente 2
                         </label>
-                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
@@ -146,7 +146,7 @@
                         <label>
                             Impacto
                         </label>
-                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
@@ -162,7 +162,7 @@
                         <label>
                             Espesor Ambiente 1
                         </label>
-                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                         <label>
                             Espesor Ambiente 2
                         </label>
-                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False">
+                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>

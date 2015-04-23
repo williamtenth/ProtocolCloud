@@ -24,6 +24,25 @@ namespace util {
             return _valor;
 		}
 
+        /// <summary>
+        /// Permite convertir una cadena de caracteres a byte. 
+        /// </summary>
+        /// <param name="valor">cadena debe contener un valor entre 0 - 255</param>
+        /// <returns>representación el valor en bytes</returns>
+        public static byte StringToBytes(string valor)
+        {
+            try
+            {
+                int intValor = int.Parse(valor);
+                byte bytesValor = (byte)intValor;
+                return bytesValor;
+            }
+            catch (FormatException e)
+            {
+                return 0;
+            }
+        }
+
 	}//end UtilNumeros
 
 }//end namespace util
