@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TS15V2.UI.APP.util;
+using TS15V2.UI.APP.componentes;
+using System.Web.UI;
 
 namespace TS15V2.UI.APP.abstractUI
 {
@@ -49,6 +51,13 @@ namespace TS15V2.UI.APP.abstractUI
         public void CargarListas()
         {
             throw new NotImplementedException();
+        }
+
+        public void EnviarAModalMsj(ModalMsj modal)
+        {
+            modal.TituloModal = "Prueba Titulo";
+            modal.MensajeModal = "Este es un menjaje de prueba1";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
     }
 }

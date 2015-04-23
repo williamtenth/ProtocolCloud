@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TS15V2.UI.APP.util;
+using TS15V2.UI.APP.componentes;
 
 namespace TS15V2.UI.APP.abstractUI
 {
@@ -56,6 +57,13 @@ namespace TS15V2.UI.APP.abstractUI
         {
             get { return _enable; }
             set { _enable = value; }
+        }
+
+        public void EnviarAModalMsj(ModalMsj modalMsj, String titulo, String mensaje)
+        {
+            modalMsj.TituloModal = titulo;
+            modalMsj.MensajeModal = mensaje;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
                 
     }
