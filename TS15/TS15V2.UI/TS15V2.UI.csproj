@@ -352,6 +352,7 @@
     <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.designer.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="APP\util\UtilNumeros.cs" />
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
     <Compile Include="APP\AccesoDenegado.aspx.cs">
@@ -491,6 +492,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="APP\util\Parametros.cs" />
+    <Compile Include="APP\util\VariableGlobales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
