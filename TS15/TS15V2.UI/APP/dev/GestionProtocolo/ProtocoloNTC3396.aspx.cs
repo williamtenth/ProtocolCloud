@@ -30,14 +30,16 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (!Page.IsPostBack)
             {
-                TextBox1.Text = Transformador.numserie;
                 CargarListas();
                 CargarPrueba();
+
+                // Se oculta la botonera si la prueba tiene resultado
+                if (_prueba != null && _prueba.resultado != null)
+                    pnlBotonera.Visible = false;
             }
         }
 
         // Métodos
-
         /// <summary>
         /// Este método carga las listas:
         /// -  los valores de resultado de una prueba.
@@ -77,27 +79,50 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             this.lbEspesor2.DataBind();
         }
 
-
         public void Modificar(object sender, EventArgs e)
         {
             ActivarControles(true);
-
         }
 
         public void Guardar(object sender, EventArgs e)
         {
-            //_prueba.espesorvalor = UtilNumeros.StringToDecimal(txtEspesor.Text);
-            //_prueba.adherencia = UtilNumeros.StringToDecimal(txtAdherencia.Text);
-
             if (Session[VariablesGlobales.SESION_PRUEBA_NTC3396] != null)
                 _prueba = (pro_ntc3396)Session[VariablesGlobales.SESION_PRUEBA_NTC3396];
 
-            if (_prueba != null)
+            if (ValidarCampos())
             {
-                ActualizarEntidad();
-                _BOntc3396Object.Modificar(_prueba);
-                ActivarControles(false);
+                if (_prueba != null)
+                {
+                    ActualizarEntidad();
+
+                    if (_BOntc3396Object.Modificar(_prueba))
+                    {
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC3396] = _prueba;
+
+                        ActivarControles(false);
+                        EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha modificado exitosamente la prueba");
+                    }
+                    else 
+                    {
+                        EnviarAModalMsj(MsjConfirmacion, "Error", "Error al modificar prueba");
+                    }
+                }
             }
+            else
+            {
+                EnviarAModalMsj(MsjConfirmacion, "Error", "No se puede guardar campos vacíos");
+            }
+
+        }
+
+        private bool ValidarCampos()
+        {
+            if (this.lbSalina1.SelectedValue != "-1" && this.lbSalina2.SelectedValue != "-1" && this.lbImpacto.SelectedValue != "-1"
+                && this.lbEspesor1.SelectedValue != "-1" && this.lbEspesor2.SelectedValue != "-1"
+                && this.txtAdherencia.Text != null && !this.txtAdherencia.Text.Equals("")
+                && this.txtEspesor.Text != null && !this.txtEspesor.Text.Equals(""))
+                return true;
+            return false;
         }
 
         public void Cancelar(object sender, EventArgs e)
@@ -107,21 +132,33 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void Terminar(object sender, EventArgs e)
         {
-            if (!_BOntc3396Object.Terminar(_prueba))
-                Console.Out.Write("Error al Terminar Prueba");
-        }
+            if (Session[VariablesGlobales.SESION_PRUEBA_NTC3396] != null)
+                _prueba = (pro_ntc3396)Session[VariablesGlobales.SESION_PRUEBA_NTC3396];
 
-        public void ActivarControles(Boolean valorEnable)
-        {
-            this.lbEspesor1.Enabled = valorEnable;
-            this.lbEspesor2.Enabled = valorEnable;
-            this.lbImpacto.Enabled = valorEnable;
-            this.lbSalina1.Enabled = valorEnable;
-            this.lbSalina2.Enabled = valorEnable;
-            this.txtAdherencia.Enabled = valorEnable;
-            this.txtEspesor.Enabled = valorEnable;
-            pnlInicial.Visible = !valorEnable;
-            pnlGuardar.Visible = valorEnable;
+            if (ValidarCampos())
+            {
+                if (_prueba != null)
+                {
+                    ActualizarEntidad();
+
+                    if (_BOntc3396Object.Terminar(_prueba))
+                    {
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC3396] = _prueba;
+
+                        pnlBotonera.Visible = false;
+                        EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Esta prueba se ha terminado, solo se puede consultar nuevamente");
+                    }
+                    else
+                    {
+                        EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar prueba");
+                    }
+                }
+            }
+            else
+            {
+                EnviarAModalMsj(MsjConfirmacion, "Error", "No se puede guardar campos vacíos");
+            }
+
         }
 
         public override void CargarPrueba()
@@ -136,6 +173,19 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 _prueba = new pro_ntc3396();
                 _prueba.fecha = new DateTime();
             }
+        }
+
+        public void ActivarControles(Boolean valorEnable)
+        {
+            this.lbEspesor1.Enabled = valorEnable;
+            this.lbEspesor2.Enabled = valorEnable;
+            this.lbImpacto.Enabled = valorEnable;
+            this.lbSalina1.Enabled = valorEnable;
+            this.lbSalina2.Enabled = valorEnable;
+            this.txtAdherencia.Enabled = valorEnable;
+            this.txtEspesor.Enabled = valorEnable;
+            pnlInicial.Visible = !valorEnable;
+            pnlGuardar.Visible = valorEnable;
         }
 
         public void CargarEntidad()
@@ -167,7 +217,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         }
 
-        protected void iniciarComponenteLista(object sender, EventArgs e)
+        protected void IniciarComponenteLista(object sender, EventArgs e)
         {
             if (sender == lbEspesor1)
                 lbEspesor1.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
@@ -180,5 +230,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             if (sender == lbSalina2)
                 lbSalina2.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
         }
+
+        // Set & Get
     }
 }

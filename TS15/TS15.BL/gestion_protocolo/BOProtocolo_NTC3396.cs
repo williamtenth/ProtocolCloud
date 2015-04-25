@@ -8,12 +8,12 @@ using TS15.Common.Generated;
 using TS15.DAL.gestion_protocolo;
 using System.Data.Objects.DataClasses;
 
-namespace TS15.BL.gestion_protocolo 
+namespace TS15.BL.gestion_protocolo
 {
     public class BOProtocolo_NTC3396 : BOGenerico, IGestionable, IProbable
     {
         // Constructores
-        public BOProtocolo_NTC3396() 
+        public BOProtocolo_NTC3396()
         {
             GenericoDAO = new DAOProtocolo_NTC3396();
         }
@@ -57,15 +57,15 @@ namespace TS15.BL.gestion_protocolo
 
         public bool Terminar(EntityObject entidad)
         {
-            // Valida que el resultado fuera exitosa.
-            pro_ntc3396 prueba = (pro_ntc3396) entidad;
+            // Valida: si todos los resultados fueron exitosos, el resultado de la prueba es exitoso, si no el resultado de la prueba en No exitoso.
+            pro_ntc3396 prueba = (pro_ntc3396)entidad;
             if (prueba.salina1 == 1 && prueba.salina2 == 1 && prueba.impacto == 1 && prueba.espesor1 == 1
                 && prueba.espesor2 == 1 && prueba.adherencia == 1)
-            {
-                return ((DAOProtocolo_NTC3396)GenericoDAO).Terminar(entidad);
-            }
-            return false;
-            
+                ((pro_ntc3396)entidad).resultado = 1;
+            else
+                ((pro_ntc3396)entidad).resultado = 2;
+            return ((DAOProtocolo_NTC3396)GenericoDAO).Terminar(entidad);
+
         }
 
         public EntityObject ConsultarXId(int id)

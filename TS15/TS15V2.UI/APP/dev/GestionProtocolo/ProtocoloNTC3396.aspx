@@ -2,6 +2,7 @@
     AutoEventWireup="true" CodeBehind="ProtocoloNTC3396.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396"
     EnableSessionState="True" %>
 
+<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,7 +101,7 @@
         <div class="box span12">
             <div class="box-header" data-original-title>
                 <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Prueba NTC 3396</h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Información de pintura</h2>
                 <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
@@ -108,46 +109,46 @@
                 </div>--%>
             </div>
             <div class="box-content">
-                <div class="row-fluid">
+                <%--div class="row-fluid">
                     <div class="span_3">
                         <label>
                             Transformador</label>
                         <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
-                </div>
+                </div--%>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
                             Color
                         </label>
-                        <asp:DropDownList ID="lbColor" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbColor" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Color Salina Ambiente 1
+                            Salina Ambiente 1*
                         </label>
-                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Color Salina Ambiente 2
+                            Salina Ambiente 2*
                         </label>
-                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Impacto
+                            Impacto*
                         </label>
-                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
@@ -161,30 +162,31 @@
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Espesor Ambiente 1
+                            Espesor Ambiente 1*
                         </label>
-                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Espesor Ambiente 2
+                            Espesor Ambiente 2*
                         </label>
-                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False" OnDataBound="iniciarComponenteLista">
+                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Adherencia</label>
+                            Adherencia*
+                        </label>
                         <asp:TextBox runat="server" ID="txtAdherencia" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
-                    <div class="span3">
+                    <asp:Panel ID="pnlBotonera" runat="server">
                         <asp:Panel ID="pnlInicial" runat="server">
                             <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
                                 OnClick="Modificar" />
@@ -197,11 +199,12 @@
                             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
                                 OnClick="Cancelar" />
                         </asp:Panel>
-                    </div>
+                    </asp:Panel>
                 </div>
             </div>
         </div>
     </div>
+    <uc3:ModalMsj ID="MsjConfirmacion" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

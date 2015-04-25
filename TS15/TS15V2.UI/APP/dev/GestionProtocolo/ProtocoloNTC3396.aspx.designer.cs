@@ -13,15 +13,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
     public partial class ProtocoloNTC3396 {
         
         /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
         /// lbColor control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,15 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtAdherencia;
         
         /// <summary>
+        /// pnlBotonera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBotonera;
+        
+        /// <summary>
         /// pnlInicial control.
         /// </summary>
         /// <remarks>
@@ -146,5 +146,14 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// MsjConfirmacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15V2.UI.APP.componentes.ModalMsj MsjConfirmacion;
     }
 }
