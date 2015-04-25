@@ -25,21 +25,6 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public void Actualizar(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Crear(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Modificar(System.Data.Objects.DataClasses.EntityObject entidad)
         {
             return ((DAOProtocolo_NTC3396)GenericoDAO).Modificar((pro_ntc3396)entidad);

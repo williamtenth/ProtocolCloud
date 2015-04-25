@@ -16,7 +16,7 @@ using TS15.BL.gestion_transformador;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public abstract class GenericoProtocolo : UIGenericoPagina, IGestionable, ITerminable
+    public abstract class GenericoProtocolo : UIGenericoPagina
     {
 
         // Datos
@@ -35,6 +35,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             CargarListas();
         }
 
+        // Métodos
         private void CargarTransformador()
         {
             if (Session[VariablesGlobales.SESSION_TRANSFORMADOR] != null)
@@ -51,7 +52,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public abstract void CargarPrueba();
 
-        // Métodos
         /// <summary>
         /// Este método carga las listas:
         /// -  los valores de resultado de pruebas.
@@ -61,7 +61,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             _listaParResultados = Parametros.ConsultarParametros("resultado");
         }
 
-        // Métodos Set & Get
+        // Métodos
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            CargarTransformador();
+        }
+
+        // Set y Get
         public List<gen_parametrica> ListaParResultados
         {
             get
@@ -73,38 +79,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             set { _listaParResultados = value; }
         }
 
-        public void Terminar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Crear(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Modificar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Guardar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Cancelar(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        // Set y Get
         public TS15.Common.Generated.pro_proceso Proceso
         {
             get { return _proceso; }
@@ -117,11 +91,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             set { _transformador = value; }
         }
 
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            CargarTransformador();
-        }
-
+        
     }//end GenericoProtocolo
 
 }//end namespace gestion_protocolo

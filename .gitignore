@@ -205,3 +205,7 @@ TS15/TS15V2.UI/TS15V2.UI.csproj
 TS15/TS15.DAL/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 TS15/TS15.BL/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 TS15/TS15V2.UI/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+TS15/TS15.Common/obj/Debug/**/*
+TS15/TS15.BL/obj/Debug/**/*
+TS15/TS15.DAL/obj/Debug/**/*
+TS15/TS15V2.UI/obj/Debug/**/*

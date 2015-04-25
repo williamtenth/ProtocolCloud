@@ -8,10 +8,11 @@ using TS15.Common.Generated;
 using TS15.BL.gestion_protocolo;
 using TS15V2.UI.APP.util;
 using util;
+using TS15V2.UI.APP.abstractUI;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class ProtocoloNTC3396 : GenericoProtocolo
+    public partial class ProtocoloNTC3396 : GenericoProtocolo, IGestionable, ITerminable
     {
         // Datos
         private List<gen_parametrica> _listaColores;
@@ -229,6 +230,16 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 lbSalina1.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
             if (sender == lbSalina2)
                 lbSalina2.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        }
+
+        public void Crear(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Eliminar(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         // Set & Get

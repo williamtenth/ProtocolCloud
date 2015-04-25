@@ -44,6 +44,7 @@
     <Compile Include="abstractBL\BOGenerico.cs" />
     <Compile Include="gestion_cliente\BOCliente.cs" />
     <Compile Include="BOParametrica.cs" />
+    <Compile Include="gestion_protocolo\BOProtocolo_NTC1465.cs" />
     <Compile Include="gestion_protocolo\BOProtocolo_NTC3396.cs" />
     <Compile Include="gestion_transformador\BOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
