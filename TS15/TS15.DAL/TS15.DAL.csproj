@@ -47,6 +47,7 @@
     <Compile Include="DAOParametrica.cs" />
     <Compile Include="gestion_cliente\DAOPedido.cs" />
     <Compile Include="gestion_protocolo\DAOProceso.cs" />
+    <Compile Include="gestion_protocolo\DAOProtocolo_NTC1465.cs" />
     <Compile Include="gestion_protocolo\DAOProtocolo_NTC3396.cs">
       <SubType>Code</SubType>
     </Compile>
