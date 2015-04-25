@@ -209,3 +209,6 @@ TS15/TS15.Common/obj/Debug/**/*
 TS15/TS15.BL/obj/Debug/**/*
 TS15/TS15.DAL/obj/Debug/**/*
 TS15/TS15V2.UI/obj/Debug/**/*
+TS15/TS15.Common/obj/Debug/TS15.Common.csproj.FileListAbsolute.txt
+TS15/TS15.DAL/obj/Debug/TS15.DAL.csproj.FileListAbsolute.txt
+TS15/TS15V2.UI/obj/Debug/TS15V2.UI.csproj.FileListAbsolute.txt
