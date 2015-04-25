@@ -21,7 +21,5 @@ namespace TS15.DAL.abstractDAL
         {
             
         }
-
-        
     }
 }

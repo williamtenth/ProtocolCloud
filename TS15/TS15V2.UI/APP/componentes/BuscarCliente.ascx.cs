@@ -21,11 +21,11 @@ namespace TS15.UI.APP.componentes
     {
         //public event EventHandler OnPatientChange;
         private cli_cliente _cliente;
-        private BOCliente _BOClienteObject;
+        private BOCliente _clienteBO;
 
         public BuscarCliente()
         {
-            _BOClienteObject = new BOCliente();
+            _clienteBO = new BOCliente();
         }
 
         private void ValidarRoles()
@@ -69,7 +69,7 @@ namespace TS15.UI.APP.componentes
             this.txtNumDoc.Text = vw_cli_usuario.numdocumento;
             this.hfIdCliente.Value = vw_cli_usuario.cliente_id.ToString();
 
-            _cliente = (cli_cliente)_BOClienteObject.ConsultarXId(vw_cli_usuario.cliente_id);
+            _cliente = (cli_cliente)_clienteBO.ConsultarXId(vw_cli_usuario.cliente_id);
 
             //CARGA EL CLIENTE EN LA SESION
             Session["Cliente"] = _cliente;
@@ -149,6 +149,12 @@ namespace TS15.UI.APP.componentes
         public string IdCliente
         {
             get { return hfIdCliente.Value; }
+        }
+
+        public void ValidationGroupControles(string validationGroup)
+        {
+            this.rfv_ddlTipDocumento.ValidationGroup = validationGroup;
+            this.rfv_txtCliente.ValidationGroup = validationGroup;
         }
     }
 }

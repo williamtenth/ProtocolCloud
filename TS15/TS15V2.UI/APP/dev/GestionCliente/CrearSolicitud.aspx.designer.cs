@@ -40,6 +40,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoSolicitud;
         
         /// <summary>
+        /// rfv_ddlTipoSolicitud control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlTipoSolicitud;
+        
+        /// <summary>
         /// pnlCantidad control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
+        
+        /// <summary>
+        /// rfv_txtCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtCantidad;
         
         /// <summary>
         /// pnlCapacidad control.
@@ -76,6 +94,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.DropDownList ddlCapacidad;
         
         /// <summary>
+        /// rfv_ddlCapacidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlCapacidad;
+        
+        /// <summary>
         /// pnlVolEntrada control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.TextBox txtVolEntrada;
         
         /// <summary>
+        /// rfv_txtVolEntrada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVolEntrada;
+        
+        /// <summary>
         /// pnlVolSalida control.
         /// </summary>
         /// <remarks>
@@ -110,6 +146,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVolSalida;
+        
+        /// <summary>
+        /// rfv_txtVolSalida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVolSalida;
         
         /// <summary>
         /// btnCrearSolicitud control.

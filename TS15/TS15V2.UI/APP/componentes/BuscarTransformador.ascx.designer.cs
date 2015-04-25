@@ -22,6 +22,15 @@ namespace TS15V2.UI.APP.componentes {
         protected global::System.Web.UI.WebControls.DropDownList ddlFabricante;
         
         /// <summary>
+        /// rfv_ddlFabricante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlFabricante;
+        
+        /// <summary>
         /// txtNumSerie control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TS15V2.UI.APP.componentes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
+        
+        /// <summary>
+        /// rfv_txtNumSerie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtNumSerie;
         
         /// <summary>
         /// UpdatePanel2 control.

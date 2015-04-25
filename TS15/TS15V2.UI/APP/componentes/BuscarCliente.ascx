@@ -22,6 +22,8 @@
                         <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound"
                             Enabled="false">
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipDocumento" ControlToValidate="ddlTipDocumento"
+                            ErrorMessage="*" InitialValue="-1" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="control-group">
@@ -31,6 +33,8 @@
                     <div class="controls">
                         <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" MaxLength="30"
                             Enabled="false" ReadOnly="true"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumDoc" ControlToValidate="txtNumDoc"
+                            ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <asp:Panel runat="server" ID="pnlCliente" CssClass="control-group" Visible="false">
@@ -40,13 +44,16 @@
                     <div class="controls">
                         <asp:TextBox runat="server" ID="txtCliente" CssClass="form-control" MaxLength="30"
                             ReadOnly="true"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtCliente" ControlToValidate="txtCliente"
+                            ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:HiddenField runat="server" ID="hfIdCliente" />
                     </div>
                 </asp:Panel>
                 <div class="form-actions">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                            <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click" />
+                            <asp:Button runat="server" ID="btnBuscar" class="btn btn-success" Text="Buscar" OnClick="btnBuscar_Click"
+                                CausesValidation="false" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>

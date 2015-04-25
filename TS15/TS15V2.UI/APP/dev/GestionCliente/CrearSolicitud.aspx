@@ -104,7 +104,7 @@
         <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
     </div>
     <div class="row-fluid sortable ui-sortable">
-        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
+        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" Visible="false" />
     </div>
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
@@ -119,13 +119,17 @@
                                 <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
                                     OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoSolicitud" ControlToValidate="ddlTipoSolicitud"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group" Visible="false">
                             <label class="control-label" for="txtCantidad">
                                 Cantidad:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="1"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtCantidad" ControlToValidate="txtCantidad"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
                             </div>
                         </asp:Panel>
                         <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
@@ -134,6 +138,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </asp:Panel>
                         <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
@@ -141,6 +147,8 @@
                                 Voltaje de Entrada:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
                             </div>
                         </asp:Panel>
                         <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
@@ -148,11 +156,13 @@
                                 Voltaje de Salida:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
                             </div>
                         </asp:Panel>
                         <div class="form-actions">
                             <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
-                                OnClick="btnCrearSolicitud_Click" />
+                                OnClick="btnCrearSolicitud_Click" ValidationGroup="vgCrearSolicitud" />
                             <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
                                 OnClick="btnCancelar_Click" />
                         </div>

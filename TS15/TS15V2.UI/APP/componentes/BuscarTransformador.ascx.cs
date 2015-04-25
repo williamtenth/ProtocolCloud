@@ -107,11 +107,16 @@ namespace TS15V2.UI.APP.componentes
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string idCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
-            string nombreCliente = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
+            string idFabricante = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
+            string numeroSerie = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
+            string fabricanteId = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[2].ToString();
             int idTransformador = Convert.ToInt32(gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[3].ToString());
 
+
             Session[VariablesGlobales.SESSION_TRANSFORMADOR] = _BOTransformadorObject.ConsultarXId(idTransformador);
+
+            ddlFabricante.SelectedValue = fabricanteId;
+            txtNumSerie.Text = numeroSerie;
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -123,6 +128,12 @@ namespace TS15V2.UI.APP.componentes
                 e.Row.ToolTip = "Click para seleccionar";
                 e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(gvTransformadores, "Select$" + e.Row.RowIndex);
             }
+        }
+
+        public void ValidationGroupControles(string validationGroup)
+        {
+            this.rfv_ddlFabricante.ValidationGroup = validationGroup;
+            this.rfv_txtNumSerie.ValidationGroup = validationGroup;
         }
     }
 }

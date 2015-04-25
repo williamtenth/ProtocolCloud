@@ -22,6 +22,8 @@
                         <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound"
                             Enabled="false">
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlFabricante" ControlToValidate="ddlFabricante"
+                            ErrorMessage="*" ForeColor="red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="control-group">
@@ -31,6 +33,8 @@
                     <div class="controls">
                         <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="30"
                             Enabled="false" ReadOnly="true"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumSerie" ControlToValidate="txtNumSerie"
+                            ErrorMessage="*" ForeColor="red"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="form-actions">
