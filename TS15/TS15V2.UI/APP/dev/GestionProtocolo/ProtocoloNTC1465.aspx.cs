@@ -16,24 +16,25 @@ using TS15.BL.gestion_protocolo;
 using TS15.Common.Generated;
 using TS15V2.UI.APP.abstractUI;
 using TS15V2.UI.APP.util;
+using util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
     public partial class ProtocoloNTC1465 : GenericoProtocolo, IGestionable, ITerminable
     {
-       
+
         // Datos
         private pro_ntc1465 _prueba;
-        private BOProtocolo_NTC1465 _BOntc1465bject;
-        private List<gen_parametrica> listTipAislante;
-        private List<gen_parametrica> listTipAislante;
-        private List<gen_parametrica> listTipAislante;
-
+        private BOProtocolo_NTC1465 _BOntc1465Object;
+        private List<gen_parametrica> _listTipAislante;
+        private List<gen_parametrica> _listReferencia;
+        private List<gen_parametrica> _listMétodo;
+                
         // Constructores
 
         public ProtocoloNTC1465()
         {
-            _BOntc1465bject = new BOProtocolo_NTC1465();
+            _BOntc1465Object = new BOProtocolo_NTC1465();
         }
 
         // Métodos
@@ -53,6 +54,30 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void CargarListas()
         {
+            // carga lista tipo aislante
+            _listTipAislante = Parametros.ConsultarParametros("tipaislante");
+            this.lbLiquidoAislante.DataSource = _listTipAislante;
+            this.lbLiquidoAislante.DataValueField = "id";
+            this.lbLiquidoAislante.DataTextField = "valor";
+            this.lbLiquidoAislante.DataBind();
+            // carga lista tipo referencia aislante
+            _listReferencia = Parametros.ConsultarParametros("refaislante");
+            this.lbReferencia.DataSource = _listReferencia;
+            this.lbReferencia.DataValueField = "id";
+            this.lbReferencia.DataTextField = "valor";
+            this.lbReferencia.DataBind();
+            // carga lista método aislante
+            _listMétodo = Parametros.ConsultarParametros("metaislante");
+            this.lbMetodo.DataSource = _listMétodo;
+            this.lbMetodo.DataValueField = "id";
+            this.lbMetodo.DataTextField = "valor";
+            this.lbMetodo.DataBind();
+            // Carga lista de resultados
+            this.lbResultado.DataSource = ListaParResultados;
+            this.lbResultado.DataValueField = "id";
+            this.lbResultado.DataTextField = "valor";
+            this.lbResultado.DataBind();
+            this.lbResultado.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
 
         }
 
@@ -69,7 +94,32 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Terminar(object sender, EventArgs e)
         {
+            if (Session[VariablesGlobales.SESION_PRUEBA_NTC1465] != null)
+                _prueba = (pro_ntc1465)Session[VariablesGlobales.SESION_PRUEBA_NTC1465];
 
+            if (ValidarCampos())
+            {
+                if (_prueba != null)
+                {
+                    ActualizarEntidad();
+
+                    if (_BOntc1465Object.Terminar(_prueba))
+                    {
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+
+                        pnlBotonera.Visible = false;
+                        EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Esta prueba se ha terminado, solo se puede consultar nuevamente");
+                    }
+                    else
+                    {
+                        EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar prueba");
+                    }
+                }
+            }
+            else
+            {
+                EnviarAModalMsj(MsjConfirmacion, "Error", "No se puede guardar campos vacíos");
+            }
         }
 
         /// 
@@ -87,7 +137,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (Transformador != null)
             {
-                _prueba = (pro_ntc1465)_BOntc1465bject.ObtenerUltimaPrueba(Transformador);
+                _prueba = (pro_ntc1465)_BOntc1465Object.ObtenerUltimaPrueba(Transformador);
                 CargarEntidad();
             }
             else
@@ -106,9 +156,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 this.txtRuptura.Text = Convert.ToString(_prueba.ruptura);
                 this.lbMetodo.SelectedValue = Convert.ToString(_prueba.metaislante);
                 this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
-                
+
                 Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
             }
+        }
+
+        private void ActualizarEntidad()
+        {
+            _prueba.tipaislante = UtilNumeros.StringToBytes(lbLiquidoAislante.SelectedValue);
+            _prueba.refaislante = UtilNumeros.StringToBytes(lbReferencia.SelectedValue);
+            _prueba.ruptura = UtilNumeros.StringToDecimal(txtRuptura.Text);
+            _prueba.metaislante = UtilNumeros.StringToBytes(lbMetodo.SelectedValue);
+            _prueba.resultado = UtilNumeros.StringToBytes(lbResultado.SelectedValue);
         }
 
         /// 
@@ -132,7 +191,32 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Guardar(object sender, EventArgs e)
         {
+            if (Session[VariablesGlobales.SESION_PRUEBA_NTC1465] != null)
+                _prueba = (pro_ntc1465)Session[VariablesGlobales.SESION_PRUEBA_NTC1465];
 
+            if (ValidarCampos())
+            {
+                if (_prueba != null)
+                {
+                    ActualizarEntidad();
+
+                    if (_BOntc1465Object.Modificar(_prueba))
+                    {
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+
+                        ActivarControles(false);
+                        EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha modificado exitosamente la prueba");
+                    }
+                    else
+                    {
+                        EnviarAModalMsj(MsjConfirmacion, "Error", "Error al modificar prueba");
+                    }
+                }
+            }
+            else
+            {
+                EnviarAModalMsj(MsjConfirmacion, "Error", "No se puede guardar campos vacíos");
+            }
         }
 
         /// 
@@ -148,7 +232,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public bool ValidarCampos()
         {
-
+            if (this.lbResultado.SelectedValue != "-1"
+                && this.txtRuptura.Text != null && !this.txtRuptura.Text.Equals(""))
+                return true;
             return false;
         }
     }
