@@ -15,6 +15,7 @@ using System.Web.UI.WebControls;
 using TS15.BL.gestion_protocolo;
 using TS15.Common.Generated;
 using TS15V2.UI.APP.abstractUI;
+using TS15V2.UI.APP.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
@@ -84,7 +85,30 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public override void CargarPrueba()
         {
+            if (Transformador != null)
+            {
+                _prueba = (pro_ntc1465)_BOntc1465bject.ObtenerUltimaPrueba(Transformador);
+                CargarEntidad();
+            }
+            else
+            {
+                _prueba = new pro_ntc1465();
+                _prueba.fecha = new DateTime();
+            }
+        }
 
+        public void CargarEntidad()
+        {
+            if (_prueba != null)
+            {
+                this.lbLiquidoAislante.SelectedValue = Convert.ToString(_prueba.tipaislante);
+                this.lbReferencia.SelectedValue = Convert.ToString(_prueba.refaislante);
+                this.txtRuptura.Text = Convert.ToString(_prueba.ruptura);
+                this.lbMetodo.SelectedValue = Convert.ToString(_prueba.metaislante);
+                this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
+                
+                Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+            }
         }
 
         /// 
@@ -92,14 +116,15 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Modificar(object sender, EventArgs e)
         {
-
+            ActivarControles(true);
         }
 
         /// 
         /// <param name="activar"></param>
         public void ActivarControles(bool activar)
         {
-
+            this.txtRuptura.Enabled = activar;
+            this.lbResultado.Enabled = activar;
         }
 
         /// 
@@ -115,7 +140,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Cancelar(object sender, EventArgs e)
         {
-
+            ActivarControles(false);
         }
 
         /// <summary>

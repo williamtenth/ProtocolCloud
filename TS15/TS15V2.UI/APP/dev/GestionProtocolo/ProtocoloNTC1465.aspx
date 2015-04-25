@@ -3,6 +3,7 @@
     EnableSessionState="True" %>
 
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -101,7 +102,7 @@
         <div class="box span12">
             <div class="box-header" data-original-title>
                 <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Información de pintura</h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Información Aceite</h2>
                 <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
@@ -119,72 +120,52 @@
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Color
+                            Liquido Aislante*
                         </label>
-                        <asp:DropDownList ID="lbColor" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Salina Ambiente 1*
+                            Referencia*
                         </label>
-                        <asp:DropDownList ID="lbSalina1" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Salina Ambiente 2*
+                            Ruptura*
                         </label>
-                        <asp:DropDownList ID="lbSalina2" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Impacto*
-                        </label>
-                        <asp:DropDownList ID="lbImpacto" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Espesor</label>
-                        <asp:TextBox runat="server" ID="txtEspesor" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtRuptura" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtRuptura_FilteredTextBoxExtender" 
+                            runat="server" TargetControlID="txtRuptura" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                        
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Espesor Ambiente 1*
+                            Método*
                         </label>
-                        <asp:DropDownList ID="lbEspesor1" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Espesor Ambiente 2*
-                        </label>
-                        <asp:DropDownList ID="lbEspesor2" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Adherencia*
+                            Resultado*
                         </label>
-                        <asp:TextBox runat="server" ID="txtAdherencia" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
+                        <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                        &nbsp;</div>
                 </div>
+                                
                 <div class="row-fluid">
                     <asp:Panel ID="pnlBotonera" runat="server">
                         <asp:Panel ID="pnlInicial" runat="server">

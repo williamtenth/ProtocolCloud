@@ -153,6 +153,7 @@
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
     <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\dev\GestionUsuarios\CrearUsuario.aspx" />
@@ -337,6 +338,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\GenericoProtocolo.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.aspx.cs">
+      <DependentUpon>ProtocoloNTC1465.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.aspx.designer.cs">
+      <DependentUpon>ProtocoloNTC1465.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.cs">
       <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>

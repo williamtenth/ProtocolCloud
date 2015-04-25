@@ -14,6 +14,8 @@ namespace TS15V2.UI.APP.util
         public const String SESION_CLIENTE = "SESION_CLIENTE";
         public const String SESION_PROCESO_PRUEBA = "SESION_PROCESO_PRUEBA";
         public const String SESION_PRUEBA_NTC3396 = "SESION_PRUEBA_NTC3396";
+        public const String SESION_PRUEBA_NTC1465 = "SESION_PRUEBA_NTC1465";
+
 
 
     }//end VariableGlobales

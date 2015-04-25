@@ -13,76 +13,58 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
     public partial class ProtocoloNTC1465 {
         
         /// <summary>
-        /// lbColor control.
+        /// lbLiquidoAislante control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbColor;
+        protected global::System.Web.UI.WebControls.DropDownList lbLiquidoAislante;
         
         /// <summary>
-        /// lbSalina1 control.
+        /// lbReferencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbSalina1;
+        protected global::System.Web.UI.WebControls.DropDownList lbReferencia;
         
         /// <summary>
-        /// lbSalina2 control.
+        /// txtRuptura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbSalina2;
+        protected global::System.Web.UI.WebControls.TextBox txtRuptura;
         
         /// <summary>
-        /// lbImpacto control.
+        /// txtRuptura_FilteredTextBoxExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbImpacto;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtRuptura_FilteredTextBoxExtender;
         
         /// <summary>
-        /// txtEspesor control.
+        /// lbMetodo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEspesor;
+        protected global::System.Web.UI.WebControls.DropDownList lbMetodo;
         
         /// <summary>
-        /// lbEspesor1 control.
+        /// lbResultado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbEspesor1;
-        
-        /// <summary>
-        /// lbEspesor2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lbEspesor2;
-        
-        /// <summary>
-        /// txtAdherencia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAdherencia;
+        protected global::System.Web.UI.WebControls.DropDownList lbResultado;
         
         /// <summary>
         /// pnlBotonera control.
