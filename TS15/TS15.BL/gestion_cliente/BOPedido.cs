@@ -26,7 +26,7 @@ namespace TS15.BL.gestion_cliente
             _transformadorBO = new BOTransformador();
         }
 
-        public bool CrearProcesoFabricacion(cli_pedido pedidoObject)
+        public bool CrearPedidoSuministro(cli_pedido pedidoObject)
         {
             bool bitProceso = true;
 
@@ -89,6 +89,21 @@ namespace TS15.BL.gestion_cliente
         public List<EntityObject> Consultar()
         {
             return ((DAOPedido)GenericoDAO).Consultar().Cast<EntityObject>().ToList();
+        }
+
+        public void CrearProcesoPruebasPreeliminares(cli_pedido pedidoObject)
+        {
+            //CREA EL PEDIDO
+            pedidoObject.consecutivo = ObtenerConsecutivo();
+            Crear(pedidoObject);
+
+            //INGRESA AL PROCESO DE PRUEBAS
+            pro_proceso procesoObject = new pro_proceso();
+            procesoObject.pedido_id = pedidoObject.id;
+            procesoObject.tipprocesop = 1; //Proceso de pruebas preliminares.
+            procesoObject.fecha = DateTime.Now;
+            procesoObject.estado = 1; //Estado Activo
+            _procesoBO.Crear(procesoObject);
         }
     }
 }

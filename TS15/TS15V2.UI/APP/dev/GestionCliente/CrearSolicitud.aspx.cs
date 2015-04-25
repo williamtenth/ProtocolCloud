@@ -13,16 +13,19 @@ using TS15.BL.gestion_cliente;
 using TS15V2.UI.APP.util;
 using TS15V2.UI.APP.abstractUI;
 using util;
+using TS15.BL.gestion_transformador;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
     public partial class CrearSolicitud : UIGenericoPagina
     {
         private BOPedido _pedidoBO;
+        private BOTransformador _transformadorBO;
 
         public CrearSolicitud()
         {
             _pedidoBO = new BOPedido();
+            _transformadorBO = new BOTransformador();
         }
 
         protected void OnPatientChange(object sender, EventArgs e)
@@ -35,7 +38,10 @@ namespace TS15V2.UI.APP.dev.GestionCliente
         {
             //ucBusquedaCliente.OnPatientChange += new EventHandler(OnPatientChange);
             if (!Page.IsPostBack)
+            {
                 CargarListas();
+                ucBusquedaCliente.ValidationGroupControles("vgCrearSolicitud", true);
+            }
         }
 
         private void CargarTipoSolicitud()
@@ -71,13 +77,24 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             if (ddlTipoSolicitud.SelectedValue == "1")
             {
                 ucBusquedaTransformador.Visible = true;
+                ucBusquedaCliente.ValidationGroupControles(string.Empty, false);
+                ucBusquedaTransformador.ValidationGroupControles("vgCrearSolicitud", true);
                 OcultarControlesSuministro();
             }
 
-            if (ddlTipoSolicitud.SelectedValue == "2")
+            else if (ddlTipoSolicitud.SelectedValue == "2")
             {
                 ucBusquedaTransformador.Visible = false;
+                ucBusquedaCliente.ValidationGroupControles("vgCrearSolicitud", true);
+                ucBusquedaTransformador.ValidationGroupControles(string.Empty, false);
                 MostrarControlesSuministro();
+            }
+
+            else
+            {
+                ucBusquedaTransformador.Visible = false;
+                ucBusquedaCliente.ValidationGroupControles("vgCrearSolicitud", true);
+                ucBusquedaTransformador.ValidationGroupControles(string.Empty, false);
             }
         }
 
@@ -119,10 +136,45 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         protected void btnCrearSolicitud_Click(object sender, EventArgs e)
         {
-            CrearProcesoFabricacion();
+            if (ddlTipoSolicitud.SelectedValue == "1")
+                CrearProcesoPruebasPreeliminares();
+
+            else if (ddlTipoSolicitud.SelectedValue == "2")
+                CrearPedidoSuministro();
         }
 
-        private void CrearProcesoFabricacion()
+        private void CrearProcesoPruebasPreeliminares()
+        {
+            string clienteTransformador = ucBusquedaCliente.IdCliente + ucBusquedaTransformador.IdTransformador;
+            if (!string.IsNullOrEmpty(clienteTransformador))
+            {
+                string idTransformador = ucBusquedaTransformador.IdTransformador;
+                if (!_transformadorBO.EsAsignadoCliente(idTransformador))
+                {
+                    if (!_transformadorBO.EsAsignadoSolicitud(idTransformador))
+                    {
+                        cli_pedido pedidoObject = new cli_pedido();
+                        pedidoObject.fechasolicitud = DateTime.Now;
+                        pedidoObject.tipsolicitud = UtilNumeros.StringToBytes(this.ddlTipoSolicitud.SelectedValue);
+                        pedidoObject.tiptransformador = 1; //TIPO DE TRANSFORMADOR 'DISTRIBUCION'
+                        pedidoObject.aprobado = true;
+                        pedidoObject.estado = 1; //ESTADO ACTIVO DEL PEDIDO
+                        pedidoObject.cliente_id = Convert.ToInt32(ucBusquedaCliente.IdCliente);
+                        pedidoObject.transformador_id = Convert.ToInt32(ucBusquedaTransformador.IdTransformador);
+
+                        _pedidoBO.CrearProcesoPruebasPreeliminares(pedidoObject);
+                    }
+                    else
+                        EnviarAModalMsj(ModalMsj1, "Error", "No se puede seleccionar transformador, tiene solicitud activa");
+                }
+                else
+                    EnviarAModalMsj(ModalMsj1, "Error", "No se puede seleccionar transformador, ya está asignado a otro cliente, por favor ir a la asignación de transformadores y retirar transformador");
+            }
+            else
+                EnviarAModalMsj(ModalMsj1, "Error", "Por favor seleccione el cliente y/o transformador");
+        }
+
+        private void CrearPedidoSuministro()
         {
             cli_pedido pedidoObject = new cli_pedido();
             pedidoObject.fechasolicitud = DateTime.Now;
@@ -134,8 +186,9 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             pedidoObject.volsalida = UtilNumeros.StringToBytes(this.txtVolSalida.Text.Trim());
             pedidoObject.aprobado = true;
             pedidoObject.estado = 1; //ESTADO ACTIVO DEL PEDIDO
+            pedidoObject.cliente_id = Convert.ToInt32(ucBusquedaCliente.IdCliente);
 
-            _pedidoBO.CrearProcesoFabricacion(pedidoObject);
+            _pedidoBO.CrearPedidoSuministro(pedidoObject);
         }
 
         //protected void btnBuscar_Click(object sender, EventArgs e)

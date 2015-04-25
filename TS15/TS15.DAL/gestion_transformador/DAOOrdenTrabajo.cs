@@ -27,5 +27,10 @@ namespace TS15.DAL.gestion_transformador
 
             return Convert.ToInt32(a) + 1;
         }
+
+        public List<EntityObject> Consultar()
+        {
+            return SingletonDatos.Contexto.tfr_ordentrabajo.ToList().Cast<EntityObject>().ToList();
+        }
     }
 }

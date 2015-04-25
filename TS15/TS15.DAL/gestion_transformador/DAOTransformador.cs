@@ -96,9 +96,31 @@ namespace TS15.DAL.gestion_transformador
             return SingletonDatos.Contexto.vw_transformador_fabricante.Where(p => p.id == idCliente).ToList();
         }
 
-        public List<vw_transformador_fabricante> ConsultarTransformadoresFabricante()
+        public List<tfr_transformador> ConsultarTransformadoresFabricante()
         {
-            return SingletonDatos.Contexto.vw_transformador_fabricante.ToList();
+            return SingletonDatos.Contexto.tfr_transformador.ToList();
+        }
+
+        public bool ValidarAsignacionCliente(int pIdTransformador)
+        {
+            bool esAsignado = false;
+            int contador = SingletonDatos.Contexto.tfr_transf_has_cliente.Where(p => p.transformador_id == pIdTransformador).ToList().Count;
+
+            if (contador > 0)
+                esAsignado = true;
+
+            return esAsignado;
+        }
+
+        public bool ValidarAsignacionSolicitud(int idTransformador)
+        {
+            bool esAsignado = false;
+            int contador = SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == idTransformador && p.estado == 1).ToList().Count;
+
+            if ( contador> 0)
+                esAsignado = true;
+
+            return esAsignado;
         }
     }
 }

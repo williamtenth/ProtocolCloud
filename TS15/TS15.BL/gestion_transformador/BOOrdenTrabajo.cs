@@ -38,7 +38,7 @@ namespace TS15.BL.gestion_transformador
 
         public List<EntityObject> Consultar()
         {
-            throw new NotImplementedException();
+            return ((DAOOrdenTrabajo)GenericoDAO).Consultar();
         }
 
         internal int ObtenerConsecutivo()

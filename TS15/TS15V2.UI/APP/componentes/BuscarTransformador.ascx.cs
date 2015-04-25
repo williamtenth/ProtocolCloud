@@ -18,7 +18,7 @@ namespace TS15V2.UI.APP.componentes
     public partial class BuscarTransformador : UIGenericoComponente
     {
         private cli_cliente _cliente;
-        private List<vw_transformador_fabricante> lstTransformadoresFabricante;
+        private List<tfr_transformador> lstTransformadoresFabricante;
         private BOTransformador _BOTransformadorObject;
         private BOCliente _BOClienteObject;
 
@@ -89,34 +89,34 @@ namespace TS15V2.UI.APP.componentes
 
         protected void btnBuscarTranformador_Click(object sender, EventArgs e)
         {
-            if (_cliente != null)
-            {
-                lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id);
-                gvTransformadores.DataSource = lstTransformadoresFabricante;
-                gvTransformadores.DataBind();
-                mpeTransformador.Show();
-            }
-            else
-            {
+            //if (_cliente != null)
+            //{
+            //    lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresCliente(_cliente.id);
+            //    gvTransformadores.DataSource = lstTransformadoresFabricante;
+            //    gvTransformadores.DataBind();
+            //    mpeTransformador.Show();
+            //}
+            //else
+            //{
                 lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresFabricante();
                 gvTransformadores.DataSource = lstTransformadoresFabricante;
                 gvTransformadores.DataBind();
                 mpeTransformador.Show();
-            }
+            //}
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string idFabricante = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString();
+            int idTransformador = Convert.ToInt32(gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[0].ToString());
             string numeroSerie = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
-            string fabricanteId = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[2].ToString();
-            int idTransformador = Convert.ToInt32(gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[3].ToString());
+            string idFabricante = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[2].ToString();
 
 
             Session[VariablesGlobales.SESSION_TRANSFORMADOR] = _BOTransformadorObject.ConsultarXId(idTransformador);
 
-            ddlFabricante.SelectedValue = fabricanteId;
+            ddlFabricante.SelectedValue = idFabricante;
             txtNumSerie.Text = numeroSerie;
+            hfIdTransformador.Value = idTransformador.ToString();
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -130,10 +130,18 @@ namespace TS15V2.UI.APP.componentes
             }
         }
 
-        public void ValidationGroupControles(string validationGroup)
+        public void ValidationGroupControles(string validationGroup, bool enabled)
         {
             this.rfv_ddlFabricante.ValidationGroup = validationGroup;
             this.rfv_txtNumSerie.ValidationGroup = validationGroup;
+
+            this.rfv_ddlFabricante.Enabled = enabled;
+            this.rfv_txtNumSerie.Enabled = enabled;
+        }
+
+        public string IdTransformador
+        {
+            get { return hfIdTransformador.Value; }
         }
     }
 }

@@ -151,10 +151,16 @@ namespace TS15.UI.APP.componentes
             get { return hfIdCliente.Value; }
         }
 
-        public void ValidationGroupControles(string validationGroup)
+        public void ValidationGroupControles(string validationGroup, bool enabled)
         {
             this.rfv_ddlTipDocumento.ValidationGroup = validationGroup;
             this.rfv_txtCliente.ValidationGroup = validationGroup;
+            this.rfv_txtNumDoc.ValidationGroup = validationGroup;
+
+            this.rfv_ddlTipDocumento.Enabled = enabled;
+            this.rfv_txtCliente.Enabled = enabled;
+            this.rfv_txtNumDoc.Enabled = enabled;
+
         }
     }
 }

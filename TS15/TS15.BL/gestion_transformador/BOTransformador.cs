@@ -98,9 +98,21 @@ namespace TS15.BL.gestion_transformador
             throw new NotImplementedException();
         }
 
-        public List<vw_transformador_fabricante> ConsultarTransformadoresFabricante()
+        public List<tfr_transformador> ConsultarTransformadoresFabricante()
         {
             return ((DAOTransformador)GenericoDAO).ConsultarTransformadoresFabricante();
+        }
+
+        public bool EsAsignadoCliente(string pIdTransformador)
+        {
+            int idTransformador = Convert.ToInt32(pIdTransformador);
+            return ((DAOTransformador)GenericoDAO).ValidarAsignacionCliente(idTransformador);
+        }
+
+        public bool EsAsignadoSolicitud(string pIdTransformador)
+        {
+            int idTransformador = Convert.ToInt32(pIdTransformador);
+            return ((DAOTransformador)GenericoDAO).ValidarAsignacionSolicitud(idTransformador);
         }
     }
 }

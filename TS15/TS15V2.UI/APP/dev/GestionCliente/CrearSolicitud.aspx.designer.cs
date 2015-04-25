@@ -173,5 +173,14 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// ModalMsj1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15V2.UI.APP.componentes.ModalMsj ModalMsj1;
     }
 }

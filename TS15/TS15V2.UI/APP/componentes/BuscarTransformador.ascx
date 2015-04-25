@@ -23,7 +23,7 @@
                             Enabled="false">
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator runat="server" ID="rfv_ddlFabricante" ControlToValidate="ddlFabricante"
-                            ErrorMessage="*" ForeColor="red"></asp:RequiredFieldValidator>
+                            ErrorMessage="*" ForeColor="red" InitialValue="-1"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="control-group">
@@ -35,6 +35,7 @@
                             Enabled="false" ReadOnly="true"></asp:TextBox>
                         <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumSerie" ControlToValidate="txtNumSerie"
                             ErrorMessage="*" ForeColor="red"></asp:RequiredFieldValidator>
+                        <asp:HiddenField runat="server" ID="hfIdTransformador" />
                     </div>
                 </div>
                 <div class="form-actions">
@@ -69,7 +70,7 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true"
-                                        DataKeyNames="id,numserie,fabricante_id,IdTransformador" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
+                                        DataKeyNames="id,numserie,fabricante_id" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
                                         OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="numserie" HeaderText="Número de Serie">

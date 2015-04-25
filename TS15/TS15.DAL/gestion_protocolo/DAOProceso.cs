@@ -15,7 +15,7 @@ namespace TS15.DAL.gestion_protocolo
         {
             pro_proceso procesoObject = entidad as pro_proceso;
             SingletonDatos.Contexto.AddTopro_proceso(procesoObject);
-
+            SingletonDatos.Contexto.SaveChanges();
             return true;
         }
     }

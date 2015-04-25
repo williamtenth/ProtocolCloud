@@ -6,6 +6,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
     TagPrefix="uc2" %>
+<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -161,16 +162,21 @@
                             </div>
                         </asp:Panel>
                         <div class="form-actions">
-                            <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
-                                OnClick="btnCrearSolicitud_Click" ValidationGroup="vgCrearSolicitud" />
-                            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
-                                OnClick="btnCancelar_Click" />
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate>
+                                    <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
+                                        OnClick="btnCrearSolicitud_Click" ValidationGroup="vgCrearSolicitud" />
+                                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
+                                        OnClick="btnCancelar_Click" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
+    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>
