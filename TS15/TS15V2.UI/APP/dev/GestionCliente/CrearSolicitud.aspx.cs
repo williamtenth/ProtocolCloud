@@ -12,11 +12,19 @@ using TS15.BL;
 using TS15.BL.gestion_cliente;
 using TS15V2.UI.APP.util;
 using TS15V2.UI.APP.abstractUI;
+using util;
 
 namespace TS15V2.UI.APP.dev.GestionCliente
 {
     public partial class CrearSolicitud : UIGenericoPagina
     {
+        private BOPedido _pedidoBO;
+
+        public CrearSolicitud()
+        {
+            _pedidoBO = new BOPedido();
+        }
+
         protected void OnPatientChange(object sender, EventArgs e)
         {
             //if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente))
@@ -61,10 +69,16 @@ namespace TS15V2.UI.APP.dev.GestionCliente
         protected void ddlTipoSolicitud_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlTipoSolicitud.SelectedValue == "1")
+            {
+                ucBusquedaTransformador.Visible = true;
                 OcultarControlesSuministro();
+            }
 
             if (ddlTipoSolicitud.SelectedValue == "2")
+            {
+                ucBusquedaTransformador.Visible = false;
                 MostrarControlesSuministro();
+            }
         }
 
         private void MostrarControlesSuministro()
@@ -105,7 +119,23 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         protected void btnCrearSolicitud_Click(object sender, EventArgs e)
         {
+            CrearProcesoFabricacion();
+        }
 
+        private void CrearProcesoFabricacion()
+        {
+            cli_pedido pedidoObject = new cli_pedido();
+            pedidoObject.fechasolicitud = DateTime.Now;
+            pedidoObject.tipsolicitud = UtilNumeros.StringToBytes(this.ddlTipoSolicitud.SelectedValue);
+            pedidoObject.cantidad = Convert.ToInt32(this.txtCantidad.Text.Trim());
+            pedidoObject.tiptransformador = 1; //TIPO DE TRANSFORMADOR 'DISTRIBUCION'
+            pedidoObject.capacidad = UtilNumeros.StringToBytes(this.ddlCapacidad.SelectedValue);
+            pedidoObject.volentrada = UtilNumeros.StringToBytes(this.txtVolEntrada.Text.Trim());
+            pedidoObject.volsalida = UtilNumeros.StringToBytes(this.txtVolSalida.Text.Trim());
+            pedidoObject.aprobado = true;
+            pedidoObject.estado = 1; //ESTADO ACTIVO DEL PEDIDO
+
+            _pedidoBO.CrearProcesoFabricacion(pedidoObject);
         }
 
         //protected void btnBuscar_Click(object sender, EventArgs e)

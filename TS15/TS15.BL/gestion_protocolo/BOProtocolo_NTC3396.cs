@@ -20,37 +20,22 @@ namespace TS15.BL.gestion_protocolo
 
 
         // Métodos
-        public List<System.Data.Objects.DataClasses.EntityObject> Consultar()
+        public List<EntityObject> Consultar()
         {
             throw new NotImplementedException();
         }
 
-        public void Actualizar(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Crear(System.Data.Objects.DataClasses.EntityObject entidad, Common.Generated.dbTS15Entities contexto, Common.RawObjects.RawError error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Modificar(System.Data.Objects.DataClasses.EntityObject entidad)
+        public bool Modificar(EntityObject entidad)
         {
             return ((DAOProtocolo_NTC3396)GenericoDAO).Modificar((pro_ntc3396)entidad);
         }
 
-        public bool Eliminar(System.Data.Objects.DataClasses.EntityObject entidad)
+        public bool Eliminar(EntityObject entidad)
         {
             throw new NotImplementedException();
         }
 
-        public bool Crear(System.Data.Objects.DataClasses.EntityObject entidad)
+        public bool Crear(EntityObject entidad)
         {
             throw new NotImplementedException();
         }

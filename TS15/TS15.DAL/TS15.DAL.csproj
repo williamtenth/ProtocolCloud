@@ -45,9 +45,12 @@
     <Compile Include="abstractDAL\DAOSingleton.cs" />
     <Compile Include="gestion_cliente\DAOCliente.cs" />
     <Compile Include="DAOParametrica.cs" />
+    <Compile Include="gestion_cliente\DAOPedido.cs" />
+    <Compile Include="gestion_protocolo\DAOProceso.cs" />
     <Compile Include="gestion_protocolo\DAOProtocolo_NTC3396.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="gestion_transformador\DAOOrdenTrabajo.cs" />
     <Compile Include="gestion_transformador\DAOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,7 +61,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Gestion Protocolo\" />
     <Folder Include="gestion_usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

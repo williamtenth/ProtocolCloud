@@ -22,6 +22,15 @@ namespace TS15.UI.APP.componentes {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipDocumento;
         
         /// <summary>
+        /// rfv_ddlTipDocumento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlTipDocumento;
+        
+        /// <summary>
         /// txtNumDoc control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TS15.UI.APP.componentes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumDoc;
+        
+        /// <summary>
+        /// rfv_txtNumDoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtNumDoc;
         
         /// <summary>
         /// pnlCliente control.
@@ -47,6 +65,15 @@ namespace TS15.UI.APP.componentes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCliente;
+        
+        /// <summary>
+        /// rfv_txtCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtCliente;
         
         /// <summary>
         /// hfIdCliente control.
