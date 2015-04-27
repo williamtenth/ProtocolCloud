@@ -6,70 +6,100 @@
 //  Original author: william_cuadros
 ///////////////////////////////////////////////////////////
 
-
-
-
 using TS15.Common.Generated;
 using TS15.Common.IService;
 using TS15.DAL.abstractDAL;
 using System.Data.Objects.DataClasses;
 using System.Collections.Generic;
-namespace TS15.DAL.gestion_protocolo {
-	public class DAOProtocoloNTC1465 : DAOGenerico, IGestionable, IProbable {
+using System.Linq;
+using System;
 
-        public DAOProtocoloNTC1465(){
+namespace TS15.DAL.gestion_protocolo
+{
+    public class DAOProtocoloNTC1465 : DAOGenerico, IGestionable, IProbable
+    {
 
-		}
+        public DAOProtocoloNTC1465()
+        {
 
-		/// <summary>
-		/// Esta función desbloquea los campos del formulario y habilita los botones.
-		/// </summary>
-		/// <param name="entidad"></param>
-		public bool Modificar(EntityObject entidad){
+        }
 
-			return false;
-		}
+        /// <summary>
+        /// Esta función desbloquea los campos del formulario y habilita los botones.
+        /// </summary>
+        /// <param name="entidad"></param>
+        public bool Modificar(EntityObject entidad)
+        {
+            pro_ntc1465 resultado = (pro_ntc1465)ConsultarXId((entidad as pro_ntc1465).id);
 
-		/// 
-		/// <param name="entidad"></param>
-		public bool Terminar(EntityObject entidad){
+            if (resultado != null && entidad != null)
+            {
+                resultado.ruptura = (entidad as pro_ntc1465).ruptura;
+                resultado.resultado = (entidad as pro_ntc1465).resultado;
+                // Fecha
+                resultado.fecha = DateTime.Now;
+                SingletonDatos.Contexto.SaveChanges();
+                return true;
+            }
 
-			return false;
-		}
+            return false;
+        }
 
-		public List<EntityObject> Consultar(){
+        /// 
+        /// <param name="entidad"></param>
+        public bool Terminar(EntityObject entidad)
+        {
+            pro_ntc1465 resultado = (pro_ntc1465)ConsultarXId((entidad as pro_ntc1465).id);
 
-			return null;
-		}
+            if (resultado != null && entidad != null)
+            {
+                resultado.estado = 2;
+                SingletonDatos.Contexto.SaveChanges();
+                return true;
+            }
 
-		/// 
-		/// <param name="prueba"></param>
-		public EntityObject ObtenerUltimaPrueba(tfr_transformador prueba){
+            return false;
+        }
 
-			return null;
-		}
+        public List<EntityObject> Consultar()
+        {
 
-		/// 
-		/// <param name="id"></param>
-		public EntityObject ConsultarXId(int id){
+            return null;
+        }
 
-			return null;
-		}
+        /// 
+        /// <param name="prueba"></param>
+        public EntityObject ObtenerUltimaPrueba(tfr_transformador transformador)
+        {
+            pro_ntc1465 resultado = SingletonDatos.Contexto.pro_ntc1465
+                .Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
+            return resultado != null ? resultado : null;
+        }
 
-		/// 
-		/// <param name="entidad"></param>
-		public bool Crear(EntityObject entidad){
+        /// 
+        /// <param name="id"></param>
+        public EntityObject ConsultarXId(int id)
+        {
+            pro_ntc1465 resultado = SingletonDatos.Contexto.pro_ntc1465.Where(p => p.id == id).SingleOrDefault();
+            return resultado;
+        }
 
-			return false;
-		}
+        /// 
+        /// <param name="entidad"></param>
+        public bool Crear(EntityObject entidad)
+        {
 
-		/// 
-		/// <param name="entidad"></param>
-		public bool Eliminar(EntityObject entidad){
+            return false;
+        }
 
-			return false;
-		}
+        /// 
+        /// <param name="entidad"></param>
+        public bool Eliminar(EntityObject entidad)
+        {
 
-	}//end DAOProtocolo_NTC1465
+            return false;
+        }
+
+    }//end DAOProtocolo_NTC1465
 
 }//end namespace gestion_protocolo

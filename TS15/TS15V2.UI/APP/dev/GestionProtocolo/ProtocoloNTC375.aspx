@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="ProtocoloNTC1465.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465"
+    AutoEventWireup="true" CodeBehind="ProtocoloNTC375.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375"
     EnableSessionState="True" %>
 
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -110,51 +110,66 @@
                 </div>--%>
             </div>
             <div class="box-content">
-                <%--div class="row-fluid">
-                    <div class="span_3">
-                        <label>
-                            Transformador</label>
-                        <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
-                </div--%>
+                <!--Encabezado-->
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Liquido Aislante*
+                            Tiempo de lectura*
                         </label>
-                        <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Referencia*
-                        </label>
-                        <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Ruptura*
-                        </label>
-                        <asp:TextBox runat="server" ID="txtRuptura" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtRuptura_FilteredTextBoxExtender" 
-                            runat="server" TargetControlID="txtRuptura" ValidChars="1234567890">
+                        <asp:TextBox runat="server" ID="txtTiempo" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTiempo_FilteredTextBoxExtender" runat="server"
+                            TargetControlID="txtTiempo" ValidChars="1234567890">
                         </asp:FilteredTextBoxExtender>
-                        
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Método*
+                            Tensión*
                         </label>
-                        <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
+                        <asp:TextBox runat="server" ID="txtTension" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTension_FilteredTextBoxExtender1" runat="server"
+                            TargetControlID="txtTension" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            AT y T *
+                        </label>
+                        <asp:TextBox runat="server" ID="txtAT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtAT_T_FilteredTextBoxExtender2" runat="server"
+                            TargetControlID="txtAT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            BT y T*
+                        </label>
+                        <asp:TextBox runat="server" ID="txtBT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtBT_T_FilteredTextBoxExtender3" runat="server"
+                            TargetControlID="txtBT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            AT, BT y T*
+                        </label>
+                        <asp:TextBox runat="server" ID="txtAT_BT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtAT_BT_T_FilteredTextBoxExtender4" runat="server"
+                            TargetControlID="txtAT_BT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
@@ -165,7 +180,12 @@
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
-                                
+                <!--Detalle de Resistencia-->
+                <div class="row-fluid">
+                    <asp:Table ID="Table1" runat="server">
+                    </asp:Table>
+                </div>
+                <!--Botonera-->
                 <div class="row-fluid">
                     <asp:Panel ID="pnlBotonera" runat="server">
                         <asp:Panel ID="pnlInicial" runat="server">

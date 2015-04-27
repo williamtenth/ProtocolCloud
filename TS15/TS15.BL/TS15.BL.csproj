@@ -48,6 +48,7 @@
     <Compile Include="gestion_protocolo\BOProceso.cs" />
     <Compile Include="gestion_protocolo\BOProtocolo_NTC1465.cs" />
     <Compile Include="gestion_protocolo\BOProtocolo_NTC3396.cs" />
+    <Compile Include="gestion_protocolo\BOProtocolo_NTC375.cs" />
     <Compile Include="gestion_transformador\BOOrdenTrabajo.cs" />
     <Compile Include="gestion_transformador\BOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -35,14 +35,14 @@ namespace TS15.BL.gestion_protocolo {
 		/// <param name="entidad"></param>
 		public bool Modificar(EntityObject entidad){
 
-			return false;
+			return ((DAOProtocoloNTC1465)GenericoDAO).Modificar(entidad);
 		}
 
 		/// 
 		/// <param name="entidad"></param>
 		public bool Terminar(EntityObject entidad){
 
-			return false;
+			return ((DAOProtocoloNTC1465)GenericoDAO).Terminar(entidad);
 		}
 
 		public List<EntityObject> Consultar(){
@@ -52,9 +52,9 @@ namespace TS15.BL.gestion_protocolo {
 
 		/// 
 		/// <param name="prueba"></param>
-		public EntityObject ObtenerUltimaPrueba(tfr_transformador prueba){
-
-			return null;
+        public EntityObject ObtenerUltimaPrueba(tfr_transformador transformador)
+        {
+            return ((DAOProtocoloNTC1465)GenericoDAO).ObtenerUltimaPrueba(transformador);
 		}
 
 		/// 

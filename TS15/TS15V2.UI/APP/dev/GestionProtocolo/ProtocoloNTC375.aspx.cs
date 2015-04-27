@@ -20,21 +20,19 @@ using util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class ProtocoloNTC1465 : GenericoProtocolo, IGestionable, ITerminable
+    public partial class ProtocoloNTC375 : GenericoProtocolo, IGestionable, ITerminable
     {
 
         // Datos
-        private pro_ntc1465 _prueba;
-        private BOProtocolo_NTC1465 _BOntc1465Object;
-        private List<gen_parametrica> _listTipAislante;
-        private List<gen_parametrica> _listReferencia;
-        private List<gen_parametrica> _listMétodo;
+        private pro_ntc375 _prueba;
+        private BOProtocolo_NTC375 _BOntc375Object;
+        private List<gen_parametrica> _listMatFabric;
 
         // Constructores
 
-        public ProtocoloNTC1465()
+        public ProtocoloNTC375()
         {
-            _BOntc1465Object = new BOProtocolo_NTC1465();
+            _BOntc375Object = new BOProtocolo_NTC375();
         }
 
         // Métodos
@@ -55,23 +53,11 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void CargarListas()
         {
             // carga lista tipo aislante
-            _listTipAislante = Parametros.ConsultarParametros("tipaislante");
-            this.lbLiquidoAislante.DataSource = _listTipAislante;
-            this.lbLiquidoAislante.DataValueField = "consecutivo";
-            this.lbLiquidoAislante.DataTextField = "valor";
-            this.lbLiquidoAislante.DataBind();
-            // carga lista tipo referencia aislante
-            _listReferencia = Parametros.ConsultarParametros("refaislante");
-            this.lbReferencia.DataSource = _listReferencia;
-            this.lbReferencia.DataValueField = "consecutivo";
-            this.lbReferencia.DataTextField = "valor";
-            this.lbReferencia.DataBind();
-            // carga lista método aislante
-            _listMétodo = Parametros.ConsultarParametros("metaislante");
-            this.lbMetodo.DataSource = _listMétodo;
-            this.lbMetodo.DataValueField = "consecutivo";
-            this.lbMetodo.DataTextField = "valor";
-            this.lbMetodo.DataBind();
+            _listMatFabric = Parametros.ConsultarParametros("tipaislante");
+            //this.lbLiquidoAislante.DataSource = _listMatFabric;
+            //this.lbLiquidoAislante.DataValueField = "consecutivo";
+            //this.lbLiquidoAislante.DataTextField = "valor";
+            //this.lbLiquidoAislante.DataBind();
             // Carga lista de resultados
             this.lbResultado.DataSource = ListaParResultados;
             this.lbResultado.DataValueField = "consecutivo";
@@ -80,6 +66,25 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             //this.lbResultado.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
 
         }
+
+        /// <summary>
+        /// Este método carga la última prueba del transformador.
+        /// </summary>
+        public override void CargarPrueba()
+        {
+            if (Transformador != null)
+            {
+                _prueba = (pro_ntc375)_BOntc375Object.ObtenerUltimaPrueba(Transformador);
+                CargarEntidad();
+            }
+            else
+            {
+                _prueba = new pro_ntc375();
+                _prueba.fecha = new DateTime();
+            }
+        }
+
+
 
         /// 
         /// <param name="sender"></param>
@@ -94,8 +99,8 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Terminar(object sender, EventArgs e)
         {
-            if (Session[VariablesGlobales.SESION_PRUEBA_NTC1465] != null)
-                _prueba = (pro_ntc1465)Session[VariablesGlobales.SESION_PRUEBA_NTC1465];
+            if (Session[VariablesGlobales.SESION_PRUEBA_NTC375] != null)
+                _prueba = (pro_ntc375)Session[VariablesGlobales.SESION_PRUEBA_NTC375];
 
             if (ValidarCampos())
             {
@@ -103,9 +108,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 {
                     ActualizarEntidad();
 
-                    if (_BOntc1465Object.Terminar(_prueba))
+                    if (_BOntc375Object.Terminar(_prueba))
                     {
-                        Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC375] = _prueba;
 
                         pnlBotonera.Visible = false;
                         EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Esta prueba se ha terminado, solo se puede consultar nuevamente");
@@ -130,44 +135,34 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         }
 
-        /// <summary>
-        /// Este método carga la última prueba del transformador.
-        /// </summary>
-        public override void CargarPrueba()
-        {
-            if (Transformador != null)
-            {
-                _prueba = (pro_ntc1465)_BOntc1465Object.ObtenerUltimaPrueba(Transformador);
-                CargarEntidad();
-            }
-            else
-            {
-                _prueba = new pro_ntc1465();
-                _prueba.fecha = new DateTime();
-            }
-        }
-
         public void CargarEntidad()
         {
             if (_prueba != null)
             {
-                this.lbLiquidoAislante.SelectedValue = Convert.ToString(_prueba.tipaislante);
-                this.lbReferencia.SelectedValue = Convert.ToString(_prueba.refaislante);
-                this.txtRuptura.Text = Convert.ToString(_prueba.ruptura);
-                this.lbMetodo.SelectedValue = Convert.ToString(_prueba.metaislante);
+                // Encabezado
+                this.txtTiempo.Text = Convert.ToString(_prueba.tiempolectura);
+                this.txtTension.Text = Convert.ToString(_prueba.tension);
+                this.txtAT_T.Text = Convert.ToString(_prueba.at_t);
+                this.txtBT_T.Text = Convert.ToString(_prueba.bt_t);
+                this.txtAT_BT_T.Text = Convert.ToString(_prueba.at_bt_t);
                 this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
+                // Detalle resistencia
 
-                Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC375] = _prueba;
             }
         }
 
         private void ActualizarEntidad()
         {
-            _prueba.tipaislante = UtilNumeros.StringToBytes(lbLiquidoAislante.SelectedValue);
-            _prueba.refaislante = UtilNumeros.StringToBytes(lbReferencia.SelectedValue);
-            _prueba.ruptura = UtilNumeros.StringToDecimal(txtRuptura.Text);
-            _prueba.metaislante = UtilNumeros.StringToBytes(lbMetodo.SelectedValue);
+            // Encabezado
+            _prueba.tiempolectura = UtilNumeros.StringToBytes(txtTiempo.Text);
+            _prueba.tension = UtilNumeros.StringToBytes(txtTension.Text);
+            _prueba.at_t = UtilNumeros.StringToDecimal(txtAT_T.Text);
+            _prueba.bt_t = UtilNumeros.StringToBytes(txtBT_T.Text);
+            _prueba.at_bt_t = UtilNumeros.StringToBytes(txtAT_BT_T.Text);
             _prueba.resultado = UtilNumeros.StringToBytes(lbResultado.SelectedValue);
+            // Detalle resistencia
+
         }
 
         /// 
@@ -182,7 +177,11 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="valorEnable"></param>
         public void ActivarControles(bool valorEnable)
         {
-            this.txtRuptura.Enabled = valorEnable;
+            this.txtTiempo.Enabled = valorEnable;
+            this.txtTension.Enabled = valorEnable;
+            this.txtAT_T.Enabled = valorEnable;
+            this.txtBT_T.Enabled = valorEnable;
+            this.txtAT_BT_T.Enabled = valorEnable;
             this.lbResultado.Enabled = valorEnable;
             pnlInicial.Visible = !valorEnable;
             pnlGuardar.Visible = valorEnable;
@@ -194,7 +193,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void Guardar(object sender, EventArgs e)
         {
             if (Session[VariablesGlobales.SESION_PRUEBA_NTC1465] != null)
-                _prueba = (pro_ntc1465)Session[VariablesGlobales.SESION_PRUEBA_NTC1465];
+                _prueba = (pro_ntc375)Session[VariablesGlobales.SESION_PRUEBA_NTC375];
 
             if (ValidarCampos())
             {
@@ -202,9 +201,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 {
                     ActualizarEntidad();
 
-                    if (_BOntc1465Object.Modificar(_prueba))
+                    if (_BOntc375Object.Modificar(_prueba))
                     {
-                        Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
+                        Session[VariablesGlobales.SESION_PRUEBA_NTC375] = _prueba;
 
                         ActivarControles(false);
                         EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha modificado exitosamente la prueba");
@@ -235,7 +234,11 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public bool ValidarCampos()
         {
             if (this.lbResultado.SelectedValue != "-1"
-                && this.txtRuptura.Text != null && !this.txtRuptura.Text.Equals(""))
+                && this.txtTiempo.Text != null && !this.txtTiempo.Text.Equals("")
+                && this.txtTension.Text != null && !this.txtTension.Text.Equals("")
+                && this.txtAT_T.Text != null && !this.txtAT_T.Text.Equals("")
+                && this.txtBT_T.Text != null && !this.txtBT_T.Text.Equals("")
+                && this.txtAT_BT_T.Text != null && !this.txtAT_BT_T.Text.Equals(""))
                 return true;
             return false;
         }
