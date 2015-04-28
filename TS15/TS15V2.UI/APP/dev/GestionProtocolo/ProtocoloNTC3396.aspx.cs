@@ -129,6 +129,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void Cancelar(object sender, EventArgs e)
         {
             ActivarControles(false);
+            CargarPrueba();
         }
 
         public void Terminar(object sender, EventArgs e)

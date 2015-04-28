@@ -40,13 +40,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtIx;
         
         /// <summary>
-        /// txtIx_FilteredTextBoxExtender control.
+        /// MaskedEditExtender0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtIx_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender0;
         
         /// <summary>
         /// txtI2 control.
@@ -58,13 +58,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtI2;
         
         /// <summary>
-        /// txtI2_FilteredTextBoxExtender control.
+        /// MaskedEditExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtI2_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender1;
         
         /// <summary>
         /// txtI3 control.
@@ -76,13 +76,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtI3;
         
         /// <summary>
-        /// txtI3_FilteredTextBoxExtender control.
+        /// MaskedEditExtender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtI3_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender2;
         
         /// <summary>
         /// txtPromedio control.
@@ -94,13 +94,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtPromedio;
         
         /// <summary>
-        /// txtPromedio_FilteredTextBoxExtender control.
+        /// MaskedEditExtender3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtPromedio_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender3;
         
         /// <summary>
         /// txtGarantia control.
@@ -112,13 +112,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtGarantia;
         
         /// <summary>
-        /// txtGarantia_FilteredTextBoxExtender control.
+        /// MaskedEditExtender4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtGarantia_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender4;
         
         /// <summary>
         /// txtPoMedida control.
@@ -130,13 +130,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtPoMedida;
         
         /// <summary>
-        /// txtPoMedida_FilteredTextBoxExtender control.
+        /// MaskedEditExtender5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtPoMedida_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender5;
         
         /// <summary>
         /// txtPoGarantizado control.
@@ -148,13 +148,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtPoGarantizado;
         
         /// <summary>
-        /// txtPoGarantizado_FilteredTextBoxExtender control.
+        /// MaskedEditExtender6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtPoGarantizado_FilteredTextBoxExtender;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender6;
         
         /// <summary>
         /// lbResultado control.

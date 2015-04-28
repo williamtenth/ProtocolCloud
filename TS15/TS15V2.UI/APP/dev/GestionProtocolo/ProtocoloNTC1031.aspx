@@ -129,14 +129,9 @@
                             Ix1*
                         </label>
                         <asp:TextBox runat="server" ID="txtIx" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtIx_FilteredTextBoxExtender" runat="server" TargetControlID="txtIx"
-                            FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
-                        <%--<asp:RegularExpressionValidator ID="txtIx_RegularExpressionValidator" runat="server" 
-                            ControlToValidate="txtIx" ValidationExpression="{0:0.##}" />--%>
-                        <%--<asp:MaskedEditExtender ID="txtIx_MaskedEditExtender" runat="server" TargetControlID="txtIx"
-                            Mask="99.999" OnFocusCssClass="MaskedEditFocus"
-                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />--%>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender0" runat="server" TargetControlID="txtIx"
+                            Mask="9.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -145,9 +140,9 @@
                             I2*
                         </label>
                         <asp:TextBox runat="server" ID="txtI2" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtI2_FilteredTextBoxExtender" runat="server" TargetControlID="txtI2"
-                            FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="txtI2"
+                            Mask="9.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -156,9 +151,9 @@
                             I3*
                         </label>
                         <asp:TextBox runat="server" ID="txtI3" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtI3_FilteredTextBoxExtender" runat="server" TargetControlID="txtI3"
-                            FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender2" runat="server" TargetControlID="txtI3"
+                            Mask="9.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -166,11 +161,10 @@
                         <label>
                             Promedio %*
                         </label>
-                        <asp:TextBox runat="server" ID="txtPromedio" CssClass="form-control" Enabled="false"
-                            MaxLength="1"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtPromedio_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtPromedio" FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtPromedio" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender3" runat="server" TargetControlID="txtPromedio"
+                            Mask="0.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -178,11 +172,10 @@
                         <label>
                             Garantía %*
                         </label>
-                        <asp:TextBox runat="server" ID="txtGarantia" CssClass="form-control" Enabled="false"
-                            MaxLength="1"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtGarantia_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtGarantia" FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtGarantia" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender4" runat="server" TargetControlID="txtGarantia"
+                            Mask="0.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -191,10 +184,10 @@
                             Po Medida*
                         </label>
                         <asp:TextBox runat="server" ID="txtPoMedida" CssClass="form-control" Enabled="false"
-                            MaxLength="3"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtPoMedida_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtPoMedida" FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                            MaxLength="5"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender5" runat="server" TargetControlID="txtPoMedida"
+                            Mask="999.99" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -203,10 +196,10 @@
                             Po Garantizado*
                         </label>
                         <asp:TextBox runat="server" ID="txtPoGarantizado" CssClass="form-control" Enabled="false"
-                            MaxLength="3"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtPoGarantizado_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtPoGarantizado" FilterType="Custom, Numbers" ValidChars=".">
-                        </asp:FilteredTextBoxExtender>
+                            MaxLength="5"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="MaskedEditExtender6" runat="server" TargetControlID="txtPoGarantizado"
+                            Mask="999.99" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />
                     </div>
                 </div>
                 <div class="row-fluid">

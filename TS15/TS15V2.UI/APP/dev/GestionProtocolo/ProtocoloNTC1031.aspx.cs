@@ -158,13 +158,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private void ActualizarEntidad()
         {
             // Encabezado
-            _prueba.ix = UtilNumeros.StringToBytes(txtIx.Text);
-            _prueba.i2 = UtilNumeros.StringToBytes(txtI2.Text);
+            _prueba.ix = UtilNumeros.StringToDecimal(txtIx.Text);
+            _prueba.i2 = UtilNumeros.StringToDecimal(txtI2.Text);
             _prueba.i3 = UtilNumeros.StringToDecimal(txtI3.Text);
-            _prueba.promedio = UtilNumeros.StringToBytes(txtPromedio.Text);
-            _prueba.garantia = UtilNumeros.StringToBytes(txtGarantia.Text);
-            _prueba.po_medida = UtilNumeros.StringToBytes(txtPoMedida.Text);
-            _prueba.po_garantizado = UtilNumeros.StringToBytes(txtPoGarantizado.Text);
+            _prueba.promedio = UtilNumeros.StringToDecimal(txtPromedio.Text);
+            _prueba.garantia = UtilNumeros.StringToDecimal(txtGarantia.Text);
+            _prueba.po_medida = UtilNumeros.StringToDecimal(txtPoMedida.Text);
+            _prueba.po_garantizado = UtilNumeros.StringToDecimal(txtPoGarantizado.Text);
             _prueba.resultado = UtilNumeros.StringToBytes(lbResultado.SelectedValue);
             // Detalle resistencia
 
@@ -233,6 +233,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public void Cancelar(object sender, EventArgs e)
         {
             ActivarControles(false);
+            CargarPrueba();
         }
 
         /// <summary>
