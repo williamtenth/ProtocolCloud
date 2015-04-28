@@ -128,11 +128,15 @@
                         <label>
                             Ix1*
                         </label>
-                        <asp:TextBox runat="server" ID="txtIx" CssClass="form-control" Enabled="false"
-                            MaxLength="1"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtIx_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtIx" FilterType="Custom, Numbers" ValidChars=".">
+                        <asp:TextBox runat="server" ID="txtIx" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtIx_FilteredTextBoxExtender" runat="server" TargetControlID="txtIx"
+                            FilterType="Custom, Numbers" ValidChars=".">
                         </asp:FilteredTextBoxExtender>
+                        <%--<asp:RegularExpressionValidator ID="txtIx_RegularExpressionValidator" runat="server" 
+                            ControlToValidate="txtIx" ValidationExpression="{0:0.##}" />--%>
+                        <%--<asp:MaskedEditExtender ID="txtIx_MaskedEditExtender" runat="server" TargetControlID="txtIx"
+                            Mask="99.999" OnFocusCssClass="MaskedEditFocus"
+                            MaskType="Number" InputDirection="LeftToRight" ClipboardEnabled="true" />--%>
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -140,10 +144,9 @@
                         <label>
                             I2*
                         </label>
-                        <asp:TextBox runat="server" ID="txtI2" CssClass="form-control" Enabled="false"
-                            MaxLength="1"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtI2_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtI2" FilterType="Custom, Numbers" ValidChars=".">
+                        <asp:TextBox runat="server" ID="txtI2" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtI2_FilteredTextBoxExtender" runat="server" TargetControlID="txtI2"
+                            FilterType="Custom, Numbers" ValidChars=".">
                         </asp:FilteredTextBoxExtender>
                     </div>
                 </div>
@@ -152,10 +155,9 @@
                         <label>
                             I3*
                         </label>
-                        <asp:TextBox runat="server" ID="txtI3" CssClass="form-control" Enabled="false"
-                            MaxLength="1"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtI3_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtI3" FilterType="Custom, Numbers" ValidChars=".">
+                        <asp:TextBox runat="server" ID="txtI3" CssClass="form-control" Enabled="false" MaxLength="4"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtI3_FilteredTextBoxExtender" runat="server" TargetControlID="txtI3"
+                            FilterType="Custom, Numbers" ValidChars=".">
                         </asp:FilteredTextBoxExtender>
                     </div>
                 </div>
