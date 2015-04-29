@@ -18,6 +18,7 @@ namespace TS15V2.UI.APP.util
         public const String SESION_PRUEBA_NTC1465 = "SESION_PRUEBA_NTC1465";
         public const String SESION_PRUEBA_NTC375 = "SESION_PRUEBA_NTC375";
         public const String SESION_PRUEBA_NTC1031 = "SESION_PRUEBA_NTC1031";
+        public const String SESION_PRUEBA_NTC1005 = "SESION_PRUEBA_NTC1005";
         // Gestión Protocolo
         public const byte RESULTADO_PRUEBAS_EXITOSA = 1;
         public const byte RESULTADO_PRUEBAS_NO_EXITOSA = 2;

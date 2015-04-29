@@ -46,6 +46,7 @@
     <Compile Include="gestion_cliente\DAOCliente.cs" />
     <Compile Include="DAOParametrica.cs" />
     <Compile Include="gestion_cliente\DAOPedido.cs" />
+    <Compile Include="gestion_protocolo\DAOProtocolo_NTC1005.cs" />
     <Compile Include="gestion_protocolo\DAOProtocolo_NTC1031.cs" />
     <Compile Include="gestion_protocolo\DAOProtocolo_NTC375.cs" />
     <Compile Include="gestion_protocolo\DAOProceso.cs" />
