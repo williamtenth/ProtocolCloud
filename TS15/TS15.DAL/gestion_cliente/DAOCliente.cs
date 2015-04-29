@@ -80,5 +80,34 @@ namespace TS15.DAL.gestion_cliente
             //return SingletonDatos.Contexto.
             return null;
         }
+
+        public bool ExisteCliente(cli_cliente clienteObject)
+        {
+            bool bitExisteCliente = false;
+            int contador = SingletonDatos.Contexto.cli_cliente.Where(p => p.numdocumento == clienteObject.numdocumento && p.tipdoc == clienteObject.tipdoc).ToList().Count;
+
+            if (contador > 0)
+                bitExisteCliente = true;
+
+            return bitExisteCliente;
+        }
+
+        public bool Crear(cli_cliente clienteObject)
+        {
+            SingletonDatos.Contexto.cli_cliente.AddObject(clienteObject);
+            SingletonDatos.Contexto.SaveChanges();
+            return true;
+        }
+
+        public List<vw_solicitudes_cliente> ConsultarTransformadoresAsignados(int pIdCliente)
+        {
+            return SingletonDatos.Contexto.vw_solicitudes_cliente.Where(p => p.id == pIdCliente).ToList();
+        }
+
+        public void AsignarTransformador(tfr_transf_has_cliente transfClienteObject)
+        {
+            SingletonDatos.Contexto.tfr_transf_has_cliente.AddObject(transfClienteObject);
+            SingletonDatos.Contexto.SaveChanges();
+        }
     }
 }

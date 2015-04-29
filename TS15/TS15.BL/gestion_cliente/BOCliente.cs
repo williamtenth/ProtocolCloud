@@ -83,12 +83,29 @@ namespace TS15.BL.gestion_cliente
 
         public bool Crear(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            cli_cliente clienteObject = entidad as cli_cliente;
+            return ((DAOCliente)GenericoDAO).Crear(clienteObject);
+        }
+
+        public bool ExisteCliente(EntityObject entidad)
+        {
+            cli_cliente clienteObject  = entidad as cli_cliente;
+            return ((DAOCliente)GenericoDAO).ExisteCliente(clienteObject);
         }
 
         public object ConsultarPedidosCliente(int intIdCliente)
         {
             return ((DAOCliente)GenericoDAO).ConsultarPedidosCliente(intIdCliente);
+        }
+
+        public List<vw_solicitudes_cliente> ConsultarTransformadoresAsignados(int pIdCliente)
+        {
+            return ((DAOCliente)GenericoDAO).ConsultarTransformadoresAsignados(pIdCliente);
+        }
+
+        internal void AsignarTransformador(tfr_transf_has_cliente transfClienteObject)
+        {
+            ((DAOCliente)GenericoDAO).AsignarTransformador(transfClienteObject);
         }
     }
 }

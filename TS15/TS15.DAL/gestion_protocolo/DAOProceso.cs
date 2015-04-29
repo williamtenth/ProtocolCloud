@@ -14,7 +14,7 @@ namespace TS15.DAL.gestion_protocolo
         public bool Crear(EntityObject entidad)
         {
             pro_proceso procesoObject = entidad as pro_proceso;
-            SingletonDatos.Contexto.AddTopro_proceso(procesoObject);
+            SingletonDatos.Contexto.pro_proceso.AddObject(procesoObject);
             SingletonDatos.Contexto.SaveChanges();
             return true;
         }

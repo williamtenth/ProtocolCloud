@@ -13,7 +13,7 @@ namespace TS15.DAL.gestion_cliente
         public bool Crear(EntityObject entidad)
         {
             cli_pedido pedidoObject = (cli_pedido)entidad;
-            SingletonDatos.Contexto.AddTocli_pedido(pedidoObject);
+            SingletonDatos.Contexto.cli_pedido.AddObject(pedidoObject);
             SingletonDatos.Contexto.SaveChanges();
 
             return true;

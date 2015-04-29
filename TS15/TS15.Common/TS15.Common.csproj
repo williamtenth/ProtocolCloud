@@ -47,9 +47,9 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="Generated\DMProtocolo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DMProtocolo.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="IService\IEntidad.cs" />
     <Compile Include="IService\IGestionable.cs" />
@@ -62,12 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+  </ItemGroup>
+  <ItemGroup>
     <EntityDeploy Include="Generated\DMProtocolo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DMProtocolo.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
