@@ -88,12 +88,15 @@ namespace TS15.DAL.gestion_transformador
 
         public bool Crear(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            tfr_transformador transformadorObject = entidad as tfr_transformador;
+            SingletonDatos.Contexto.tfr_transformador.AddObject(transformadorObject);
+            SingletonDatos.Contexto.SaveChanges();
+            return true;
         }
 
-        public List<vw_transformador_fabricante> ConsultarTransformadoresCliente(int idCliente)
+        public List<vw_transformador_fabricante_1> ConsultarTransformadoresCliente(int idCliente)
         {
-            return SingletonDatos.Contexto.vw_transformador_fabricante.Where(p => p.id == idCliente).ToList();
+            return SingletonDatos.Contexto.vw_transformador_fabricante_1.Where(p => p.id == idCliente).ToList();
         }
 
         public List<tfr_transformador> ConsultarTransformadoresFabricante()
@@ -121,6 +124,12 @@ namespace TS15.DAL.gestion_transformador
                 esAsignado = true;
 
             return esAsignado;
+        }
+
+        public void IngresarEnBodega(tfr_bodega bodegaObject)
+        {
+            SingletonDatos.Contexto.tfr_bodega.AddObject(bodegaObject);
+            SingletonDatos.Contexto.SaveChanges();
         }
     }
 }

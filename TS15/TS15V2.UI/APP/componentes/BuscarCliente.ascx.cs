@@ -19,13 +19,14 @@ namespace TS15.UI.APP.componentes
 {
     public partial class BuscarCliente : UIGenericoComponente
     {
-        //public event EventHandler OnPatientChange;
-        private cli_cliente _cliente;
-        private BOCliente _clienteBO;
+        public event EventHandler PatientChange;
+
+        private cli_cliente _clienteObject;
+        private BOCliente _BOCliente;
 
         public BuscarCliente()
         {
-            _clienteBO = new BOCliente();
+            _BOCliente = new BOCliente();
         }
 
         private void ValidarRoles()
@@ -69,10 +70,10 @@ namespace TS15.UI.APP.componentes
             this.txtNumDoc.Text = vw_cli_usuario.numdocumento;
             this.hfIdCliente.Value = vw_cli_usuario.cliente_id.ToString();
 
-            _cliente = (cli_cliente)_clienteBO.ConsultarXId(vw_cli_usuario.cliente_id);
+            _clienteObject = (cli_cliente)_BOCliente.ConsultarXId(vw_cli_usuario.cliente_id);
 
             //CARGA EL CLIENTE EN LA SESION
-            Session["Cliente"] = _cliente;
+            Session["Cliente"] = _clienteObject;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -127,12 +128,12 @@ namespace TS15.UI.APP.componentes
 
         protected void gvClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string idCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[0].ToString();
+            int idCliente = Convert.ToInt32(gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[0].ToString());
             string nombreCliente = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[1].ToString();
             string tipDocumento = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[2].ToString();
             string numDocumento = gvClientes.DataKeys[gvClientes.SelectedRow.RowIndex].Values[3].ToString();
 
-            this.hfIdCliente.Value = idCliente;
+            this.hfIdCliente.Value = idCliente.ToString();
             this.txtCliente.Text = nombreCliente;
             this.pnlCliente.Visible = true;
 
@@ -143,7 +144,11 @@ namespace TS15.UI.APP.componentes
             this.ddlTipDocumento.SelectedValue = tipDocumento;
             this.txtNumDoc.Text = numDocumento;
 
-            //if (this.OnPatientChange != null) this.OnPatientChange(sender, e);
+            // Delegate the event to the caller
+            if (this.PatientChange != null) this.PatientChange(sender, e);
+
+            cli_cliente clienteObject = _BOCliente.ConsultarXId(idCliente) as cli_cliente;
+            Session[VariablesGlobales.SESION_CLIENTE] = clienteObject;
         }
 
         public string IdCliente

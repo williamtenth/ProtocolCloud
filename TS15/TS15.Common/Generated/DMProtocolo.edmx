@@ -50,6 +50,7 @@
           </EntitySet>
           <EntitySet Name="pro_proceso" EntityType="dbTS15Model.Store.pro_proceso" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="pro_proceso_has_prueba" EntityType="dbTS15Model.Store.pro_proceso_has_prueba" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_bodega" EntityType="dbTS15Model.Store.tfr_bodega" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_caracteristicas" EntityType="dbTS15Model.Store.tfr_caracteristicas" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tfr_ordentrabajo" EntityType="dbTS15Model.Store.tfr_ordentrabajo" store:Type="Tables" Schema="dbo" />
@@ -157,6 +158,24 @@
       [vw_cli_usuario].[telefono] AS [telefono]
       FROM [dbo].[vw_cli_usuario] AS [vw_cli_usuario]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.Store.vw_solicitudes_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_solicitudes_cliente">
+            <DefiningQuery>SELECT 
+      [vw_solicitudes_cliente].[fabricante_id] AS [fabricante_id], 
+      [vw_solicitudes_cliente].[cliente_nombre] AS [cliente_nombre], 
+      [vw_solicitudes_cliente].[id] AS [id], 
+      [vw_solicitudes_cliente].[nombre] AS [nombre], 
+      [vw_solicitudes_cliente].[tipdoc] AS [tipdoc], 
+      [vw_solicitudes_cliente].[transformador_id] AS [transformador_id], 
+      [vw_solicitudes_cliente].[fechaasignacion] AS [fechaasignacion], 
+      [vw_solicitudes_cliente].[numserie] AS [numserie], 
+      [vw_solicitudes_cliente].[tipsolicitud] AS [tipsolicitud], 
+      [vw_solicitudes_cliente].[fecentrada] AS [fecentrada], 
+      [vw_solicitudes_cliente].[tipbodega] AS [tipbodega], 
+      [vw_solicitudes_cliente].[nombreFabricante] AS [nombreFabricante], 
+      [vw_solicitudes_cliente].[tfrcapacidad] AS [tfrcapacidad], 
+      [vw_solicitudes_cliente].[consecutivo] AS [consecutivo]
+      FROM [dbo].[vw_solicitudes_cliente] AS [vw_solicitudes_cliente]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_transformador_cliente" EntityType="dbTS15Model.Store.vw_transformador_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_transformador_cliente">
             <DefiningQuery>SELECT 
       [vw_transformador_cliente].[nombre] AS [nombre], 
@@ -169,38 +188,38 @@
       [vw_transformador_cliente].[id] AS [id]
       FROM [dbo].[vw_transformador_cliente] AS [vw_transformador_cliente]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vw_transformador_fabricante" EntityType="dbTS15Model.Store.vw_transformador_fabricante" store:Type="Views" store:Schema="dbo" store:Name="vw_transformador_fabricante">
+          <EntitySet Name="vw_transformador_fabricante_1" EntityType="dbTS15Model.Store.vw_transformador_fabricante_1" store:Type="Views" store:Schema="dbo" store:Name="vw_transformador_fabricante_1">
             <DefiningQuery>SELECT 
-      [vw_transformador_fabricante].[id] AS [id], 
-      [vw_transformador_fabricante].[nombre] AS [nombre], 
-      [vw_transformador_fabricante].[tipdoc] AS [tipdoc], 
-      [vw_transformador_fabricante].[numdocumento] AS [numdocumento], 
-      [vw_transformador_fabricante].[fechaasignacion] AS [fechaasignacion], 
-      [vw_transformador_fabricante].[IdTransformador] AS [IdTransformador], 
-      [vw_transformador_fabricante].[numserie] AS [numserie], 
-      [vw_transformador_fabricante].[fabricante_id] AS [fabricante_id], 
-      [vw_transformador_fabricante].[altura] AS [altura], 
-      [vw_transformador_fabricante].[tfrestado] AS [tfrestado], 
-      [vw_transformador_fabricante].[tfrtenserieAT] AS [tfrtenserieAT], 
-      [vw_transformador_fabricante].[tfrtenserieBT] AS [tfrtenserieBT], 
-      [vw_transformador_fabricante].[tfrcapacidad] AS [tfrcapacidad], 
-      [vw_transformador_fabricante].[trffase] AS [trffase], 
-      [vw_transformador_fabricante].[fecfabricacion] AS [fecfabricacion], 
-      [vw_transformador_fabricante].[tempdevanado] AS [tempdevanado], 
-      [vw_transformador_fabricante].[trfaislamiento] AS [trfaislamiento], 
-      [vw_transformador_fabricante].[frecuencia] AS [frecuencia], 
-      [vw_transformador_fabricante].[trfrefrigeracion] AS [trfrefrigeracion], 
-      [vw_transformador_fabricante].[volentrada] AS [volentrada], 
-      [vw_transformador_fabricante].[volsalida] AS [volsalida], 
-      [vw_transformador_fabricante].[volentrada_der] AS [volentrada_der], 
-      [vw_transformador_fabricante].[volsalida_der] AS [volsalida_der], 
-      [vw_transformador_fabricante].[derivaciones] AS [derivaciones], 
-      [vw_transformador_fabricante].[corentrada] AS [corentrada], 
-      [vw_transformador_fabricante].[corsalida] AS [corsalida], 
-      [vw_transformador_fabricante].[corentrada_der] AS [corentrada_der], 
-      [vw_transformador_fabricante].[corsalida_der] AS [corsalida_der], 
-      [vw_transformador_fabricante].[trfgrpconex] AS [trfgrpconex]
-      FROM [dbo].[vw_transformador_fabricante] AS [vw_transformador_fabricante]</DefiningQuery>
+      [vw_transformador_fabricante_1].[transformador_id] AS [transformador_id], 
+      [vw_transformador_fabricante_1].[numserie] AS [numserie], 
+      [vw_transformador_fabricante_1].[fabricante_id] AS [fabricante_id], 
+      [vw_transformador_fabricante_1].[altura] AS [altura], 
+      [vw_transformador_fabricante_1].[tfrestado] AS [tfrestado], 
+      [vw_transformador_fabricante_1].[tfrtenserieAT] AS [tfrtenserieAT], 
+      [vw_transformador_fabricante_1].[tfrtenserieBT] AS [tfrtenserieBT], 
+      [vw_transformador_fabricante_1].[tfrcapacidad] AS [tfrcapacidad], 
+      [vw_transformador_fabricante_1].[trffase] AS [trffase], 
+      [vw_transformador_fabricante_1].[fecfabricacion] AS [fecfabricacion], 
+      [vw_transformador_fabricante_1].[tempdevanado] AS [tempdevanado], 
+      [vw_transformador_fabricante_1].[trfaislamiento] AS [trfaislamiento], 
+      [vw_transformador_fabricante_1].[frecuencia] AS [frecuencia], 
+      [vw_transformador_fabricante_1].[trfrefrigeracion] AS [trfrefrigeracion], 
+      [vw_transformador_fabricante_1].[volentrada] AS [volentrada], 
+      [vw_transformador_fabricante_1].[volsalida] AS [volsalida], 
+      [vw_transformador_fabricante_1].[volentrada_der] AS [volentrada_der], 
+      [vw_transformador_fabricante_1].[volsalida_der] AS [volsalida_der], 
+      [vw_transformador_fabricante_1].[derivaciones] AS [derivaciones], 
+      [vw_transformador_fabricante_1].[corentrada] AS [corentrada], 
+      [vw_transformador_fabricante_1].[corsalida] AS [corsalida], 
+      [vw_transformador_fabricante_1].[corentrada_der] AS [corentrada_der], 
+      [vw_transformador_fabricante_1].[corsalida_der] AS [corsalida_der], 
+      [vw_transformador_fabricante_1].[trfgrpconex] AS [trfgrpconex], 
+      [vw_transformador_fabricante_1].[fechaasignacion] AS [fechaasignacion], 
+      [vw_transformador_fabricante_1].[nombre] AS [nombre], 
+      [vw_transformador_fabricante_1].[tipdoc] AS [tipdoc], 
+      [vw_transformador_fabricante_1].[numdocumento] AS [numdocumento], 
+      [vw_transformador_fabricante_1].[id] AS [id]
+      FROM [dbo].[vw_transformador_fabricante_1] AS [vw_transformador_fabricante_1]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__276EDEB3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
@@ -482,7 +501,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="consecutivo" Type="int" Nullable="false" />
           <Property Name="cliente_id" Type="int" />
           <Property Name="fechasolicitud" Type="datetime" Nullable="false" />
@@ -620,6 +639,7 @@
           <Property Name="matedevanado" Type="tinyint" />
           <Property Name="metadevanado2" Type="tinyint" />
           <Property Name="estado" Type="tinyint" />
+          <Property Name="proceso_id" Type="int" />
         </EntityType>
         <EntityType Name="pro_ntc471">
           <Key>
@@ -669,7 +689,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="pedido_id" Type="int" />
           <Property Name="tipprocesop" Type="tinyint" />
           <Property Name="fecha" Type="datetime" />
@@ -687,6 +707,16 @@
           <Property Name="pro_prueba_id" Type="int" Nullable="false" />
           <Property Name="fecha" Type="datetime" />
           <Property Name="resultado" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tfr_bodega">
           <Key>
@@ -718,7 +748,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="consecutivo" Type="int" Nullable="false" />
           <Property Name="pedido_id" Type="int" />
           <Property Name="fechacreacion" Type="datetime" Nullable="false" />
@@ -738,7 +768,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="numserie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="numserie" Type="varchar" MaxLength="50" />
           <Property Name="fabricante_id" Type="int" />
           <Property Name="altura" Type="varchar" MaxLength="6" />
           <Property Name="tfrestado" Type="tinyint" />
@@ -940,6 +970,35 @@
           <Property Name="telefono" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbTS15.dbo.vw_solicitudes_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_solicitudes_cliente">
+          <Key>
+            <PropertyRef Name="cliente_nombre" />
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="transformador_id" />
+            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="nombreFabricante" />
+            <PropertyRef Name="consecutivo" />
+          </Key>
+          <Property Name="fabricante_id" Type="int" />
+          <Property Name="cliente_nombre" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="tipdoc" Type="tinyint" Nullable="false" />
+          <Property Name="transformador_id" Type="int" Nullable="false" />
+          <Property Name="fechaasignacion" Type="datetime" />
+          <Property Name="numserie" Type="varchar" MaxLength="50" />
+          <Property Name="tipsolicitud" Type="tinyint" Nullable="false" />
+          <Property Name="fecentrada" Type="date" />
+          <Property Name="tipbodega" Type="varchar" MaxLength="2" />
+          <Property Name="nombreFabricante" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="tfrcapacidad" Type="tinyint" />
+          <Property Name="consecutivo" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'dbTS15.dbo.vw_transformador_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_transformador_cliente">
@@ -959,20 +1018,17 @@
           <Property Name="id" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbTS15.dbo.vw_transformador_fabricante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbTS15.dbo.vw_transformador_fabricante_1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
-        <EntityType Name="vw_transformador_fabricante">
+        <EntityType Name="vw_transformador_fabricante_1">
           <Key>
-            <PropertyRef Name="IdTransformador" />
-            <PropertyRef Name="numserie" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="numdocumento" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" />
-          <Property Name="nombre" Type="varchar" MaxLength="80" />
-          <Property Name="tipdoc" Type="tinyint" />
-          <Property Name="numdocumento" Type="varchar" MaxLength="30" />
-          <Property Name="fechaasignacion" Type="datetime" />
-          <Property Name="IdTransformador" Type="int" Nullable="false" />
-          <Property Name="numserie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="transformador_id" Type="int" />
+          <Property Name="numserie" Type="varchar" MaxLength="50" />
           <Property Name="fabricante_id" Type="int" />
           <Property Name="altura" Type="varchar" MaxLength="6" />
           <Property Name="tfrestado" Type="tinyint" />
@@ -995,6 +1051,11 @@
           <Property Name="corentrada_der" Type="numeric" Precision="10" Scale="3" />
           <Property Name="corsalida_der" Type="numeric" Precision="10" Scale="3" />
           <Property Name="trfgrpconex" Type="tinyint" />
+          <Property Name="fechaasignacion" Type="datetime" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="tipdoc" Type="tinyint" Nullable="false" />
+          <Property Name="numdocumento" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__aspnet_Me__Appli__276EDEB3">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
@@ -1344,6 +1405,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'dbTS15.dbo.vw_transformador_fabricante' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="vw_transformador_fabricante">
+        <Property Name="id" Type="int" />
+        <Property Name="nombre" Type="varchar" MaxLength="80" />
+        <Property Name="tipdoc" Type="tinyint" />
+        <Property Name="numdocumento" Type="varchar" MaxLength="30" />
+        <Property Name="fechaasignacion" Type="datetime" />
+        <Property Name="IdTransformador" Type="int" />
+        <Property Name="numserie" Type="varchar" MaxLength="50" />
+        <Property Name="fabricante_id" Type="int" />
+        <Property Name="altura" Type="varchar" MaxLength="6" />
+        <Property Name="tfrestado" Type="tinyint" />
+        <Property Name="tfrtenserieAT" Type="tinyint" />
+        <Property Name="tfrtenserieBT" Type="tinyint" />
+        <Property Name="tfrcapacidad" Type="tinyint" />
+        <Property Name="trffase" Type="tinyint" />
+        <Property Name="fecfabricacion" Type="datetime" />
+        <Property Name="tempdevanado" Type="varchar" MaxLength="3" />
+        <Property Name="trfaislamiento" Type="tinyint" />
+        <Property Name="frecuencia" Type="bigint" />
+        <Property Name="trfrefrigeracion" Type="tinyint" />
+        <Property Name="volentrada" Type="numeric" Precision="10" />
+        <Property Name="volsalida" Type="numeric" Precision="10" />
+        <Property Name="volentrada_der" Type="numeric" Precision="10" />
+        <Property Name="volsalida_der" Type="numeric" Precision="10" />
+        <Property Name="derivaciones" Type="int" />
+        <Property Name="corentrada" Type="numeric" Precision="10" Scale="3" />
+        <Property Name="corsalida" Type="numeric" Precision="10" Scale="3" />
+        <Property Name="corentrada_der" Type="numeric" Precision="10" Scale="3" />
+        <Property Name="corsalida_der" Type="numeric" Precision="10" Scale="3" />
+        <Property Name="trfgrpconex" Type="tinyint" />
+      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1374,6 +1469,7 @@
           <EntitySet Name="pro_ntc837" EntityType="dbTS15Model.pro_ntc837" />
           <EntitySet Name="pro_proceso" EntityType="dbTS15Model.pro_proceso" />
           <EntitySet Name="pro_proceso_has_prueba" EntityType="dbTS15Model.pro_proceso_has_prueba" />
+          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.sysdiagrams" />
           <EntitySet Name="tfr_bodega" EntityType="dbTS15Model.tfr_bodega" />
           <EntitySet Name="tfr_caracteristicas" EntityType="dbTS15Model.tfr_caracteristicas" />
           <EntitySet Name="tfr_ordentrabajo" EntityType="dbTS15Model.tfr_ordentrabajo" />
@@ -1389,8 +1485,9 @@
           <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" />
           <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="dbTS15Model.vw_aspnet_WebPartState_User" />
           <EntitySet Name="vw_cli_usuario" EntityType="dbTS15Model.vw_cli_usuario" />
+          <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.vw_solicitudes_cliente" />
           <EntitySet Name="vw_transformador_cliente" EntityType="dbTS15Model.vw_transformador_cliente" />
-          <EntitySet Name="vw_transformador_fabricante" EntityType="dbTS15Model.vw_transformador_fabricante" />
+          <EntitySet Name="vw_transformador_fabricante_1" EntityType="dbTS15Model.vw_transformador_fabricante_1" />
           <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -1671,7 +1768,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="consecutivo" Nullable="false" />
           <Property Type="Int32" Name="cliente_id" />
           <Property Type="DateTime" Name="fechasolicitud" Nullable="false" />
@@ -1814,6 +1911,7 @@
           <Property Type="Byte" Name="matedevanado" />
           <Property Type="Byte" Name="metadevanado2" />
           <Property Type="Byte" Name="estado" />
+          <Property Type="Int32" Name="proceso_id" />
           <NavigationProperty Name="tfr_transformador" Relationship="dbTS15Model.FK_pro_ntc375_tfr_transformador" FromRole="pro_ntc375" ToRole="tfr_transformador" />
         </EntityType>
         <EntityType Name="pro_ntc471">
@@ -1864,7 +1962,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="pedido_id" />
           <Property Type="Byte" Name="tipprocesop" />
           <Property Type="DateTime" Name="fecha" />
@@ -1885,6 +1983,16 @@
           <Property Type="DateTime" Name="fecha" />
           <Property Type="Byte" Name="resultado" />
           <NavigationProperty Name="pro_proceso" Relationship="dbTS15Model.FK_pro_proceso_has_prueba_pro_proceso" FromRole="pro_proceso_has_prueba" ToRole="pro_proceso" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tfr_bodega">
           <Key>
@@ -1918,7 +2026,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="consecutivo" Nullable="false" />
           <Property Type="Int32" Name="pedido_id" />
           <Property Type="DateTime" Name="fechacreacion" Nullable="false" />
@@ -1941,7 +2049,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="numserie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="numserie" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="fabricante_id" />
           <Property Type="String" Name="altura" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Type="Byte" Name="tfrestado" />
@@ -2122,6 +2230,32 @@
           <Property Type="String" Name="direccion" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="telefono" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="vw_solicitudes_cliente">
+          <Key>
+            <PropertyRef Name="cliente_nombre" />
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="transformador_id" />
+            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="nombreFabricante" />
+            <PropertyRef Name="consecutivo" />
+          </Key>
+          <Property Type="Int32" Name="fabricante_id" />
+          <Property Type="String" Name="cliente_nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="tipdoc" Nullable="false" />
+          <Property Type="Int32" Name="transformador_id" Nullable="false" />
+          <Property Type="DateTime" Name="fechaasignacion" />
+          <Property Type="String" Name="numserie" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="tipsolicitud" Nullable="false" />
+          <Property Type="DateTime" Name="fecentrada" />
+          <Property Type="String" Name="tipbodega" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombreFabricante" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="tfrcapacidad" />
+          <Property Type="Int32" Name="consecutivo" Nullable="false" />
+        </EntityType>
         <EntityType Name="vw_transformador_cliente">
           <Key>
             <PropertyRef Name="nombre" />
@@ -2138,18 +2272,15 @@
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Int32" Name="id" Nullable="false" />
         </EntityType>
-        <EntityType Name="vw_transformador_fabricante">
+        <EntityType Name="vw_transformador_fabricante_1">
           <Key>
-            <PropertyRef Name="IdTransformador" />
-            <PropertyRef Name="numserie" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="tipdoc" />
+            <PropertyRef Name="numdocumento" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" />
-          <Property Type="String" Name="nombre" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Type="Byte" Name="tipdoc" />
-          <Property Type="String" Name="numdocumento" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="fechaasignacion" />
-          <Property Type="Int32" Name="IdTransformador" Nullable="false" />
-          <Property Type="String" Name="numserie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="transformador_id" />
+          <Property Type="String" Name="numserie" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="fabricante_id" />
           <Property Type="String" Name="altura" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Type="Byte" Name="tfrestado" />
@@ -2172,6 +2303,11 @@
           <Property Type="Decimal" Name="corentrada_der" Precision="10" Scale="3" />
           <Property Type="Decimal" Name="corsalida_der" Precision="10" Scale="3" />
           <Property Type="Byte" Name="trfgrpconex" />
+          <Property Type="DateTime" Name="fechaasignacion" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="tipdoc" Nullable="false" />
+          <Property Type="String" Name="numdocumento" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
         </EntityType>
         <Association Name="FK__aspnet_Me__Appli__276EDEB3">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
@@ -2765,6 +2901,7 @@
           <EntitySetMapping Name="pro_ntc375">
             <EntityTypeMapping TypeName="dbTS15Model.pro_ntc375">
               <MappingFragment StoreEntitySet="pro_ntc375">
+                <ScalarProperty Name="proceso_id" ColumnName="proceso_id" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="metadevanado2" ColumnName="metadevanado2" />
                 <ScalarProperty Name="matedevanado" ColumnName="matedevanado" />
@@ -2853,6 +2990,17 @@
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="pro_prueba_id" ColumnName="pro_prueba_id" />
                 <ScalarProperty Name="proceso_id" ColumnName="proceso_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="dbTS15Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3055,6 +3203,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vw_solicitudes_cliente">
+            <EntityTypeMapping TypeName="dbTS15Model.vw_solicitudes_cliente">
+              <MappingFragment StoreEntitySet="vw_solicitudes_cliente">
+                <ScalarProperty Name="consecutivo" ColumnName="consecutivo" />
+                <ScalarProperty Name="tfrcapacidad" ColumnName="tfrcapacidad" />
+                <ScalarProperty Name="nombreFabricante" ColumnName="nombreFabricante" />
+                <ScalarProperty Name="tipbodega" ColumnName="tipbodega" />
+                <ScalarProperty Name="fecentrada" ColumnName="fecentrada" />
+                <ScalarProperty Name="tipsolicitud" ColumnName="tipsolicitud" />
+                <ScalarProperty Name="numserie" ColumnName="numserie" />
+                <ScalarProperty Name="fechaasignacion" ColumnName="fechaasignacion" />
+                <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cliente_nombre" ColumnName="cliente_nombre" />
+                <ScalarProperty Name="fabricante_id" ColumnName="fabricante_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vw_transformador_cliente">
             <EntityTypeMapping TypeName="dbTS15Model.vw_transformador_cliente">
               <MappingFragment StoreEntitySet="vw_transformador_cliente">
@@ -3069,9 +3237,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vw_transformador_fabricante">
-            <EntityTypeMapping TypeName="dbTS15Model.vw_transformador_fabricante">
-              <MappingFragment StoreEntitySet="vw_transformador_fabricante">
+          <EntitySetMapping Name="vw_transformador_fabricante_1">
+            <EntityTypeMapping TypeName="dbTS15Model.vw_transformador_fabricante_1">
+              <MappingFragment StoreEntitySet="vw_transformador_fabricante_1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="numdocumento" ColumnName="numdocumento" />
+                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fechaasignacion" ColumnName="fechaasignacion" />
                 <ScalarProperty Name="trfgrpconex" ColumnName="trfgrpconex" />
                 <ScalarProperty Name="corsalida_der" ColumnName="corsalida_der" />
                 <ScalarProperty Name="corentrada_der" ColumnName="corentrada_der" />
@@ -3095,12 +3268,7 @@
                 <ScalarProperty Name="altura" ColumnName="altura" />
                 <ScalarProperty Name="fabricante_id" ColumnName="fabricante_id" />
                 <ScalarProperty Name="numserie" ColumnName="numserie" />
-                <ScalarProperty Name="IdTransformador" ColumnName="IdTransformador" />
-                <ScalarProperty Name="fechaasignacion" ColumnName="fechaasignacion" />
-                <ScalarProperty Name="numdocumento" ColumnName="numdocumento" />
-                <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3134,14 +3302,14 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="DMProtocolo" ZoomLevel="63">
-        <EntityTypeShape EntityType="dbTS15Model.aspnet_Applications" Width="1.5" PointX="1.5" PointY="4.5" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="dbTS15Model.aspnet_Applications" Width="1.5" PointX="1.5" PointY="4.5" Height="2.557190755208353" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Membership" Width="1.5" PointX="6.75" PointY="9.5" Height="5.4417122395833246" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Paths" Width="1.5" PointX="3.75" PointY="1.5" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_PersonalizationAllUsers" Width="1.5" PointX="6" PointY="1.875" Height="1.7879850260416674" />
@@ -3156,33 +3324,35 @@
         <EntityTypeShape EntityType="dbTS15Model.cli_pedido" Width="1.5" PointX="6" PointY="23.125" Height="4.287903645833353" />
         <EntityTypeShape EntityType="dbTS15Model.gen_parametrica" Width="1.5" PointX="10.75" PointY="1" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="dbTS15Model.plantilla_prueba" Width="1.5" PointX="10.75" PointY="4" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1005" Width="1.5" PointX="3" PointY="14.625" Height="4.864807942708353" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1031" Width="1.5" PointX="3" PointY="20.25" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1465" Width="1.5" PointX="3" PointY="24.75" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc3396" Width="1.5" PointX="3" PointY="28.625" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc375" Width="1.5" PointX="3" PointY="33.25" Height="5.0571093749999818" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc471" Width="1.5" PointX="3" PointY="39" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc471_has_relacion" Width="1.5" PointX="5.25" PointY="39.125" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1005" Width="1.5" PointX="3" PointY="14.5" Height="4.864807942708353" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1031" Width="1.5" PointX="3" PointY="20.125" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1465" Width="1.5" PointX="3" PointY="24.625" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc3396" Width="1.5" PointX="3" PointY="28.5" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc375" Width="1.5" PointX="3" PointY="33.125" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc471" Width="1.5" PointX="3" PointY="39.125" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc471_has_relacion" Width="1.5" PointX="5.25" PointY="39.25" Height="3.134095052083353" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc837" Width="1.5" PointX="10.75" PointY="7" Height="2.1725878906249818" />
         <EntityTypeShape EntityType="dbTS15Model.pro_proceso" Width="1.5" PointX="8.25" PointY="22.375" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="dbTS15Model.pro_proceso_has_prueba" Width="1.5" PointX="10.5" PointY="22.875" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.tfr_bodega" Width="1.5" PointX="3" PointY="43.125" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.tfr_caracteristicas" Width="1.5" PointX="3" PointY="45.875" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="dbTS15Model.sysdiagrams" Width="1.5" PointX="10.75" PointY="10" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbTS15Model.tfr_bodega" Width="1.5" PointX="3" PointY="43.25" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbTS15Model.tfr_caracteristicas" Width="1.5" PointX="3" PointY="46" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_ordentrabajo" Width="1.5" PointX="8.25" PointY="26" Height="2.1725878906249818" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_transf_has_cliente" Width="1.5" PointX="6" PointY="20.25" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_transformador" Width="1.5" PointX="0.75" PointY="21.5" Height="7.5570279947916674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Applications" Width="1.5" PointX="10.75" PointY="10" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="1" Height="5.4417122395833246" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Profiles" Width="1.5" PointX="12.75" PointY="8" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Roles" Width="1.5" PointX="8.75" PointY="13" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Users" Width="1.5" PointX="12.75" PointY="11" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="14.75" PointY="1" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="14.75" PointY="4" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="7" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="10" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="15" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="14.75" PointY="13" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante" Width="1.5" PointX="16.75" PointY="1" Height="6.5955208333333388" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Applications" Width="1.5" PointX="12.75" PointY="1" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="4" Height="5.4417122395833246" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Profiles" Width="1.5" PointX="8.75" PointY="13" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Roles" Width="1.5" PointX="12.75" PointY="11" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Users" Width="1.5" PointX="10.75" PointY="14" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="12.75" PointY="14" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="14.75" PointY="1" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="4" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="7" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="14.75" PointY="10" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_solicitudes_cliente" Width="1.5" PointX="14.75" PointY="14" Height="3.7109993489583388" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="5.75" PointY="16" Height="2.557190755208353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante_1" Width="1.5" PointX="16.75" PointY="1" Height="6.595520833333353" />
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" >
           <ConnectorPoint PointX="3" PointY="4.84375" />
           <ConnectorPoint PointX="5.541666666666667" PointY="4.8437499999999991" />
@@ -3201,15 +3371,15 @@
           <ConnectorPoint PointX="2.2187475" PointY="3.1148893229166674" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Us__Appli__173876EA" >
-          <ConnectorPoint PointX="2.25" PointY="7.0571907552083246" />
+          <ConnectorPoint PointX="2.25" PointY="7.057190755208353" />
           <ConnectorPoint PointX="2.25" PointY="8.5" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__286302EC" >
           <ConnectorPoint PointX="3" PointY="11.886495768229167" />
+          <ConnectorPoint PointX="4.2135396666666667" PointY="11.886495768229167" />
+          <ConnectorPoint PointX="4.3802063333333328" PointY="11.886495768229167" />
           <ConnectorPoint PointX="4.822916666666667" PointY="11.886495768229167" />
           <ConnectorPoint PointX="4.989583333333333" PointY="11.886495768229167" />
-          <ConnectorPoint PointX="6.260416666666667" PointY="11.886495768229167" />
-          <ConnectorPoint PointX="6.427083333333333" PointY="11.886495768229167" />
           <ConnectorPoint PointX="6.75" PointY="11.886495768229167" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" >
@@ -3235,17 +3405,23 @@
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_cli_pedido_cli_cliente" >
           <ConnectorPoint PointX="4.90625" PointY="11.691793619791667" />
-          <ConnectorPoint PointX="4.90625" PointY="24.355499674479177" />
-          <ConnectorPoint PointX="6" PointY="24.355499674479177" />
+          <ConnectorPoint PointX="4.90625" PointY="24.230499674479177" />
+          <ConnectorPoint PointX="6" PointY="24.230499674479177" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_transf_has_cliente_cli_cliente" >
-          <ConnectorPoint PointX="5.25" PointY="9.09375" />
-          <ConnectorPoint PointX="6.34375" PointY="9.09375" />
-          <ConnectorPoint PointX="6.34375" PointY="20.25" />
+          <ConnectorPoint PointX="4.296873" PointY="11.691793619791667" />
+          <ConnectorPoint PointX="4.296873" PointY="14.25" />
+          <ConnectorPoint PointX="4.75" PointY="14.25" />
+          <ConnectorPoint PointX="4.75" PointY="21.240143229166662" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="21.240143229166662" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="21.240143229166662" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="21.240143229166662" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="21.240143229166662" />
+          <ConnectorPoint PointX="6" PointY="21.240143229166662" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_cli_pedido_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="24.583999837239588" />
-          <ConnectorPoint PointX="6" PointY="24.583999837239588" />
+          <ConnectorPoint PointX="2.25" PointY="24.458999837239588" />
+          <ConnectorPoint PointX="6" PointY="24.458999837239588" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_proceso_cli_pedido" >
           <ConnectorPoint PointX="7.5" PointY="24.220896809895834" />
@@ -3257,40 +3433,40 @@
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc1005_tfr_transformador" >
           <ConnectorPoint PointX="1.5" PointY="21.5" />
-          <ConnectorPoint PointX="1.5" PointY="17.057403971354177" />
-          <ConnectorPoint PointX="3" PointY="17.057403971354177" />
+          <ConnectorPoint PointX="1.5" PointY="16.932403971354177" />
+          <ConnectorPoint PointX="3" PointY="16.932403971354177" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc1031_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="22.730499674479177" />
-          <ConnectorPoint PointX="3" PointY="22.730499674479177" />
+          <ConnectorPoint PointX="2.25" PointY="22.667999674479177" />
+          <ConnectorPoint PointX="3" PointY="22.667999674479177" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc1465_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="26.317047526041677" />
-          <ConnectorPoint PointX="3" PointY="26.317047526041677" />
+          <ConnectorPoint PointX="2.25" PointY="26.192047526041677" />
+          <ConnectorPoint PointX="3" PointY="26.192047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc3396_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="28.841013997395834" />
-          <ConnectorPoint PointX="3" PointY="28.841013997395834" />
+          <ConnectorPoint PointX="2.25" PointY="28.778513997395834" />
+          <ConnectorPoint PointX="3" PointY="28.778513997395834" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc375_tfr_transformador" >
           <ConnectorPoint PointX="1.5" PointY="29.057027994791667" />
-          <ConnectorPoint PointX="1.5" PointY="35.778554687499991" />
-          <ConnectorPoint PointX="1.8229191666666667" PointY="35.778554687499991" />
-          <ConnectorPoint PointX="1.9895858333333332" PointY="35.778554687499991" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="35.778554687499991" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="35.778554687499991" />
-          <ConnectorPoint PointX="3" PointY="35.778554687499991" />
+          <ConnectorPoint PointX="1.5" PointY="35.749705403645834" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="35.749705403645834" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="35.749705403645834" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="35.749705403645834" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="35.749705403645834" />
+          <ConnectorPoint PointX="3" PointY="35.749705403645834" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc471_has_relacion_pro_ntc471" >
-          <ConnectorPoint PointX="4.5" PointY="40.692047526041677" />
-          <ConnectorPoint PointX="5.25" PointY="40.692047526041677" />
+          <ConnectorPoint PointX="4.5" PointY="40.817047526041677" />
+          <ConnectorPoint PointX="5.25" PointY="40.817047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc471_tfr_transformador" >
           <ConnectorPoint PointX="1.9062525" PointY="29.057027994791667" />
-          <ConnectorPoint PointX="1.9062525" PointY="40.663198242187491" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="40.663198242187491" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="40.663198242187491" />
-          <ConnectorPoint PointX="3" PointY="40.663198242187491" />
+          <ConnectorPoint PointX="1.9062525" PointY="40.788198242187491" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="40.788198242187491" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="40.788198242187491" />
+          <ConnectorPoint PointX="3" PointY="40.788198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_proceso_has_prueba_pro_proceso" >
           <ConnectorPoint PointX="9.75" PointY="23.865143229166677" />
@@ -3298,24 +3474,24 @@
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_bodega_tfr_transformador" >
           <ConnectorPoint PointX="1.0937475" PointY="29.057027994791667" />
-          <ConnectorPoint PointX="1.0937475" PointY="44.115143229166677" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="44.115143229166677" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="44.115143229166677" />
-          <ConnectorPoint PointX="3" PointY="44.115143229166677" />
+          <ConnectorPoint PointX="1.0937475" PointY="44.240143229166677" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="44.240143229166677" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="44.240143229166677" />
+          <ConnectorPoint PointX="3" PointY="44.240143229166677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_caracteristicas_tfr_transformador" >
           <ConnectorPoint PointX="2.10937875" PointY="29.057027994791667" />
-          <ConnectorPoint PointX="2.10937875" PointY="47.538198242187491" />
-          <ConnectorPoint PointX="3" PointY="47.538198242187491" />
+          <ConnectorPoint PointX="2.10937875" PointY="47.663198242187491" />
+          <ConnectorPoint PointX="3" PointY="47.663198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_transf_has_cliente_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="21.501152846153843" />
-          <ConnectorPoint PointX="2.625" PointY="21.126152846153843" />
-          <ConnectorPoint PointX="2.625" PointY="19.875" />
-          <ConnectorPoint PointX="4.822916666666667" PointY="19.875" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="21.5" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="19.875" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="19.875" />
           <ConnectorPoint PointX="4.989583333333333" PointY="19.875" />
-          <ConnectorPoint PointX="5.6261528461538468" PointY="19.875" />
-          <ConnectorPoint PointX="6.0011528461538459" PointY="20.25" />
+          <ConnectorPoint PointX="5.625" PointY="19.875" />
+          <ConnectorPoint PointX="5.625" PointY="21.766466843749988" />
+          <ConnectorPoint PointX="6" PointY="21.766466843749988" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.aspnet_UsersInRoles" >
           <ConnectorPoint PointX="1.5" PointY="3.1148893229166674" />

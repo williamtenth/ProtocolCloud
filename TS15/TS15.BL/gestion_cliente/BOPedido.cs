@@ -14,16 +14,18 @@ namespace TS15.BL.gestion_cliente
 {
     public class BOPedido : BOGenerico, IGestionable
     {
-        private BOOrdenTrabajo _ordenTrabajoBO;
-        private BOProceso _procesoBO;
-        private BOTransformador _transformadorBO;
+        private BOOrdenTrabajo _BOOrdenTrabajo;
+        private BOProceso _BOProceso;
+        private BOTransformador _BOTransformador;
+        private BOCliente _BOCliente;
 
         public BOPedido()
         {
             GenericoDAO = new DAOPedido();
-            _ordenTrabajoBO = new BOOrdenTrabajo();
-            _procesoBO = new BOProceso();
-            _transformadorBO = new BOTransformador();
+            _BOOrdenTrabajo = new BOOrdenTrabajo();
+            _BOProceso = new BOProceso();
+            _BOTransformador = new BOTransformador();
+            _BOCliente = new BOCliente();
         }
 
         public bool CrearPedidoSuministro(cli_pedido pedidoObject)
@@ -39,10 +41,10 @@ namespace TS15.BL.gestion_cliente
                 //CREA LA ORDEN DE TRABAJO
                 tfr_ordentrabajo ordenTrabajoObject = new tfr_ordentrabajo();
                 ordenTrabajoObject.pedido_id = pedidoObject.id;
-                ordenTrabajoObject.consecutivo = _ordenTrabajoBO.ObtenerConsecutivo();
+                ordenTrabajoObject.consecutivo = _BOOrdenTrabajo.ObtenerConsecutivo();
                 ordenTrabajoObject.fechacreacion = DateTime.Now;
                 ordenTrabajoObject.estado = 1; //Estado Activo
-                _ordenTrabajoBO.Crear(ordenTrabajoObject);
+                _BOOrdenTrabajo.Crear(ordenTrabajoObject);
 
                 //INGRESA AL PROCESO DE PRUEBAS
                 pro_proceso procesoObject = new pro_proceso();
@@ -50,7 +52,7 @@ namespace TS15.BL.gestion_cliente
                 procesoObject.tipprocesop = 1; //Proceso de pruebas preliminares.
                 procesoObject.fecha = DateTime.Now;
                 procesoObject.estado = 1; //Estado Activo
-                _procesoBO.Crear(procesoObject);
+                _BOProceso.Crear(procesoObject);
             }
 
             return bitProceso;
@@ -103,7 +105,22 @@ namespace TS15.BL.gestion_cliente
             procesoObject.tipprocesop = 1; //Proceso de pruebas preliminares.
             procesoObject.fecha = DateTime.Now;
             procesoObject.estado = 1; //Estado Activo
-            _procesoBO.Crear(procesoObject);
+            _BOProceso.Crear(procesoObject);
+
+            //INGRESA EL TRANSFORMADOR A LA BODEGA CON TIPO 'EN'
+            tfr_bodega bodegaObject = new tfr_bodega();
+            bodegaObject.transformador_id = Convert.ToInt32(pedidoObject.transformador_id);
+            bodegaObject.tipbodega = "EN"; //TIPO BODEGA DE ENTRADA
+            bodegaObject.fecentrada = DateTime.Now;
+            _BOTransformador.IngresarEnBodega(bodegaObject);
+
+            //ASIGNA EL TRANSFORMADOR AL CLIENTE
+            tfr_transf_has_cliente transfClienteObject = new tfr_transf_has_cliente();
+            transfClienteObject.cliente_id = Convert.ToInt32(pedidoObject.cliente_id);
+            transfClienteObject.transformador_id = bodegaObject.transformador_id;
+            transfClienteObject.fechaasignacion = DateTime.Now;
+
+            _BOCliente.AsignarTransformador(transfClienteObject);
         }
     }
 }

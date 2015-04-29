@@ -145,8 +145,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void CrearProcesoPruebasPreeliminares()
         {
-            string clienteTransformador = ucBusquedaCliente.IdCliente + ucBusquedaTransformador.IdTransformador;
-            if (!string.IsNullOrEmpty(clienteTransformador))
+            if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente) && !string.IsNullOrEmpty(ucBusquedaTransformador.IdTransformador))
             {
                 string idTransformador = ucBusquedaTransformador.IdTransformador;
                 if (!_transformadorBO.EsAsignadoCliente(idTransformador))
@@ -163,6 +162,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                         pedidoObject.transformador_id = Convert.ToInt32(ucBusquedaTransformador.IdTransformador);
 
                         _pedidoBO.CrearProcesoPruebasPreeliminares(pedidoObject);
+
+                        EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado la solicitud correctamente");
                     }
                     else
                         EnviarAModalMsj(ModalMsj1, "Error", "No se puede seleccionar transformador, tiene solicitud activa");
@@ -189,6 +190,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             pedidoObject.cliente_id = Convert.ToInt32(ucBusquedaCliente.IdCliente);
 
             _pedidoBO.CrearPedidoSuministro(pedidoObject);
+
+            EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado el pedido correctamente");
         }
 
         //protected void btnBuscar_Click(object sender, EventArgs e)

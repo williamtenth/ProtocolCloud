@@ -151,6 +151,7 @@
     <Content Include="APP\css\uploadify.css" />
     <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
+    <Content Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\GestionarPedidos.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
     <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
@@ -159,6 +160,7 @@
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
+    <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
     <Content Include="APP\dev\GestionUsuarios\CrearUsuario.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
@@ -332,6 +334,13 @@
     <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
     </Compile>
+    <Compile Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx.cs">
+      <DependentUpon>GestionarInformacionCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx.designer.cs">
+      <DependentUpon>GestionarInformacionCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="APP\dev\GestionCliente\GestionarPedidos.aspx.cs">
       <DependentUpon>GestionarPedidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -376,6 +385,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.designer.cs">
       <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\CrearTransformador.aspx.cs">
+      <DependentUpon>CrearTransformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\CrearTransformador.aspx.designer.cs">
+      <DependentUpon>CrearTransformador.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
