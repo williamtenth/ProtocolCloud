@@ -15,5 +15,11 @@ namespace TS15V2.UI.APP.util
             BOParametrica parametricaBO = new BOParametrica();
             return parametricaBO.ConsultarParametros(pTipo);
         }
+
+        public static gen_parametrica ConsultarXTipoConsecutivo(String pTipo, Byte consecutivo)
+        {
+            BOParametrica parametricaBO = new BOParametrica();
+            return parametricaBO.ConsultarXTipoConsecutivo(pTipo,consecutivo);
+        }
     }
 }

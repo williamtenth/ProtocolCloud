@@ -19,12 +19,22 @@ namespace TS15V2.UI.APP.util
         public const String SESION_PRUEBA_NTC375 = "SESION_PRUEBA_NTC375";
         public const String SESION_PRUEBA_NTC1031 = "SESION_PRUEBA_NTC1031";
         public const String SESION_PRUEBA_NTC1005 = "SESION_PRUEBA_NTC1005";
-        // Gestión Protocolo
+        public const String SESION_PRUEBA_NTC471 = "SESION_PRUEBA_NTC471";
+        public const String SESION_PRUEBA_NTC471_DETALLE = "SESION_PRUEBA_NTC471_DETALLE";
+        public const String SESION_PRUEBA_NTC837 = "SESION_PRUEBA_NTC837";
+
+        // Gestión protocolo
         public const byte RESULTADO_PRUEBAS_EXITOSA = 1;
         public const byte RESULTADO_PRUEBAS_NO_EXITOSA = 2;
+        
         // Variables generales
         public const byte ESTADO_ACTIVO = 1;
         public const byte ESTADO_TERMINADO = 2;
+
+        // Tipos para gen_parametrica
+        public const String GEN_PARAMETRICA_RESULTADO = "resultado";
+        public const String GEN_PARAMETRICA_ESTADO = "estado";
+
 
 
     }//end VariableGlobales

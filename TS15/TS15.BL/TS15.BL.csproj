@@ -51,6 +51,7 @@
     <Compile Include="gestion_protocolo\BOProtocolo_NTC375.cs" />
     <Compile Include="gestion_protocolo\BOProtocolo_NTC1031.cs" />
     <Compile Include="gestion_protocolo\BOProtocolo_NTC1005.cs" />
+    <Compile Include="gestion_protocolo\BOProtocolo_NTC471.cs" />
     <Compile Include="gestion_transformador\BOOrdenTrabajo.cs" />
     <Compile Include="gestion_transformador\BOTransformador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

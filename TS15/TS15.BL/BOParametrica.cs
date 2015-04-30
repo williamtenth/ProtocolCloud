@@ -24,6 +24,11 @@ namespace TS15.BL
             return ((DAOParametrica)GenericoDAO).ConsultarParametros(tipo);
         }
 
+        public gen_parametrica ConsultarXTipoConsecutivo(String tipo, Byte consecutivo)
+        {
+            return ((DAOParametrica)GenericoDAO).ConsultarXTipoConsecutivo(tipo, consecutivo);
+        }
+
         public List<gen_parametrica> ConsultarParametrosSuministro(string tipo)
         {
             return ((DAOParametrica)GenericoDAO).ConsultarParametrosSuministro(tipo);

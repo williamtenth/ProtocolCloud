@@ -155,6 +155,7 @@
     <Content Include="APP\dev\GestionCliente\GestionarPedidos.aspx" />
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
     <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC471.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1031.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC375.aspx" />
@@ -355,6 +356,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC471.aspx.cs">
+      <DependentUpon>ProtocoloNTC471.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC471.aspx.designer.cs">
+      <DependentUpon>ProtocoloNTC471.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.aspx.cs">
       <DependentUpon>ProtocoloNTC1005.aspx</DependentUpon>
