@@ -40,6 +40,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc375_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc375", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc375), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc471_has_relacion_pro_ntc471", "pro_ntc471", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.pro_ntc471), "pro_ntc471_has_relacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc471_has_relacion), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc471_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc471", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc471), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc837", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc837), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_proceso_has_prueba_pro_proceso", "pro_proceso", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.pro_proceso), "pro_proceso_has_prueba", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_proceso_has_prueba), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_bodega_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "tfr_bodega", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_bodega), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_caracteristicas_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "tfr_caracteristicas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_caracteristicas), true)]
@@ -756,6 +757,22 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<vw_sol_pedidos_cliente> vw_sol_pedidos_cliente
+        {
+            get
+            {
+                if ((_vw_sol_pedidos_cliente == null))
+                {
+                    _vw_sol_pedidos_cliente = base.CreateObjectSet<vw_sol_pedidos_cliente>("vw_sol_pedidos_cliente");
+                }
+                return _vw_sol_pedidos_cliente;
+            }
+        }
+        private ObjectSet<vw_sol_pedidos_cliente> _vw_sol_pedidos_cliente;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<vw_solicitudes_cliente> vw_solicitudes_cliente
         {
             get
@@ -1131,6 +1148,14 @@ namespace TS15.Common.Generated
         public void AddTovw_cli_usuario(vw_cli_usuario vw_cli_usuario)
         {
             base.AddObject("vw_cli_usuario", vw_cli_usuario);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_sol_pedidos_cliente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_sol_pedidos_cliente(vw_sol_pedidos_cliente vw_sol_pedidos_cliente)
+        {
+            base.AddObject("vw_sol_pedidos_cliente", vw_sol_pedidos_cliente);
         }
     
         /// <summary>
@@ -8113,10 +8138,14 @@ namespace TS15.Common.Generated
         /// Create a new pro_ntc837 object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
-        public static pro_ntc837 Createpro_ntc837(global::System.Int32 id)
+        /// <param name="transformador_id">Initial value of the transformador_id property.</param>
+        /// <param name="proceso_id">Initial value of the proceso_id property.</param>
+        public static pro_ntc837 Createpro_ntc837(global::System.Int32 id, global::System.Int32 transformador_id, global::System.Int32 proceso_id)
         {
             pro_ntc837 pro_ntc837 = new pro_ntc837();
             pro_ntc837.id = id;
+            pro_ntc837.transformador_id = transformador_id;
+            pro_ntc837.proceso_id = proceso_id;
             return pro_ntc837;
         }
 
@@ -8154,9 +8183,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> transformador_id
+        public global::System.Int32 transformador_id
         {
             get
             {
@@ -8171,16 +8200,16 @@ namespace TS15.Common.Generated
                 Ontransformador_idChanged();
             }
         }
-        private Nullable<global::System.Int32> _transformador_id;
-        partial void Ontransformador_idChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _transformador_id;
+        partial void Ontransformador_idChanging(global::System.Int32 value);
         partial void Ontransformador_idChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> proceso_id
+        public global::System.Int32 proceso_id
         {
             get
             {
@@ -8195,8 +8224,8 @@ namespace TS15.Common.Generated
                 Onproceso_idChanged();
             }
         }
-        private Nullable<global::System.Int32> _proceso_id;
-        partial void Onproceso_idChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _proceso_id;
+        partial void Onproceso_idChanging(global::System.Int32 value);
         partial void Onproceso_idChanged();
     
         /// <summary>
@@ -8270,10 +8299,172 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _estado;
         partial void OnestadoChanging(Nullable<global::System.Byte> value);
         partial void OnestadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> bt_at_t
+        {
+            get
+            {
+                return _bt_at_t;
+            }
+            set
+            {
+                Onbt_at_tChanging(value);
+                ReportPropertyChanging("bt_at_t");
+                _bt_at_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("bt_at_t");
+                Onbt_at_tChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _bt_at_t;
+        partial void Onbt_at_tChanging(Nullable<global::System.Decimal> value);
+        partial void Onbt_at_tChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> at_bt_t
+        {
+            get
+            {
+                return _at_bt_t;
+            }
+            set
+            {
+                Onat_bt_tChanging(value);
+                ReportPropertyChanging("at_bt_t");
+                _at_bt_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("at_bt_t");
+                Onat_bt_tChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _at_bt_t;
+        partial void Onat_bt_tChanging(Nullable<global::System.Decimal> value);
+        partial void Onat_bt_tChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> tension
+        {
+            get
+            {
+                return _tension;
+            }
+            set
+            {
+                OntensionChanging(value);
+                ReportPropertyChanging("tension");
+                _tension = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tension");
+                OntensionChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _tension;
+        partial void OntensionChanging(Nullable<global::System.Decimal> value);
+        partial void OntensionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> frecuencia
+        {
+            get
+            {
+                return _frecuencia;
+            }
+            set
+            {
+                OnfrecuenciaChanging(value);
+                ReportPropertyChanging("frecuencia");
+                _frecuencia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("frecuencia");
+                OnfrecuenciaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _frecuencia;
+        partial void OnfrecuenciaChanging(Nullable<global::System.Decimal> value);
+        partial void OnfrecuenciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> tiempo
+        {
+            get
+            {
+                return _tiempo;
+            }
+            set
+            {
+                OntiempoChanging(value);
+                ReportPropertyChanging("tiempo");
+                _tiempo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiempo");
+                OntiempoChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _tiempo;
+        partial void OntiempoChanging(Nullable<global::System.Decimal> value);
+        partial void OntiempoChanged();
 
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "tfr_transformador")]
+        public tfr_transformador tfr_transformador
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tfr_transformador> tfr_transformadorReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -10573,6 +10764,28 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "pro_ntc837")]
+        public EntityCollection<pro_ntc837> pro_ntc837
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<pro_ntc837>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "pro_ntc837");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pro_ntc837>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "pro_ntc837", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK_tfr_bodega_tfr_transformador", "tfr_bodega")]
         public EntityCollection<tfr_bodega> tfr_bodega
         {
@@ -12624,6 +12837,530 @@ namespace TS15.Common.Generated
         private global::System.String _telefono;
         partial void OntelefonoChanging(global::System.String value);
         partial void OntelefonoChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="vw_sol_pedidos_cliente")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class vw_sol_pedidos_cliente : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new vw_sol_pedidos_cliente object.
+        /// </summary>
+        /// <param name="idCliente">Initial value of the idCliente property.</param>
+        /// <param name="nombre">Initial value of the nombre property.</param>
+        /// <param name="tipdoc">Initial value of the tipdoc property.</param>
+        /// <param name="numdocumento">Initial value of the numdocumento property.</param>
+        /// <param name="idPedido">Initial value of the idPedido property.</param>
+        /// <param name="consecutivo">Initial value of the consecutivo property.</param>
+        /// <param name="fechasolicitud">Initial value of the fechasolicitud property.</param>
+        /// <param name="tipsolicitud">Initial value of the tipsolicitud property.</param>
+        public static vw_sol_pedidos_cliente Createvw_sol_pedidos_cliente(global::System.Int32 idCliente, global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento, global::System.Int32 idPedido, global::System.Int32 consecutivo, global::System.DateTime fechasolicitud, global::System.Byte tipsolicitud)
+        {
+            vw_sol_pedidos_cliente vw_sol_pedidos_cliente = new vw_sol_pedidos_cliente();
+            vw_sol_pedidos_cliente.idCliente = idCliente;
+            vw_sol_pedidos_cliente.nombre = nombre;
+            vw_sol_pedidos_cliente.tipdoc = tipdoc;
+            vw_sol_pedidos_cliente.numdocumento = numdocumento;
+            vw_sol_pedidos_cliente.idPedido = idPedido;
+            vw_sol_pedidos_cliente.consecutivo = consecutivo;
+            vw_sol_pedidos_cliente.fechasolicitud = fechasolicitud;
+            vw_sol_pedidos_cliente.tipsolicitud = tipsolicitud;
+            return vw_sol_pedidos_cliente;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idCliente
+        {
+            get
+            {
+                return _idCliente;
+            }
+            set
+            {
+                if (_idCliente != value)
+                {
+                    OnidClienteChanging(value);
+                    ReportPropertyChanging("idCliente");
+                    _idCliente = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("idCliente");
+                    OnidClienteChanged();
+                }
+            }
+        }
+        private global::System.Int32 _idCliente;
+        partial void OnidClienteChanging(global::System.Int32 value);
+        partial void OnidClienteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                if (_nombre != value)
+                {
+                    OnnombreChanging(value);
+                    ReportPropertyChanging("nombre");
+                    _nombre = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("nombre");
+                    OnnombreChanged();
+                }
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte tipdoc
+        {
+            get
+            {
+                return _tipdoc;
+            }
+            set
+            {
+                if (_tipdoc != value)
+                {
+                    OntipdocChanging(value);
+                    ReportPropertyChanging("tipdoc");
+                    _tipdoc = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("tipdoc");
+                    OntipdocChanged();
+                }
+            }
+        }
+        private global::System.Byte _tipdoc;
+        partial void OntipdocChanging(global::System.Byte value);
+        partial void OntipdocChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String numdocumento
+        {
+            get
+            {
+                return _numdocumento;
+            }
+            set
+            {
+                if (_numdocumento != value)
+                {
+                    OnnumdocumentoChanging(value);
+                    ReportPropertyChanging("numdocumento");
+                    _numdocumento = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("numdocumento");
+                    OnnumdocumentoChanged();
+                }
+            }
+        }
+        private global::System.String _numdocumento;
+        partial void OnnumdocumentoChanging(global::System.String value);
+        partial void OnnumdocumentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                OndireccionChanging(value);
+                ReportPropertyChanging("direccion");
+                _direccion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("direccion");
+                OndireccionChanged();
+            }
+        }
+        private global::System.String _direccion;
+        partial void OndireccionChanging(global::System.String value);
+        partial void OndireccionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                OntelefonoChanging(value);
+                ReportPropertyChanging("telefono");
+                _telefono = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telefono");
+                OntelefonoChanged();
+            }
+        }
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
+        partial void OntelefonoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> tiptercero
+        {
+            get
+            {
+                return _tiptercero;
+            }
+            set
+            {
+                OntipterceroChanging(value);
+                ReportPropertyChanging("tiptercero");
+                _tiptercero = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiptercero");
+                OntipterceroChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _tiptercero;
+        partial void OntipterceroChanging(Nullable<global::System.Int32> value);
+        partial void OntipterceroChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idPedido
+        {
+            get
+            {
+                return _idPedido;
+            }
+            set
+            {
+                if (_idPedido != value)
+                {
+                    OnidPedidoChanging(value);
+                    ReportPropertyChanging("idPedido");
+                    _idPedido = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("idPedido");
+                    OnidPedidoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _idPedido;
+        partial void OnidPedidoChanging(global::System.Int32 value);
+        partial void OnidPedidoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 consecutivo
+        {
+            get
+            {
+                return _consecutivo;
+            }
+            set
+            {
+                if (_consecutivo != value)
+                {
+                    OnconsecutivoChanging(value);
+                    ReportPropertyChanging("consecutivo");
+                    _consecutivo = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("consecutivo");
+                    OnconsecutivoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _consecutivo;
+        partial void OnconsecutivoChanging(global::System.Int32 value);
+        partial void OnconsecutivoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime fechasolicitud
+        {
+            get
+            {
+                return _fechasolicitud;
+            }
+            set
+            {
+                if (_fechasolicitud != value)
+                {
+                    OnfechasolicitudChanging(value);
+                    ReportPropertyChanging("fechasolicitud");
+                    _fechasolicitud = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("fechasolicitud");
+                    OnfechasolicitudChanged();
+                }
+            }
+        }
+        private global::System.DateTime _fechasolicitud;
+        partial void OnfechasolicitudChanging(global::System.DateTime value);
+        partial void OnfechasolicitudChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte tipsolicitud
+        {
+            get
+            {
+                return _tipsolicitud;
+            }
+            set
+            {
+                if (_tipsolicitud != value)
+                {
+                    OntipsolicitudChanging(value);
+                    ReportPropertyChanging("tipsolicitud");
+                    _tipsolicitud = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("tipsolicitud");
+                    OntipsolicitudChanged();
+                }
+            }
+        }
+        private global::System.Byte _tipsolicitud;
+        partial void OntipsolicitudChanging(global::System.Byte value);
+        partial void OntipsolicitudChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                OncantidadChanging(value);
+                ReportPropertyChanging("cantidad");
+                _cantidad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("cantidad");
+                OncantidadChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _cantidad;
+        partial void OncantidadChanging(Nullable<global::System.Int32> value);
+        partial void OncantidadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> tiptransformador
+        {
+            get
+            {
+                return _tiptransformador;
+            }
+            set
+            {
+                OntiptransformadorChanging(value);
+                ReportPropertyChanging("tiptransformador");
+                _tiptransformador = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiptransformador");
+                OntiptransformadorChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _tiptransformador;
+        partial void OntiptransformadorChanging(Nullable<global::System.Byte> value);
+        partial void OntiptransformadorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> capacidad
+        {
+            get
+            {
+                return _capacidad;
+            }
+            set
+            {
+                OncapacidadChanging(value);
+                ReportPropertyChanging("capacidad");
+                _capacidad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("capacidad");
+                OncapacidadChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _capacidad;
+        partial void OncapacidadChanging(Nullable<global::System.Byte> value);
+        partial void OncapacidadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> volentrada
+        {
+            get
+            {
+                return _volentrada;
+            }
+            set
+            {
+                OnvolentradaChanging(value);
+                ReportPropertyChanging("volentrada");
+                _volentrada = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volentrada");
+                OnvolentradaChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Byte> value);
+        partial void OnvolentradaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> volsalida
+        {
+            get
+            {
+                return _volsalida;
+            }
+            set
+            {
+                OnvolsalidaChanging(value);
+                ReportPropertyChanging("volsalida");
+                _volsalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volsalida");
+                OnvolsalidaChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _volsalida;
+        partial void OnvolsalidaChanging(Nullable<global::System.Byte> value);
+        partial void OnvolsalidaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> transformador_id
+        {
+            get
+            {
+                return _transformador_id;
+            }
+            set
+            {
+                Ontransformador_idChanging(value);
+                ReportPropertyChanging("transformador_id");
+                _transformador_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("transformador_id");
+                Ontransformador_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _transformador_id;
+        partial void Ontransformador_idChanging(Nullable<global::System.Int32> value);
+        partial void Ontransformador_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> aprobado
+        {
+            get
+            {
+                return _aprobado;
+            }
+            set
+            {
+                OnaprobadoChanging(value);
+                ReportPropertyChanging("aprobado");
+                _aprobado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("aprobado");
+                OnaprobadoChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _aprobado;
+        partial void OnaprobadoChanging(Nullable<global::System.Boolean> value);
+        partial void OnaprobadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Byte> estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private Nullable<global::System.Byte> _estado;
+        partial void OnestadoChanging(Nullable<global::System.Byte> value);
+        partial void OnestadoChanged();
 
         #endregion
 
