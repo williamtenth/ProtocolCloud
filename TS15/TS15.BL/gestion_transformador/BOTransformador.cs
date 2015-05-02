@@ -77,12 +77,6 @@ namespace TS15.BL.gestion_transformador
             return transformadorDAO.RetirarTranfoDeCliente(trafo_id, contexto, error);
         }
 
-        public List<vw_transformador_fabricante_1> ConsultarTransformadoresCliente(int idCliente)
-        {
-            return ((DAOTransformador)GenericoDAO).ConsultarTransformadoresCliente(idCliente);
-        }
-
-
         public bool Modificar(EntityObject entidad)
         {
             throw new NotImplementedException();
@@ -123,6 +117,11 @@ namespace TS15.BL.gestion_transformador
         internal void IngresarEnBodega(tfr_bodega bodegaObject)
         {
             ((DAOTransformador)GenericoDAO).IngresarEnBodega(bodegaObject);
+        }
+
+        public vw_transformador_fabricante ConsultarTransformadorFabricante(int idTransformador)
+        {
+            return ((DAOTransformador)GenericoDAO).ConsultarTransformadorFabricante(idTransformador);
         }
     }
 }

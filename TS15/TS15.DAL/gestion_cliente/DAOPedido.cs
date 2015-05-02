@@ -31,5 +31,10 @@ namespace TS15.DAL.gestion_cliente
 
             return Convert.ToInt32(a) + 1;
         }
+
+        public EntityObject ConsultarXId(int idSolicitud)
+        {
+            return SingletonDatos.Contexto.cli_pedido.Where(p => p.id == idSolicitud).FirstOrDefault();
+        }
     }
 }

@@ -156,7 +156,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                         pedidoObject.fechasolicitud = DateTime.Now;
                         pedidoObject.tipsolicitud = UtilNumeros.StringToBytes(this.ddlTipoSolicitud.SelectedValue);
                         pedidoObject.tiptransformador = 1; //TIPO DE TRANSFORMADOR 'DISTRIBUCION'
-                        pedidoObject.aprobado = true;
+                        //pedidoObject.aprobado = true;
                         pedidoObject.estado = 1; //ESTADO ACTIVO DEL PEDIDO
                         pedidoObject.cliente_id = Convert.ToInt32(ucBusquedaCliente.IdCliente);
                         pedidoObject.transformador_id = Convert.ToInt32(ucBusquedaTransformador.IdTransformador);

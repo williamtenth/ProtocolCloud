@@ -94,11 +94,6 @@ namespace TS15.DAL.gestion_transformador
             return true;
         }
 
-        public List<vw_transformador_fabricante_1> ConsultarTransformadoresCliente(int idCliente)
-        {
-            return SingletonDatos.Contexto.vw_transformador_fabricante_1.Where(p => p.id == idCliente).ToList();
-        }
-
         public List<tfr_transformador> ConsultarTransformadoresFabricante()
         {
             return SingletonDatos.Contexto.tfr_transformador.ToList();
@@ -130,6 +125,11 @@ namespace TS15.DAL.gestion_transformador
         {
             SingletonDatos.Contexto.tfr_bodega.AddObject(bodegaObject);
             SingletonDatos.Contexto.SaveChanges();
+        }
+
+        public vw_transformador_fabricante ConsultarTransformadorFabricante(int idTransformador)
+        {
+            return SingletonDatos.Contexto.vw_transformador_fabricante.Where(p => p.IdTransformador == idTransformador).SingleOrDefault();
         }
     }
 }

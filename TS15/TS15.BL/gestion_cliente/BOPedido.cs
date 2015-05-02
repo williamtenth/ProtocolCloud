@@ -68,9 +68,9 @@ namespace TS15.BL.gestion_cliente
             return maximo;
         }
 
-        public EntityObject ConsultarXId(int id)
+        public EntityObject ConsultarXId(int idSolicitud)
         {
-            throw new NotImplementedException();
+            return ((DAOPedido)GenericoDAO).ConsultarXId(idSolicitud);
         }
 
         public bool Modificar(EntityObject entidad)

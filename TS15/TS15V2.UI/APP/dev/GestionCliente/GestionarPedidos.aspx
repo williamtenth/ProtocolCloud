@@ -100,39 +100,132 @@
         <li><i class="icon-edit"></i><a href="#">Gestionar Pedidos</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnPatientChange="ucBusquedaCliente_PatientChange" />
+        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnClienteChange="ucBusquedaCliente_ClienteChange" />
     </div>
-    <asp:Panel runat="server" ID="pnlGrilla" CssClass="row-fluid sortable ui-sortable">
+    <asp:Panel runat="server" ID="pnlGrilla" CssClass="row-fluid sortable ui-sortable"
+        Visible="false">
         <div class="box span12">
+            <div class="box-header">
+                <h2>
+                    <i class="halflings-icon th"></i><span class="break"></span>Solicitudes</h2>
+            </div>
             <div class="box-content">
-                <div class="box-content">
-                    <asp:GridView runat="server" ID="gvSolicitudesCliente" AutoGenerateColumns="false"
-                        CssClass="table table-striped" OnRowCommand="gvSolicitudesCliente_RowCommand">
-                        <Columns>
-                            <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" />
-                            <asp:BoundField DataField="fechasolicitud" HeaderText="Fecha" DataFormatString="{0:d}" />
-                            <asp:BoundField DataField="tipsolicitud" HeaderText="Tipo Solicitud" />
-                            <asp:TemplateField HeaderText="Aprobado">
-                                <ItemTemplate>
-                                    <%# (Boolean.Parse(Eval("aprobado").ToString())) ? "Si" : "No"%></ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:LinkButton runat="server" ID="lbtnVer" CommandName="Ver" CssClass="btn btn-success"
-                                        ToolTip="Ver Detalle">
-                                <i class="halflings-icon white zoom-in"></i> </asp:LinkButton>
-                                    <asp:LinkButton runat="server" ID="ltbnEditar" CommandName="Editar" CssClass="btn btn-info"
-                                        ToolTip="Editar">
-                                <i class="halflings-icon white edit"></i></asp:LinkButton>
-                                    <%--<asp:LinkButton runat="server" ID="lbtnEliminar" CommandName="Eliminar" CssClass="btn btn-danger"
-                                    OnClientClick="return confirm('¿Realmente deseas eliminar este registro?');">
-                                <i class="glyphicon glyphicon-trash icon-white">Eliminar</i>
-                                </asp:LinkButton>--%>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-                </div>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <asp:GridView runat="server" ID="gvSolicitudesCliente" DataKeyNames="tipSolicitud,idpedido,transformador_id"
+                            AutoGenerateColumns="false" CssClass="table table-striped" OnRowCommand="gvSolicitudesCliente_RowCommand"
+                            OnSelectedIndexChanged="gvSolicitudesCliente_SelectedIndexChanged">
+                            <Columns>
+                                <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" ItemStyle-HorizontalAlign="Center" />
+                                <asp:BoundField DataField="fechasolicitud" HeaderText="Fecha" DataFormatString="{0:d}" />
+                                <asp:BoundField DataField="tipoSolicitud" HeaderText="Tipo Solicitud" />
+                                <asp:TemplateField HeaderText="Aprobado">
+                                    <ItemTemplate>
+                                        <%# Eval("aprobado") == null ? " " : (Boolean.Parse(Eval("aprobado").ToString())) ? "Si" : "No"%></ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:ButtonField ButtonType="Link" CommandName="Select" Text="Seleccionar" />
+                            </Columns>
+                            <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
+                        </asp:GridView>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <asp:Panel runat="server" ID="pnlControles" Visible="false">
+                            <div class="form-horizontal">
+                                <fieldset>
+                                    <asp:Panel runat="server" ID="pnlFabricante" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtFabricante">
+                                            Fabricante:</label>
+                                        <div class="controls">
+                                            <asp:TextBox runat="server" ID="txtFabricante" CssClass="form-control" MaxLength="20"
+                                                Enabled="false" Visible="false"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_txtFabricante" ControlToValidate="txtFabricante"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlNumeroSerie" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtNumeroSerie">
+                                            Número de Serie:</label>
+                                        <div class="controls">
+                                            <asp:TextBox runat="server" ID="txtNumeroSerie" CssClass="form-control" MaxLength="20"
+                                                Enabled="false" Visible="false"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumeroSerie" ControlToValidate="txtNumeroSerie"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtCantidad">
+                                            Cantidad:</label>
+                                        <div class="controls">
+                                            <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="20"
+                                                Enabled="false" Visible="false"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_txtCantidad" ControlToValidate="txtCantidad"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="ddlCapacidad">
+                                            Capacidad:</label>
+                                        <div class="controls">
+                                            <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound"
+                                                Enabled="false" Visible="false">
+                                            </asp:DropDownList>
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtVolEntrada">
+                                            Voltaje Entrada:</label>
+                                        <div class="controls">
+                                            <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control" MaxLength="20"
+                                                Enabled="false" Visible="false"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtVolSalida">
+                                            Voltaje Salida:</label>
+                                        <div class="controls">
+                                            <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control" MaxLength="20"
+                                                Enabled="false" Visible="false"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                            <asp:HiddenField runat="server" ID="hfIdPedido" />
+                                            <asp:HiddenField runat="server" ID="hfTipoSolicitud" />
+                                        </div>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlAprobado" CssClass="control-group" Visible="false">
+                                        <label class="control-label" for="txtVolSalida">
+                                            Aprobado:</label>
+                                        <div class="controls">
+                                            <asp:RadioButtonList runat="server" ID="rblAprobado" Width="200px" RepeatDirection="Horizontal">
+                                                <asp:ListItem Text="Si" Value="1">
+                                                </asp:ListItem>
+                                                <asp:ListItem Text="No" Value="0">
+                                                </asp:ListItem>
+                                            </asp:RadioButtonList>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_rblAprobado" ControlToValidate="rblAprobado"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                        </div>
+                                    </asp:Panel>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <asp:Button ID="btnModificarSolicitud" runat="server" CssClass="btn btn-primary"
+                                        Text="Modificar" OnClick="btnModificarSolicitud_Click" />
+                                    <asp:Button ID="btnEliminarSolicitud" runat="server" CssClass="btn btn-primary" Text="Eliminar"
+                                        OnClick="btnEliminarSolicitud_Click" />
+                                    <asp:Button ID="btnBuscarSolicitud" runat="server" CssClass="btn btn-primary" Text="Buscar"
+                                        OnClick="btnBuscarSolicitud_Click" />
+                                    <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar"
+                                        OnClick="btnGuardar_Click" Visible="false" ValidationGroup="vgGuardarCliente" />
+                                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
+                                        OnClick="btnCancelar_Click" Visible="false" />
+                                </div>
+                            </div>
+                        </asp:Panel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
     </asp:Panel>
