@@ -98,9 +98,14 @@ namespace TS15.BL.gestion_cliente
             return ((DAOCliente)GenericoDAO).ConsultarPedidosCliente(intIdCliente);
         }
 
-        public List<vw_solicitudes_cliente> ConsultarTransformadoresAsignados(int pIdCliente)
+        public List<vw_solicitudes_cliente> ConsultarSolicitudesCliente(int pIdCliente)
         {
-            return ((DAOCliente)GenericoDAO).ConsultarTransformadoresAsignados(pIdCliente);
+            return ((DAOCliente)GenericoDAO).ConsultarSolicitudesCliente(pIdCliente);
+        }
+
+        public List<vw_sol_pedidos_cliente> ConsultarPedidosSolicitudCliente(int pIdCliente)
+        {
+            return ((DAOCliente)GenericoDAO).ConsultarPedidosSolicitudCliente(pIdCliente);
         }
 
         internal void AsignarTransformador(tfr_transf_has_cliente transfClienteObject)

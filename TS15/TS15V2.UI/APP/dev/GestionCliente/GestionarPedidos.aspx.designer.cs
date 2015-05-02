@@ -13,12 +13,30 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
     public partial class GestionarPedidos {
         
         /// <summary>
-        /// gvPedidosCliente control.
+        /// ucBusquedaCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPedidosCliente;
+        protected global::TS15.UI.APP.componentes.BuscarCliente ucBusquedaCliente;
+        
+        /// <summary>
+        /// pnlGrilla control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlGrilla;
+        
+        /// <summary>
+        /// gvSolicitudesCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvSolicitudesCliente;
     }
 }

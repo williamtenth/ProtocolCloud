@@ -32,7 +32,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             }
         }
 
-        protected void ucBusquedaCliente_PatientChange(object sender, EventArgs e)
+        protected void ucBusquedaCliente_ClienteChange(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente))
                 pnlTabs.Visible = true;
@@ -48,8 +48,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente))
             {
                 int idCliente = Convert.ToInt32(ucBusquedaCliente.IdCliente);
-                gvTransformadoresCliente.DataSource = _BOCliente.ConsultarTransformadoresAsignados(idCliente);
-                gvTransformadoresCliente.DataBind();
+                gvSolicitudesCliente.DataSource = _BOCliente.ConsultarSolicitudesCliente(idCliente);
+                gvSolicitudesCliente.DataBind();
             }
         }
 

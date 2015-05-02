@@ -31,13 +31,13 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.Panel pnlTabs;
         
         /// <summary>
-        /// gvTransformadoresCliente control.
+        /// gvSolicitudesCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTransformadoresCliente;
+        protected global::System.Web.UI.WebControls.GridView gvSolicitudesCliente;
         
         /// <summary>
         /// ddlTipoDocumento control.

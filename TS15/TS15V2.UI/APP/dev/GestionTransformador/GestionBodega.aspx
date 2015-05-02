@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="GestionarPedidos.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.GestionarPedidos"
-    EnableEventValidation="false" %>
+    AutoEventWireup="true" CodeBehind="GestionBodega.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionTransformador.GestionBodega" %>
 
-<%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
+    TagPrefix="uc2" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
@@ -97,44 +97,70 @@
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Gestionar Pedidos</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Gestionar Bodega</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnPatientChange="ucBusquedaCliente_PatientChange" />
+        <uc2:BuscarTransformador ID="ucBusquedaTransformador" OnTransformadorChange="ucBusquedaTransformador_TransformadorChange"
+            runat="server" />
     </div>
-    <asp:Panel runat="server" ID="pnlGrilla" CssClass="row-fluid sortable ui-sortable">
+    <asp:Panel runat="server" ID="pnlDetalle" CssClass="row-fluid">
         <div class="box span12">
+            <div class="box-header">
+                <h2>
+                    <i class="halflings-icon th"></i><span class="break"></span>Detalle</h2>
+            </div>
             <div class="box-content">
-                <div class="box-content">
-                    <asp:GridView runat="server" ID="gvSolicitudesCliente" AutoGenerateColumns="false"
-                        CssClass="table table-striped" OnRowCommand="gvSolicitudesCliente_RowCommand">
-                        <Columns>
-                            <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" />
-                            <asp:BoundField DataField="fechasolicitud" HeaderText="Fecha" DataFormatString="{0:d}" />
-                            <asp:BoundField DataField="tipsolicitud" HeaderText="Tipo Solicitud" />
-                            <asp:TemplateField HeaderText="Aprobado">
-                                <ItemTemplate>
-                                    <%# (Boolean.Parse(Eval("aprobado").ToString())) ? "Si" : "No"%></ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:LinkButton runat="server" ID="lbtnVer" CommandName="Ver" CssClass="btn btn-success"
-                                        ToolTip="Ver Detalle">
-                                <i class="halflings-icon white zoom-in"></i> </asp:LinkButton>
-                                    <asp:LinkButton runat="server" ID="ltbnEditar" CommandName="Editar" CssClass="btn btn-info"
-                                        ToolTip="Editar">
-                                <i class="halflings-icon white edit"></i></asp:LinkButton>
-                                    <%--<asp:LinkButton runat="server" ID="lbtnEliminar" CommandName="Eliminar" CssClass="btn btn-danger"
-                                    OnClientClick="return confirm('¿Realmente deseas eliminar este registro?');">
-                                <i class="glyphicon glyphicon-trash icon-white">Eliminar</i>
-                                </asp:LinkButton>--%>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
+                <div class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="ddlFabricante">
+                                Fecha de Ingreso:</label>
+                            <div class="controls">
+                                <asp:TextBox runat="server" ID="txtFechaIngreso" CssClass="input-xlarge focused"
+                                    MaxLength="20"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtFechaIngreso" ControlToValidate="txtFechaIngreso"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarTransformador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="txtNumeroDocumento">
+                                Tipo de Bodega:</label>
+                            <div class="controls">
+                                <asp:DropDownList runat="server" ID="ddlTipoBodega" CssClass="input-xlarge focused">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoBodega" ControlToValidate="ddlTipoBodega"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente" InitialValue="-1"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="txtTipoCliente">
+                                Tipo Cliente:</label>
+                            <div class="controls">
+                                <%--<asp:DropDownList runat="server" ID="ddlTipoCliente" OnDataBound="ddlTipoCliente_DataBound"
+                                    Enabled="false">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoCliente" ControlToValidate="ddlTipoCliente"
+                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente" InitialValue="-1"></asp:RequiredFieldValidator>
+                                <asp:HiddenField runat="server" ID="hfIdCliente" />--%>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <%--<asp:Button ID="btnCrearCliente" runat="server" CssClass="btn btn-primary" Text="Crear"
+                                OnClick="btnCrearCliente_Click" />
+                            <asp:Button ID="btnModificarCliente" runat="server" CssClass="btn btn-primary" Text="Modificar"
+                                OnClick="btnModificarCliente_Click" />
+                            <asp:Button ID="btnEliminarCliente" runat="server" CssClass="btn btn-primary" Text="Eliminar"
+                                OnClick="btnEliminarCliente_Click" />
+                            <asp:Button ID="btnGuardarCliente" runat="server" CssClass="btn btn-primary" Text="Guardar"
+                                OnClick="btnGuardarCliente_Click" ValidationGroup="vgGuardarCliente" Visible="false" />
+                            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
+                                OnClick="btnCancelar_Click" Visible="false" />--%>
+                        </div>
+                    </fieldset>
                 </div>
             </div>
         </div>
+        hola
     </asp:Panel>
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>

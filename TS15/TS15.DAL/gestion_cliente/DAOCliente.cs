@@ -99,7 +99,7 @@ namespace TS15.DAL.gestion_cliente
             return true;
         }
 
-        public List<vw_solicitudes_cliente> ConsultarTransformadoresAsignados(int pIdCliente)
+        public List<vw_solicitudes_cliente> ConsultarSolicitudesCliente(int pIdCliente)
         {
             return SingletonDatos.Contexto.vw_solicitudes_cliente.Where(p => p.id == pIdCliente).ToList();
         }
@@ -108,6 +108,11 @@ namespace TS15.DAL.gestion_cliente
         {
             SingletonDatos.Contexto.tfr_transf_has_cliente.AddObject(transfClienteObject);
             SingletonDatos.Contexto.SaveChanges();
+        }
+
+        public List<vw_sol_pedidos_cliente> ConsultarPedidosSolicitudCliente(int pIdCliente)
+        {
+            return SingletonDatos.Contexto.vw_sol_pedidos_cliente.Where(p => p.idCliente == pIdCliente).ToList();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace TS15.UI.APP.componentes
 {
     public partial class BuscarCliente : UIGenericoComponente
     {
-        public event EventHandler PatientChange;
+        public event EventHandler ClienteChange;
 
         private cli_cliente _clienteObject;
         private BOCliente _BOCliente;
@@ -145,7 +145,7 @@ namespace TS15.UI.APP.componentes
             this.txtNumDoc.Text = numDocumento;
 
             // Delegate the event to the caller
-            if (this.PatientChange != null) this.PatientChange(sender, e);
+            if (this.ClienteChange != null) this.ClienteChange(sender, e);
 
             cli_cliente clienteObject = _BOCliente.ConsultarXId(idCliente) as cli_cliente;
             Session[VariablesGlobales.SESION_CLIENTE] = clienteObject;

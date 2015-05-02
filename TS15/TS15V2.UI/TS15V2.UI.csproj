@@ -161,6 +161,7 @@
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
+    <Content Include="APP\dev\GestionTransformador\GestionBodega.aspx" />
     <Content Include="APP\dev\GestionUsuarios\CrearUsuario.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
@@ -392,6 +393,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionTransformador\CrearTransformador.aspx.designer.cs">
       <DependentUpon>CrearTransformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\GestionBodega.aspx.cs">
+      <DependentUpon>GestionBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\GestionBodega.aspx.designer.cs">
+      <DependentUpon>GestionBodega.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>

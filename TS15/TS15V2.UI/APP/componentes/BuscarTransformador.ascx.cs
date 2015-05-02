@@ -22,6 +22,8 @@ namespace TS15V2.UI.APP.componentes
         private BOTransformador _BOTransformadorObject;
         private BOCliente _BOClienteObject;
 
+        public event EventHandler TransformadorChange;
+
         public BuscarTransformador()
         {
             _BOTransformadorObject = new BOTransformador();
@@ -98,10 +100,10 @@ namespace TS15V2.UI.APP.componentes
             //}
             //else
             //{
-                lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresFabricante();
-                gvTransformadores.DataSource = lstTransformadoresFabricante;
-                gvTransformadores.DataBind();
-                mpeTransformador.Show();
+            lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresFabricante();
+            gvTransformadores.DataSource = lstTransformadoresFabricante;
+            gvTransformadores.DataBind();
+            mpeTransformador.Show();
             //}
         }
 
@@ -111,12 +113,15 @@ namespace TS15V2.UI.APP.componentes
             string numeroSerie = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[1].ToString();
             string idFabricante = gvTransformadores.DataKeys[gvTransformadores.SelectedRow.RowIndex].Values[2].ToString();
 
-
-            Session[VariablesGlobales.SESSION_TRANSFORMADOR] = _BOTransformadorObject.ConsultarXId(idTransformador);
-
             ddlFabricante.SelectedValue = idFabricante;
             txtNumSerie.Text = numeroSerie;
             hfIdTransformador.Value = idTransformador.ToString();
+
+            // Delegate the event to the caller
+            if (this.TransformadorChange != null) this.TransformadorChange(sender, e);
+
+            tfr_transformador transformadorObject = _BOTransformadorObject.ConsultarXId(idTransformador) as tfr_transformador;
+            Session[VariablesGlobales.SESSION_TRANSFORMADOR] = transformadorObject;
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)

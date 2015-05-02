@@ -100,7 +100,7 @@
         <li><i class="icon-edit"></i><a href="#">Gestionar Información Cliente</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnPatientChange="ucBusquedaCliente_PatientChange" />
+        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnClienteChange="ucBusquedaCliente_ClienteChange" />
     </div>
     <asp:Panel runat="server" ID="pnlTabs" class="row-fluid" Visible="false">
         <div class="box span12">
@@ -116,7 +116,7 @@
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane" id="historial">
                         <div class="box-content">
-                            <asp:GridView runat="server" ID="gvTransformadoresCliente" AutoGenerateColumns="false"
+                            <asp:GridView runat="server" ID="gvSolicitudesCliente" AutoGenerateColumns="false"
                                 CssClass="table table-striped">
                                 <Columns>
                                     <asp:BoundField DataField="nombreFabricante" HeaderText="Nombre Fabricante" />
