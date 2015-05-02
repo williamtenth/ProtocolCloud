@@ -64,5 +64,11 @@ namespace TS15.BL.gestion_protocolo
             pro_ntc3396 resultado = (pro_ntc3396)((DAOProtocolo_NTC3396)GenericoDAO).ObtenerUltimaPrueba(transformador);
             return resultado != null ? resultado : new pro_ntc3396();
         }
+
+
+        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        {
+            return ((DAOProtocolo_NTC3396)GenericoDAO).ObternerPruebasXProceso(proceso);
+        }
     }
 }

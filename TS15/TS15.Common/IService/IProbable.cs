@@ -11,6 +11,6 @@ namespace TS15.Common.IService
     {
         Boolean Terminar(EntityObject entidad);
         EntityObject ObtenerUltimaPrueba(tfr_transformador transformador);
-
+        pro_elementoprueba ObternerPruebasXProceso(int pedido);
     }
 }

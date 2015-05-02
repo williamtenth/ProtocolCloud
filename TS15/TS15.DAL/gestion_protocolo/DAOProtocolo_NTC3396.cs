@@ -7,11 +7,17 @@ using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
+using TS15.Common.util;
 
 namespace TS15.DAL.gestion_protocolo
 {
     public class DAOProtocolo_NTC3396 : DAOGenerico, IGestionable, IProbable
     {
+        private String nombrePrueba;
+        public DAOProtocolo_NTC3396()
+        {
+            nombrePrueba = VariablesGlobales.PRUEBA_NTC3396;
+        }
 
         public List<EntityObject> Consultar()
         {
@@ -84,6 +90,17 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc3396 resultado = SingletonDatos.Contexto.pro_ntc3396
                 .Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
             return resultado != null ? resultado : new pro_ntc3396();
+        }
+
+        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        {
+            pro_ntc3396 prueba = SingletonDatos.Contexto.pro_ntc3396.Where(p => p.proceso_id == proceso).First();
+            if (prueba != null)
+            {
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba);
+                return elemento;
+            }
+            return null;
         }
     }
 }

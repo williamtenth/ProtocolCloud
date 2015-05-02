@@ -7,6 +7,7 @@ using TS15.Common.IService;
 using TS15.DAL.gestion_transformador;
 using System.Data.Objects.DataClasses;
 using TS15.DAL.gestion_protocolo;
+using TS15.Common.Generated;
 
 namespace TS15.BL.gestion_protocolo
 {
@@ -25,7 +26,7 @@ namespace TS15.BL.gestion_protocolo
 
         public bool Modificar(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            return ((DAOProceso)GenericoDAO).Modificar(entidad);
         }
 
         public bool Eliminar(EntityObject entidad)
@@ -41,6 +42,11 @@ namespace TS15.BL.gestion_protocolo
         public List<EntityObject> Consultar()
         {
             throw new NotImplementedException();
+        }
+
+        public pro_proceso ObternerProcesoXPedido(int pedido)
+        {
+            return null;
         }
     }
 }

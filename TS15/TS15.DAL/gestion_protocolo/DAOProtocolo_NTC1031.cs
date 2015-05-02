@@ -7,11 +7,18 @@ using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.Common.Generated;
 using TS15.Common.RawObjects;
+using TS15.Common.util;
 
 namespace TS15.DAL.gestion_protocolo
 {
     public class DAOProtocolo_NTC1031 : DAOGenerico, IGestionable, IProbable
     {
+        private String nombrePrueba;
+
+        public DAOProtocolo_NTC1031()
+        {
+            nombrePrueba = VariablesGlobales.PRUEBA_NTC1031;
+        }
 
         public List<EntityObject> Consultar()
         {
@@ -26,9 +33,9 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Modificar(EntityObject entidad)
         {
-            pro_ntc1031 _entidad = (pro_ntc1031) entidad;
+            pro_ntc1031 _entidad = (pro_ntc1031)entidad;
             pro_ntc1031 resultado = (pro_ntc1031)ConsultarXId(_entidad.id);
-            
+
             if (resultado != null && _entidad != null)
             {
                 // Encabezado
@@ -41,11 +48,11 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.po_garantizado = _entidad.po_garantizado;
                 // Fecha de modificación
                 resultado.fecha = DateTime.Now;
-                
+
                 SingletonDatos.Contexto.SaveChanges();
                 return true;
             }
-            
+
             return false;
         }
 
@@ -78,6 +85,18 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc1031 resultado = SingletonDatos.Contexto.pro_ntc1031
                 .Where(r => r.transformador_id == transformador.id).OrderByDescending(p => p.id).SingleOrDefault();
             return resultado != null ? resultado : new pro_ntc1031();
+        }
+
+
+        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        {
+            pro_ntc1031 prueba = SingletonDatos.Contexto.pro_ntc1031.Where(p => p.proceso_id == proceso).First();
+            if (prueba != null)
+            {
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba);
+                return elemento;
+            }
+            return null;
         }
     }
 }

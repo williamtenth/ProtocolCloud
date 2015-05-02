@@ -13,15 +13,16 @@ using System.Data.Objects.DataClasses;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using TS15.Common.util;
 
 namespace TS15.DAL.gestion_protocolo
 {
     public class DAOProtocoloNTC1465 : DAOGenerico, IGestionable, IProbable
     {
-
+        private string nombrePrueba;
         public DAOProtocoloNTC1465()
         {
-
+            nombrePrueba = VariablesGlobales.PRUEBA_NTC1465;
         }
 
         /// <summary>
@@ -100,6 +101,18 @@ namespace TS15.DAL.gestion_protocolo
             return false;
         }
 
+
+
+        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        {
+            pro_ntc1465 prueba = SingletonDatos.Contexto.pro_ntc1465.Where(p => p.proceso_id == proceso).First();
+            if (prueba != null)
+            {
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba);
+                return elemento;
+            }
+            return null;
+        }
     }//end DAOProtocolo_NTC1465
 
 }//end namespace gestion_protocolo
