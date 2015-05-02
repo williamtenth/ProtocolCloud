@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="ProtocoloNTC375.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375"
+    AutoEventWireup="true" CodeBehind="ProtocoloNTC471.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471"
     EnableSessionState="True" %>
 
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
@@ -102,7 +102,7 @@
         <div class="box span12">
             <div class="box-header" data-original-title>
                 <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Medición de resistencia</h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Medición de cortocircuito</h2>
                 <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
@@ -114,61 +114,41 @@
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Tiempo de lectura*
+                            Relación de transformación*
                         </label>
-                        <asp:TextBox runat="server" ID="txtTiempo" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtTiempo_FilteredTextBoxExtender" runat="server"
-                            TargetControlID="txtTiempo" ValidChars="1234567890">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtRelacion" CssClass="form-control" Enabled="false" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Tensión*
+                            Fase-Fase*
                         </label>
-                        <asp:TextBox runat="server" ID="txtTension" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtTension_FilteredTextBoxExtender1" runat="server"
-                            TargetControlID="txtTension" ValidChars="1234567890">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtFaseFase" CssClass="form-control" Enabled="false" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            AT y T *
+                            Fase- Neutro*
                         </label>
-                        <asp:TextBox runat="server" ID="txtAT_T" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtAT_T_FilteredTextBoxExtender2" runat="server"
-                            TargetControlID="txtAT_T" ValidChars="1234567890">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtFaseNeutro" CssClass="form-control" Enabled="false" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            BT y T*
+                            Polaridad*
                         </label>
-                        <asp:TextBox runat="server" ID="txtBT_T" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtBT_T_FilteredTextBoxExtender3" runat="server"
-                            TargetControlID="txtBT_T" ValidChars="1234567890">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtPolaridad" CssClass="form-control" Enabled="false" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            AT, BT y T*
+                            Grupo de conexión*
                         </label>
-                        <asp:TextBox runat="server" ID="txtAT_BT_T" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtAT_BT_T_FilteredTextBoxExtender4" runat="server"
-                            TargetControlID="txtAT_BT_T" ValidChars="1234567890">
-                        </asp:FilteredTextBoxExtender>
+                        <asp:TextBox runat="server" ID="txtGrupoConexion" CssClass="form-control" Enabled="false" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -180,11 +160,8 @@
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
-                <!--Detalle de Resistencia-->
-                <div class="row-fluid">
-                    <asp:Table ID="Table1" runat="server">
-                    </asp:Table>
-                </div>
+                <!--Detalle de relación-->
+                
                 <!--Botonera-->
                 <div class="row-fluid">
                     <asp:Panel ID="pnlBotonera" runat="server">

@@ -58,7 +58,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public void CargarListas()
         {
-            _listaParResultados = Parametros.ConsultarParametros("resultado");
+            _listaParResultados = Parametros.ConsultarParametros(VariablesGlobales.GEN_PARAMETRICA_RESULTADO);
         }
 
         // Métodos

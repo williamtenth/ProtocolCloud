@@ -40,6 +40,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc375_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc375", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc375), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc471_has_relacion_pro_ntc471", "pro_ntc471", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.pro_ntc471), "pro_ntc471_has_relacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc471_has_relacion), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc471_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc471", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc471), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "pro_ntc837", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_ntc837), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_pro_proceso_has_prueba_pro_proceso", "pro_proceso", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.pro_proceso), "pro_proceso_has_prueba", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.pro_proceso_has_prueba), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_bodega_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.tfr_transformador), "tfr_bodega", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_bodega), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_caracteristicas_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "tfr_caracteristicas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_caracteristicas), true)]
@@ -500,18 +501,18 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<sysdiagrams> sysdiagrams
+        public ObjectSet<sysdiagram> sysdiagrams
         {
             get
             {
                 if ((_sysdiagrams == null))
                 {
-                    _sysdiagrams = base.CreateObjectSet<sysdiagrams>("sysdiagrams");
+                    _sysdiagrams = base.CreateObjectSet<sysdiagram>("sysdiagrams");
                 }
                 return _sysdiagrams;
             }
         }
-        private ObjectSet<sysdiagrams> _sysdiagrams;
+        private ObjectSet<sysdiagram> _sysdiagrams;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -752,6 +753,22 @@ namespace TS15.Common.Generated
             }
         }
         private ObjectSet<vw_cli_usuario> _vw_cli_usuario;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vw_sol_pedidos_cliente> vw_sol_pedidos_cliente
+        {
+            get
+            {
+                if ((_vw_sol_pedidos_cliente == null))
+                {
+                    _vw_sol_pedidos_cliente = base.CreateObjectSet<vw_sol_pedidos_cliente>("vw_sol_pedidos_cliente");
+                }
+                return _vw_sol_pedidos_cliente;
+            }
+        }
+        private ObjectSet<vw_sol_pedidos_cliente> _vw_sol_pedidos_cliente;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1024,9 +1041,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
+        public void AddTosysdiagrams(sysdiagram sysdiagram)
         {
-            base.AddObject("sysdiagrams", sysdiagrams);
+            base.AddObject("sysdiagrams", sysdiagram);
         }
     
         /// <summary>
@@ -1147,6 +1164,14 @@ namespace TS15.Common.Generated
         public void AddTovw_cli_usuario(vw_cli_usuario vw_cli_usuario)
         {
             base.AddObject("vw_cli_usuario", vw_cli_usuario);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vw_sol_pedidos_cliente EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovw_sol_pedidos_cliente(vw_sol_pedidos_cliente vw_sol_pedidos_cliente)
+        {
+            base.AddObject("vw_sol_pedidos_cliente", vw_sol_pedidos_cliente);
         }
     
         /// <summary>
@@ -8137,10 +8162,14 @@ namespace TS15.Common.Generated
         /// Create a new pro_ntc837 object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
-        public static pro_ntc837 Createpro_ntc837(global::System.Int32 id)
+        /// <param name="transformador_id">Initial value of the transformador_id property.</param>
+        /// <param name="proceso_id">Initial value of the proceso_id property.</param>
+        public static pro_ntc837 Createpro_ntc837(global::System.Int32 id, global::System.Int32 transformador_id, global::System.Int32 proceso_id)
         {
             pro_ntc837 pro_ntc837 = new pro_ntc837();
             pro_ntc837.id = id;
+            pro_ntc837.transformador_id = transformador_id;
+            pro_ntc837.proceso_id = proceso_id;
             return pro_ntc837;
         }
 
@@ -8178,9 +8207,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> transformador_id
+        public global::System.Int32 transformador_id
         {
             get
             {
@@ -8195,16 +8224,16 @@ namespace TS15.Common.Generated
                 Ontransformador_idChanged();
             }
         }
-        private Nullable<global::System.Int32> _transformador_id;
-        partial void Ontransformador_idChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _transformador_id;
+        partial void Ontransformador_idChanging(global::System.Int32 value);
         partial void Ontransformador_idChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> proceso_id
+        public global::System.Int32 proceso_id
         {
             get
             {
@@ -8219,8 +8248,8 @@ namespace TS15.Common.Generated
                 Onproceso_idChanged();
             }
         }
-        private Nullable<global::System.Int32> _proceso_id;
-        partial void Onproceso_idChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _proceso_id;
+        partial void Onproceso_idChanging(global::System.Int32 value);
         partial void Onproceso_idChanged();
     
         /// <summary>
@@ -8294,10 +8323,172 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _estado;
         partial void OnestadoChanging(Nullable<global::System.Byte> value);
         partial void OnestadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> bt_at_t
+        {
+            get
+            {
+                return _bt_at_t;
+            }
+            set
+            {
+                Onbt_at_tChanging(value);
+                ReportPropertyChanging("bt_at_t");
+                _bt_at_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("bt_at_t");
+                Onbt_at_tChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _bt_at_t;
+        partial void Onbt_at_tChanging(Nullable<global::System.Decimal> value);
+        partial void Onbt_at_tChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> at_bt_t
+        {
+            get
+            {
+                return _at_bt_t;
+            }
+            set
+            {
+                Onat_bt_tChanging(value);
+                ReportPropertyChanging("at_bt_t");
+                _at_bt_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("at_bt_t");
+                Onat_bt_tChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _at_bt_t;
+        partial void Onat_bt_tChanging(Nullable<global::System.Decimal> value);
+        partial void Onat_bt_tChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> tension
+        {
+            get
+            {
+                return _tension;
+            }
+            set
+            {
+                OntensionChanging(value);
+                ReportPropertyChanging("tension");
+                _tension = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tension");
+                OntensionChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _tension;
+        partial void OntensionChanging(Nullable<global::System.Decimal> value);
+        partial void OntensionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> frecuencia
+        {
+            get
+            {
+                return _frecuencia;
+            }
+            set
+            {
+                OnfrecuenciaChanging(value);
+                ReportPropertyChanging("frecuencia");
+                _frecuencia = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("frecuencia");
+                OnfrecuenciaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _frecuencia;
+        partial void OnfrecuenciaChanging(Nullable<global::System.Decimal> value);
+        partial void OnfrecuenciaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> tiempo
+        {
+            get
+            {
+                return _tiempo;
+            }
+            set
+            {
+                OntiempoChanging(value);
+                ReportPropertyChanging("tiempo");
+                _tiempo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiempo");
+                OntiempoChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _tiempo;
+        partial void OntiempoChanging(Nullable<global::System.Decimal> value);
+        partial void OntiempoChanged();
 
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "tfr_transformador")]
+        public tfr_transformador tfr_transformador
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<tfr_transformador> tfr_transformadorReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tfr_transformador>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "tfr_transformador", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -8768,26 +8959,26 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagrams")]
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagram")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class sysdiagrams : EntityObject
+    public partial class sysdiagram : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new sysdiagrams object.
+        /// Create a new sysdiagram object.
         /// </summary>
         /// <param name="name">Initial value of the name property.</param>
         /// <param name="principal_id">Initial value of the principal_id property.</param>
         /// <param name="diagram_id">Initial value of the diagram_id property.</param>
-        public static sysdiagrams Createsysdiagrams(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
+        public static sysdiagram Createsysdiagram(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
         {
-            sysdiagrams sysdiagrams = new sysdiagrams();
-            sysdiagrams.name = name;
-            sysdiagrams.principal_id = principal_id;
-            sysdiagrams.diagram_id = diagram_id;
-            return sysdiagrams;
+            sysdiagram sysdiagram = new sysdiagram();
+            sysdiagram.name = name;
+            sysdiagram.principal_id = principal_id;
+            sysdiagram.diagram_id = diagram_id;
+            return sysdiagram;
         }
 
         #endregion
@@ -10587,6 +10778,28 @@ namespace TS15.Common.Generated
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pro_ntc471>("dbTS15Model.FK_pro_ntc471_tfr_transformador", "pro_ntc471", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK_pro_ntc837_tfr_transformador", "pro_ntc837")]
+        public EntityCollection<pro_ntc837> pro_ntc837
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<pro_ntc837>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "pro_ntc837");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pro_ntc837>("dbTS15Model.FK_pro_ntc837_tfr_transformador", "pro_ntc837", value);
                 }
             }
         }

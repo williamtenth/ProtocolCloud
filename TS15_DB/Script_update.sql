@@ -24,3 +24,10 @@ add estado tinyint null;
 
 ALTER TABLE pro_ntc375
 ADD proceso_id INT NULL;
+
+-- 2015/04/29
+ALTER TABLE pro_ntc1005
+ADD pf_regulacion NUMERIC (3,2) NULL;
+
+ALTER TABLE pro_ntc1005
+ADD pf_eficiencia NUMERIC (3,2) NULL;

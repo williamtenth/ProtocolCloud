@@ -48,5 +48,18 @@ namespace TS15.DAL
                 return null;
             }
         }
+
+        public gen_parametrica ConsultarXTipoConsecutivo(String tipo, byte consecutivo)
+        {
+            try
+            {
+                return SingletonDatos.Contexto.gen_parametrica.Where(p => p.tipo == tipo && p.consecutivo == consecutivo).OrderBy(p => p.consecutivo).SingleOrDefault();
+            }
+                //where(p => p.property = variable && p.otraproperty == variable2)
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
