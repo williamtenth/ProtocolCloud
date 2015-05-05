@@ -216,3 +216,5 @@ TS15/TS15V2.UI/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 TS15/TS15.BL/Properties/AssemblyInfo.cs
 TS15/TS15V2.UI/Properties/AssemblyInfo.cs
 TS15/TS15.DAL/Properties/AssemblyInfo.cs
+TS15/TS15V2.UI/Web.config
+*.config

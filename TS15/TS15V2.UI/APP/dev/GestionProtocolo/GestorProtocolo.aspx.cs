@@ -61,20 +61,14 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             // Se traer valores desde la sesion
             if (Session[VariablesGlobales.SESION_PROCESO_PRUEBA] != null)
                 _gestorProceso.Proceso = (pro_proceso)Session[VariablesGlobales.SESION_PROCESO_PRUEBA];
-<<<<<<< HEAD
-=======
+
             if (Session[VariablesGlobales.SESION_PROCESO_LISTA_PRUEBAS] != null)
                 _gestorProceso.ListaElementos = Session[VariablesGlobales.SESION_PROCESO_LISTA_PRUEBAS] as pro_elementoprueba[];
 
             if (_gestorProceso.Proceso != null && _gestorProceso.Terminar() && _gestorProceso.ListaElementos != null)
-            {
                 EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha terminado el proceso de pruebas");
-            }
             else
-            {
                 EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas tiene resultado (Exitosa/No Exitosa)");
-            }
->>>>>>> origin/master
         }
 
         /// 
