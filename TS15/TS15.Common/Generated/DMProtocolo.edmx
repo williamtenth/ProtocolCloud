@@ -165,12 +165,12 @@
       [vw_sol_pedidos_cliente].[cantidad] AS [cantidad], 
       [vw_sol_pedidos_cliente].[tiptransformador] AS [tiptransformador], 
       [vw_sol_pedidos_cliente].[capacidad] AS [capacidad], 
-      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
-      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida], 
       [vw_sol_pedidos_cliente].[transformador_id] AS [transformador_id], 
       [vw_sol_pedidos_cliente].[aprobado] AS [aprobado], 
       [vw_sol_pedidos_cliente].[estado] AS [estado], 
-      [vw_sol_pedidos_cliente].[tipoSolicitud] AS [tipoSolicitud]
+      [vw_sol_pedidos_cliente].[tipoSolicitud] AS [tipoSolicitud], 
+      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
+      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida]
       FROM [dbo].[vw_sol_pedidos_cliente] AS [vw_sol_pedidos_cliente]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.Store.vw_solicitudes_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_solicitudes_cliente">
@@ -526,8 +526,8 @@
           <Property Name="cantidad" Type="int" />
           <Property Name="tiptransformador" Type="tinyint" />
           <Property Name="capacidad" Type="tinyint" />
-          <Property Name="volentrada" Type="tinyint" />
-          <Property Name="volsalida" Type="tinyint" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="aprobado" Type="bit" />
           <Property Name="estado" Type="tinyint" />
@@ -802,7 +802,7 @@
           <Property Name="trfaislamiento" Type="tinyint" />
           <Property Name="frecuencia" Type="bigint" />
           <Property Name="trfrefrigeracion" Type="tinyint" />
-          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volentrada" Type="numeric" Nullable="false" Precision="10" />
           <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="volentrada_der" Type="numeric" Precision="10" />
           <Property Name="volsalida_der" Type="numeric" Precision="10" />
@@ -1018,12 +1018,12 @@
           <Property Name="cantidad" Type="int" />
           <Property Name="tiptransformador" Type="tinyint" />
           <Property Name="capacidad" Type="tinyint" />
-          <Property Name="volentrada" Type="tinyint" />
-          <Property Name="volsalida" Type="tinyint" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="aprobado" Type="bit" />
           <Property Name="estado" Type="tinyint" />
           <Property Name="tipoSolicitud" Type="varchar" MaxLength="13" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volsalida" Type="numeric" Precision="10" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbTS15.dbo.vw_solicitudes_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1813,8 +1813,8 @@
           <Property Type="Int32" Name="cantidad" />
           <Property Type="Byte" Name="tiptransformador" />
           <Property Type="Byte" Name="capacidad" />
-          <Property Type="Byte" Name="volentrada" />
-          <Property Type="Byte" Name="volsalida" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Boolean" Name="aprobado" />
           <Property Type="Byte" Name="estado" />
@@ -2107,7 +2107,7 @@
           <Property Type="Byte" Name="trfaislamiento" />
           <Property Type="Int64" Name="frecuencia" />
           <Property Type="Byte" Name="trfrefrigeracion" />
-          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volentrada" Nullable="false" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volentrada_der" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volsalida_der" Precision="10" Scale="0" />
@@ -2301,12 +2301,12 @@
           <Property Type="Int32" Name="cantidad" />
           <Property Type="Byte" Name="tiptransformador" />
           <Property Type="Byte" Name="capacidad" />
-          <Property Type="Byte" Name="volentrada" />
-          <Property Type="Byte" Name="volsalida" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Boolean" Name="aprobado" />
           <Property Type="Byte" Name="estado" />
           <Property Type="String" Name="tipoSolicitud" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="vw_solicitudes_cliente">
           <Key>
@@ -3301,12 +3301,12 @@
           <EntitySetMapping Name="vw_sol_pedidos_cliente">
             <EntityTypeMapping TypeName="dbTS15Model.vw_sol_pedidos_cliente">
               <MappingFragment StoreEntitySet="vw_sol_pedidos_cliente">
+                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
+                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
                 <ScalarProperty Name="tipoSolicitud" ColumnName="tipoSolicitud" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="aprobado" ColumnName="aprobado" />
                 <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
-                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
-                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
                 <ScalarProperty Name="capacidad" ColumnName="capacidad" />
                 <ScalarProperty Name="tiptransformador" ColumnName="tiptransformador" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
@@ -3463,12 +3463,12 @@
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="0.75" Height="5.441712239583353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Profiles" Width="1.5" PointX="12.75" PointY="7.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Roles" Width="1.5" PointX="8.75" PointY="12.75" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Users" Width="1.5" PointX="12.75" PointY="10.75" Height="2.3648893229166106" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Users" Width="1.5" PointX="12.75" PointY="10.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="14.75" PointY="0.75" Height="1.403382161458353" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="14.75" PointY="3.75" Height="1.7879850260417243" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="14.75" PointY="3.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="9.75" Height="1.7879850260417243" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="14.75" Height="2.3648893229167243" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="9.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="14.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.864807942708353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_solicitudes_cliente" Width="1.5" PointX="16.75" PointY="0.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="16.75" PointY="5.75" Height="2.557190755208353" />

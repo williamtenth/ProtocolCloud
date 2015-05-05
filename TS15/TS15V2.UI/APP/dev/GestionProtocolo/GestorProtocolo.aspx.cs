@@ -60,8 +60,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (Session[VariablesGlobales.SESION_PROCESO_PRUEBA] != null)
                 _gestorProceso.Proceso = (pro_proceso)Session[VariablesGlobales.SESION_PROCESO_PRUEBA];
-            _
-            
         }
 
         /// 

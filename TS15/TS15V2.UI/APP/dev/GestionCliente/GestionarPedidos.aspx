@@ -118,6 +118,7 @@
                             <Columns>
                                 <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField DataField="fechasolicitud" HeaderText="Fecha" DataFormatString="{0:d}" />
+                                <asp:BoundField DataField="tipSolicitud" HeaderText="Tipo Solicitud" />
                                 <asp:BoundField DataField="tipoSolicitud" HeaderText="Tipo Solicitud" />
                                 <asp:TemplateField HeaderText="Aprobado">
                                     <ItemTemplate>
@@ -142,6 +143,7 @@
                                                 Enabled="false" Visible="false"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="rfv_txtFabricante" ControlToValidate="txtFabricante"
                                                 ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                            <asp:HiddenField runat="server" ID="hfIdFabricante" />
                                         </div>
                                     </asp:Panel>
                                     <asp:Panel runat="server" ID="pnlNumeroSerie" CssClass="control-group" Visible="false">
@@ -161,7 +163,7 @@
                                             <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="20"
                                                 Enabled="false" Visible="false"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="rfv_txtCantidad" ControlToValidate="txtCantidad"
-                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarSolicitud"></asp:RequiredFieldValidator>
                                         </div>
                                     </asp:Panel>
                                     <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
@@ -171,6 +173,8 @@
                                             <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound"
                                                 Enabled="false" Visible="false">
                                             </asp:DropDownList>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
                                         </div>
                                     </asp:Panel>
                                     <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
@@ -180,7 +184,7 @@
                                             <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control" MaxLength="20"
                                                 Enabled="false" Visible="false"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
-                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarSolicitud"></asp:RequiredFieldValidator>
                                         </div>
                                     </asp:Panel>
                                     <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
@@ -190,7 +194,7 @@
                                             <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control" MaxLength="20"
                                                 Enabled="false" Visible="false"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
-                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarSolicitud"></asp:RequiredFieldValidator>
                                             <asp:HiddenField runat="server" ID="hfIdPedido" />
                                             <asp:HiddenField runat="server" ID="hfTipoSolicitud" />
                                         </div>
@@ -199,14 +203,16 @@
                                         <label class="control-label" for="txtVolSalida">
                                             Aprobado:</label>
                                         <div class="controls">
-                                            <asp:RadioButtonList runat="server" ID="rblAprobado" Width="200px" RepeatDirection="Horizontal">
-                                                <asp:ListItem Text="Si" Value="1">
+                                            <asp:DropDownList runat="server" ID="ddlAprobado" Enabled="false">
+                                                <asp:ListItem Text="--Seleccione--" Value="-1">
                                                 </asp:ListItem>
-                                                <asp:ListItem Text="No" Value="0">
+                                                <asp:ListItem Text="Si" Value="True">
                                                 </asp:ListItem>
-                                            </asp:RadioButtonList>
-                                            <asp:RequiredFieldValidator runat="server" ID="rfv_rblAprobado" ControlToValidate="rblAprobado"
-                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente"></asp:RequiredFieldValidator>
+                                                <asp:ListItem Text="No" Value="False">
+                                                </asp:ListItem>
+                                            </asp:DropDownList>
+                                            <asp:RequiredFieldValidator runat="server" ID="rfv_ddlAprobado" ControlToValidate="ddlAprobado"
+                                                ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
                                         </div>
                                     </asp:Panel>
                                 </fieldset>
@@ -218,7 +224,8 @@
                                     <asp:Button ID="btnBuscarSolicitud" runat="server" CssClass="btn btn-primary" Text="Buscar"
                                         OnClick="btnBuscarSolicitud_Click" />
                                     <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar"
-                                        OnClick="btnGuardar_Click" Visible="false" ValidationGroup="vgGuardarCliente" />
+                                        OnClick="btnGuardar_Click" Visible="false" ValidationGroup="vgGuardarSolicitud"
+                                        CausesValidation="true" />
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
                                         OnClick="btnCancelar_Click" Visible="false" />
                                 </div>
@@ -229,6 +236,7 @@
             </div>
         </div>
     </asp:Panel>
+    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

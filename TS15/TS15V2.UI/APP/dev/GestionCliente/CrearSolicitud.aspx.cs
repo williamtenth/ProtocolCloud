@@ -183,8 +183,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             pedidoObject.cantidad = Convert.ToInt32(this.txtCantidad.Text.Trim());
             pedidoObject.tiptransformador = 1; //TIPO DE TRANSFORMADOR 'DISTRIBUCION'
             pedidoObject.capacidad = UtilNumeros.StringToBytes(this.ddlCapacidad.SelectedValue);
-            pedidoObject.volentrada = UtilNumeros.StringToBytes(this.txtVolEntrada.Text.Trim());
-            pedidoObject.volsalida = UtilNumeros.StringToBytes(this.txtVolSalida.Text.Trim());
+            pedidoObject.volentrada = Convert.ToDecimal(this.txtVolEntrada.Text.Trim());
+            pedidoObject.volsalida = Convert.ToDecimal(this.txtVolSalida.Text.Trim());
             pedidoObject.aprobado = true;
             pedidoObject.estado = 1; //ESTADO ACTIVO DEL PEDIDO
             pedidoObject.cliente_id = Convert.ToInt32(ucBusquedaCliente.IdCliente);

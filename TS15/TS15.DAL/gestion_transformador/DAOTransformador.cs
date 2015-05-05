@@ -26,9 +26,9 @@ namespace TS15.DAL.gestion_transformador
             return lstTransformadores;
         }
 
-        public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)
+        public void Actualizar(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            SingletonDatos.Contexto.SaveChanges();
         }
 
         public void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error)

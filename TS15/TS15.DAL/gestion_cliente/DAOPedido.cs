@@ -36,5 +36,10 @@ namespace TS15.DAL.gestion_cliente
         {
             return SingletonDatos.Contexto.cli_pedido.Where(p => p.id == idSolicitud).FirstOrDefault();
         }
+
+        public void Actualizar(cli_pedido pedidoObject)
+        {
+            SingletonDatos.Contexto.SaveChanges();
+        }
     }
 }

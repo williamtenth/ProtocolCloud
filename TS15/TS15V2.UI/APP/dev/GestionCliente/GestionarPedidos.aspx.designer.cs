@@ -76,6 +76,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtFabricante;
         
         /// <summary>
+        /// hfIdFabricante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdFabricante;
+        
+        /// <summary>
         /// pnlNumeroSerie control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCapacidad;
+        
+        /// <summary>
+        /// rfv_ddlCapacidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlCapacidad;
         
         /// <summary>
         /// pnlVolEntrada control.
@@ -229,22 +247,22 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.Panel pnlAprobado;
         
         /// <summary>
-        /// rblAprobado control.
+        /// ddlAprobado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblAprobado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAprobado;
         
         /// <summary>
-        /// rfv_rblAprobado control.
+        /// rfv_ddlAprobado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_rblAprobado;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlAprobado;
         
         /// <summary>
         /// btnModificarSolicitud control.
@@ -290,5 +308,14 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// ModalMsj1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15V2.UI.APP.componentes.ModalMsj ModalMsj1;
     }
 }

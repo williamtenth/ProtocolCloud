@@ -4640,7 +4640,7 @@ namespace TS15.Common.Generated
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Byte> volentrada
+        public Nullable<global::System.Decimal> volentrada
         {
             get
             {
@@ -4655,8 +4655,8 @@ namespace TS15.Common.Generated
                 OnvolentradaChanged();
             }
         }
-        private Nullable<global::System.Byte> _volentrada;
-        partial void OnvolentradaChanging(Nullable<global::System.Byte> value);
+        private Nullable<global::System.Decimal> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
         partial void OnvolentradaChanged();
     
         /// <summary>
@@ -4664,7 +4664,7 @@ namespace TS15.Common.Generated
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Byte> volsalida
+        public Nullable<global::System.Decimal> volsalida
         {
             get
             {
@@ -4679,8 +4679,8 @@ namespace TS15.Common.Generated
                 OnvolsalidaChanged();
             }
         }
-        private Nullable<global::System.Byte> _volsalida;
-        partial void OnvolsalidaChanging(Nullable<global::System.Byte> value);
+        private Nullable<global::System.Decimal> _volsalida;
+        partial void OnvolsalidaChanging(Nullable<global::System.Decimal> value);
         partial void OnvolsalidaChanged();
     
         /// <summary>
@@ -10009,10 +10009,12 @@ namespace TS15.Common.Generated
         /// Create a new tfr_transformador object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
-        public static tfr_transformador Createtfr_transformador(global::System.Int32 id)
+        /// <param name="volentrada">Initial value of the volentrada property.</param>
+        public static tfr_transformador Createtfr_transformador(global::System.Int32 id, global::System.Decimal volentrada)
         {
             tfr_transformador tfr_transformador = new tfr_transformador();
             tfr_transformador.id = id;
+            tfr_transformador.volentrada = volentrada;
             return tfr_transformador;
         }
 
@@ -10362,9 +10364,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> volentrada
+        public global::System.Decimal volentrada
         {
             get
             {
@@ -10379,8 +10381,8 @@ namespace TS15.Common.Generated
                 OnvolentradaChanged();
             }
         }
-        private Nullable<global::System.Decimal> _volentrada;
-        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
+        private global::System.Decimal _volentrada;
+        partial void OnvolentradaChanging(global::System.Decimal value);
         partial void OnvolentradaChanged();
     
         /// <summary>
@@ -13247,54 +13249,6 @@ namespace TS15.Common.Generated
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Byte> volentrada
-        {
-            get
-            {
-                return _volentrada;
-            }
-            set
-            {
-                OnvolentradaChanging(value);
-                ReportPropertyChanging("volentrada");
-                _volentrada = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("volentrada");
-                OnvolentradaChanged();
-            }
-        }
-        private Nullable<global::System.Byte> _volentrada;
-        partial void OnvolentradaChanging(Nullable<global::System.Byte> value);
-        partial void OnvolentradaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Byte> volsalida
-        {
-            get
-            {
-                return _volsalida;
-            }
-            set
-            {
-                OnvolsalidaChanging(value);
-                ReportPropertyChanging("volsalida");
-                _volsalida = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("volsalida");
-                OnvolsalidaChanged();
-            }
-        }
-        private Nullable<global::System.Byte> _volsalida;
-        partial void OnvolsalidaChanging(Nullable<global::System.Byte> value);
-        partial void OnvolsalidaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Int32> transformador_id
         {
             get
@@ -13385,6 +13339,54 @@ namespace TS15.Common.Generated
         private global::System.String _tipoSolicitud;
         partial void OntipoSolicitudChanging(global::System.String value);
         partial void OntipoSolicitudChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volentrada
+        {
+            get
+            {
+                return _volentrada;
+            }
+            set
+            {
+                OnvolentradaChanging(value);
+                ReportPropertyChanging("volentrada");
+                _volentrada = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volentrada");
+                OnvolentradaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolentradaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volsalida
+        {
+            get
+            {
+                return _volsalida;
+            }
+            set
+            {
+                OnvolsalidaChanging(value);
+                ReportPropertyChanging("volsalida");
+                _volsalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volsalida");
+                OnvolsalidaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volsalida;
+        partial void OnvolsalidaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolsalidaChanged();
 
         #endregion
 

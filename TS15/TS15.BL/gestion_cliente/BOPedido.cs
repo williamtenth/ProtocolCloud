@@ -122,5 +122,10 @@ namespace TS15.BL.gestion_cliente
 
             _BOCliente.AsignarTransformador(transfClienteObject);
         }
+
+        public void Actualizar(cli_pedido pedidoObject)
+        {
+            ((DAOPedido)GenericoDAO).Actualizar(pedidoObject);
+        }
     }
 }

@@ -74,7 +74,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
             if (tipoSolicitud == "2")
             {
-                this.txtCantidad.Enabled = true;
+                //TOD: Preguntar a William
+                //this.txtCantidad.Enabled = true; //
                 this.ddlCapacidad.Enabled = true;
                 this.txtVolEntrada.Enabled = true;
                 this.txtVolSalida.Enabled = true;
@@ -88,22 +89,27 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
             else if (tipoSolicitud == "3" || tipoSolicitud == "4")
             {
-                this.pnlCantidad.Visible = false;
-                this.pnlCapacidad.Visible = false;
-                this.pnlFabricante.Visible = false;
-                this.pnlNumeroSerie.Visible = false;
-                this.pnlVolEntrada.Visible = false;
-                this.pnlVolSalida.Visible = false;
+                //this.pnlCantidad.Visible = false;
+                //this.pnlCapacidad.Visible = false;
+                //this.pnlFabricante.Visible = false;
+                //this.pnlNumeroSerie.Visible = false;
+                //this.pnlVolEntrada.Visible = false;
+                //this.pnlVolSalida.Visible = false;
 
                 this.btnModificarSolicitud.Visible = false;
                 this.btnEliminarSolicitud.Visible = false;
                 this.btnBuscarSolicitud.Visible = false;
 
+                this.ddlAprobado.Enabled = true;
                 this.pnlAprobado.Visible = true;
             }
 
             btnGuardar.Visible = true;
             btnCancelar.Visible = true;
+
+            btnModificarSolicitud.Visible = false;
+            btnEliminarSolicitud.Visible = false;
+            btnBuscarSolicitud.Visible = false;
         }
 
         protected void btnEliminarSolicitud_Click(object sender, EventArgs e)
@@ -131,10 +137,12 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                 bitAprobado = Convert.ToBoolean(pedidoObject.aprobado);
 
                 if (bitAprobado)
-                    rblAprobado.SelectedValue = "1";
+                    ddlAprobado.SelectedValue = "True";
                 else
-                    rblAprobado.SelectedValue = "0";
+                    ddlAprobado.SelectedValue = "False";
             }
+            else
+                ddlAprobado.SelectedValue = "-1";
 
             if (tipoSolicitud == "2")
             {
@@ -148,10 +156,17 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                 this.txtVolEntrada.Visible = true;
                 this.txtVolSalida.Visible = true;
 
+                this.txtCantidad.Enabled = false;
+                this.ddlCapacidad.Enabled = false;
+                this.txtVolEntrada.Enabled = false;
+                this.txtVolSalida.Enabled = false;
+                this.ddlAprobado.Enabled = false;
+
                 this.pnlCantidad.Visible = true;
                 this.pnlCapacidad.Visible = true;
                 this.pnlVolEntrada.Visible = true;
                 this.pnlVolSalida.Visible = true;
+                this.pnlAprobado.Visible = true;
 
                 this.pnlFabricante.Visible = false;
                 this.pnlNumeroSerie.Visible = false;
@@ -164,6 +179,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
                 this.txtFabricante.Text = transFabricanteObj.nombre;
                 this.txtNumeroSerie.Text = transFabricanteObj.numserie;
+                this.hfIdFabricante.Value = transFabricanteObj.fabricante_id.ToString();
                 this.ddlCapacidad.SelectedValue = transFabricanteObj.tfrcapacidad.ToString();
                 this.txtVolEntrada.Text = transFabricanteObj.volentrada.ToString();
                 this.txtVolSalida.Text = transFabricanteObj.volsalida.ToString();
@@ -174,10 +190,18 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                 this.txtVolEntrada.Visible = true;
                 this.txtVolSalida.Visible = true;
 
+                this.txtFabricante.Enabled = false;
+                this.txtNumeroSerie.Enabled = false;
+                this.ddlCapacidad.Enabled = false;
+                this.txtVolEntrada.Enabled = false;
+                this.txtVolSalida.Enabled = false;
+                this.ddlAprobado.Enabled = false;
+
                 this.pnlCantidad.Visible = false;
                 this.pnlCapacidad.Visible = true;
                 this.pnlVolEntrada.Visible = true;
                 this.pnlVolSalida.Visible = true;
+                this.pnlAprobado.Visible = true;
 
                 this.pnlFabricante.Visible = true;
                 this.pnlNumeroSerie.Visible = true;
@@ -186,6 +210,13 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             this.hfIdPedido.Value = pedidoObject.id.ToString();
             this.hfTipoSolicitud.Value = pedidoObject.tipsolicitud.ToString();
             this.pnlControles.Visible = true;
+
+            this.btnModificarSolicitud.Visible = true;
+            this.btnEliminarSolicitud.Visible = true;
+            this.btnBuscarSolicitud.Visible = true;
+
+            this.btnGuardar.Visible = false;
+            this.btnCancelar.Visible = false;
         }
 
         private void CargarCapacidad()
@@ -203,7 +234,49 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            string tipoSolicitud = hfTipoSolicitud.Value;
+            int idPedido = Convert.ToInt32(hfIdPedido.Value);
+            cli_pedido pedidoObject = _BOPedido.ConsultarXId(idPedido) as cli_pedido;
 
+            if (tipoSolicitud == "3" || tipoSolicitud == "4")
+            {
+                pedidoObject.aprobado = Convert.ToBoolean(ddlAprobado.SelectedValue);
+                _BOPedido.Actualizar(pedidoObject);
+
+                pnlControles.Visible = false;
+                EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha modificado exitosamente la solicitud");
+            }
+
+            else if (tipoSolicitud == "2")
+            {
+                //pedidoObject.cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
+                pedidoObject.capacidad = UtilNumeros.StringToBytes(ddlCapacidad.SelectedValue);
+                pedidoObject.volentrada = Convert.ToDecimal(txtVolEntrada.Text.Trim());
+                pedidoObject.volsalida = Convert.ToDecimal(txtVolSalida.Text.Trim());
+                _BOPedido.Actualizar(pedidoObject);
+
+                pnlControles.Visible = false;
+                EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha modificado exitosamente la solicitud");
+            }
+
+            else if (tipoSolicitud == "1")
+            {
+                int idTransformador = Convert.ToInt32(pedidoObject.transformador_id);
+                tfr_transformador transformadorObject = _BOTransformador.ConsultarXId(idTransformador) as tfr_transformador;
+                int idFabricante = Convert.ToInt32(transformadorObject.fabricante_id);
+
+                cli_cliente clienteObject = _BOCliente.ConsultarXId(idFabricante) as cli_cliente;
+
+                clienteObject.nombre = txtFabricante.Text.Trim();
+                _BOCliente.Actualizar(clienteObject);
+                transformadorObject.numserie = txtNumeroSerie.Text.Trim();
+                _BOTransformador.Actualizar(transformadorObject);
+
+                pnlControles.Visible = false;
+                EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha modificado exitosamente la solicitud");
+            }
+
+            ConsultarSolicitudes();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

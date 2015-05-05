@@ -25,9 +25,9 @@ namespace TS15.BL.gestion_transformador
             return transformadorDAO.Consultar();
         }
 
-        public void Actualizar(EntityObject entidad, dbTS15Entities contexto, RawError error)
+        public void Actualizar(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            ((DAOTransformador)GenericoDAO).Actualizar(entidad);
         }
 
         public void Eliminar(EntityObject entidad, dbTS15Entities contexto, RawError error)
