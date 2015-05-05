@@ -161,16 +161,15 @@
       [vw_sol_pedidos_cliente].[idPedido] AS [idPedido], 
       [vw_sol_pedidos_cliente].[consecutivo] AS [consecutivo], 
       [vw_sol_pedidos_cliente].[fechasolicitud] AS [fechasolicitud], 
-      [vw_sol_pedidos_cliente].[tipsolicitud] AS [tipsolicitud], 
       [vw_sol_pedidos_cliente].[cantidad] AS [cantidad], 
       [vw_sol_pedidos_cliente].[tiptransformador] AS [tiptransformador], 
       [vw_sol_pedidos_cliente].[capacidad] AS [capacidad], 
+      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
+      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida], 
       [vw_sol_pedidos_cliente].[transformador_id] AS [transformador_id], 
       [vw_sol_pedidos_cliente].[aprobado] AS [aprobado], 
       [vw_sol_pedidos_cliente].[estado] AS [estado], 
-      [vw_sol_pedidos_cliente].[tipoSolicitud] AS [tipoSolicitud], 
-      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
-      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida]
+      [vw_sol_pedidos_cliente].[tipSolicitud] AS [tipSolicitud]
       FROM [dbo].[vw_sol_pedidos_cliente] AS [vw_sol_pedidos_cliente]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.Store.vw_solicitudes_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_solicitudes_cliente">
@@ -208,7 +207,6 @@
       [vw_transformador_fabricante].[nombre] AS [nombre], 
       [vw_transformador_fabricante].[tipdoc] AS [tipdoc], 
       [vw_transformador_fabricante].[numdocumento] AS [numdocumento], 
-      [vw_transformador_fabricante].[IdTransformador] AS [IdTransformador], 
       [vw_transformador_fabricante].[numserie] AS [numserie], 
       [vw_transformador_fabricante].[fabricante_id] AS [fabricante_id], 
       [vw_transformador_fabricante].[altura] AS [altura], 
@@ -231,50 +229,54 @@
       [vw_transformador_fabricante].[corsalida] AS [corsalida], 
       [vw_transformador_fabricante].[corentrada_der] AS [corentrada_der], 
       [vw_transformador_fabricante].[corsalida_der] AS [corsalida_der], 
-      [vw_transformador_fabricante].[trfgrpconex] AS [trfgrpconex]
+      [vw_transformador_fabricante].[trfgrpconex] AS [trfgrpconex], 
+      [vw_transformador_fabricante].[IdTransformador] AS [IdTransformador], 
+      [vw_transformador_fabricante].[direccion] AS [direccion], 
+      [vw_transformador_fabricante].[telefono] AS [telefono], 
+      [vw_transformador_fabricante].[tiptercero] AS [tiptercero]
       FROM [dbo].[vw_transformador_fabricante] AS [vw_transformador_fabricante]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__aspnet_Me__Appli__76B698BF" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__76B698BF">
+          <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__276EDEB3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Me__UserI__77AABCF8" Association="dbTS15Model.Store.FK__aspnet_Me__UserI__77AABCF8">
+          <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="dbTS15Model.Store.FK__aspnet_Me__UserI__286302EC">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pa__Appli__789EE131" Association="dbTS15Model.Store.FK__aspnet_Pa__Appli__789EE131">
+          <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="dbTS15Model.Store.FK__aspnet_Pa__Appli__59063A47">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__7993056A" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__7993056A">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__5EBF139D">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__7A8729A3" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__7A8729A3">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__628FA481">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__UserI__7B7B4DDC" Association="dbTS15Model.Store.FK__aspnet_Pe__UserI__7B7B4DDC">
+          <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="dbTS15Model.Store.FK__aspnet_Pe__UserI__6383C8BA">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pr__UserI__7C6F7215" Association="dbTS15Model.Store.FK__aspnet_Pr__UserI__7C6F7215">
+          <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="dbTS15Model.Store.FK__aspnet_Pr__UserI__3C69FB99">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Ro__Appli__7D63964E" Association="dbTS15Model.Store.FK__aspnet_Ro__Appli__7D63964E">
+          <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="dbTS15Model.Store.FK__aspnet_Ro__Appli__45F365D3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__Appli__7E57BA87" Association="dbTS15Model.Store.FK__aspnet_Us__Appli__7E57BA87">
+          <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="dbTS15Model.Store.FK__aspnet_Us__Appli__173876EA">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__RoleI__7F4BDEC0" Association="dbTS15Model.Store.FK__aspnet_Us__RoleI__7F4BDEC0">
+          <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="dbTS15Model.Store.FK__aspnet_Us__RoleI__4AB81AF0">
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__UserI__004002F9" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__004002F9">
+          <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__49C3F6B7">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
@@ -560,7 +562,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="proceso_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
@@ -586,7 +588,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="proceso_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
@@ -604,7 +606,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="proceso_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
@@ -619,10 +621,10 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" Nullable="false" />
           <Property Name="proceso_id" Type="int" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
           <Property Name="resultado" Type="tinyint" />
           <Property Name="color" Type="varchar" MaxLength="12" />
           <Property Name="salina1" Type="tinyint" />
@@ -638,7 +640,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
           <Property Name="resultado" Type="tinyint" />
@@ -664,7 +666,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="proceso_id" Type="int" />
           <Property Name="fecha" Type="datetime" />
@@ -679,7 +681,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="id" Type="numeric" Nullable="false" Precision="10" StoreGeneratedPattern="Identity" />
           <Property Name="ntc471_id" Type="int" />
           <Property Name="consecutivo" Type="tinyint" />
           <Property Name="tension" Type="numeric" Scale="2" />
@@ -694,7 +696,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="transformador_id" Type="int" Nullable="false" />
           <Property Name="proceso_id" Type="int" Nullable="false" />
           <Property Name="fecha" Type="datetime" />
@@ -802,7 +804,7 @@
           <Property Name="trfaislamiento" Type="tinyint" />
           <Property Name="frecuencia" Type="bigint" />
           <Property Name="trfrefrigeracion" Type="tinyint" />
-          <Property Name="volentrada" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
           <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="volentrada_der" Type="numeric" Precision="10" />
           <Property Name="volsalida_der" Type="numeric" Precision="10" />
@@ -1002,7 +1004,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="tipSolicitud" />
           </Key>
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
@@ -1014,16 +1016,15 @@
           <Property Name="idPedido" Type="int" Nullable="false" />
           <Property Name="consecutivo" Type="int" Nullable="false" />
           <Property Name="fechasolicitud" Type="datetime" Nullable="false" />
-          <Property Name="tipsolicitud" Type="tinyint" Nullable="false" />
           <Property Name="cantidad" Type="int" />
           <Property Name="tiptransformador" Type="tinyint" />
           <Property Name="capacidad" Type="tinyint" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="aprobado" Type="bit" />
           <Property Name="estado" Type="tinyint" />
-          <Property Name="tipoSolicitud" Type="varchar" MaxLength="13" />
-          <Property Name="volentrada" Type="numeric" Precision="10" />
-          <Property Name="volsalida" Type="numeric" Precision="10" />
+          <Property Name="tipSolicitud" Type="varchar" Nullable="false" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbTS15.dbo.vw_solicitudes_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1086,7 +1087,6 @@
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
           <Property Name="tipdoc" Type="tinyint" Nullable="false" />
           <Property Name="numdocumento" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="IdTransformador" Type="int" Nullable="false" />
           <Property Name="numserie" Type="varchar" MaxLength="50" />
           <Property Name="fabricante_id" Type="int" />
           <Property Name="altura" Type="varchar" MaxLength="6" />
@@ -1110,8 +1110,12 @@
           <Property Name="corentrada_der" Type="numeric" Precision="10" Scale="3" />
           <Property Name="corsalida_der" Type="numeric" Precision="10" Scale="3" />
           <Property Name="trfgrpconex" Type="tinyint" />
+          <Property Name="IdTransformador" Type="int" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="80" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="tiptercero" Type="int" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__Appli__76B698BF">
+        <Association Name="FK__aspnet_Me__Appli__276EDEB3">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1123,7 +1127,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Me__UserI__77AABCF8">
+        <Association Name="FK__aspnet_Me__UserI__286302EC">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1135,7 +1139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pa__Appli__789EE131">
+        <Association Name="FK__aspnet_Pa__Appli__59063A47">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1147,7 +1151,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__7993056A">
+        <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="1" />
           <End Role="aspnet_PersonalizationAllUsers" Type="dbTS15Model.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1159,7 +1163,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__7A8729A3">
+        <Association Name="FK__aspnet_Pe__PathI__628FA481">
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1171,7 +1175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__UserI__7B7B4DDC">
+        <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1183,7 +1187,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pr__UserI__7C6F7215">
+        <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Profile" Type="dbTS15Model.Store.aspnet_Profile" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1195,7 +1199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Ro__Appli__7D63964E">
+        <Association Name="FK__aspnet_Ro__Appli__45F365D3">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1207,7 +1211,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__Appli__7E57BA87">
+        <Association Name="FK__aspnet_Us__Appli__173876EA">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1219,7 +1223,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__RoleI__7F4BDEC0">
+        <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
           <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1231,7 +1235,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__UserI__004002F9">
+        <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1501,7 +1505,7 @@
           <EntitySet Name="pro_ntc837" EntityType="dbTS15Model.pro_ntc837" />
           <EntitySet Name="pro_proceso" EntityType="dbTS15Model.pro_proceso" />
           <EntitySet Name="pro_proceso_has_prueba" EntityType="dbTS15Model.pro_proceso_has_prueba" />
-          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.sysdiagrams" />
+          <EntitySet Name="sysdiagrams" EntityType="dbTS15Model.sysdiagram" />
           <EntitySet Name="tfr_bodega" EntityType="dbTS15Model.tfr_bodega" />
           <EntitySet Name="tfr_caracteristicas" EntityType="dbTS15Model.tfr_caracteristicas" />
           <EntitySet Name="tfr_ordentrabajo" EntityType="dbTS15Model.tfr_ordentrabajo" />
@@ -1521,39 +1525,39 @@
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.vw_solicitudes_cliente" />
           <EntitySet Name="vw_transformador_cliente" EntityType="dbTS15Model.vw_transformador_cliente" />
           <EntitySet Name="vw_transformador_fabricante" EntityType="dbTS15Model.vw_transformador_fabricante" />
-          <AssociationSet Name="FK__aspnet_Me__Appli__76B698BF" Association="dbTS15Model.FK__aspnet_Me__Appli__76B698BF">
+          <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pa__Appli__789EE131" Association="dbTS15Model.FK__aspnet_Pa__Appli__789EE131">
+          <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="dbTS15Model.FK__aspnet_Pa__Appli__59063A47">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Ro__Appli__7D63964E" Association="dbTS15Model.FK__aspnet_Ro__Appli__7D63964E">
+          <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__Appli__7E57BA87" Association="dbTS15Model.FK__aspnet_Us__Appli__7E57BA87">
+          <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="dbTS15Model.FK__aspnet_Us__Appli__173876EA">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Me__UserI__77AABCF8" Association="dbTS15Model.FK__aspnet_Me__UserI__77AABCF8">
+          <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="dbTS15Model.FK__aspnet_Me__UserI__286302EC">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__7993056A" Association="dbTS15Model.FK__aspnet_Pe__PathI__7993056A">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__7A8729A3" Association="dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="dbTS15Model.FK__aspnet_Pe__PathI__628FA481">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__UserI__7B7B4DDC" Association="dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC">
+          <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pr__UserI__7C6F7215" Association="dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215">
+          <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
@@ -1642,10 +1646,10 @@
           <Property Type="String" Name="LoweredApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="Guid" Name="ApplicationId" Nullable="false" />
           <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__Appli__76B698BF" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__789EE131" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
-          <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__7D63964E" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Us__Appli__7E57BA87" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Membership">
           <Key>
@@ -1672,8 +1676,8 @@
           <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
           <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
           <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Me__Appli__76B698BF" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Me__UserI__77AABCF8" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Paths">
           <Key>
@@ -1683,9 +1687,9 @@
           <Property Type="Guid" Name="PathId" Nullable="false" />
           <Property Type="String" Name="Path" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LoweredPath" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__789EE131" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__7993056A" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
-          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
         </EntityType>
         <EntityType Name="aspnet_PersonalizationAllUsers">
           <Key>
@@ -1694,7 +1698,7 @@
           <Property Type="Guid" Name="PathId" Nullable="false" />
           <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__7993056A" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
         </EntityType>
         <EntityType Name="aspnet_PersonalizationPerUser">
           <Key>
@@ -1705,8 +1709,8 @@
           <Property Type="Guid" Name="UserId" />
           <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Profile">
           <Key>
@@ -1717,7 +1721,7 @@
           <Property Type="String" Name="PropertyValuesString" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="PropertyValuesBinary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Roles">
           <Key>
@@ -1728,7 +1732,7 @@
           <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__7D63964E" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
           <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_SchemaVersions">
@@ -1751,10 +1755,10 @@
           <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
           <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Us__Appli__7E57BA87" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__UserI__77AABCF8" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
-          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
-          <NavigationProperty Name="aspnet_Profile" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Profile" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
           <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
           <NavigationProperty Name="cli_cliente" Relationship="dbTS15Model.cli_cliente_has_usuarios" FromRole="aspnet_Users" ToRole="cli_cliente" />
         </EntityType>
@@ -1848,7 +1852,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Int32" Name="proceso_id" />
           <Property Type="DateTime" Name="fecha" />
@@ -1875,7 +1879,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Int32" Name="proceso_id" />
           <Property Type="DateTime" Name="fecha" />
@@ -1894,7 +1898,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Int32" Name="proceso_id" />
           <Property Type="DateTime" Name="fecha" />
@@ -1910,10 +1914,10 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" Nullable="false" />
           <Property Type="Int32" Name="proceso_id" />
-          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" />
           <Property Type="Byte" Name="resultado" />
           <Property Type="String" Name="color" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Type="Byte" Name="salina1" />
@@ -1930,7 +1934,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="DateTime" Name="fecha" />
           <Property Type="Byte" Name="resultado" />
@@ -1957,7 +1961,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Int32" Name="proceso_id" />
           <Property Type="DateTime" Name="fecha" />
@@ -1974,7 +1978,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Decimal" Name="id" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="id" Nullable="false" Precision="10" Scale="0" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="ntc471_id" />
           <Property Type="Byte" Name="consecutivo" />
           <Property Type="Decimal" Name="tension" Precision="18" Scale="2" />
@@ -1990,7 +1994,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="transformador_id" Nullable="false" />
           <Property Type="Int32" Name="proceso_id" Nullable="false" />
           <Property Type="DateTime" Name="fecha" />
@@ -2029,7 +2033,7 @@
           <Property Type="Byte" Name="resultado" />
           <NavigationProperty Name="pro_proceso" Relationship="dbTS15Model.FK_pro_proceso_has_prueba_pro_proceso" FromRole="pro_proceso_has_prueba" ToRole="pro_proceso" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -2107,7 +2111,7 @@
           <Property Type="Byte" Name="trfaislamiento" />
           <Property Type="Int64" Name="frecuencia" />
           <Property Type="Byte" Name="trfrefrigeracion" />
-          <Property Type="Decimal" Name="volentrada" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volentrada_der" Precision="10" Scale="0" />
           <Property Type="Decimal" Name="volsalida_der" Precision="10" Scale="0" />
@@ -2285,7 +2289,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="tipSolicitud" />
           </Key>
           <Property Type="Int32" Name="idCliente" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
@@ -2297,16 +2301,15 @@
           <Property Type="Int32" Name="idPedido" Nullable="false" />
           <Property Type="Int32" Name="consecutivo" Nullable="false" />
           <Property Type="DateTime" Name="fechasolicitud" Nullable="false" />
-          <Property Type="Byte" Name="tipsolicitud" Nullable="false" />
           <Property Type="Int32" Name="cantidad" />
           <Property Type="Byte" Name="tiptransformador" />
           <Property Type="Byte" Name="capacidad" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Boolean" Name="aprobado" />
           <Property Type="Byte" Name="estado" />
-          <Property Type="String" Name="tipoSolicitud" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
+          <Property Type="String" Name="tipSolicitud" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_solicitudes_cliente">
           <Key>
@@ -2360,7 +2363,6 @@
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Type="Byte" Name="tipdoc" Nullable="false" />
           <Property Type="String" Name="numdocumento" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="IdTransformador" Nullable="false" />
           <Property Type="String" Name="numserie" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="fabricante_id" />
           <Property Type="String" Name="altura" MaxLength="6" FixedLength="false" Unicode="false" />
@@ -2384,8 +2386,12 @@
           <Property Type="Decimal" Name="corentrada_der" Precision="10" Scale="3" />
           <Property Type="Decimal" Name="corsalida_der" Precision="10" Scale="3" />
           <Property Type="Byte" Name="trfgrpconex" />
+          <Property Type="Int32" Name="IdTransformador" Nullable="false" />
+          <Property Type="String" Name="direccion" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="tiptercero" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__Appli__76B698BF">
+        <Association Name="FK__aspnet_Me__Appli__276EDEB3">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2397,7 +2403,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pa__Appli__789EE131">
+        <Association Name="FK__aspnet_Pa__Appli__59063A47">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2409,7 +2415,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Ro__Appli__7D63964E">
+        <Association Name="FK__aspnet_Ro__Appli__45F365D3">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2421,7 +2427,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__Appli__7E57BA87">
+        <Association Name="FK__aspnet_Us__Appli__173876EA">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2433,7 +2439,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Me__UserI__77AABCF8">
+        <Association Name="FK__aspnet_Me__UserI__286302EC">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -2445,7 +2451,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__7993056A">
+        <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -2457,7 +2463,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__7A8729A3">
+        <Association Name="FK__aspnet_Pe__PathI__628FA481">
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
           <End Type="dbTS15Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2469,7 +2475,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__UserI__7B7B4DDC">
+        <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
           <End Type="dbTS15Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2481,7 +2487,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pr__UserI__7C6F7215">
+        <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -3089,7 +3095,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="dbTS15Model.sysdiagrams">
+            <EntityTypeMapping TypeName="dbTS15Model.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="definition" ColumnName="definition" />
                 <ScalarProperty Name="version" ColumnName="version" />
@@ -3301,16 +3307,15 @@
           <EntitySetMapping Name="vw_sol_pedidos_cliente">
             <EntityTypeMapping TypeName="dbTS15Model.vw_sol_pedidos_cliente">
               <MappingFragment StoreEntitySet="vw_sol_pedidos_cliente">
-                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
-                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
-                <ScalarProperty Name="tipoSolicitud" ColumnName="tipoSolicitud" />
+                <ScalarProperty Name="tipSolicitud" ColumnName="tipSolicitud" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="aprobado" ColumnName="aprobado" />
                 <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
+                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
+                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
                 <ScalarProperty Name="capacidad" ColumnName="capacidad" />
                 <ScalarProperty Name="tiptransformador" ColumnName="tiptransformador" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="tipsolicitud" ColumnName="tipsolicitud" />
                 <ScalarProperty Name="fechasolicitud" ColumnName="fechasolicitud" />
                 <ScalarProperty Name="consecutivo" ColumnName="consecutivo" />
                 <ScalarProperty Name="idPedido" ColumnName="idPedido" />
@@ -3361,6 +3366,10 @@
           <EntitySetMapping Name="vw_transformador_fabricante">
             <EntityTypeMapping TypeName="dbTS15Model.vw_transformador_fabricante">
               <MappingFragment StoreEntitySet="vw_transformador_fabricante">
+                <ScalarProperty Name="tiptercero" ColumnName="tiptercero" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="IdTransformador" ColumnName="IdTransformador" />
                 <ScalarProperty Name="trfgrpconex" ColumnName="trfgrpconex" />
                 <ScalarProperty Name="corsalida_der" ColumnName="corsalida_der" />
                 <ScalarProperty Name="corentrada_der" ColumnName="corentrada_der" />
@@ -3384,7 +3393,6 @@
                 <ScalarProperty Name="altura" ColumnName="altura" />
                 <ScalarProperty Name="fabricante_id" ColumnName="fabricante_id" />
                 <ScalarProperty Name="numserie" ColumnName="numserie" />
-                <ScalarProperty Name="IdTransformador" ColumnName="IdTransformador" />
                 <ScalarProperty Name="numdocumento" ColumnName="numdocumento" />
                 <ScalarProperty Name="tipdoc" ColumnName="tipdoc" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -3421,7 +3429,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
@@ -3429,9 +3437,9 @@
     <Diagrams>
       <Diagram Name="DMProtocolo" ZoomLevel="63">
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Applications" Width="1.5" PointX="1.5" PointY="4.75" Height="2.557190755208353" />
-        <EntityTypeShape EntityType="dbTS15Model.aspnet_Membership" Width="1.5" PointX="6.75" PointY="9.75" Height="5.441712239583353" />
+        <EntityTypeShape EntityType="dbTS15Model.aspnet_Membership" Width="1.5" PointX="6.75" PointY="9.75" Height="5.4417122395833246" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Paths" Width="1.5" PointX="3.75" PointY="1.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.aspnet_PersonalizationAllUsers" Width="1.5" PointX="6" PointY="2.125" Height="1.7879850260416106" />
+        <EntityTypeShape EntityType="dbTS15Model.aspnet_PersonalizationAllUsers" Width="1.5" PointX="6" PointY="2.125" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_PersonalizationPerUser" Width="1.5" PointX="6" PointY="5.875" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Profile" Width="1.5" PointX="3.75" PointY="5.5" Height="2.1725878906249818" />
         <EntityTypeShape EntityType="dbTS15Model.aspnet_Roles" Width="1.5" PointX="1.5" PointY="1" Height="2.3648893229166674" />
@@ -3441,60 +3449,60 @@
         <EntityTypeShape EntityType="dbTS15Model.cli_cliente" Width="1.5" PointX="3.75" PointY="9" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="dbTS15Model.cli_peddetalle" Width="1.5" PointX="8.75" PointY="8.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbTS15Model.cli_pedido" Width="1.5" PointX="6" PointY="25.375" Height="4.287903645833353" />
-        <EntityTypeShape EntityType="dbTS15Model.gen_parametrica" Width="1.5" PointX="10.75" PointY="0.75" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.plantilla_prueba" Width="1.5" PointX="10.75" PointY="3.75" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1005" Width="1.5" PointX="3" PointY="14.5" Height="5.2494108072916106" />
+        <EntityTypeShape EntityType="dbTS15Model.gen_parametrica" Width="1.5" PointX="10.75" PointY="0.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbTS15Model.plantilla_prueba" Width="1.5" PointX="10.75" PointY="3.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc1005" Width="1.5" PointX="3" PointY="14.5" Height="5.2494108072916674" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc1031" Width="1.5" PointX="3" PointY="20.5" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc1465" Width="1.5" PointX="3" PointY="25" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc3396" Width="1.5" PointX="3" PointY="28.875" Height="3.9033007812499783" />
-        <EntityTypeShape EntityType="dbTS15Model.pro_ntc375" Width="1.5" PointX="3" PointY="33.5" Height="5.2494108072916106" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc3396" Width="1.5" PointX="3" PointY="28.875" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbTS15Model.pro_ntc375" Width="1.5" PointX="3" PointY="33.5" Height="5.2494108072916674" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc471" Width="1.5" PointX="3" PointY="39.5" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc471_has_relacion" Width="1.5" PointX="5.25" PointY="39.625" Height="3.134095052083353" />
         <EntityTypeShape EntityType="dbTS15Model.pro_ntc837" Width="1.5" PointX="3" PointY="43.625" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbTS15Model.pro_proceso" Width="1.5" PointX="8.25" PointY="24.625" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="dbTS15Model.pro_proceso_has_prueba" Width="1.5" PointX="10.5" PointY="25.125" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.sysdiagrams" Width="1.5" PointX="10.75" PointY="6.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbTS15Model.sysdiagram" Width="1.5" PointX="10.75" PointY="6.75" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_bodega" Width="1.5" PointX="3" PointY="47.75" Height="1.980286458333353" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_caracteristicas" Width="1.5" PointX="3" PointY="50.375" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbTS15Model.tfr_ordentrabajo" Width="1.5" PointX="8.25" PointY="28.25" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="dbTS15Model.tfr_transf_has_cliente" Width="1.5" PointX="6" PointY="22.5" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbTS15Model.tfr_transformador" Width="1.5" PointX="0.75" PointY="23.625" Height="7.749329427083353" />
+        <EntityTypeShape EntityType="dbTS15Model.tfr_transf_has_cliente" Width="1.5" PointX="6" PointY="22.5" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbTS15Model.tfr_transformador" Width="1.5" PointX="0.75" PointY="23.625" Height="7.7493294270833246" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Applications" Width="1.5" PointX="10.75" PointY="9.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="0.75" Height="5.441712239583353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="12.75" PointY="0.75" Height="5.4417122395833246" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Profiles" Width="1.5" PointX="12.75" PointY="7.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Roles" Width="1.5" PointX="8.75" PointY="12.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Roles" Width="1.5" PointX="8.75" PointY="12.75" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_Users" Width="1.5" PointX="12.75" PointY="10.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="14.75" PointY="0.75" Height="1.403382161458353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="14.75" PointY="0.75" Height="1.4033821614583246" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="14.75" PointY="3.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="9.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="14.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.864807942708353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_solicitudes_cliente" Width="1.5" PointX="16.75" PointY="0.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="16.75" PointY="5.75" Height="2.557190755208353" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante" Width="1.5" PointX="16.75" PointY="9.75" Height="6.2109179687499818" />
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__Appli__76B698BF" >
+        <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante" Width="1.5" PointX="16.75" PointY="9.75" Height="6.7878222656249818" />
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" >
           <ConnectorPoint PointX="3" PointY="5.09375" />
           <ConnectorPoint PointX="5.541666666666667" PointY="5.0937499999999991" />
           <ConnectorPoint PointX="5.708333333333333" PointY="5.09375" />
           <ConnectorPoint PointX="7.90625" PointY="5.09375" />
           <ConnectorPoint PointX="7.90625" PointY="9.75" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pa__Appli__789EE131" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" >
           <ConnectorPoint PointX="3" PointY="4.75" />
           <ConnectorPoint PointX="3.375" PointY="4.375" />
           <ConnectorPoint PointX="3.375" PointY="4.4898893229166674" />
           <ConnectorPoint PointX="3.75" PointY="4.1148893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Ro__Appli__7D63964E" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" >
           <ConnectorPoint PointX="2.2187475" PointY="4.75" />
           <ConnectorPoint PointX="2.2187475" PointY="3.3648893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Us__Appli__7E57BA87" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Us__Appli__173876EA" >
           <ConnectorPoint PointX="2.25" PointY="7.307190755208353" />
           <ConnectorPoint PointX="2.25" PointY="8.75" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__77AABCF8" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__286302EC" >
           <ConnectorPoint PointX="3" PointY="12.136495768229167" />
           <ConnectorPoint PointX="4.822916666666667" PointY="12.136495768229167" />
           <ConnectorPoint PointX="4.989583333333333" PointY="12.136495768229167" />
@@ -3502,22 +3510,22 @@
           <ConnectorPoint PointX="5.1927108333333329" PointY="12.136495768229167" />
           <ConnectorPoint PointX="6.75" PointY="12.136495768229167" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__7993056A" >
-          <ConnectorPoint PointX="5.25" PointY="3.0189925130208053" />
-          <ConnectorPoint PointX="6" PointY="3.0189925130208053" />
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" >
+          <ConnectorPoint PointX="5.25" PointY="3.0189925130208337" />
+          <ConnectorPoint PointX="6" PointY="3.0189925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" >
           <ConnectorPoint PointX="5.25" PointY="4.1148893229166674" />
           <ConnectorPoint PointX="5.625" PointY="4.4898893229166674" />
           <ConnectorPoint PointX="5.625" PointY="7.0574446614583337" />
           <ConnectorPoint PointX="6" PointY="7.0574446614583337" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" >
           <ConnectorPoint PointX="3" PointY="8.84375" />
           <ConnectorPoint PointX="6.34375" PointY="8.84375" />
           <ConnectorPoint PointX="6.34375" PointY="8.2398893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" >
           <ConnectorPoint PointX="3" PointY="8.7511528461538468" />
           <ConnectorPoint PointX="3.375" PointY="8.3761528461538468" />
           <ConnectorPoint PointX="3.375" PointY="6.5862939453124909" />
@@ -3530,10 +3538,10 @@
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_transf_has_cliente_cli_cliente" >
           <ConnectorPoint PointX="5.1093775" PointY="11.941793619791667" />
-          <ConnectorPoint PointX="5.1093775" PointY="24.376892903645853" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="24.376892903645853" />
-          <ConnectorPoint PointX="5.708333333333333" PointY="24.376892903645853" />
-          <ConnectorPoint PointX="6" PointY="24.376892903645853" />
+          <ConnectorPoint PointX="5.1093775" PointY="24.376892903645839" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="24.376892903645839" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="24.376892903645839" />
+          <ConnectorPoint PointX="6" PointY="24.376892903645839" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_cli_pedido_tfr_transformador" >
           <ConnectorPoint PointX="2.25" PointY="28.288071289062515" />
@@ -3551,8 +3559,8 @@
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc1005_tfr_transformador" >
           <ConnectorPoint PointX="1.5" PointY="23.625" />
-          <ConnectorPoint PointX="1.5" PointY="17.124705403645805" />
-          <ConnectorPoint PointX="3" PointY="17.124705403645805" />
+          <ConnectorPoint PointX="1.5" PointY="17.124705403645834" />
+          <ConnectorPoint PointX="3" PointY="17.124705403645834" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc1031_tfr_transformador" >
           <ConnectorPoint PointX="2.25" PointY="23.917999674479177" />
@@ -3565,33 +3573,33 @@
           <ConnectorPoint PointX="3" PointY="26.567047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc3396_tfr_transformador" >
-          <ConnectorPoint PointX="2.25" PointY="30.124664713541677" />
-          <ConnectorPoint PointX="3" PointY="30.124664713541677" />
+          <ConnectorPoint PointX="2.25" PointY="30.124664713541662" />
+          <ConnectorPoint PointX="3" PointY="30.124664713541662" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc375_tfr_transformador" >
-          <ConnectorPoint PointX="1.5" PointY="31.374329427083353" />
-          <ConnectorPoint PointX="1.5" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="1.6197929166666667" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="1.7864595833333332" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="1.8229191666666667" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="1.9895858333333332" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="36.124705403645805" />
-          <ConnectorPoint PointX="3" PointY="36.124705403645805" />
+          <ConnectorPoint PointX="1.5" PointY="31.374329427083325" />
+          <ConnectorPoint PointX="1.5" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="36.124705403645834" />
+          <ConnectorPoint PointX="3" PointY="36.124705403645834" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc471_has_relacion_pro_ntc471" >
           <ConnectorPoint PointX="4.5" PointY="41.192047526041677" />
           <ConnectorPoint PointX="5.25" PointY="41.192047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc471_tfr_transformador" >
-          <ConnectorPoint PointX="1.9062525" PointY="31.374329427083353" />
+          <ConnectorPoint PointX="1.9062525" PointY="31.374329427083325" />
           <ConnectorPoint PointX="1.9062525" PointY="41.163198242187491" />
           <ConnectorPoint PointX="2.0260454166666664" PointY="41.163198242187491" />
           <ConnectorPoint PointX="2.1927120833333333" PointY="41.163198242187491" />
           <ConnectorPoint PointX="3" PointY="41.163198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_pro_ntc837_tfr_transformador" >
-          <ConnectorPoint PointX="1.0937475" PointY="31.374329427083353" />
+          <ConnectorPoint PointX="1.0937475" PointY="31.374329427083325" />
           <ConnectorPoint PointX="1.0937475" PointY="45.288198242187491" />
           <ConnectorPoint PointX="1.6197929166666667" PointY="45.288198242187491" />
           <ConnectorPoint PointX="1.7864595833333332" PointY="45.288198242187491" />
@@ -3604,25 +3612,25 @@
           <ConnectorPoint PointX="10.5" PointY="26.115143229166677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_bodega_tfr_transformador" >
-          <ConnectorPoint PointX="2.10937875" PointY="31.374329427083353" />
+          <ConnectorPoint PointX="2.10937875" PointY="31.374329427083325" />
           <ConnectorPoint PointX="2.10937875" PointY="48.740143229166677" />
           <ConnectorPoint PointX="3" PointY="48.740143229166677" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_caracteristicas_tfr_transformador" >
-          <ConnectorPoint PointX="1.70312625" PointY="31.374329427083353" />
+          <ConnectorPoint PointX="1.70312625" PointY="31.374329427083325" />
           <ConnectorPoint PointX="1.70312625" PointY="52.038198242187491" />
           <ConnectorPoint PointX="3" PointY="52.038198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.FK_tfr_transf_has_cliente_tfr_transformador" >
           <ConnectorPoint PointX="1.9062519999999998" PointY="23.625" />
-          <ConnectorPoint PointX="1.9062519999999998" PointY="23.490143229166677" />
-          <ConnectorPoint PointX="2.75" PointY="23.490143229166677" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="23.490143229166662" />
+          <ConnectorPoint PointX="2.75" PointY="23.490143229166662" />
           <ConnectorPoint PointX="2.75" PointY="24.710999348958353" />
           <ConnectorPoint PointX="4.822916666666667" PointY="24.710999348958353" />
           <ConnectorPoint PointX="4.989583333333333" PointY="24.710999348958353" />
           <ConnectorPoint PointX="5.625" PointY="24.710999348958353" />
-          <ConnectorPoint PointX="5.625" PointY="23.407194451822932" />
-          <ConnectorPoint PointX="6" PointY="23.407194451822932" />
+          <ConnectorPoint PointX="5.625" PointY="23.407194451822924" />
+          <ConnectorPoint PointX="6" PointY="23.407194451822924" />
         </AssociationConnector>
         <AssociationConnector Association="dbTS15Model.aspnet_UsersInRoles" >
           <ConnectorPoint PointX="1.5" PointY="3.3648893229166674" />
