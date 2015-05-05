@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using TS15V2.UI.APP.abstractUI;
 using TS15.Common.Generated;
 using TS15V2.UI.APP.util;
-using util;
+using TS15.Common.util;
 using TS15.BL.gestion_cliente;
 using TS15.UI.APP.componentes;
 

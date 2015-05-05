@@ -10,7 +10,8 @@
 
 
 using System;
-namespace util {
+namespace TS15.Common.util
+{
 	public static class UtilNumeros {
 
 		/// <summary>
@@ -36,6 +37,24 @@ namespace util {
                 int intValor = int.Parse(valor);
                 byte bytesValor = (byte)intValor;
                 return bytesValor;
+            }
+            catch (FormatException e)
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Permite convertir una cadena de caracteres a Entero. 
+        /// </summary>
+        /// <param name="valor">Valor con no más de 10 cifras</param>
+        /// <returns>representación el valor en Entero</returns>
+        public static int StringToInt(string valor)
+        {
+            try
+            {
+                int intValor = int.Parse(valor);
+                return intValor;
             }
             catch (FormatException e)
             {

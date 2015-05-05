@@ -59,7 +59,12 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Crear(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            SingletonDatos.Contexto.pro_ntc471.AddObject(entidad as pro_ntc471);
+            if (SingletonDatos.Contexto.SaveChanges() > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool Terminar(EntityObject entidad)
@@ -88,7 +93,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc471 prueba = SingletonDatos.Contexto.pro_ntc471.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
                 return elemento;
             }
             return null;

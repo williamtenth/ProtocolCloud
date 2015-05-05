@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
     AutoEventWireup="true" CodeBehind="GestorProtocolo.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.GestorProtocolo"
-    EnableSessionState="True" %>
+    EnableSessionState="true" %>
 
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -108,15 +108,14 @@
                             <label class="control-label" for="ddlFabricante">
                                 Solicitud:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" Enabled="false" ID="txtSolicitud" CssClass="form-control"
-                                    MaxLength="10"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtSolicitud" CssClass="form-control" MaxLength="10"></asp:TextBox>
                                 <asp:RequiredFieldValidator runat="server" ID="txtSolicitud_RequiredFieldValidator1"
                                     ControlToValidate="txtSolicitud" ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
                                 <asp:FilteredTextBoxExtender ID="txtSolicitud_FilteredTextBoxExtender" runat="server"
                                     TargetControlID="txtSolicitud" FilterType="Custom, Numbers" ValidChars="0123456789" />
                             </div>
                         </div>
-                        <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group" Visible="false">
+                        <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group">
                             <label class="control-label" for="txtCantidad">
                                 Fabricante :</label>
                             <div class="controls">
@@ -124,7 +123,7 @@
                                     MaxLength="80"></asp:TextBox>
                             </div>
                         </asp:Panel>
-                        <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
+                        <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group">
                             <label class="control-label" for="ddlCapacidad">
                                 Número de serie:</label>
                             <div class="controls">
@@ -132,7 +131,7 @@
                                     MaxLength="50"></asp:TextBox>
                             </div>
                         </asp:Panel>
-                        <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
+                        <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group">
                             <label class="control-label" for="txtVolEntrada">
                                 Resultado pruebas:</label>
                             <div class="controls">
@@ -142,58 +141,45 @@
                         </asp:Panel>
                         <!--Botonera-->
                         <div class="form-actions">
-                            <asp:UpdatePanel ID="UpdatePanel" runat="server">
-                                <ContentTemplate>
-                                    <asp:Panel ID="pnlBotonera" runat="server" Visible=false>
-                                        <asp:Panel ID="pnlCrear" runat="server" Visible=false>
-                                            <asp:Button ID="btnCrear" runat="server" CssClass="btn btn-primary" OnClick="Crear"
-                                                Text="Crear" ValidationGroup="vgCrearSolicitud" />
-                                        </asp:Panel>
-                                        <asp:Panel ID="pnlEditar" runat="server" Visible=false>
-                                            <asp:Button ID="btnConsultar" runat="server" CssClass="btn btn-primary" OnClick="Consultar"
-                                                Text="Consultar" />
-                                            <asp:Button ID="btnTerminar" runat="server" CssClass="btn btn-primary" OnClick="Terminar"
-                                                Text="Terminar" />
-                                            <asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-primary" OnClick="Eliminar"
-                                                Text="Eliminar" />
-                                        </asp:Panel>
-                                    </asp:Panel>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                            <asp:Button ID="btnBuscar" runat="server" CssClass="btn btn-primary" OnClick="Buscar"
+                                Text="Buscar" />
+                            <asp:Panel ID="pnlBotonera" runat="server" Visible="false">
+                                <asp:Panel ID="pnlCrear" runat="server" Visible="false">
+                                    <asp:Button ID="btnCrear" runat="server" CssClass="btn btn-primary" OnClick="Crear"
+                                        Text="Crear" ValidationGroup="vgCrearSolicitud" />
+                                </asp:Panel>
+                                <asp:Panel ID="pnlEditar" runat="server" Visible="false">
+                                    <%--<asp:Button ID="btnConsultar" runat="server" CssClass="btn btn-primary" OnClick="Consultar"
+                                        Text="Consultar" />--%>
+                                    <asp:Button ID="btnTerminar" runat="server" CssClass="btn btn-primary" OnClick="Terminar"
+                                        Text="Terminar" />
+                                    <%--<asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-primary" OnClick="Eliminar"
+                                        Text="Eliminar" />--%>
+                                </asp:Panel>
+                            </asp:Panel>
                         </div>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row-fluid sortable ui-sortable">
-        <div class="box span12">
-            <div class="box-header" data-original-title="">
-                <h2>
-                    <i class="halflings-icon user"></i><span class="break"></span>Clientes</h2>
-                <%--<div class="box-icon">
-                    <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
-                        class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
-                            <i class="halflings-icon remove"></i></a>
-                </div>--%>
-            </div>
-            <asp:GridView runat="server" ID="gvPruebas" CssClass="table table-striped" AutoGenerateColumns="false"
-                OnRowCommand="gvClientes_RowCommand" DataKeyNames="id" OnRowDataBound="gvClientes_RowDataBound">
-                <Columns>
-                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
-                    <asp:BoundField DataField="fecha" HeaderText="Fecha" />
-                    <asp:BoundField DataField="resultado" HeaderText="Resultado" />
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="lbtnConsultar" CommandName="Consultar" CssClass="btn btn-success"
-                                ToolTip="Consultar">
-                                <i class="halflings-icon white zoom-in"></i> </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-        </div>
-    </div>
+    <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba" AutoGenerateColumns="false"
+        CssClass="table table-striped" OnRowCommand="gvPruebas_RowCommand">
+        <Columns>
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-HorizontalAlign="Center" />
+            <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="Resultado" HeaderText="Resultado" />
+            <asp:TemplateField HeaderText="Consultar">
+                <ItemTemplate>
+                    <asp:LinkButton runat="server" ID="lbtnConsultar" CommandName="Consultar" CssClass="btn btn-success"
+                        ToolTip="Consultar">
+                            <i class="halflings-icon white zoom-in"></i>
+                    </asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+        <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
+    </asp:GridView>
     <uc3:ModalMsj ID="MsjConfirmacion" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>

@@ -8,7 +8,7 @@ using TS15V2.UI.APP.abstractUI;
 using TS15.BL.gestion_cliente;
 using TS15.BL;
 using TS15.Common.Generated;
-using util;
+using TS15.Common.util;
 using TS15.BL.gestion_transformador;
 
 namespace TS15V2.UI.APP.dev.GestionCliente

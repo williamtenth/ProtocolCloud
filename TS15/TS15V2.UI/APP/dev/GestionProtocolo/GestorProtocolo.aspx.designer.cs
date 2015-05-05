@@ -94,13 +94,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.TextBox txtResultado;
         
         /// <summary>
-        /// UpdatePanel control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
         /// pnlBotonera control.
@@ -139,15 +139,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.Panel pnlEditar;
         
         /// <summary>
-        /// btnConsultar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultar;
-        
-        /// <summary>
         /// btnTerminar control.
         /// </summary>
         /// <remarks>
@@ -155,15 +146,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTerminar;
-        
-        /// <summary>
-        /// btnEliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
         /// gvPruebas control.

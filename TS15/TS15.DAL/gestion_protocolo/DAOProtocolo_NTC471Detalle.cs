@@ -66,7 +66,12 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Crear(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            SingletonDatos.Contexto.pro_ntc471_has_relacion.AddObject(entidad as pro_ntc471_has_relacion);
+            if (SingletonDatos.Contexto.SaveChanges() > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

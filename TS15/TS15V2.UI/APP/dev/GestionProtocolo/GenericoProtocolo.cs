@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System;
 using System.Data.Objects.DataClasses;
 using TS15.BL.gestion_transformador;
+using TS15.Common.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
