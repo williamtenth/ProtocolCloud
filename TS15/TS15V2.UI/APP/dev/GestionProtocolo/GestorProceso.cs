@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using TS15.Common.IService;
 using TS15.BL.gestion_protocolo;
 using System.Data.Objects.DataClasses;
+using TS15.Common.util;
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
     public class GestorProceso
@@ -53,21 +54,32 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// 
         /// <param name="transformador"></param>
         /// <param name="pedido"></param>
-        public void GenerarProceso(tfr_transformador transformador, cli_pedido pedido)
+        public bool CrearProceso(int pedido, byte tipoProceso)
         {
-
+            pro_proceso nuevo = new pro_proceso();
+            nuevo.pedido_id = pedido;
+            nuevo.tipprocesop = tipoProceso;
+            if (_BOProcesoObject.Crear(nuevo))
+            {
+                ConsultarProceso(pedido);
+                return true;
+            }
+            return false;
         }
 
         /// 
         /// <param name="pedido"></param>
-        public void ConsultarProceso(int pedido)
+        public bool ConsultarProceso(int pedido)
         {
             _proceso = _BOProcesoObject.ObternerProcesoXPedido(pedido);
 
             if (_proceso != null)
             {
                 GenerarElementos();
+                return true;
             }
+
+            return false;
         }
 
         private void GenerarElementos()
@@ -89,14 +101,26 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         }
 
-        private void GenerarPruebas()
+        private bool ValidarProceso()
         {
-
+            int resultado = 0;
+            foreach (pro_elementoprueba elemento in _listaElementos)
+            {
+                if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA_LABEL))
+                    resultado++;
+                if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_SIN_RESULTADO_LABEL))
+                    return false;
+            }
+            // Si el valor de resultado es igual al tamaño del arreglo, el resultado del proceso es exitoso.
+            _proceso.resultado = resultado == _listaElementos.Length ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA;
+            return true;
         }
 
-        public void Terminar()
+        public bool Terminar()
         {
-            _BOProcesoObject.Modificar(_proceso);
+            if(ValidarProceso())
+                return _BOProcesoObject.Terminar(_proceso);
+            return false;
         }
 
         // Set Get
@@ -105,13 +129,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             get { return _proceso; }
             set { _proceso = value; }
         }
-        
+
         public pro_elementoprueba[] ListaElementos
         {
             get { return _listaElementos; }
             set { _listaElementos = value; }
         }
-        
+
     }//end GestorProceso
 
 }//end namespace gestion_protocolo

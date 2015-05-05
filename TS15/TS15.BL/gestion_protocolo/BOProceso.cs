@@ -11,7 +11,7 @@ using TS15.Common.Generated;
 
 namespace TS15.BL.gestion_protocolo
 {
-    public class BOProceso : BOGenerico, IGestionable
+    public class BOProceso : BOGenerico, IGestionable, IProbable
     {
 
         public BOProceso()
@@ -46,7 +46,22 @@ namespace TS15.BL.gestion_protocolo
 
         public pro_proceso ObternerProcesoXPedido(int pedido)
         {
-            return null;
+            return ((DAOProceso)GenericoDAO).ObternerProcesoXPedido(pedido);
+        }
+
+        public bool Terminar(EntityObject entidad)
+        {
+            return ((DAOProceso)GenericoDAO).Terminar(entidad);
+        }
+
+        public EntityObject ObtenerUltimaPrueba(tfr_transformador transformador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public pro_elementoprueba ObternerPruebasXProceso(int pedido)
+        {
+            throw new NotImplementedException();
         }
     }
 }

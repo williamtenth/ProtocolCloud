@@ -9,6 +9,7 @@
 using System;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
+using TS15.Common.util;
 namespace TS15.Common.Generated {
 	public class pro_elementoprueba {
 
@@ -34,6 +35,12 @@ namespace TS15.Common.Generated {
             _nombre = nombre;
             _prueba = prueba;
 		}
+
+        public pro_elementoprueba(string nombre, DateTime? fecha, byte? resultado, EntityObject prueba) : this(nombre, prueba)
+        {
+            _fecha = (DateTime) fecha;
+            _resultado = UtilParametros.ValidarResultado(resultado);
+        }
 
         public string Nombre
         {
