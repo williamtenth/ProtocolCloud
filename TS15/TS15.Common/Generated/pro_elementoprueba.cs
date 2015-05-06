@@ -10,35 +10,41 @@ using System;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.Common.util;
-namespace TS15.Common.Generated {
-	public class pro_elementoprueba {
+namespace TS15.Common.Generated
+{
+    public class pro_elementoprueba
+    {
 
         private string _nombre;
         private DateTime _fecha;
         private string _resultado;
         private EntityObject _prueba;
 
-        public pro_elementoprueba(){
+        public pro_elementoprueba()
+        {
 
-		}
+        }
 
-		~pro_elementoprueba(){
+        ~pro_elementoprueba()
+        {
 
-		}
+        }
 
-		/// 
-		/// <param name="nombre"></param>
-		/// <param name="fecha"></param>
-		/// <param name="Resultado"></param>
+        /// 
+        /// <param name="nombre"></param>
+        /// <param name="fecha"></param>
+        /// <param name="Resultado"></param>
         public pro_elementoprueba(string nombre, EntityObject prueba)
         {
             _nombre = nombre;
             _prueba = prueba;
-		}
+        }
 
-        public pro_elementoprueba(string nombre, DateTime? fecha, byte? resultado, EntityObject prueba) : this(nombre, prueba)
+        public pro_elementoprueba(string nombre, DateTime? fecha, byte? resultado, EntityObject prueba)
+            : this(nombre, prueba)
         {
-            _fecha = (DateTime) fecha;
+            if (fecha != null)
+                _fecha = (DateTime)fecha;
             _resultado = UtilParametros.ValidarResultado(resultado);
         }
 
@@ -67,6 +73,6 @@ namespace TS15.Common.Generated {
         }
 
 
-	}//end pro_elementoprueba
+    }//end pro_elementoprueba
 
 }//end namespace Generated

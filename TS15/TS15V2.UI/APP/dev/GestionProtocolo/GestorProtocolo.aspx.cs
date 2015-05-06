@@ -9,6 +9,7 @@ using TS15.Common.Generated;
 using TS15.Common.util;
 using TS15.BL.gestion_cliente;
 using TS15.BL.gestion_transformador;
+using System.Data.Objects.DataClasses;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
@@ -50,7 +51,27 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Consultar(object sender, EventArgs e)
         {
+            int index = Convert.ToInt32((e as GridViewCommandEventArgs).CommandArgument);
 
+            GridViewRow row = gvPruebas.Rows[index];
+            EntityObject tipoSolicitud = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
+            string etiquetaPrueba = (gvPruebas.DataKeys[row.RowIndex].Values[1] as string);
+            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = tipoSolicitud;
+
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1005))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1005.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1031))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1031.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1465))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1465.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC3396))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC3396.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC375))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC375.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC471))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC471.aspx");
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC837))
+                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC837.aspx");
         }
 
         /// 
@@ -198,14 +219,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             }
         }
 
-        protected void gvPruebas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void SeleccionarPrueba(object sender, GridViewCommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument);
 
+            GridViewRow row = gvPruebas.Rows[index];
+            EntityObject tipoSolicitud = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
+            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = tipoSolicitud;
         }
 
         protected void gvPruebas_SelectedIndexChanged(object sender, GridViewCommandEventArgs e)
         {
-            GridViewRow row = gvPruebas.SelectedRow;
+            SeleccionarPrueba(sender, e);
 
         }
 

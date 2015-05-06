@@ -163,8 +163,8 @@
             </div>
         </div>
     </div>
-    <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba" AutoGenerateColumns="false"
-        CssClass="table table-striped" OnRowCommand="gvPruebas_RowCommand">
+    <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba, Nombre" AutoGenerateColumns="false"
+        CssClass="table table-striped" OnRowCommand="Consultar">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-HorizontalAlign="Center" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
@@ -172,7 +172,7 @@
             <asp:TemplateField HeaderText="Consultar">
                 <ItemTemplate>
                     <asp:LinkButton runat="server" ID="lbtnConsultar" CommandName="Consultar" CssClass="btn btn-success"
-                        ToolTip="Consultar">
+                        ToolTip="Consultar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>">
                             <i class="halflings-icon white zoom-in"></i>
                     </asp:LinkButton>
                 </ItemTemplate>
@@ -180,6 +180,7 @@
         </Columns>
         <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
     </asp:GridView>
+    <iframe id="urIframe" runat="server"></iframe>
     <uc3:ModalMsj ID="MsjConfirmacion" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>

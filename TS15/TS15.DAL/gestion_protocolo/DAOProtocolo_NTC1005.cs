@@ -70,7 +70,8 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Crear(EntityObject entidad)
         {
-            SingletonDatos.Contexto.pro_ntc1005.AddObject(entidad as pro_ntc1005);
+            pro_ntc1005 pruebas = (pro_ntc1005)entidad;
+            SingletonDatos.Contexto.pro_ntc1005.AddObject(pruebas);
             if (SingletonDatos.Contexto.SaveChanges() > 0)
             {
                 return true;

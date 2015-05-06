@@ -33,6 +33,7 @@ namespace TS15.Common.util
         public const String RESULTADO_SIN_RESULTADO_LABEL = "Sin resultado";
         public const byte TIPO_PROCESO_PRELIMINARES = 1;
         public const byte TIPO_PROCESO_PROTOCOLO = 2;
+        public const string PRUEBA_SELECCIONADA = "PRUEBA_SELECCIONADA";
         public const String PRUEBA_NTC3396 = "NTC 3396";
         public const String PRUEBA_NTC1465 = "NTC 1465";
         public const String PRUEBA_NTC375 = "NTC 375";
