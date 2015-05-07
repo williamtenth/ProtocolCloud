@@ -10,97 +10,169 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class GestorProtocolo {
+    public partial class ProtocoloNTC1031C {
         
         /// <summary>
-        /// txtSolicitud control.
+        /// txtTension control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSolicitud;
+        protected global::System.Web.UI.WebControls.TextBox txtTension;
         
         /// <summary>
-        /// txtSolicitud_RequiredFieldValidator1 control.
+        /// txtTension_FilteredTextBoxExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtSolicitud_RequiredFieldValidator1;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtTension_FilteredTextBoxExtender;
         
         /// <summary>
-        /// txtSolicitud_FilteredTextBoxExtender control.
+        /// txtIx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender txtSolicitud_FilteredTextBoxExtender;
+        protected global::System.Web.UI.WebControls.TextBox txtIx;
         
         /// <summary>
-        /// pnlCantidad control.
+        /// MaskedEditExtender0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlCantidad;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender0;
         
         /// <summary>
-        /// txtFabricante control.
+        /// txtI2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFabricante;
+        protected global::System.Web.UI.WebControls.TextBox txtI2;
         
         /// <summary>
-        /// pnlCapacidad control.
+        /// MaskedEditExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlCapacidad;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender1;
         
         /// <summary>
-        /// txtNumSerie control.
+        /// txtI3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
+        protected global::System.Web.UI.WebControls.TextBox txtI3;
         
         /// <summary>
-        /// pnlVolEntrada control.
+        /// MaskedEditExtender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlVolEntrada;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender2;
         
         /// <summary>
-        /// txtResultado control.
+        /// txtPromedio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResultado;
+        protected global::System.Web.UI.WebControls.TextBox txtPromedio;
         
         /// <summary>
-        /// btnBuscar control.
+        /// MaskedEditExtender3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender3;
+        
+        /// <summary>
+        /// txtGarantia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGarantia;
+        
+        /// <summary>
+        /// MaskedEditExtender4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender4;
+        
+        /// <summary>
+        /// txtPoMedida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPoMedida;
+        
+        /// <summary>
+        /// MaskedEditExtender5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender5;
+        
+        /// <summary>
+        /// txtPoGarantizado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPoGarantizado;
+        
+        /// <summary>
+        /// MaskedEditExtender6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender6;
+        
+        /// <summary>
+        /// lbResultado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList lbResultado;
+        
+        /// <summary>
+        /// Table1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
         /// pnlBotonera control.
@@ -112,112 +184,58 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.Panel pnlBotonera;
         
         /// <summary>
-        /// pnlCrear control.
+        /// pnlInicial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlCrear;
+        protected global::System.Web.UI.WebControls.Panel pnlInicial;
         
         /// <summary>
-        /// btnCrear control.
+        /// btModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.Button btModificar;
         
         /// <summary>
-        /// pnlEditar control.
+        /// btTerminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlEditar;
+        protected global::System.Web.UI.WebControls.Button btTerminar;
         
         /// <summary>
-        /// btnTerminar control.
+        /// pnlGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTerminar;
+        protected global::System.Web.UI.WebControls.Panel pnlGuardar;
         
         /// <summary>
-        /// gvPruebas control.
+        /// btnGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPruebas;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
-        /// ucProtocoloNTC1031 control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1031C ucProtocoloNTC1031;
-        
-        /// <summary>
-        /// ucProtocoloNTC1465 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465C ucProtocoloNTC1465;
-        
-        /// <summary>
-        /// ucProtocoloNTC3396 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396C ucProtocoloNTC3396;
-        
-        /// <summary>
-        /// ucProtocoloNTC375 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375C ucProtocoloNTC375;
-        
-        /// <summary>
-        /// ucProtocoloNTC837 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC837C ucProtocoloNTC837;
-        
-        /// <summary>
-        /// ucProtocoloNTC471 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471C ucProtocoloNTC471;
-        
-        /// <summary>
-        /// ucProtocoloNTC1005 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005Componente ucProtocoloNTC1005;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
         /// MsjConfirmacion control.

@@ -156,6 +156,11 @@
     <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
     <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
     <Content Include="APP\dev\GestionProtocolo\GestorProtocolo.aspx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.ascx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.ascx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC375.ascx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC471.ascx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC837.ascx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC837.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC471.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.aspx" />
@@ -163,6 +168,8 @@
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC375.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1031.ascx" />
+    <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.ascx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\GestionBodega.aspx" />
@@ -360,6 +367,9 @@
     <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\GenericoProtocoloComponente.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="APP\dev\GestionProtocolo\GestorProceso.cs" />
     <Compile Include="APP\dev\GestionProtocolo\GestorProtocolo.aspx.cs">
       <DependentUpon>GestorProtocolo.aspx</DependentUpon>
@@ -367,6 +377,41 @@
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\GestorProtocolo.aspx.designer.cs">
       <DependentUpon>GestorProtocolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.ascx.cs">
+      <DependentUpon>ProtocoloNTC1005.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC1005.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.ascx.cs">
+      <DependentUpon>ProtocoloNTC1465.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC1465.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC375.ascx.cs">
+      <DependentUpon>ProtocoloNTC375.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC375.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC375.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC471.ascx.cs">
+      <DependentUpon>ProtocoloNTC471.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC471.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC471.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC837.ascx.cs">
+      <DependentUpon>ProtocoloNTC837.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC837.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC837.ascx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC837.aspx.cs">
       <DependentUpon>ProtocoloNTC837.aspx</DependentUpon>
@@ -419,6 +464,20 @@
     </Compile>
     <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.aspx.designer.cs">
       <DependentUpon>ProtocoloNTC3396.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1031.ascx.cs">
+      <DependentUpon>ProtocoloNTC1031.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC1031.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC1031.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.ascx.cs">
+      <DependentUpon>ProtocoloNTC3396.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.ascx.designer.cs">
+      <DependentUpon>ProtocoloNTC3396.ascx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionTransformador\CrearTransformador.aspx.cs">
       <DependentUpon>CrearTransformador.aspx</DependentUpon>

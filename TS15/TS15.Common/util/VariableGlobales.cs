@@ -24,6 +24,7 @@ namespace TS15.Common.util
         public const String SESION_PRUEBA_NTC471_DETALLE = "SESION_PRUEBA_NTC471_DETALLE";
         public const String SESION_PRUEBA_NTC837 = "SESION_PRUEBA_NTC837";
         public const String SESION_CLIENTE_PEDIDO = "SESION_CLIENTE_PEDIDO";
+        public const String SESION_ID_COMPONENTE = "SESION_ID_COMPONENTE";
 
         // Gestión protocolo
         public const byte RESULTADO_PRUEBAS_EXITOSA = 1;

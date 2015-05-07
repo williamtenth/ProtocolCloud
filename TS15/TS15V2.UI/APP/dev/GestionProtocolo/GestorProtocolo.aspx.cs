@@ -59,19 +59,42 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             Session[VariablesGlobales.PRUEBA_SELECCIONADA] = tipoSolicitud;
 
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1005))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1005.aspx");
+                MostrarControl(0);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1031))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1031.aspx");
+                MostrarControl(1);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1465))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC1465.aspx");
+                MostrarControl(2);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC3396))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC3396.aspx");
+                MostrarControl(3);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC375))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC375.aspx");
+                MostrarControl(4);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC471))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC471.aspx");
+                MostrarControl(5);
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC837))
-                urIframe.Attributes.Add("src", "/APP/dev/GestionProtocolo/ProtocoloNTC837.aspx");
+                MostrarControl(6);
+        }
+
+        private void MostrarControl(int valor)
+        {
+            Control[] listaControl = { ucProtocoloNTC1005, ucProtocoloNTC1031, ucProtocoloNTC1465, ucProtocoloNTC3396, ucProtocoloNTC375, ucProtocoloNTC471, ucProtocoloNTC837 };
+            int i = 0;
+
+            foreach (Control control in listaControl)
+            {
+                control.Visible = false;
+                if (i == valor)
+                    control.Visible = true;
+                i++;
+            }
+        }
+
+        private void MostrarControl(Control control)
+        {
+            if (Session[VariablesGlobales.SESION_ID_COMPONENTE] != null)
+                ((Control)Session[VariablesGlobales.SESION_ID_COMPONENTE]).Visible = false;
+
+            control.Visible = true;
+            Session[VariablesGlobales.SESION_ID_COMPONENTE] = control;
         }
 
         /// 
