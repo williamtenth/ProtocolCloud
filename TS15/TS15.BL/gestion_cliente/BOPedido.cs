@@ -10,6 +10,7 @@ using TS15.Common.Generated;
 using TS15.BL.gestion_transformador;
 using TS15.BL.gestion_protocolo;
 using TS15.Common;
+using TS15.DAL.gestion_transformador;
 
 namespace TS15.BL.gestion_cliente
 {
@@ -17,7 +18,7 @@ namespace TS15.BL.gestion_cliente
     {
         private BOOrdenTrabajo _BOOrdenTrabajo;
         private BOProceso _BOProceso;
-        private BOTransformador _BOTransformador;
+        private DAOTransformador _DAOTransformador;
         private BOCliente _BOCliente;
 
         public BOPedido()
@@ -25,7 +26,7 @@ namespace TS15.BL.gestion_cliente
             GenericoDAO = new DAOPedido();
             _BOOrdenTrabajo = new BOOrdenTrabajo();
             _BOProceso = new BOProceso();
-            _BOTransformador = new BOTransformador();
+            _DAOTransformador = new DAOTransformador();
             _BOCliente = new BOCliente();
         }
 
@@ -113,7 +114,7 @@ namespace TS15.BL.gestion_cliente
             bodegaObject.transformador_id = Convert.ToInt32(pedidoObject.transformador_id);
             bodegaObject.tipbodega = "EN"; //TIPO BODEGA DE ENTRADA
             bodegaObject.fecentrada = DateTime.Now;
-            _BOTransformador.IngresarEnBodega(bodegaObject);
+            _DAOTransformador.IngresarEnBodega(bodegaObject);
 
             //ASIGNA EL TRANSFORMADOR AL CLIENTE
             tfr_transf_has_cliente transfClienteObject = new tfr_transf_has_cliente();
