@@ -41,5 +41,15 @@ namespace TS15.DAL.gestion_cliente
         {
             SingletonDatos.Contexto.SaveChanges();
         }
+
+        public List<cli_pedido> ConsultarSolitcitudes(int pIdTransformador, int tipoSolicitud)
+        {
+            return SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == pIdTransformador && p.tipsolicitud == tipoSolicitud).ToList();
+        }
+
+        public cli_pedido ConsultarXIdTransformador(int idTransformador)
+        {
+            return SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == idTransformador).SingleOrDefault();
+        }
     }
 }

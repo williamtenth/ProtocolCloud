@@ -81,7 +81,8 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <asp:GridView runat="server" ID="gvClientes" AutoGenerateColumns="false" DataKeyNames="id,nombre,tipdoc,numdocumento"
-                                        AllowPaging="true" PageSize="10" OnRowDataBound="gvClientes_RowDataBound" OnSelectedIndexChanged="gvClientes_SelectedIndexChanged">
+                                        AllowPaging="true" PageSize="10" OnRowDataBound="gvClientes_RowDataBound" OnSelectedIndexChanged="gvClientes_SelectedIndexChanged"
+                                        CssClass="table table-condensed" OnPageIndexChanging="gvClientes_PageIndexChanging">
                                         <Columns>
                                             <asp:BoundField DataField="nombre" HeaderText="Nombre(s)">
                                                 <ItemStyle HorizontalAlign="Justify" />

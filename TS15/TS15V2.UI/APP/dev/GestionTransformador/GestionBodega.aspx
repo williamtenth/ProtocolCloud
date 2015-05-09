@@ -117,7 +117,7 @@
                                 Fecha de Ingreso:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtFechaIngreso" CssClass="input-xlarge focused"
-                                    MaxLength="20"></asp:TextBox>
+                                    MaxLength="20" Enabled="false"></asp:TextBox>
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_txtFechaIngreso" ControlToValidate="txtFechaIngreso"
                                     ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarTransformador"></asp:RequiredFieldValidator>
                             </div>
@@ -126,35 +126,20 @@
                             <label class="control-label" for="txtNumeroDocumento">
                                 Tipo de Bodega:</label>
                             <div class="controls">
-                                <asp:DropDownList runat="server" ID="ddlTipoBodega" CssClass="input-xlarge focused">
+                                <asp:DropDownList runat="server" ID="ddlTipoBodega" CssClass="input-xlarge focused"
+                                    OnDataBound="ddlTipoBodega_DataBound">
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoBodega" ControlToValidate="ddlTipoBodega"
                                     ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label" for="txtTipoCliente">
-                                Tipo Cliente:</label>
-                            <div class="controls">
-                                <%--<asp:DropDownList runat="server" ID="ddlTipoCliente" OnDataBound="ddlTipoCliente_DataBound"
-                                    Enabled="false">
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoCliente" ControlToValidate="ddlTipoCliente"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente" InitialValue="-1"></asp:RequiredFieldValidator>
-                                <asp:HiddenField runat="server" ID="hfIdCliente" />--%>
-                            </div>
-                        </div>
                         <div class="form-actions">
-                            <%--<asp:Button ID="btnCrearCliente" runat="server" CssClass="btn btn-primary" Text="Crear"
-                                OnClick="btnCrearCliente_Click" />
-                            <asp:Button ID="btnModificarCliente" runat="server" CssClass="btn btn-primary" Text="Modificar"
-                                OnClick="btnModificarCliente_Click" />
-                            <asp:Button ID="btnEliminarCliente" runat="server" CssClass="btn btn-primary" Text="Eliminar"
-                                OnClick="btnEliminarCliente_Click" />
-                            <asp:Button ID="btnGuardarCliente" runat="server" CssClass="btn btn-primary" Text="Guardar"
-                                OnClick="btnGuardarCliente_Click" ValidationGroup="vgGuardarCliente" Visible="false" />
-                            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
-                                OnClick="btnCancelar_Click" Visible="false" />--%>
+                            <asp:Button ID="btnBodegaEntrada" runat="server" CssClass="btn btn-primary" Text="Enviar a Bodega de Entrada"
+                                OnClick="btnBodegaEntrada_Click" Visible="false" />
+                            <asp:Button ID="btnBodegaEntrega" runat="server" CssClass="btn btn-primary" Text="Enviar a Bodega de Entrega"
+                                OnClick="btnBodegaEntrega_Click" Visible="false" />
+                            <asp:Button ID="btnEntregarCliente" runat="server" CssClass="btn btn-primary" Text="Entregar a Cliente"
+                                OnClick="btnEntregarCliente_Click" Visible="false" />
                         </div>
                     </fieldset>
                 </div>
@@ -162,6 +147,7 @@
         </div>
         hola
     </asp:Panel>
+    <uc3:ModalMsj ID="ucMsjModal" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

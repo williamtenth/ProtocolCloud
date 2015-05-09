@@ -75,10 +75,6 @@ namespace TS15V2.UI.APP.componentes
 
         private void CargarFabricante()
         {
-            dbTS15Entities contexto = new dbTS15Entities();
-            RawError error = new RawError();
-            BOCliente clienteBO = new BOCliente();
-
             this.ddlFabricante.DataSource = _BOClienteObject.ConsultarFabricantes();
             this.ddlFabricante.DataValueField = "id";
             this.ddlFabricante.DataTextField = "nombre";
@@ -101,11 +97,16 @@ namespace TS15V2.UI.APP.componentes
             //}
             //else
             //{
+            ConsultarTransformadores();
+            //}
+        }
+
+        private void ConsultarTransformadores()
+        {
             lstTransformadoresFabricante = _BOTransformadorObject.ConsultarTransformadoresFabricante();
             gvTransformadores.DataSource = lstTransformadoresFabricante;
             gvTransformadores.DataBind();
             mpeTransformador.Show();
-            //}
         }
 
         protected void gvTransformadores_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +149,12 @@ namespace TS15V2.UI.APP.componentes
         public string IdTransformador
         {
             get { return hfIdTransformador.Value; }
+        }
+
+        protected void gvTransformadores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvTransformadores.PageIndex = e.NewPageIndex;
+            ConsultarTransformadores();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace TS15.DAL.gestion_protocolo
         {
             pro_proceso procesoObject = entidad as pro_proceso;
             SingletonDatos.Contexto.pro_proceso.AddObject(procesoObject);
+
             if (SingletonDatos.Contexto.SaveChanges() == 1)
             {
                 CrearPruebas(procesoObject.id);

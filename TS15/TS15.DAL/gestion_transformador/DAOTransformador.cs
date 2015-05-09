@@ -115,7 +115,7 @@ namespace TS15.DAL.gestion_transformador
             bool esAsignado = false;
             int contador = SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == idTransformador && p.estado == 1).ToList().Count;
 
-            if ( contador> 0)
+            if (contador > 0)
                 esAsignado = true;
 
             return esAsignado;
@@ -130,6 +130,20 @@ namespace TS15.DAL.gestion_transformador
         public vw_transformador_fabricante ConsultarTransformadorFabricante(int idTransformador)
         {
             return SingletonDatos.Contexto.vw_transformador_fabricante.Where(p => p.IdTransformador == idTransformador).SingleOrDefault();
+        }
+
+        public tfr_bodega ConsultarTransformadorBodega(int pIdTransformador)
+        {
+            if (SingletonDatos.Contexto.tfr_bodega.Where(p => p.transformador_id == pIdTransformador).ToList().Count > 0)
+                return SingletonDatos.Contexto.tfr_bodega.Where(p => p.transformador_id == pIdTransformador).SingleOrDefault();
+
+            else
+                return null;
+        }
+
+        public void AsignarBodegaEntrega(tfr_bodega bodegaObject)
+        {
+            //SingletonDatos.Contexto.
         }
     }
 }

@@ -71,7 +71,8 @@
                                 <ContentTemplate>
                                     <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true"
                                         DataKeyNames="id,numserie,fabricante_id" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
-                                        OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged">
+                                        OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged" CssClass="table table-condensed"
+                                        OnPageIndexChanging="gvTransformadores_PageIndexChanging">
                                         <Columns>
                                             <asp:BoundField DataField="numserie" HeaderText="Número de Serie">
                                                 <ItemStyle HorizontalAlign="Justify" />

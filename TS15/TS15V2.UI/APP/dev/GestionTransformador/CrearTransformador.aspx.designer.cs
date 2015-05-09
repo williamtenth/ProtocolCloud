@@ -22,6 +22,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.DropDownList ddlFabricante;
         
         /// <summary>
+        /// rfv_ddlFabricante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlFabricante;
+        
+        /// <summary>
         /// txtNumSerie control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
+        
+        /// <summary>
+        /// rfv_txtNumSerie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtNumSerie;
         
         /// <summary>
         /// txtAltura control.
@@ -40,6 +58,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtAltura;
         
         /// <summary>
+        /// rfv_txtAltura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtAltura;
+        
+        /// <summary>
         /// ddlSerieAT control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSerieAT;
+        
+        /// <summary>
+        /// rfv_ddlSerieAT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlSerieAT;
         
         /// <summary>
         /// ddlSerieBT control.
@@ -58,6 +94,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.DropDownList ddlSerieBT;
         
         /// <summary>
+        /// rfv_ddlSerieBT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlSerieBT;
+        
+        /// <summary>
         /// ddlCapacidad control.
         /// </summary>
         /// <remarks>
@@ -65,6 +110,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCapacidad;
+        
+        /// <summary>
+        /// rfv_ddlCapacidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlCapacidad;
         
         /// <summary>
         /// ddlFase control.
@@ -76,6 +130,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.DropDownList ddlFase;
         
         /// <summary>
+        /// rfv_ddlFase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlFase;
+        
+        /// <summary>
         /// txtFechaFabricacion control.
         /// </summary>
         /// <remarks>
@@ -83,6 +146,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaFabricacion;
+        
+        /// <summary>
+        /// rfv_txtFechaFabricacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtFechaFabricacion;
         
         /// <summary>
         /// txtTempDevanado control.
@@ -94,6 +166,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtTempDevanado;
         
         /// <summary>
+        /// rfv_txtTempDevanado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtTempDevanado;
+        
+        /// <summary>
         /// ddlAislamiento control.
         /// </summary>
         /// <remarks>
@@ -101,6 +182,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAislamiento;
+        
+        /// <summary>
+        /// rfv_ddlAislamiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlAislamiento;
         
         /// <summary>
         /// txtFrecuencia control.
@@ -112,6 +202,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtFrecuencia;
         
         /// <summary>
+        /// rfv_txtFrecuencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtFrecuencia;
+        
+        /// <summary>
         /// ddlRefrigeracion control.
         /// </summary>
         /// <remarks>
@@ -119,6 +218,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRefrigeracion;
+        
+        /// <summary>
+        /// rfv_ddlRefrigeracion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlRefrigeracion;
         
         /// <summary>
         /// txtVoltajeEntrada control.
@@ -130,6 +238,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtVoltajeEntrada;
         
         /// <summary>
+        /// rfv_txtVoltajeEntrada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVoltajeEntrada;
+        
+        /// <summary>
         /// txtVoltajeSalida control.
         /// </summary>
         /// <remarks>
@@ -137,6 +254,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVoltajeSalida;
+        
+        /// <summary>
+        /// rfv_txtVoltajeSalida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVoltajeSalida;
         
         /// <summary>
         /// txtVoltajeEntDerivada control.
@@ -148,6 +274,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtVoltajeEntDerivada;
         
         /// <summary>
+        /// rfv_txtVoltajeEntDerivada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVoltajeEntDerivada;
+        
+        /// <summary>
         /// txtVoltajeSalDerivada control.
         /// </summary>
         /// <remarks>
@@ -155,6 +290,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVoltajeSalDerivada;
+        
+        /// <summary>
+        /// rfv_txtVoltajeSalDerivada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtVoltajeSalDerivada;
         
         /// <summary>
         /// txtNumDerivaciones control.
@@ -166,6 +310,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtNumDerivaciones;
         
         /// <summary>
+        /// rfv_txtNumDerivaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtNumDerivaciones;
+        
+        /// <summary>
         /// ddlGrupoConexion control.
         /// </summary>
         /// <remarks>
@@ -173,6 +326,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGrupoConexion;
+        
+        /// <summary>
+        /// rfv_ddlGrupoConexion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlGrupoConexion;
         
         /// <summary>
         /// btnGuardar control.

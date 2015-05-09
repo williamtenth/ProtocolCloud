@@ -25,5 +25,19 @@ namespace TS15.Common
             [EnumMember(Value = "Usuario")]
             Usuario
         }
+
+        public enum TipoBodega
+        {
+            BodegaEntrada = 1,
+            BodegaSalida
+        }
+
+        public enum TipoSolicitud
+        {
+            Servicio = 1,
+            Suministro,
+            Reparacion,
+            Mantenimiento
+        }
     }
 }

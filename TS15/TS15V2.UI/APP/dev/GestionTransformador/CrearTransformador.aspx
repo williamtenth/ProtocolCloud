@@ -51,6 +51,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlFabricante" CssClass="form-control" OnDataBound="ddlFabricante_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlFabricante" ControlToValidate="ddlFabricante"
+                                    ErrorMessage="*" ForeColor="Red" InitialValue="-1" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -58,6 +60,8 @@
                                 Número de Serie:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumSerie" ControlToValidate="txtNumSerie"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -66,6 +70,8 @@
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtAltura" CssClass="form-control" ReadOnly="true"
                                     Enabled="false"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtAltura" ControlToValidate="txtAltura"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -74,6 +80,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlSerieAT" CssClass="form-control" OnDataBound="ddlSerieAT_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlSerieAT" ControlToValidate="ddlSerieAT"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -82,6 +90,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlSerieBT" CssClass="form-control" OnDataBound="ddlSerieBT_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlSerieBT" ControlToValidate="ddlSerieBT"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -90,6 +100,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -98,13 +110,21 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlFase" CssClass="form-control" OnDataBound="ddlFase_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlFase" ControlToValidate="ddlFase"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="txtFechaFabricacion">
                                 Fecha de Fabricación:</label>
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtFechaFabricacion" CssClass="form-control"></asp:TextBox>
+                                <div class="input-append date">
+                                    <asp:TextBox runat="server" ID="txtFechaFabricacion" CssClass="span11 datepicker"
+                                        MaxLength="10"></asp:TextBox>
+                                    <span class="add-on"><i class="icon-calendar"></i></span>
+                                </div>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtFechaFabricacion" ControlToValidate="txtFechaFabricacion"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -112,6 +132,8 @@
                                 Temp. Devanado:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtTempDevanado" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtTempDevanado" ControlToValidate="txtTempDevanado"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -120,6 +142,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlAislamiento" CssClass="form-control" OnDataBound="ddlAislamiento_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlAislamiento" ControlToValidate="ddlAislamiento"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -127,6 +151,8 @@
                                 Frecuencia:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtFrecuencia" CssClass="form-control" MaxLength="15"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtFrecuencia" ControlToValidate="txtFrecuencia"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -135,6 +161,8 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlRefrigeracion" CssClass="form-control" OnDataBound="ddlRefrigeracion_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlRefrigeracion" ControlToValidate="ddlRefrigeracion"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -142,6 +170,8 @@
                                 Voltaje Entrada:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVoltajeEntrada" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVoltajeEntrada" ControlToValidate="txtVoltajeEntrada"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -149,6 +179,8 @@
                                 Voltaje Salida:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVoltajeSalida" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVoltajeSalida" ControlToValidate="txtVoltajeSalida"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -156,6 +188,8 @@
                                 Voltaje Entrada Derivada:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVoltajeEntDerivada" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVoltajeEntDerivada" ControlToValidate="txtVoltajeEntDerivada"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -163,6 +197,8 @@
                                 Voltaje Salida Derivada:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtVoltajeSalDerivada" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVoltajeSalDerivada" ControlToValidate="txtVoltajeSalDerivada"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -170,6 +206,8 @@
                                 Número Derivaciones:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtNumDerivaciones" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumDerivaciones" ControlToValidate="txtNumDerivaciones"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">
@@ -178,19 +216,21 @@
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlGrupoConexion" CssClass="form-control" OnDataBound="ddlGrupoConexion_DataBound">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlGrupoConexion" ControlToValidate="ddlGrupoConexion"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-actions">
                             <asp:Button runat="server" ID="btnGuardar" CssClass="btn btn-primary" Text="Guardar"
-                                OnClick="btnGuardar_Click" />
+                                OnClick="btnGuardar_Click" CausesValidation="true" ValidationGroup="vgCrearTransformador" />
                         </div>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
-    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
+    <uc3:ModalMsj runat="server" ID="ModalMsj1" />
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -198,7 +238,7 @@
     <script type="text/javascript" src="../../js/modernizr.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../../js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src='../../js/fullcalendar.min.js'></script>
     <script type="text/javascript" src='../../js/jquery.dataTables.min.js'></script>
     <script type="text/javascript" src="../../js/excanvas.js"></script>
     <script type="text/javascript" src="../../js/jquery.flot.js"></script>

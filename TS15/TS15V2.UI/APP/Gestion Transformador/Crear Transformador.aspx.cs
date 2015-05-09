@@ -216,7 +216,7 @@ namespace TS15.UI.APP.systems.Gestion_Transformador
             transformadorEntity.tfrtenserieBT = Convert.ToByte(this.ddlSerieBT.SelectedValue);
             transformadorEntity.tfrcapacidad = Convert.ToByte(this.ddlCapacidad.SelectedValue);
             transformadorEntity.trffase = Convert.ToByte(this.ddlFase.SelectedValue);
-            transformadorEntity.fecfabricacion = Convert.ToDateTime(this.txtFechaFabricacion.Text.Trim());
+            //transformadorEntity.fecfabricacion = Convert.ToDateTime(this.txtFechaFabricacion.Text.Trim());
             transformadorEntity.tempdevanado = this.txtTempDevanado.Text.Trim();
             transformadorEntity.trfaislamiento = Convert.ToByte(this.ddlAislamiento.SelectedValue);
             transformadorEntity.frecuencia = Convert.ToInt64(this.txtFrecuencia.Text.Trim());

@@ -48,7 +48,7 @@ namespace TS15.BL
         {
             return ((DAOParametrica)GenericoDAO).ConsultarTipoSolictudSS(tipo);
         }
-        
+
         public bool Modificar(EntityObject entidad)
         {
             throw new NotImplementedException();

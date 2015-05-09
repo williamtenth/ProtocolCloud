@@ -176,7 +176,7 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
             tfr_transformador transformadorEntity = new tfr_transformador();
             ObtenerValores(transformadorEntity);
             _BOTransformador.Crear(transformadorEntity);
-            Response.Redirect("~/APP/Gestion Transformador/Detalle Transformador.aspx?idTransformador=" + transformadorEntity.id);
+            EnviarAModalMsj(ModalMsj1, "Transformador", "Se ha creado correctamente el transformador");
         }
 
         private void ObtenerValores(tfr_transformador transformadorEntity)

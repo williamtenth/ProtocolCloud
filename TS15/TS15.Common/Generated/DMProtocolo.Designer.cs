@@ -19,15 +19,15 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Paths), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Roles), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_Users), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_PersonalizationAllUsers), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.aspnet_Profile), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.cli_cliente), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_tfr_transf_has_cliente_cli_cliente", "cli_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TS15.Common.Generated.cli_cliente), "tfr_transf_has_cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.tfr_transf_has_cliente), true)]
 [assembly: EdmRelationshipAttribute("dbTS15Model", "FK_cli_pedido_tfr_transformador", "tfr_transformador", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TS15.Common.Generated.tfr_transformador), "cli_pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TS15.Common.Generated.cli_pedido), true)]
@@ -501,18 +501,18 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<sysdiagrams> sysdiagrams
+        public ObjectSet<sysdiagram> sysdiagrams
         {
             get
             {
                 if ((_sysdiagrams == null))
                 {
-                    _sysdiagrams = base.CreateObjectSet<sysdiagrams>("sysdiagrams");
+                    _sysdiagrams = base.CreateObjectSet<sysdiagram>("sysdiagrams");
                 }
                 return _sysdiagrams;
             }
         }
-        private ObjectSet<sysdiagrams> _sysdiagrams;
+        private ObjectSet<sysdiagram> _sysdiagrams;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1025,9 +1025,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
+        public void AddTosysdiagrams(sysdiagram sysdiagram)
         {
-            base.AddObject("sysdiagrams", sysdiagrams);
+            base.AddObject("sysdiagrams", sysdiagram);
         }
     
         /// <summary>
@@ -1329,18 +1329,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__76B698BF", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership")]
         public EntityCollection<aspnet_Membership> aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Membership", value);
                 }
             }
         }
@@ -1351,18 +1351,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__789EE131", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths")]
         public EntityCollection<aspnet_Paths> aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Paths", value);
                 }
             }
         }
@@ -1373,18 +1373,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__7D63964E", "aspnet_Roles")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles")]
         public EntityCollection<aspnet_Roles> aspnet_Roles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Roles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Roles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Roles", value);
                 }
             }
         }
@@ -1395,18 +1395,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E57BA87", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Users")]
         public EntityCollection<aspnet_Users> aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Users", value);
                 }
             }
         }
@@ -1986,16 +1986,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2007,13 +2007,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__76B698BF", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Me__Appli__276EDEB3", "aspnet_Applications", value);
                 }
             }
         }
@@ -2024,16 +2024,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2045,13 +2045,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Users", value);
                 }
             }
         }
@@ -2201,16 +2201,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2222,13 +2222,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__789EE131", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Pa__Appli__59063A47", "aspnet_Applications", value);
                 }
             }
         }
@@ -2239,16 +2239,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7993056A", "aspnet_PersonalizationAllUsers")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers")]
         public aspnet_PersonalizationAllUsers aspnet_PersonalizationAllUsers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_PersonalizationAllUsers").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_PersonalizationAllUsers").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers").Value = value;
             }
         }
         /// <summary>
@@ -2260,13 +2260,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_PersonalizationAllUsers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_PersonalizationAllUsers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_PersonalizationAllUsers", value);
                 }
             }
         }
@@ -2277,18 +2277,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7A8729A3", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -2412,16 +2412,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2433,13 +2433,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7993056A", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D", "aspnet_Paths", value);
                 }
             }
         }
@@ -2611,16 +2611,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2632,13 +2632,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__7A8729A3", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("dbTS15Model.FK__aspnet_Pe__PathI__628FA481", "aspnet_Paths", value);
                 }
             }
         }
@@ -2649,16 +2649,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2670,13 +2670,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_Users", value);
                 }
             }
         }
@@ -2852,16 +2852,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2873,13 +2873,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Users", value);
                 }
             }
         }
@@ -3053,16 +3053,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -3074,13 +3074,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__7D63964E", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Ro__Appli__45F365D3", "aspnet_Applications", value);
                 }
             }
         }
@@ -3440,16 +3440,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Us__Appli__173876EA", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -3461,13 +3461,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__7E57BA87", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("dbTS15Model.FK__aspnet_Us__Appli__173876EA", "aspnet_Applications", value);
                 }
             }
         }
@@ -3478,16 +3478,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__77AABCF8", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Me__UserI__286302EC", "aspnet_Membership")]
         public aspnet_Membership aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Membership").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Membership").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership").Value = value;
             }
         }
         /// <summary>
@@ -3499,13 +3499,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__77AABCF8", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("dbTS15Model.FK__aspnet_Me__UserI__286302EC", "aspnet_Membership", value);
                 }
             }
         }
@@ -3516,18 +3516,18 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__7B7B4DDC", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -3538,16 +3538,16 @@ namespace TS15.Common.Generated
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Profile")]
+        [EdmRelationshipNavigationPropertyAttribute("dbTS15Model", "FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile")]
         public aspnet_Profile aspnet_Profile
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Profile").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Profile").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile").Value = value;
             }
         }
         /// <summary>
@@ -3559,13 +3559,13 @@ namespace TS15.Common.Generated
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Profile");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__7C6F7215", "aspnet_Profile", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99", "aspnet_Profile", value);
                 }
             }
         }
@@ -6493,13 +6493,11 @@ namespace TS15.Common.Generated
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
         /// <param name="transformador_id">Initial value of the transformador_id property.</param>
-        /// <param name="fecha">Initial value of the fecha property.</param>
-        public static pro_ntc3396 Createpro_ntc3396(global::System.Int32 id, global::System.Int32 transformador_id, global::System.DateTime fecha)
+        public static pro_ntc3396 Createpro_ntc3396(global::System.Int32 id, global::System.Int32 transformador_id)
         {
             pro_ntc3396 pro_ntc3396 = new pro_ntc3396();
             pro_ntc3396.id = id;
             pro_ntc3396.transformador_id = transformador_id;
-            pro_ntc3396.fecha = fecha;
             return pro_ntc3396;
         }
 
@@ -6585,9 +6583,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime fecha
+        public Nullable<global::System.DateTime> fecha
         {
             get
             {
@@ -6602,8 +6600,8 @@ namespace TS15.Common.Generated
                 OnfechaChanged();
             }
         }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
+        private Nullable<global::System.DateTime> _fecha;
+        partial void OnfechaChanging(Nullable<global::System.DateTime> value);
         partial void OnfechaChanged();
     
         /// <summary>
@@ -8935,26 +8933,26 @@ namespace TS15.Common.Generated
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagrams")]
+    [EdmEntityTypeAttribute(NamespaceName="dbTS15Model", Name="sysdiagram")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class sysdiagrams : EntityObject
+    public partial class sysdiagram : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new sysdiagrams object.
+        /// Create a new sysdiagram object.
         /// </summary>
         /// <param name="name">Initial value of the name property.</param>
         /// <param name="principal_id">Initial value of the principal_id property.</param>
         /// <param name="diagram_id">Initial value of the diagram_id property.</param>
-        public static sysdiagrams Createsysdiagrams(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
+        public static sysdiagram Createsysdiagram(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
         {
-            sysdiagrams sysdiagrams = new sysdiagrams();
-            sysdiagrams.name = name;
-            sysdiagrams.principal_id = principal_id;
-            sysdiagrams.diagram_id = diagram_id;
-            return sysdiagrams;
+            sysdiagram sysdiagram = new sysdiagram();
+            sysdiagram.name = name;
+            sysdiagram.principal_id = principal_id;
+            sysdiagram.diagram_id = diagram_id;
+            return sysdiagram;
         }
 
         #endregion
@@ -10009,12 +10007,10 @@ namespace TS15.Common.Generated
         /// Create a new tfr_transformador object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
-        /// <param name="volentrada">Initial value of the volentrada property.</param>
-        public static tfr_transformador Createtfr_transformador(global::System.Int32 id, global::System.Decimal volentrada)
+        public static tfr_transformador Createtfr_transformador(global::System.Int32 id)
         {
             tfr_transformador tfr_transformador = new tfr_transformador();
             tfr_transformador.id = id;
-            tfr_transformador.volentrada = volentrada;
             return tfr_transformador;
         }
 
@@ -10364,9 +10360,9 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Decimal volentrada
+        public Nullable<global::System.Decimal> volentrada
         {
             get
             {
@@ -10381,8 +10377,8 @@ namespace TS15.Common.Generated
                 OnvolentradaChanged();
             }
         }
-        private global::System.Decimal _volentrada;
-        partial void OnvolentradaChanging(global::System.Decimal value);
+        private Nullable<global::System.Decimal> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
         partial void OnvolentradaChanged();
     
         /// <summary>
@@ -14152,33 +14148,6 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdTransformador
-        {
-            get
-            {
-                return _IdTransformador;
-            }
-            set
-            {
-                if (_IdTransformador != value)
-                {
-                    OnIdTransformadorChanging(value);
-                    ReportPropertyChanging("IdTransformador");
-                    _IdTransformador = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTransformador");
-                    OnIdTransformadorChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdTransformador;
-        partial void OnIdTransformadorChanging(global::System.Int32 value);
-        partial void OnIdTransformadorChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String numserie
@@ -14727,6 +14696,105 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _trfgrpconex;
         partial void OntrfgrpconexChanging(Nullable<global::System.Byte> value);
         partial void OntrfgrpconexChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 IdTransformador
+        {
+            get
+            {
+                return _IdTransformador;
+            }
+            set
+            {
+                if (_IdTransformador != value)
+                {
+                    OnIdTransformadorChanging(value);
+                    ReportPropertyChanging("IdTransformador");
+                    _IdTransformador = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("IdTransformador");
+                    OnIdTransformadorChanged();
+                }
+            }
+        }
+        private global::System.Int32 _IdTransformador;
+        partial void OnIdTransformadorChanging(global::System.Int32 value);
+        partial void OnIdTransformadorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                OndireccionChanging(value);
+                ReportPropertyChanging("direccion");
+                _direccion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("direccion");
+                OndireccionChanged();
+            }
+        }
+        private global::System.String _direccion;
+        partial void OndireccionChanging(global::System.String value);
+        partial void OndireccionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                OntelefonoChanging(value);
+                ReportPropertyChanging("telefono");
+                _telefono = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("telefono");
+                OntelefonoChanged();
+            }
+        }
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
+        partial void OntelefonoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> tiptercero
+        {
+            get
+            {
+                return _tiptercero;
+            }
+            set
+            {
+                OntipterceroChanging(value);
+                ReportPropertyChanging("tiptercero");
+                _tiptercero = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tiptercero");
+                OntipterceroChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _tiptercero;
+        partial void OntipterceroChanging(Nullable<global::System.Int32> value);
+        partial void OntipterceroChanged();
 
         #endregion
 

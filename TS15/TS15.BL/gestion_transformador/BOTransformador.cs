@@ -9,14 +9,19 @@ using System.Data.Objects.DataClasses;
 using TS15.DAL;
 using TS15.BL.abstractBL;
 using TS15.DAL.gestion_transformador;
+using TS15.BL.gestion_cliente;
+using TS15.Common;
 
 namespace TS15.BL.gestion_transformador
 {
     public class BOTransformador : BOGenerico, IGestionable
     {
+        private BOPedido _BOPedido;
+
         public BOTransformador()
         {
             GenericoDAO = new DAOTransformador();
+            _BOPedido = new BOPedido();
         }
 
         public List<EntityObject> Consultar()
@@ -122,6 +127,47 @@ namespace TS15.BL.gestion_transformador
         public vw_transformador_fabricante ConsultarTransformadorFabricante(int idTransformador)
         {
             return ((DAOTransformador)GenericoDAO).ConsultarTransformadorFabricante(idTransformador);
+        }
+
+        public tfr_bodega ConsultarTransformadorBodega(int pIdTransformador)
+        {
+            return ((DAOTransformador)GenericoDAO).ConsultarTransformadorBodega(pIdTransformador);
+        }
+
+        public void EnviarBodegaEntrada(tfr_bodega bodegaObject, out string mensaje)
+        {
+            //valida si el transformador seleccionado no posee una solicitud tipo servicio
+            mensaje = string.Empty;
+            int tipoSolicitud = Convert.ToInt32(Enums.TipoSolicitud.Servicio);
+            int contSolServicio = _BOPedido.ConsultarSolitcitudes(bodegaObject.transformador_id, tipoSolicitud).Count;
+
+            if (contSolServicio > 0)
+                mensaje = "No se puede enviar a la bodega de entrada, por favor crear solicitud de servicio";
+
+            else
+                IngresarEnBodega(bodegaObject);
+        }
+
+        public void EnviarBodegaEntrega(tfr_transformador transformadorObject, out string errorMsj)
+        {
+            //valida si el transformador seleccionado no ha sido aprobado
+            errorMsj = string.Empty;
+
+            bool bitEstado = Convert.ToBoolean(_BOPedido.ConsultarXIdTransformador(transformadorObject.id).aprobado);
+
+            if (bitEstado)
+                errorMsj = "No se puede enviar a la bodega de entrega, el transformador no ha sido aprobado";
+            else
+            {
+                tfr_bodega bodegaObject = ConsultarTransformadorBodega(transformadorObject.id);
+                bodegaObject.tipbodega = "";
+                AsignarBodegaEntrega(bodegaObject);
+            }
+        }
+
+        private void AsignarBodegaEntrega(tfr_bodega bodegaObject)
+        {
+            ((DAOTransformador)GenericoDAO).AsignarBodegaEntrega(bodegaObject);
         }
     }
 }

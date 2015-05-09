@@ -9,6 +9,7 @@ using System.Data.Objects.DataClasses;
 using TS15.Common.Generated;
 using TS15.BL.gestion_transformador;
 using TS15.BL.gestion_protocolo;
+using TS15.Common;
 
 namespace TS15.BL.gestion_cliente
 {
@@ -126,6 +127,16 @@ namespace TS15.BL.gestion_cliente
         public void Actualizar(cli_pedido pedidoObject)
         {
             ((DAOPedido)GenericoDAO).Actualizar(pedidoObject);
+        }
+
+        internal List<cli_pedido> ConsultarSolitcitudes(int pIdTransformador, int tipoSolicitud)
+        {
+            return ((DAOPedido)GenericoDAO).ConsultarSolitcitudes(pIdTransformador, tipoSolicitud);
+        }
+
+        public cli_pedido ConsultarXIdTransformador(int idTransformador)
+        {
+            return ((DAOPedido)GenericoDAO).ConsultarXIdTransformador(idTransformador);
         }
     }
 }
