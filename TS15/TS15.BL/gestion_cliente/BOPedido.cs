@@ -34,28 +34,61 @@ namespace TS15.BL.gestion_cliente
         {
             bool bitProceso = true;
 
+            //CREAR EL TRANSFORMADOR
+            tfr_transformador transformadorObject = new tfr_transformador();
+            transformadorObject.numserie = DateTime.Now.Ticks.ToString();
+            transformadorObject.fabricante_id = 7; //ID DE LA EMPRESA FABRICANTE
+            transformadorObject.altura = "1000";
+            transformadorObject.tfrestado = 1; //GEN PARAMETRICA TFRESTADO = 1
+            transformadorObject.tfrtenserieAT = 1;
+            transformadorObject.tfrtenserieBT = 2;
+            transformadorObject.tfrcapacidad = pedidoObject.capacidad;
+            transformadorObject.trffase = 3;
+            transformadorObject.fecfabricacion = DateTime.Now;
+            transformadorObject.tempdevanado = "65";
+            transformadorObject.trfaislamiento = 1;
+            transformadorObject.frecuencia = 60;
+            transformadorObject.volentrada = pedidoObject.volentrada;
+            transformadorObject.volsalida = pedidoObject.volsalida;
+            transformadorObject.derivaciones = 5;
+            transformadorObject.trfgrpconex = 1;
+            _DAOTransformador.Crear(transformadorObject);
+
+            //ASIGNA EL TRANSFORMADOR AL CLIENTE
+            tfr_transf_has_cliente transfClienteObject = new tfr_transf_has_cliente();
+            transfClienteObject.cliente_id = Convert.ToInt32(pedidoObject.cliente_id);
+            transfClienteObject.transformador_id = transformadorObject.id;
+            transfClienteObject.fechaasignacion = DateTime.Now;
+            _BOCliente.AsignarTransformador(transfClienteObject);
+
             //CREA EL PEDIDO
+            pedidoObject.transformador_id = transformadorObject.id;
             pedidoObject.consecutivo = ((DAOPedido)GenericoDAO).ObtenerConsecutivo();
             Crear(pedidoObject);
 
-            for (int i = 0; i < pedidoObject.cantidad; i++)
-            {
-                //CREA LA ORDEN DE TRABAJO
-                tfr_ordentrabajo ordenTrabajoObject = new tfr_ordentrabajo();
-                ordenTrabajoObject.pedido_id = pedidoObject.id;
-                ordenTrabajoObject.consecutivo = _BOOrdenTrabajo.ObtenerConsecutivo();
-                ordenTrabajoObject.fechacreacion = DateTime.Now;
-                ordenTrabajoObject.estado = 1; //Estado Activo
-                _BOOrdenTrabajo.Crear(ordenTrabajoObject);
+            //CREA LA ORDEN DE TRABAJO
+            tfr_ordentrabajo ordenTrabajoObject = new tfr_ordentrabajo();
+            ordenTrabajoObject.pedido_id = pedidoObject.id;
+            ordenTrabajoObject.consecutivo = _BOOrdenTrabajo.ObtenerConsecutivo();
+            ordenTrabajoObject.fechacreacion = DateTime.Now;
+            ordenTrabajoObject.estado = 1; //Estado Activo
+            _BOOrdenTrabajo.Crear(ordenTrabajoObject);
 
-                //INGRESA AL PROCESO DE PRUEBAS
-                pro_proceso procesoObject = new pro_proceso();
-                procesoObject.pedido_id = pedidoObject.id;
-                procesoObject.tipprocesop = 1; //Proceso de pruebas preliminares.
-                procesoObject.fecha = DateTime.Now;
-                procesoObject.estado = 1; //Estado Activo
-                _BOProceso.Crear(procesoObject);
-            }
+            //INGRESA AL PROCESO DE PRUEBAS
+            pro_proceso procesoObject = new pro_proceso();
+            procesoObject.pedido_id = pedidoObject.id;
+            procesoObject.tipprocesop = 1; //Proceso de pruebas preliminares.
+            procesoObject.fecha = DateTime.Now;
+            procesoObject.estado = 1; //Estado Activo
+            _BOProceso.Crear(procesoObject);
+
+            //INGRESA EL TRANSFORMADOR A LA BODEGA
+            tfr_bodega bodegaObject = new tfr_bodega();
+            bodegaObject.transformador_id = transformadorObject.id;
+            bodegaObject.tipbodega = "EN";
+            bodegaObject.fecentrada = DateTime.Now;
+            bodegaObject.pedido_id = pedidoObject.id;
+            _DAOTransformador.IngresarEnBodega(bodegaObject);
 
             return bitProceso;
         }

@@ -100,7 +100,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void MostrarControlesSuministro()
         {
-            pnlCantidad.Visible = true;
             pnlCapacidad.Visible = true;
             pnlVolEntrada.Visible = true;
             pnlVolSalida.Visible = true;
@@ -108,7 +107,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
         private void OcultarControlesSuministro()
         {
-            pnlCantidad.Visible = false;
             pnlCapacidad.Visible = false;
             pnlVolEntrada.Visible = false;
             pnlVolSalida.Visible = false;
@@ -180,7 +178,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             cli_pedido pedidoObject = new cli_pedido();
             pedidoObject.fechasolicitud = DateTime.Now;
             pedidoObject.tipsolicitud = UtilNumeros.StringToBytes(this.ddlTipoSolicitud.SelectedValue);
-            pedidoObject.cantidad = Convert.ToInt32(this.txtCantidad.Text.Trim());
+            pedidoObject.cantidad = 1;//SOLO SE PUEDE CREAR UN TRANSFORMADOR;
             pedidoObject.tiptransformador = 1; //TIPO DE TRANSFORMADOR 'DISTRIBUCION'
             pedidoObject.capacidad = UtilNumeros.StringToBytes(this.ddlCapacidad.SelectedValue);
             pedidoObject.volentrada = Convert.ToDecimal(this.txtVolEntrada.Text.Trim());

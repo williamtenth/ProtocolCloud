@@ -141,7 +141,7 @@ namespace TS15.BL.gestion_transformador
             int tipoSolicitud = Convert.ToInt32(Enums.TipoSolicitud.Servicio);
             int contSolServicio = _BOPedido.ConsultarSolitcitudes(bodegaObject.transformador_id, tipoSolicitud).Count;
 
-            if (contSolServicio > 0)
+            if (contSolServicio == 0)
                 mensaje = "No se puede enviar a la bodega de entrada, por favor crear solicitud de servicio";
 
             else
@@ -155,12 +155,12 @@ namespace TS15.BL.gestion_transformador
 
             bool bitEstado = Convert.ToBoolean(_BOPedido.ConsultarXIdTransformador(transformadorObject.id).aprobado);
 
-            if (bitEstado)
+            if (!bitEstado)
                 errorMsj = "No se puede enviar a la bodega de entrega, el transformador no ha sido aprobado";
             else
             {
                 tfr_bodega bodegaObject = ConsultarTransformadorBodega(transformadorObject.id);
-                bodegaObject.tipbodega = "";
+                bodegaObject.tipbodega = "SA";
                 AsignarBodegaEntrega(bodegaObject);
             }
         }
@@ -168,6 +168,11 @@ namespace TS15.BL.gestion_transformador
         private void AsignarBodegaEntrega(tfr_bodega bodegaObject)
         {
             ((DAOTransformador)GenericoDAO).AsignarBodegaEntrega(bodegaObject);
+        }
+
+        public void EliminarEnBodega(tfr_bodega bodegaObject)
+        {
+            ((DAOTransformador)GenericoDAO).EliminarEnBodega(bodegaObject);
         }
     }
 }

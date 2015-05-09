@@ -124,15 +124,6 @@
                                     ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                        <asp:Panel runat="server" ID="pnlCantidad" CssClass="control-group" Visible="false">
-                            <label class="control-label" for="txtCantidad">
-                                Cantidad:</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" MaxLength="1"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtCantidad" ControlToValidate="txtCantidad"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
-                            </div>
-                        </asp:Panel>
                         <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
                             <label class="control-label" for="ddlCapacidad">
                                 Capacidad:</label>

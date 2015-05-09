@@ -143,7 +143,13 @@ namespace TS15.DAL.gestion_transformador
 
         public void AsignarBodegaEntrega(tfr_bodega bodegaObject)
         {
-            //SingletonDatos.Contexto.
+            SingletonDatos.Contexto.SaveChanges();
+        }
+
+        public void EliminarEnBodega(tfr_bodega bodegaObject)
+        {
+            SingletonDatos.Contexto.tfr_bodega.DeleteObject(bodegaObject);
+            SingletonDatos.Contexto.SaveChanges();
         }
     }
 }

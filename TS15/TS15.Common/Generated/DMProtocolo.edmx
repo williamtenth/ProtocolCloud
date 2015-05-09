@@ -161,15 +161,16 @@
       [vw_sol_pedidos_cliente].[idPedido] AS [idPedido], 
       [vw_sol_pedidos_cliente].[consecutivo] AS [consecutivo], 
       [vw_sol_pedidos_cliente].[fechasolicitud] AS [fechasolicitud], 
+      [vw_sol_pedidos_cliente].[tipsolicitud] AS [tipsolicitud], 
       [vw_sol_pedidos_cliente].[cantidad] AS [cantidad], 
       [vw_sol_pedidos_cliente].[tiptransformador] AS [tiptransformador], 
       [vw_sol_pedidos_cliente].[capacidad] AS [capacidad], 
-      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
-      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida], 
       [vw_sol_pedidos_cliente].[transformador_id] AS [transformador_id], 
       [vw_sol_pedidos_cliente].[aprobado] AS [aprobado], 
       [vw_sol_pedidos_cliente].[estado] AS [estado], 
-      [vw_sol_pedidos_cliente].[tipSolicitud] AS [tipSolicitud]
+      [vw_sol_pedidos_cliente].[tipoSolicitud] AS [tipoSolicitud], 
+      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
+      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida]
       FROM [dbo].[vw_sol_pedidos_cliente] AS [vw_sol_pedidos_cliente]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.Store.vw_solicitudes_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_solicitudes_cliente">
@@ -236,47 +237,47 @@
       [vw_transformador_fabricante].[tiptercero] AS [tiptercero]
       FROM [dbo].[vw_transformador_fabricante] AS [vw_transformador_fabricante]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__276EDEB3">
+          <AssociationSet Name="FK__aspnet_Me__Appli__4E3E9311" Association="dbTS15Model.Store.FK__aspnet_Me__Appli__4E3E9311">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="dbTS15Model.Store.FK__aspnet_Me__UserI__286302EC">
+          <AssociationSet Name="FK__aspnet_Me__UserI__4F32B74A" Association="dbTS15Model.Store.FK__aspnet_Me__UserI__4F32B74A">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="dbTS15Model.Store.FK__aspnet_Pa__Appli__59063A47">
+          <AssociationSet Name="FK__aspnet_Pa__Appli__5026DB83" Association="dbTS15Model.Store.FK__aspnet_Pa__Appli__5026DB83">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__5EBF139D">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__511AFFBC" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__511AFFBC">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__628FA481">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__520F23F5" Association="dbTS15Model.Store.FK__aspnet_Pe__PathI__520F23F5">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="dbTS15Model.Store.FK__aspnet_Pe__UserI__6383C8BA">
+          <AssociationSet Name="FK__aspnet_Pe__UserI__5303482E" Association="dbTS15Model.Store.FK__aspnet_Pe__UserI__5303482E">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="dbTS15Model.Store.FK__aspnet_Pr__UserI__3C69FB99">
+          <AssociationSet Name="FK__aspnet_Pr__UserI__53F76C67" Association="dbTS15Model.Store.FK__aspnet_Pr__UserI__53F76C67">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="dbTS15Model.Store.FK__aspnet_Ro__Appli__45F365D3">
+          <AssociationSet Name="FK__aspnet_Ro__Appli__54EB90A0" Association="dbTS15Model.Store.FK__aspnet_Ro__Appli__54EB90A0">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="dbTS15Model.Store.FK__aspnet_Us__Appli__173876EA">
+          <AssociationSet Name="FK__aspnet_Us__Appli__55DFB4D9" Association="dbTS15Model.Store.FK__aspnet_Us__Appli__55DFB4D9">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="dbTS15Model.Store.FK__aspnet_Us__RoleI__4AB81AF0">
+          <AssociationSet Name="FK__aspnet_Us__RoleI__56D3D912" Association="dbTS15Model.Store.FK__aspnet_Us__RoleI__56D3D912">
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__49C3F6B7">
+          <AssociationSet Name="FK__aspnet_Us__UserI__57C7FD4B" Association="dbTS15Model.Store.FK__aspnet_Us__UserI__57C7FD4B">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
@@ -743,7 +744,6 @@
         </EntityType>
         <EntityType Name="tfr_bodega">
           <Key>
-            <PropertyRef Name="tipbodega" />
             <PropertyRef Name="transformador_id" />
           </Key>
           <Property Name="tipbodega" Type="varchar" Nullable="false" MaxLength="2" />
@@ -1004,7 +1004,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipSolicitud" />
+            <PropertyRef Name="tipsolicitud" />
           </Key>
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
@@ -1016,15 +1016,16 @@
           <Property Name="idPedido" Type="int" Nullable="false" />
           <Property Name="consecutivo" Type="int" Nullable="false" />
           <Property Name="fechasolicitud" Type="datetime" Nullable="false" />
+          <Property Name="tipsolicitud" Type="tinyint" Nullable="false" />
           <Property Name="cantidad" Type="int" />
           <Property Name="tiptransformador" Type="tinyint" />
           <Property Name="capacidad" Type="tinyint" />
-          <Property Name="volentrada" Type="numeric" Precision="10" />
-          <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="aprobado" Type="bit" />
           <Property Name="estado" Type="tinyint" />
-          <Property Name="tipSolicitud" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="tipoSolicitud" Type="varchar" MaxLength="13" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volsalida" Type="numeric" Precision="10" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbTS15.dbo.vw_solicitudes_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1115,7 +1116,7 @@
           <Property Name="telefono" Type="varchar" MaxLength="20" />
           <Property Name="tiptercero" Type="int" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__Appli__276EDEB3">
+        <Association Name="FK__aspnet_Me__Appli__4E3E9311">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1127,7 +1128,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Me__UserI__286302EC">
+        <Association Name="FK__aspnet_Me__UserI__4F32B74A">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="dbTS15Model.Store.aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1139,7 +1140,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pa__Appli__59063A47">
+        <Association Name="FK__aspnet_Pa__Appli__5026DB83">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1151,7 +1152,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
+        <Association Name="FK__aspnet_Pe__PathI__511AFFBC">
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="1" />
           <End Role="aspnet_PersonalizationAllUsers" Type="dbTS15Model.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1163,7 +1164,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__628FA481">
+        <Association Name="FK__aspnet_Pe__PathI__520F23F5">
           <End Role="aspnet_Paths" Type="dbTS15Model.Store.aspnet_Paths" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1175,7 +1176,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
+        <Association Name="FK__aspnet_Pe__UserI__5303482E">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="0..1" />
           <End Role="aspnet_PersonalizationPerUser" Type="dbTS15Model.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1187,7 +1188,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
+        <Association Name="FK__aspnet_Pr__UserI__53F76C67">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_Profile" Type="dbTS15Model.Store.aspnet_Profile" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1199,7 +1200,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Ro__Appli__45F365D3">
+        <Association Name="FK__aspnet_Ro__Appli__54EB90A0">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1211,7 +1212,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__Appli__173876EA">
+        <Association Name="FK__aspnet_Us__Appli__55DFB4D9">
           <End Role="aspnet_Applications" Type="dbTS15Model.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1223,7 +1224,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+        <Association Name="FK__aspnet_Us__RoleI__56D3D912">
           <End Role="aspnet_Roles" Type="dbTS15Model.Store.aspnet_Roles" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1235,7 +1236,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+        <Association Name="FK__aspnet_Us__UserI__57C7FD4B">
           <End Role="aspnet_Users" Type="dbTS15Model.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="dbTS15Model.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1417,7 +1418,7 @@
         </Association>
         <Association Name="FK_tfr_bodega_tfr_transformador">
           <End Role="tfr_transformador" Type="dbTS15Model.Store.tfr_transformador" Multiplicity="1" />
-          <End Role="tfr_bodega" Type="dbTS15Model.Store.tfr_bodega" Multiplicity="*" />
+          <End Role="tfr_bodega" Type="dbTS15Model.Store.tfr_bodega" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="tfr_transformador">
               <PropertyRef Name="id" />
@@ -1525,39 +1526,39 @@
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.vw_solicitudes_cliente" />
           <EntitySet Name="vw_transformador_cliente" EntityType="dbTS15Model.vw_transformador_cliente" />
           <EntitySet Name="vw_transformador_fabricante" EntityType="dbTS15Model.vw_transformador_fabricante" />
-          <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3">
+          <AssociationSet Name="FK__aspnet_Me__Appli__4E3E9311" Association="dbTS15Model.FK__aspnet_Me__Appli__4E3E9311">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="dbTS15Model.FK__aspnet_Pa__Appli__59063A47">
+          <AssociationSet Name="FK__aspnet_Pa__Appli__5026DB83" Association="dbTS15Model.FK__aspnet_Pa__Appli__5026DB83">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3">
+          <AssociationSet Name="FK__aspnet_Ro__Appli__54EB90A0" Association="dbTS15Model.FK__aspnet_Ro__Appli__54EB90A0">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="dbTS15Model.FK__aspnet_Us__Appli__173876EA">
+          <AssociationSet Name="FK__aspnet_Us__Appli__55DFB4D9" Association="dbTS15Model.FK__aspnet_Us__Appli__55DFB4D9">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="dbTS15Model.FK__aspnet_Me__UserI__286302EC">
+          <AssociationSet Name="FK__aspnet_Me__UserI__4F32B74A" Association="dbTS15Model.FK__aspnet_Me__UserI__4F32B74A">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__511AFFBC" Association="dbTS15Model.FK__aspnet_Pe__PathI__511AFFBC">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="dbTS15Model.FK__aspnet_Pe__PathI__628FA481">
+          <AssociationSet Name="FK__aspnet_Pe__PathI__520F23F5" Association="dbTS15Model.FK__aspnet_Pe__PathI__520F23F5">
             <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA">
+          <AssociationSet Name="FK__aspnet_Pe__UserI__5303482E" Association="dbTS15Model.FK__aspnet_Pe__UserI__5303482E">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99">
+          <AssociationSet Name="FK__aspnet_Pr__UserI__53F76C67" Association="dbTS15Model.FK__aspnet_Pr__UserI__53F76C67">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
@@ -1646,10 +1647,10 @@
           <Property Type="String" Name="LoweredApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="Guid" Name="ApplicationId" Nullable="false" />
           <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
-          <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__Appli__4E3E9311" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__5026DB83" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__54EB90A0" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Us__Appli__55DFB4D9" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Membership">
           <Key>
@@ -1676,8 +1677,8 @@
           <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
           <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
           <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Me__Appli__4E3E9311" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Me__UserI__4F32B74A" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Paths">
           <Key>
@@ -1687,9 +1688,9 @@
           <Property Type="Guid" Name="PathId" Nullable="false" />
           <Property Type="String" Name="Path" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LoweredPath" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
-          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Pa__Appli__5026DB83" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__511AFFBC" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__520F23F5" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
         </EntityType>
         <EntityType Name="aspnet_PersonalizationAllUsers">
           <Key>
@@ -1698,7 +1699,7 @@
           <Property Type="Guid" Name="PathId" Nullable="false" />
           <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__511AFFBC" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
         </EntityType>
         <EntityType Name="aspnet_PersonalizationPerUser">
           <Key>
@@ -1709,8 +1710,8 @@
           <Property Type="Guid" Name="UserId" />
           <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="dbTS15Model.FK__aspnet_Pe__PathI__520F23F5" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__5303482E" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Profile">
           <Key>
@@ -1721,7 +1722,7 @@
           <Property Type="String" Name="PropertyValuesString" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="PropertyValuesBinary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+          <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__53F76C67" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_Roles">
           <Key>
@@ -1732,7 +1733,7 @@
           <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Ro__Appli__54EB90A0" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
           <NavigationProperty Name="aspnet_Users" Relationship="dbTS15Model.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
         </EntityType>
         <EntityType Name="aspnet_SchemaVersions">
@@ -1755,10 +1756,10 @@
           <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
           <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
-          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
-          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
-          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
-          <NavigationProperty Name="aspnet_Profile" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="dbTS15Model.FK__aspnet_Us__Appli__55DFB4D9" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="dbTS15Model.FK__aspnet_Me__UserI__4F32B74A" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="dbTS15Model.FK__aspnet_Pe__UserI__5303482E" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Profile" Relationship="dbTS15Model.FK__aspnet_Pr__UserI__53F76C67" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
           <NavigationProperty Name="aspnet_Roles" Relationship="dbTS15Model.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
           <NavigationProperty Name="cli_cliente" Relationship="dbTS15Model.cli_cliente_has_usuarios" FromRole="aspnet_Users" ToRole="cli_cliente" />
         </EntityType>
@@ -2045,7 +2046,6 @@
         </EntityType>
         <EntityType Name="tfr_bodega">
           <Key>
-            <PropertyRef Name="tipbodega" />
             <PropertyRef Name="transformador_id" />
           </Key>
           <Property Type="String" Name="tipbodega" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
@@ -2289,7 +2289,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipSolicitud" />
+            <PropertyRef Name="tipsolicitud" />
           </Key>
           <Property Type="Int32" Name="idCliente" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
@@ -2301,15 +2301,16 @@
           <Property Type="Int32" Name="idPedido" Nullable="false" />
           <Property Type="Int32" Name="consecutivo" Nullable="false" />
           <Property Type="DateTime" Name="fechasolicitud" Nullable="false" />
+          <Property Type="Byte" Name="tipsolicitud" Nullable="false" />
           <Property Type="Int32" Name="cantidad" />
           <Property Type="Byte" Name="tiptransformador" />
           <Property Type="Byte" Name="capacidad" />
-          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Boolean" Name="aprobado" />
           <Property Type="Byte" Name="estado" />
-          <Property Type="String" Name="tipSolicitud" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipoSolicitud" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="vw_solicitudes_cliente">
           <Key>
@@ -2391,7 +2392,7 @@
           <Property Type="String" Name="telefono" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="tiptercero" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__Appli__276EDEB3">
+        <Association Name="FK__aspnet_Me__Appli__4E3E9311">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2403,7 +2404,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pa__Appli__59063A47">
+        <Association Name="FK__aspnet_Pa__Appli__5026DB83">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2415,7 +2416,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Ro__Appli__45F365D3">
+        <Association Name="FK__aspnet_Ro__Appli__54EB90A0">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2427,7 +2428,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__Appli__173876EA">
+        <Association Name="FK__aspnet_Us__Appli__55DFB4D9">
           <End Type="dbTS15Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2439,7 +2440,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Me__UserI__286302EC">
+        <Association Name="FK__aspnet_Me__UserI__4F32B74A">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -2451,7 +2452,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
+        <Association Name="FK__aspnet_Pe__PathI__511AFFBC">
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -2463,7 +2464,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__PathI__628FA481">
+        <Association Name="FK__aspnet_Pe__PathI__520F23F5">
           <End Type="dbTS15Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
           <End Type="dbTS15Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2475,7 +2476,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
+        <Association Name="FK__aspnet_Pe__UserI__5303482E">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
           <End Type="dbTS15Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2487,7 +2488,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
+        <Association Name="FK__aspnet_Pr__UserI__53F76C67">
           <End Type="dbTS15Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
           <End Type="dbTS15Model.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -2669,7 +2670,7 @@
         </Association>
         <Association Name="FK_tfr_bodega_tfr_transformador">
           <End Type="dbTS15Model.tfr_transformador" Role="tfr_transformador" Multiplicity="1" />
-          <End Type="dbTS15Model.tfr_bodega" Role="tfr_bodega" Multiplicity="*" />
+          <End Type="dbTS15Model.tfr_bodega" Role="tfr_bodega" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="tfr_transformador">
               <PropertyRef Name="id" />
@@ -3307,15 +3308,16 @@
           <EntitySetMapping Name="vw_sol_pedidos_cliente">
             <EntityTypeMapping TypeName="dbTS15Model.vw_sol_pedidos_cliente">
               <MappingFragment StoreEntitySet="vw_sol_pedidos_cliente">
-                <ScalarProperty Name="tipSolicitud" ColumnName="tipSolicitud" />
+                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
+                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
+                <ScalarProperty Name="tipoSolicitud" ColumnName="tipoSolicitud" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="aprobado" ColumnName="aprobado" />
                 <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
-                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
-                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
                 <ScalarProperty Name="capacidad" ColumnName="capacidad" />
                 <ScalarProperty Name="tiptransformador" ColumnName="tiptransformador" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="tipsolicitud" ColumnName="tipsolicitud" />
                 <ScalarProperty Name="fechasolicitud" ColumnName="fechasolicitud" />
                 <ScalarProperty Name="consecutivo" ColumnName="consecutivo" />
                 <ScalarProperty Name="idPedido" ColumnName="idPedido" />
@@ -3477,32 +3479,32 @@
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="9.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="14.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.864807942708353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_solicitudes_cliente" Width="1.5" PointX="16.75" PointY="0.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="16.75" PointY="5.75" Height="2.557190755208353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante" Width="1.5" PointX="16.75" PointY="9.75" Height="6.7878222656249818" />
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__Appli__276EDEB3" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__Appli__4E3E9311" >
           <ConnectorPoint PointX="3" PointY="5.09375" />
           <ConnectorPoint PointX="5.541666666666667" PointY="5.0937499999999991" />
           <ConnectorPoint PointX="5.708333333333333" PointY="5.09375" />
           <ConnectorPoint PointX="7.90625" PointY="5.09375" />
           <ConnectorPoint PointX="7.90625" PointY="9.75" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pa__Appli__59063A47" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pa__Appli__5026DB83" >
           <ConnectorPoint PointX="3" PointY="4.75" />
           <ConnectorPoint PointX="3.375" PointY="4.375" />
           <ConnectorPoint PointX="3.375" PointY="4.4898893229166674" />
           <ConnectorPoint PointX="3.75" PointY="4.1148893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Ro__Appli__45F365D3" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Ro__Appli__54EB90A0" >
           <ConnectorPoint PointX="2.2187475" PointY="4.75" />
           <ConnectorPoint PointX="2.2187475" PointY="3.3648893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Us__Appli__173876EA" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Us__Appli__55DFB4D9" >
           <ConnectorPoint PointX="2.25" PointY="7.307190755208353" />
           <ConnectorPoint PointX="2.25" PointY="8.75" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__286302EC" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Me__UserI__4F32B74A" >
           <ConnectorPoint PointX="3" PointY="12.136495768229167" />
           <ConnectorPoint PointX="4.822916666666667" PointY="12.136495768229167" />
           <ConnectorPoint PointX="4.989583333333333" PointY="12.136495768229167" />
@@ -3510,22 +3512,22 @@
           <ConnectorPoint PointX="5.1927108333333329" PointY="12.136495768229167" />
           <ConnectorPoint PointX="6.75" PointY="12.136495768229167" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__5EBF139D" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__511AFFBC" >
           <ConnectorPoint PointX="5.25" PointY="3.0189925130208337" />
           <ConnectorPoint PointX="6" PointY="3.0189925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__628FA481" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__PathI__520F23F5" >
           <ConnectorPoint PointX="5.25" PointY="4.1148893229166674" />
           <ConnectorPoint PointX="5.625" PointY="4.4898893229166674" />
           <ConnectorPoint PointX="5.625" PointY="7.0574446614583337" />
           <ConnectorPoint PointX="6" PointY="7.0574446614583337" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__UserI__6383C8BA" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pe__UserI__5303482E" >
           <ConnectorPoint PointX="3" PointY="8.84375" />
           <ConnectorPoint PointX="6.34375" PointY="8.84375" />
           <ConnectorPoint PointX="6.34375" PointY="8.2398893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pr__UserI__3C69FB99" >
+        <AssociationConnector Association="dbTS15Model.FK__aspnet_Pr__UserI__53F76C67" >
           <ConnectorPoint PointX="3" PointY="8.7511528461538468" />
           <ConnectorPoint PointX="3.375" PointY="8.3761528461538468" />
           <ConnectorPoint PointX="3.375" PointY="6.5862939453124909" />

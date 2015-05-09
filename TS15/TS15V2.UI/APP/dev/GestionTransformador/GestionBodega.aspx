@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="GestionBodega.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionTransformador.GestionBodega" %>
+    AutoEventWireup="true" CodeBehind="GestionBodega.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionTransformador.GestionBodega"
+    EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
@@ -127,7 +128,7 @@
                                 Tipo de Bodega:</label>
                             <div class="controls">
                                 <asp:DropDownList runat="server" ID="ddlTipoBodega" CssClass="input-xlarge focused"
-                                    OnDataBound="ddlTipoBodega_DataBound">
+                                    OnDataBound="ddlTipoBodega_DataBound" Enabled="false">
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoBodega" ControlToValidate="ddlTipoBodega"
                                     ErrorMessage="*" ForeColor="red" ValidationGroup="vgGuardarCliente" InitialValue="-1"></asp:RequiredFieldValidator>
@@ -145,7 +146,6 @@
                 </div>
             </div>
         </div>
-        hola
     </asp:Panel>
     <uc3:ModalMsj ID="ucMsjModal" runat="server" />
     <!-- start: JavaScript-->

@@ -49,33 +49,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_ddlTipoSolicitud;
         
         /// <summary>
-        /// pnlCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlCantidad;
-        
-        /// <summary>
-        /// txtCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
-        
-        /// <summary>
-        /// rfv_txtCantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_txtCantidad;
-        
-        /// <summary>
         /// pnlCapacidad control.
         /// </summary>
         /// <remarks>

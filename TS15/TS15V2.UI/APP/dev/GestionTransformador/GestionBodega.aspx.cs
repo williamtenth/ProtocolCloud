@@ -29,7 +29,10 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
+                ucBusquedaTransformador.ValidationGroupControles(string.Empty, false);
                 CargarListasBodega();
+            }
 
         }
 
@@ -75,8 +78,11 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
             }
 
             else
+            {
+                this.txtFechaIngreso.Text = string.Empty;
+                this.ddlTipoBodega.SelectedValue = "-1";
                 this.btnBodegaEntrada.Visible = true;
-             
+            }
         }
 
         protected void ddlTipoBodega_DataBound(object sender, EventArgs e)
@@ -87,16 +93,21 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
         protected void btnBodegaEntrada_Click(object sender, EventArgs e)
         {
             int idTransformador = Convert.ToInt32(ucBusquedaTransformador.IdTransformador);
-            tfr_bodega bodegaObject = _BOTransformador.ConsultarTransformadorBodega(idTransformador);
+            //tfr_bodega bodegaObject = _BOTransformador.ConsultarTransformadorBodega(idTransformador);
+            tfr_bodega bodegaObject = new tfr_bodega();
+            bodegaObject.fecentrada = DateTime.Now;
+            bodegaObject.transformador_id = idTransformador;
+            bodegaObject.tipbodega = "EN";
+
             string errorMsj = string.Empty;
 
             _BOTransformador.EnviarBodegaEntrada(bodegaObject, out errorMsj);
 
-            if (!string.IsNullOrEmpty(errorMsj))
+            if (string.IsNullOrEmpty(errorMsj))
                 EnviarAModalMsj(ucMsjModal, "Ingresar Bodega Entrada", "Se asignado el transformador exitosamente a la bodega de entrada");
             else
                 EnviarAModalMsj(ucMsjModal, "Ingresar Bodega Entrada", errorMsj);
-            
+
         }
 
         protected void btnBodegaEntrega_Click(object sender, EventArgs e)
@@ -107,7 +118,7 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
 
             _BOTransformador.EnviarBodegaEntrega(transformadorObject, out errorMsj);
 
-            if (!string.IsNullOrEmpty(errorMsj))
+            if (string.IsNullOrEmpty(errorMsj))
                 EnviarAModalMsj(ucMsjModal, "Ingresar Bodega Entrega", "Se asignado el transformador exitosamente a la bodega de entrega");
             else
                 EnviarAModalMsj(ucMsjModal, "Ingresar Bodega Entrega", errorMsj);
@@ -115,7 +126,11 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
 
         protected void btnEntregarCliente_Click(object sender, EventArgs e)
         {
+            int idTransformador = Convert.ToInt32(ucBusquedaTransformador.IdTransformador);
+            tfr_bodega bodegaObject = _BOTransformador.ConsultarTransformadorBodega(idTransformador);
+            _BOTransformador.EliminarEnBodega(bodegaObject);
 
+            EnviarAModalMsj(ucMsjModal, "Entregar a Cliente", "El transformador ha sido descargado, está disponible para entregar a cliente");
         }
     }
 }
