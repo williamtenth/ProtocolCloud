@@ -96,7 +96,7 @@
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Prueba NTC 3396</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Prueba NTC 375</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">

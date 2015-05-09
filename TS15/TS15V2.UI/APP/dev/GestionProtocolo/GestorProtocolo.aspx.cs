@@ -9,6 +9,7 @@ using TS15.Common.Generated;
 using TS15.Common.util;
 using TS15.BL.gestion_cliente;
 using TS15.BL.gestion_transformador;
+using System.Data.Objects.DataClasses;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
@@ -36,8 +37,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Page_Load(object sender, EventArgs e)
         {
-            CargarListas();
-            ActivarControles(true);
+            if (!Page.IsPostBack)
+            {
+                CargarListas();
+                CargarSesion();
+                ActivarControles(true);
+            }
         }
 
         public void CargarListas()
@@ -45,12 +50,66 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         }
 
+        protected void CargarSesion()
+        {
+            _pedido = (cli_pedido)Session[VariablesGlobales.SESION_CLIENTE_PEDIDO];
+            _transformador = (tfr_transformador)Session[VariablesGlobales.SESSION_TRANSFORMADOR];
+        }
+
         /// 
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Consultar(object sender, EventArgs e)
         {
+            int index = Convert.ToInt32((e as GridViewCommandEventArgs).CommandArgument);
 
+            GridViewRow row = gvPruebas.Rows[index];
+            EntityObject pruebaSeleccionada = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
+            string etiquetaPrueba = (gvPruebas.DataKeys[row.RowIndex].Values[1] as string);
+            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = pruebaSeleccionada;
+
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1005))
+                MostrarControl(0);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1031))
+                MostrarControl(1);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1465))
+                MostrarControl(2);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC3396))
+                MostrarControl(3);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC375))
+                MostrarControl(4);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC471))
+                MostrarControl(5);
+            if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC837))
+                MostrarControl(6);
+        }
+
+        private void MostrarControl(int valor)
+        {
+            Control[] listaControl = { ucProtocoloNTC1005, ucProtocoloNTC1031, ucProtocoloNTC1465, ucProtocoloNTC3396, ucProtocoloNTC375, ucProtocoloNTC471, ucProtocoloNTC837 };
+            int i = 0;
+
+            foreach (Control control in listaControl)
+            {
+                control.Visible = false;
+                if (i == valor)
+                {
+                    control.Visible = true;
+                    ((GenericoProtocoloComponente)control).CargarPrueba();
+                }
+                i++;
+            }
+
+
+        }
+
+        private void MostrarControl(Control control)
+        {
+            if (Session[VariablesGlobales.SESION_ID_COMPONENTE] != null)
+                ((Control)Session[VariablesGlobales.SESION_ID_COMPONENTE]).Visible = false;
+
+            control.Visible = true;
+            Session[VariablesGlobales.SESION_ID_COMPONENTE] = control;
         }
 
         /// 
@@ -66,9 +125,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 _gestorProceso.ListaElementos = Session[VariablesGlobales.SESION_PROCESO_LISTA_PRUEBAS] as pro_elementoprueba[];
 
             if (_gestorProceso.Proceso != null && _gestorProceso.Terminar() && _gestorProceso.ListaElementos != null)
+            {
                 EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha terminado el proceso de pruebas");
+                ActivarControles(false);
+            }
             else
-                EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas tiene resultado (Exitosa/No Exitosa)");
+                EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas estén cerradas con resultado (Exitosa/No Exitosa)");
         }
 
         /// 
@@ -198,14 +260,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             }
         }
 
-        protected void gvPruebas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void SeleccionarPrueba(object sender, GridViewCommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument);
 
+            GridViewRow row = gvPruebas.Rows[index];
+            EntityObject tipoSolicitud = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
+            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = tipoSolicitud;
         }
 
         protected void gvPruebas_SelectedIndexChanged(object sender, GridViewCommandEventArgs e)
         {
-            GridViewRow row = gvPruebas.SelectedRow;
+            SeleccionarPrueba(sender, e);
 
         }
 

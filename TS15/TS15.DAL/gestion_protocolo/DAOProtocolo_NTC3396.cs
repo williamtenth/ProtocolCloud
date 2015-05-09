@@ -45,9 +45,11 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.salina1 = entidad.salina1;
                 resultado.salina2 = entidad.salina2;
                 resultado.impacto = entidad.impacto;
+                resultado.espesorvalor = entidad.espesorvalor;
                 resultado.espesor1 = entidad.espesor1;
                 resultado.espesor2 = entidad.espesor2;
                 resultado.adherencia = entidad.adherencia;
+                resultado.resultado = entidad.resultado;
                 resultado.fecha = DateTime.Now;
                 SingletonDatos.Contexto.SaveChanges();
                 return true;
@@ -73,11 +75,13 @@ namespace TS15.DAL.gestion_protocolo
 
         public bool Terminar(EntityObject entidad)
         {
+            pro_ntc3396 _resultado = (pro_ntc3396)entidad;
             pro_ntc3396 resultado = (pro_ntc3396)ConsultarXId((entidad as pro_ntc3396).id);
-
+            
             if (resultado != null && entidad != null)
             {
                 resultado.estado = 2;
+                resultado.resultado = _resultado.resultado;
                 SingletonDatos.Contexto.SaveChanges();
                 return true;
             }
@@ -102,7 +106,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc3396 prueba = SingletonDatos.Contexto.pro_ntc3396.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba.estado, prueba);
                 return elemento;
             }
             return null;

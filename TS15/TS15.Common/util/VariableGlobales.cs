@@ -24,6 +24,7 @@ namespace TS15.Common.util
         public const String SESION_PRUEBA_NTC471_DETALLE = "SESION_PRUEBA_NTC471_DETALLE";
         public const String SESION_PRUEBA_NTC837 = "SESION_PRUEBA_NTC837";
         public const String SESION_CLIENTE_PEDIDO = "SESION_CLIENTE_PEDIDO";
+        public const String SESION_ID_COMPONENTE = "SESION_ID_COMPONENTE";
 
         // Gestión protocolo
         public const byte RESULTADO_PRUEBAS_EXITOSA = 1;
@@ -33,6 +34,7 @@ namespace TS15.Common.util
         public const String RESULTADO_SIN_RESULTADO_LABEL = "Sin resultado";
         public const byte TIPO_PROCESO_PRELIMINARES = 1;
         public const byte TIPO_PROCESO_PROTOCOLO = 2;
+        public const string PRUEBA_SELECCIONADA = "PRUEBA_SELECCIONADA";
         public const String PRUEBA_NTC3396 = "NTC 3396";
         public const String PRUEBA_NTC1465 = "NTC 1465";
         public const String PRUEBA_NTC375 = "NTC 375";
@@ -40,10 +42,20 @@ namespace TS15.Common.util
         public const String PRUEBA_NTC1005 = "NTC 1005";
         public const String PRUEBA_NTC471 = "NTC 471";
         public const String PRUEBA_NTC837 = "NTC 837";
+
+        // Gestión cliente
+        public const byte CLI_TIPO_SOLICITUD_SUMINISTRO = 1;
+        public const byte CLI_TIPO_SOLICITUD_SERVICIO = 2;
+        public const byte CLI_TIPO_SOLICITUD_REPARACION = 3;
+        public const byte CLI_TIPO_SOLICITUD_MTTO = 4;
+
         
         // Variables generales
         public const byte ESTADO_ACTIVO = 1;
         public const byte ESTADO_TERMINADO = 2;
+        public const string ESTADO_ACTIVO_LABEL = "Activo";
+        public const string ESTADO_TERMINADO_LABEL = "Terminado";
+        public const string ESTADO_SIN_ESTADO_LABEL = "Sin estado";
 
         // Tipos para gen_parametrica
         public const String GEN_PARAMETRICA_RESULTADO = "resultado";

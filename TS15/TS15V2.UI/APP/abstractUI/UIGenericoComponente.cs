@@ -59,5 +59,12 @@ namespace TS15V2.UI.APP.abstractUI
             modal.MensajeModal = "Este es un menjaje de prueba1";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
+
+        public void EnviarAModalMsj(ModalMsj modalMsj, String titulo, String mensaje)
+        {
+            modalMsj.TituloModal = titulo;
+            modalMsj.MensajeModal = mensaje;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+        }
     }
 }

@@ -12861,8 +12861,8 @@ namespace TS15.Common.Generated
         /// <param name="idPedido">Initial value of the idPedido property.</param>
         /// <param name="consecutivo">Initial value of the consecutivo property.</param>
         /// <param name="fechasolicitud">Initial value of the fechasolicitud property.</param>
-        /// <param name="tipsolicitud">Initial value of the tipsolicitud property.</param>
-        public static vw_sol_pedidos_cliente Createvw_sol_pedidos_cliente(global::System.Int32 idCliente, global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento, global::System.Int32 idPedido, global::System.Int32 consecutivo, global::System.DateTime fechasolicitud, global::System.Byte tipsolicitud)
+        /// <param name="tipSolicitud">Initial value of the tipSolicitud property.</param>
+        public static vw_sol_pedidos_cliente Createvw_sol_pedidos_cliente(global::System.Int32 idCliente, global::System.String nombre, global::System.Byte tipdoc, global::System.String numdocumento, global::System.Int32 idPedido, global::System.Int32 consecutivo, global::System.DateTime fechasolicitud, global::System.String tipSolicitud)
         {
             vw_sol_pedidos_cliente vw_sol_pedidos_cliente = new vw_sol_pedidos_cliente();
             vw_sol_pedidos_cliente.idCliente = idCliente;
@@ -12872,7 +12872,7 @@ namespace TS15.Common.Generated
             vw_sol_pedidos_cliente.idPedido = idPedido;
             vw_sol_pedidos_cliente.consecutivo = consecutivo;
             vw_sol_pedidos_cliente.fechasolicitud = fechasolicitud;
-            vw_sol_pedidos_cliente.tipsolicitud = tipsolicitud;
+            vw_sol_pedidos_cliente.tipSolicitud = tipSolicitud;
             return vw_sol_pedidos_cliente;
         }
 
@@ -13144,33 +13144,6 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Byte tipsolicitud
-        {
-            get
-            {
-                return _tipsolicitud;
-            }
-            set
-            {
-                if (_tipsolicitud != value)
-                {
-                    OntipsolicitudChanging(value);
-                    ReportPropertyChanging("tipsolicitud");
-                    _tipsolicitud = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("tipsolicitud");
-                    OntipsolicitudChanged();
-                }
-            }
-        }
-        private global::System.Byte _tipsolicitud;
-        partial void OntipsolicitudChanging(global::System.Byte value);
-        partial void OntipsolicitudChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Int32> cantidad
@@ -13239,6 +13212,54 @@ namespace TS15.Common.Generated
         private Nullable<global::System.Byte> _capacidad;
         partial void OncapacidadChanging(Nullable<global::System.Byte> value);
         partial void OncapacidadChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volentrada
+        {
+            get
+            {
+                return _volentrada;
+            }
+            set
+            {
+                OnvolentradaChanging(value);
+                ReportPropertyChanging("volentrada");
+                _volentrada = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volentrada");
+                OnvolentradaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volentrada;
+        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolentradaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> volsalida
+        {
+            get
+            {
+                return _volsalida;
+            }
+            set
+            {
+                OnvolsalidaChanging(value);
+                ReportPropertyChanging("volsalida");
+                _volsalida = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("volsalida");
+                OnvolsalidaChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _volsalida;
+        partial void OnvolsalidaChanging(Nullable<global::System.Decimal> value);
+        partial void OnvolsalidaChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13315,74 +13336,29 @@ namespace TS15.Common.Generated
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String tipoSolicitud
+        public global::System.String tipSolicitud
         {
             get
             {
-                return _tipoSolicitud;
+                return _tipSolicitud;
             }
             set
             {
-                OntipoSolicitudChanging(value);
-                ReportPropertyChanging("tipoSolicitud");
-                _tipoSolicitud = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("tipoSolicitud");
-                OntipoSolicitudChanged();
+                if (_tipSolicitud != value)
+                {
+                    OntipSolicitudChanging(value);
+                    ReportPropertyChanging("tipSolicitud");
+                    _tipSolicitud = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("tipSolicitud");
+                    OntipSolicitudChanged();
+                }
             }
         }
-        private global::System.String _tipoSolicitud;
-        partial void OntipoSolicitudChanging(global::System.String value);
-        partial void OntipoSolicitudChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> volentrada
-        {
-            get
-            {
-                return _volentrada;
-            }
-            set
-            {
-                OnvolentradaChanging(value);
-                ReportPropertyChanging("volentrada");
-                _volentrada = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("volentrada");
-                OnvolentradaChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _volentrada;
-        partial void OnvolentradaChanging(Nullable<global::System.Decimal> value);
-        partial void OnvolentradaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> volsalida
-        {
-            get
-            {
-                return _volsalida;
-            }
-            set
-            {
-                OnvolsalidaChanging(value);
-                ReportPropertyChanging("volsalida");
-                _volsalida = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("volsalida");
-                OnvolsalidaChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _volsalida;
-        partial void OnvolsalidaChanging(Nullable<global::System.Decimal> value);
-        partial void OnvolsalidaChanged();
+        private global::System.String _tipSolicitud;
+        partial void OntipSolicitudChanging(global::System.String value);
+        partial void OntipSolicitudChanged();
 
         #endregion
 

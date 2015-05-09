@@ -78,6 +78,24 @@ namespace TS15.BL.gestion_protocolo
             return null;
         }
 
+        public object[] ObtenerPruebaDetalle(pro_ntc471 prueba) {
+            object[] pruebaDetalle = new object[2];
+            
+            if (prueba != null)
+            {
+                pruebaDetalle[0] = prueba;
+                List<pro_ntc471_has_relacion> listDetalle = _DAOntc471Object.ConsultarListaXIdPrueba(prueba.id);
+
+                if (listDetalle != null)
+                {
+                    pruebaDetalle[1] = listDetalle;
+                    return pruebaDetalle;
+                }
+            }
+
+            return null;
+        }
+
         /// 
         /// <param name="prueba"></param>
         public EntityObject ObtenerUltimaPrueba(tfr_transformador transformador)

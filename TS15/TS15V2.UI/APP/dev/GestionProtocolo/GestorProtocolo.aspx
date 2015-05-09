@@ -2,7 +2,14 @@
     AutoEventWireup="true" CodeBehind="GestorProtocolo.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.GestorProtocolo"
     EnableSessionState="true" %>
 
-<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
+<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc0" %>
+<%@ Register Src="ProtocoloNTC1005.ascx" TagName="ProtocoloNTC1005" TagPrefix="uc1" %>
+<%@ Register Src="ProtocoloNTC1031.ascx" TagName="ProtocoloNTC1031" TagPrefix="uc2" %>
+<%@ Register Src="ProtocoloNTC1465.ascx" TagName="ProtocoloNTC1465" TagPrefix="uc3" %>
+<%@ Register Src="ProtocoloNTC3396.ascx" TagName="ProtocoloNTC3396" TagPrefix="uc4" %>
+<%@ Register Src="ProtocoloNTC375.ascx" TagName="ProtocoloNTC375" TagPrefix="uc5" %>
+<%@ Register Src="ProtocoloNTC837.ascx" TagName="ProtocoloNTC837" TagPrefix="uc6" %>
+<%@ Register Src="ProtocoloNTC471.ascx" TagName="ProtocoloNTC471" TagPrefix="uc7" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
@@ -163,8 +170,8 @@
             </div>
         </div>
     </div>
-    <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba" AutoGenerateColumns="false"
-        CssClass="table table-striped" OnRowCommand="gvPruebas_RowCommand">
+    <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba, Nombre" AutoGenerateColumns="false"
+        CssClass="table table-striped" OnRowCommand="Consultar">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-HorizontalAlign="Center" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />
@@ -172,7 +179,7 @@
             <asp:TemplateField HeaderText="Consultar">
                 <ItemTemplate>
                     <asp:LinkButton runat="server" ID="lbtnConsultar" CommandName="Consultar" CssClass="btn btn-success"
-                        ToolTip="Consultar">
+                        ToolTip="Consultar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>">
                             <i class="halflings-icon white zoom-in"></i>
                     </asp:LinkButton>
                 </ItemTemplate>
@@ -180,7 +187,16 @@
         </Columns>
         <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
     </asp:GridView>
-    <uc3:ModalMsj ID="MsjConfirmacion" runat="server" />
+    <div class="row-fluid sortable ui-sortable">
+        <uc1:ProtocoloNTC1005 ID="ucProtocoloNTC1005" runat="server" Visible="false" />
+        <uc2:ProtocoloNTC1031 ID="ucProtocoloNTC1031" runat="server" Visible="false" />
+        <uc3:ProtocoloNTC1465 ID="ucProtocoloNTC1465" runat="server" Visible="false" />
+        <uc4:ProtocoloNTC3396 ID="ucProtocoloNTC3396" runat="server" Visible="false" />
+        <uc5:ProtocoloNTC375 ID="ucProtocoloNTC375" runat="server" Visible="false" />
+        <uc6:ProtocoloNTC837 ID="ucProtocoloNTC837" runat="server" Visible="false" />
+        <uc7:ProtocoloNTC471 ID="ucProtocoloNTC471" runat="server" Visible="false" />
+    </div>
+    <uc0:ModalMsj ID="MsjConfirmacion" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

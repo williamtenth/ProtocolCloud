@@ -1,108 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="ProtocoloNTC1465.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465"
-    EnableSessionState="True" %>
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC375.ascx.cs" 
+Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375C" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!-- start: Mobile Specific -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- end: Mobile Specific -->
-    <!-- start: CSS -->
-    <link id="bootstrap-style" href="../../css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link id="base-style" href="../../css/style.css" rel="stylesheet" />
-    <link id="base-style-responsive" href="../../css/style-responsive.css" rel="stylesheet" />
-    <!-- end: CSS -->
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-    <!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-    <!-- start: Favicon -->
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <!-- end: Favicon -->
-    <style>
-        /************** Modal PopUp *****************************************************************************************************/.cerrar
-        {
-            float: right;
-            margin-right: -30px;
-            margin-top: -20px;
-            z-index: 20;
-        }
-        .detalles
-        {
-            width: 320px;
-            margin: auto;
-            height: 55px;
-            padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
-        }
-        .detalles p
-        {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'Museo' , Arial, sans-serif;
-            height: auto;
-            margin: auto;
-        }
-        .modalPopup
-        {
-            font-size: 10pt;
-            border-radius: 10px;
-            -ms-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            z-index: 10001;
-            padding: 10px 20px;
-            width: 500px;
-        }
-        .modalPopup2
-        {
-            font-size: 10pt;
-            border-radius: 10px;
-            -ms-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            z-index: 25;
-            padding: 10px 20px;
-            width: 600px;
-            z-index: 10001 !important;
-        }
-        .modalBackGround
-        {
-            background: url(../../img/overlay.png) repeat 0 0;
-            filter: alpha(opacity=70);
-            opacity: 0.7;
-        }
-        .modalBackgroundCargando
-        {
-            background-color: Black;
-            filter: alpha(opacity=55);
-            opacity: 0.50;
-            z-index: 10100 !important;
-        }
-        .imgFinca
-        {
-            max-width: 100%;
-            max-height: 300px;
-        }
-        /***********************************************************************************************************************/
-    </style>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
-    <ul class="breadcrumb">
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Prueba NTC 1465</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Prueba NTC 375</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
             <div class="box-header" data-original-title>
                 <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Información Aceite</h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Medición de resistencia</h2>
                 <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
@@ -110,51 +20,66 @@
                 </div>--%>
             </div>
             <div class="box-content">
-                <%--div class="row-fluid">
-                    <div class="span_3">
-                        <label>
-                            Transformador</label>
-                        <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
-                </div--%>
+                <!--Encabezado-->
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Liquido Aislante*
+                            Tiempo de lectura*
                         </label>
-                        <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Referencia*
-                        </label>
-                        <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>
-                            Ruptura*
-                        </label>
-                        <asp:TextBox runat="server" ID="txtRuptura" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="txtRuptura_FilteredTextBoxExtender" 
-                            runat="server" TargetControlID="txtRuptura" ValidChars="1234567890">
+                        <asp:TextBox runat="server" ID="txtTiempo" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTiempo_FilteredTextBoxExtender" runat="server"
+                            TargetControlID="txtTiempo" ValidChars="1234567890">
                         </asp:FilteredTextBoxExtender>
-                        
                     </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
                         <label>
-                            Método*
+                            Tensión*
                         </label>
-                        <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False">
-                        </asp:DropDownList>
-                        &nbsp;</div>
+                        <asp:TextBox runat="server" ID="txtTension" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTension_FilteredTextBoxExtender1" runat="server"
+                            TargetControlID="txtTension" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            AT y T *
+                        </label>
+                        <asp:TextBox runat="server" ID="txtAT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtAT_T_FilteredTextBoxExtender2" runat="server"
+                            TargetControlID="txtAT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            BT y T*
+                        </label>
+                        <asp:TextBox runat="server" ID="txtBT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtBT_T_FilteredTextBoxExtender3" runat="server"
+                            TargetControlID="txtBT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>
+                            AT, BT y T*
+                        </label>
+                        <asp:TextBox runat="server" ID="txtAT_BT_T" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtAT_BT_T_FilteredTextBoxExtender4" runat="server"
+                            TargetControlID="txtAT_BT_T" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
@@ -165,7 +90,12 @@
                         </asp:DropDownList>
                         &nbsp;</div>
                 </div>
-                                
+                <!--Detalle de Resistencia-->
+                <div class="row-fluid">
+                    <asp:Table ID="Table1" runat="server">
+                    </asp:Table>
+                </div>
+                <!--Botonera-->
                 <div class="row-fluid">
                     <asp:Panel ID="pnlBotonera" runat="server">
                         <asp:Panel ID="pnlInicial" runat="server">
@@ -217,5 +147,3 @@
     <script type="text/javascript" src="../../js/counter.js"></script>
     <script type="text/javascript" src="../../js/retina.js"></script>
     <script type="text/javascript" src="../../js/custom.js"></script>
-    <!-- end: JavaScript-->
-</asp:Content>

@@ -220,3 +220,5 @@ TS15/TS15V2.UI/Web.config
 *.config
 TS15/TS15V2.UI/Web.config
 TS15/TS15.Common/App.Config
+TS15/TS15V2.UI/Web.config
+*.config

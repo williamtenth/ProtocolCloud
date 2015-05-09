@@ -104,16 +104,37 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private bool ValidarProceso()
         {
             int resultado = 0;
+            int estado = 0;
+            
             foreach (pro_elementoprueba elemento in _listaElementos)
             {
                 if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA_LABEL))
                     resultado++;
-                if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_SIN_RESULTADO_LABEL))
-                    return false;
+                if (elemento.Estado.Equals(VariablesGlobales.ESTADO_TERMINADO_LABEL)) 
+                    estado++;
             }
-            // Si el valor de resultado es igual al tamaño del arreglo, el resultado del proceso es exitoso.
-            _proceso.resultado = resultado == _listaElementos.Length ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA;
-            return true;
+
+            if (estado == _listaElementos.Length)
+            {
+                // Si el valor de resultado es igual al tamaño del arreglo, el resultado del proceso es exitoso.
+                _proceso.resultado = resultado == _listaElementos.Length ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA;
+
+                //if (_proceso.resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA))
+                //{
+                //    _proceso.cli_pedido.estado = VariablesGlobales.ESTADO_TERMINADO;
+                //    _BOProcesoObject.Modificar(_proceso.cli_pedido);
+                //    cli_pedido pedido = new cli_pedido();
+                //    pedido.tipsolicitud = VariablesGlobales.CLI_TIPO_SOLICITUD_REPARACION;
+                //    pedido.cliente_id = _proceso.cli_pedido.cliente_id;
+                //    pedido.fechasolicitud = new System.DateTime();
+                //    pedido.transformador_id = 
+
+                //}
+                
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool Terminar()

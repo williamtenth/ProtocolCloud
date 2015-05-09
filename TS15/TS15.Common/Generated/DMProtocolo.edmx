@@ -161,16 +161,15 @@
       [vw_sol_pedidos_cliente].[idPedido] AS [idPedido], 
       [vw_sol_pedidos_cliente].[consecutivo] AS [consecutivo], 
       [vw_sol_pedidos_cliente].[fechasolicitud] AS [fechasolicitud], 
-      [vw_sol_pedidos_cliente].[tipsolicitud] AS [tipsolicitud], 
       [vw_sol_pedidos_cliente].[cantidad] AS [cantidad], 
       [vw_sol_pedidos_cliente].[tiptransformador] AS [tiptransformador], 
       [vw_sol_pedidos_cliente].[capacidad] AS [capacidad], 
+      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
+      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida], 
       [vw_sol_pedidos_cliente].[transformador_id] AS [transformador_id], 
       [vw_sol_pedidos_cliente].[aprobado] AS [aprobado], 
       [vw_sol_pedidos_cliente].[estado] AS [estado], 
-      [vw_sol_pedidos_cliente].[tipoSolicitud] AS [tipoSolicitud], 
-      [vw_sol_pedidos_cliente].[volentrada] AS [volentrada], 
-      [vw_sol_pedidos_cliente].[volsalida] AS [volsalida]
+      [vw_sol_pedidos_cliente].[tipSolicitud] AS [tipSolicitud]
       FROM [dbo].[vw_sol_pedidos_cliente] AS [vw_sol_pedidos_cliente]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_solicitudes_cliente" EntityType="dbTS15Model.Store.vw_solicitudes_cliente" store:Type="Views" store:Schema="dbo" store:Name="vw_solicitudes_cliente">
@@ -1005,7 +1004,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="tipSolicitud" />
           </Key>
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="80" />
@@ -1017,16 +1016,15 @@
           <Property Name="idPedido" Type="int" Nullable="false" />
           <Property Name="consecutivo" Type="int" Nullable="false" />
           <Property Name="fechasolicitud" Type="datetime" Nullable="false" />
-          <Property Name="tipsolicitud" Type="tinyint" Nullable="false" />
           <Property Name="cantidad" Type="int" />
           <Property Name="tiptransformador" Type="tinyint" />
           <Property Name="capacidad" Type="tinyint" />
+          <Property Name="volentrada" Type="numeric" Precision="10" />
+          <Property Name="volsalida" Type="numeric" Precision="10" />
           <Property Name="transformador_id" Type="int" />
           <Property Name="aprobado" Type="bit" />
           <Property Name="estado" Type="tinyint" />
-          <Property Name="tipoSolicitud" Type="varchar" MaxLength="13" />
-          <Property Name="volentrada" Type="numeric" Precision="10" />
-          <Property Name="volsalida" Type="numeric" Precision="10" />
+          <Property Name="tipSolicitud" Type="varchar" Nullable="false" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbTS15.dbo.vw_solicitudes_cliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -2291,7 +2289,7 @@
             <PropertyRef Name="idPedido" />
             <PropertyRef Name="consecutivo" />
             <PropertyRef Name="fechasolicitud" />
-            <PropertyRef Name="tipsolicitud" />
+            <PropertyRef Name="tipSolicitud" />
           </Key>
           <Property Type="Int32" Name="idCliente" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
@@ -2303,16 +2301,15 @@
           <Property Type="Int32" Name="idPedido" Nullable="false" />
           <Property Type="Int32" Name="consecutivo" Nullable="false" />
           <Property Type="DateTime" Name="fechasolicitud" Nullable="false" />
-          <Property Type="Byte" Name="tipsolicitud" Nullable="false" />
           <Property Type="Int32" Name="cantidad" />
           <Property Type="Byte" Name="tiptransformador" />
           <Property Type="Byte" Name="capacidad" />
+          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
           <Property Type="Int32" Name="transformador_id" />
           <Property Type="Boolean" Name="aprobado" />
           <Property Type="Byte" Name="estado" />
-          <Property Type="String" Name="tipoSolicitud" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="volentrada" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="volsalida" Precision="10" Scale="0" />
+          <Property Type="String" Name="tipSolicitud" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_solicitudes_cliente">
           <Key>
@@ -3310,16 +3307,15 @@
           <EntitySetMapping Name="vw_sol_pedidos_cliente">
             <EntityTypeMapping TypeName="dbTS15Model.vw_sol_pedidos_cliente">
               <MappingFragment StoreEntitySet="vw_sol_pedidos_cliente">
-                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
-                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
-                <ScalarProperty Name="tipoSolicitud" ColumnName="tipoSolicitud" />
+                <ScalarProperty Name="tipSolicitud" ColumnName="tipSolicitud" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="aprobado" ColumnName="aprobado" />
                 <ScalarProperty Name="transformador_id" ColumnName="transformador_id" />
+                <ScalarProperty Name="volsalida" ColumnName="volsalida" />
+                <ScalarProperty Name="volentrada" ColumnName="volentrada" />
                 <ScalarProperty Name="capacidad" ColumnName="capacidad" />
                 <ScalarProperty Name="tiptransformador" ColumnName="tiptransformador" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="tipsolicitud" ColumnName="tipsolicitud" />
                 <ScalarProperty Name="fechasolicitud" ColumnName="fechasolicitud" />
                 <ScalarProperty Name="consecutivo" ColumnName="consecutivo" />
                 <ScalarProperty Name="idPedido" ColumnName="idPedido" />
@@ -3481,7 +3477,7 @@
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbTS15Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="14.75" PointY="9.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_cli_usuario" Width="1.5" PointX="10.75" PointY="14.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.864807942708353" />
+        <EntityTypeShape EntityType="dbTS15Model.vw_sol_pedidos_cliente" Width="1.5" PointX="14.75" PointY="12.75" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="dbTS15Model.vw_solicitudes_cliente" Width="1.5" PointX="16.75" PointY="0.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_cliente" Width="1.5" PointX="16.75" PointY="5.75" Height="2.557190755208353" />
         <EntityTypeShape EntityType="dbTS15Model.vw_transformador_fabricante" Width="1.5" PointX="16.75" PointY="9.75" Height="6.7878222656249818" />

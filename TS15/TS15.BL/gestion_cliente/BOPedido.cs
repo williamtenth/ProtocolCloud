@@ -34,7 +34,7 @@ namespace TS15.BL.gestion_cliente
             bool bitProceso = true;
 
             //CREA EL PEDIDO
-            pedidoObject.consecutivo = ObtenerConsecutivo();
+            pedidoObject.consecutivo = ((DAOPedido)GenericoDAO).ObtenerConsecutivo();
             Crear(pedidoObject);
 
             for (int i = 0; i < pedidoObject.cantidad; i++)

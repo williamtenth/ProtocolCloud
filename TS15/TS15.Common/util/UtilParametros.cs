@@ -21,6 +21,14 @@ namespace TS15.Common.util {
                 (consecutivoParametro == VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA_LABEL : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA_LABEL)
                 : VariablesGlobales.RESULTADO_SIN_RESULTADO_LABEL;
 		}
+
+        public static string ValidarEstado(byte? consecutivoParametro)
+        {
+            // Validación del valor estado: ACTIVO o TERMINADO.
+            return consecutivoParametro != null ?
+                (consecutivoParametro.Equals(VariablesGlobales.ESTADO_ACTIVO) ? VariablesGlobales.ESTADO_ACTIVO_LABEL : VariablesGlobales.ESTADO_TERMINADO_LABEL)
+                : VariablesGlobales.ESTADO_SIN_ESTADO_LABEL;
+        }
                 
     }//end UtilParametros
 
