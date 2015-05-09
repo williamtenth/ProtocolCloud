@@ -18,6 +18,7 @@ namespace TS15.Common.Generated
         private string _nombre;
         private DateTime _fecha;
         private string _resultado;
+        private String _estado;
         private EntityObject _prueba;
 
         public pro_elementoprueba()
@@ -48,6 +49,12 @@ namespace TS15.Common.Generated
             _resultado = UtilParametros.ValidarResultado(resultado);
         }
 
+        public pro_elementoprueba(string nombre, DateTime? fecha, byte? resultado, byte? estado, EntityObject prueba)
+            : this(nombre, fecha, resultado, prueba)
+        {
+            _estado = UtilParametros.ValidarEstado(estado);
+        }
+
         public string Nombre
         {
             get { return _nombre; }
@@ -70,6 +77,12 @@ namespace TS15.Common.Generated
         {
             get { return _prueba; }
             set { _prueba = value; }
+        }
+
+        public String Estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
         }
 
 

@@ -42,10 +42,20 @@ namespace TS15.Common.util
         public const String PRUEBA_NTC1005 = "NTC 1005";
         public const String PRUEBA_NTC471 = "NTC 471";
         public const String PRUEBA_NTC837 = "NTC 837";
+
+        // Gestión cliente
+        public const byte CLI_TIPO_SOLICITUD_SUMINISTRO = 1;
+        public const byte CLI_TIPO_SOLICITUD_SERVICIO = 2;
+        public const byte CLI_TIPO_SOLICITUD_REPARACION = 3;
+        public const byte CLI_TIPO_SOLICITUD_MTTO = 4;
+
         
         // Variables generales
         public const byte ESTADO_ACTIVO = 1;
         public const byte ESTADO_TERMINADO = 2;
+        public const string ESTADO_ACTIVO_LABEL = "Activo";
+        public const string ESTADO_TERMINADO_LABEL = "Terminado";
+        public const string ESTADO_SIN_ESTADO_LABEL = "Sin estado";
 
         // Tipos para gen_parametrica
         public const String GEN_PARAMETRICA_RESULTADO = "resultado";

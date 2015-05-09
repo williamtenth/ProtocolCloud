@@ -13,6 +13,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
     {
         // Datos
         private List<gen_parametrica> _listaParResultados;
+        private cli_pedido _pedido;
         private pro_proceso _proceso;
         private tfr_transformador _transformador;
         // BO
@@ -24,21 +25,15 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             _proceso = new pro_proceso();
             _BOTransformadorObjet = new BOTransformador();
             //CargarTransformador();
-            CargarListas();
+            //CargarListas();
         }
 
         // Métodos
-        private void CargarTransformador()
+        public void CargarSesion()
         {
-            if (Session[VariablesGlobales.SESSION_TRANSFORMADOR] != null)
-            {
-                _transformador = (tfr_transformador)Session[VariablesGlobales.SESSION_TRANSFORMADOR];
-
-            }
-            else
-            {
-                _transformador = (tfr_transformador)_BOTransformadorObjet.ConsultarXId(0);
-            }
+            _pedido = (cli_pedido)Session[VariablesGlobales.SESION_CLIENTE_PEDIDO];
+            _proceso = (pro_proceso)Session[VariablesGlobales.SESION_PROCESO_PRUEBA];
+            _transformador = (tfr_transformador)Session[VariablesGlobales.SESSION_TRANSFORMADOR];
 
         }
 
@@ -56,7 +51,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         // Métodos
         protected void Page_Init(object sender, EventArgs e)
         {
-            CargarTransformador();
+            CargarListas();
+            if (!Page.IsPostBack)
+            {
+                CargarSesion();
+            }
+            
         }
 
         // Set y Get
@@ -81,6 +81,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             get { return _transformador; }
             set { _transformador = value; }
+        }
+
+        public TS15.Common.Generated.cli_pedido Pedido
+        {
+            get { return _pedido; }
+            set { _pedido = value; }
         }
     }
 }

@@ -50,7 +50,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             _listaColores = Parametros.ConsultarParametros("trfcolor");
             // carga lista colores
             this.lbColor.DataSource = _listaColores;
-            this.lbColor.DataValueField = "valor";
+            this.lbColor.DataValueField = "consecutivo";
             this.lbColor.DataTextField = "valor";
             this.lbColor.DataBind();
             // carga lista salina Ambiente 1
@@ -80,6 +80,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             this.lbEspesor2.DataBind();
         }
 
+        /// <summary>
+        /// Es método permite modificar la entidad, pero no modifica el resultado total, este se calcula cuando se termina la prueba.
+        /// </summary>
         public void Modificar(object sender, EventArgs e)
         {
             ActivarControles(true);
@@ -141,7 +144,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             {
                 if (_prueba != null)
                 {
-                    ActualizarEntidad();
+                    //ActualizarEntidad();
 
                     if (_BOntc3396Object.Terminar(_prueba))
                     {
@@ -165,10 +168,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public override void CargarPrueba()
         {
-            if (Transformador != null)
+            CargarSesion();
+            CargarListas();
+            if (Pedido != null && Transformador != null && Proceso != null)
             {
-                _prueba = (pro_ntc3396)_BOntc3396Object.ObtenerUltimaPrueba(Transformador);
+                _prueba = (pro_ntc3396)Session[VariablesGlobales.PRUEBA_SELECCIONADA];
                 CargarEntidad();
+                ActivarControles(false);
             }
             else
             {
@@ -186,6 +192,10 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             this.lbSalina2.Enabled = valorEnable;
             this.txtAdherencia.Enabled = valorEnable;
             this.txtEspesor.Enabled = valorEnable;
+
+            // Se oculta la botonera si la prueba tiene resultado
+            if (_prueba != null && _prueba.estado != null && _prueba.estado.Equals(VariablesGlobales.ESTADO_TERMINADO))
+                pnlBotonera.Visible = false;
             pnlInicial.Visible = !valorEnable;
             pnlGuardar.Visible = valorEnable;
         }
@@ -194,12 +204,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (_prueba != null)
             {
-                this.lbColor.SelectedValue = _prueba.color;
-                this.lbEspesor1.SelectedValue = Convert.ToString(_prueba.espesor1);
-                this.lbEspesor2.SelectedValue = Convert.ToString(_prueba.espesor2);
-                this.lbImpacto.SelectedValue = Convert.ToString(_prueba.impacto);
-                this.lbSalina1.SelectedValue = Convert.ToString(_prueba.salina1);
-                this.lbSalina2.SelectedValue = Convert.ToString(_prueba.salina2);
+                this.lbColor.SelectedValue = "1";
+                this.lbEspesor1.SelectedValue =_prueba.espesor1 != null ? Convert.ToString(_prueba.espesor1) : "-1";
+                this.lbEspesor2.SelectedValue = _prueba.espesor2 != null ? Convert.ToString(_prueba.espesor2) : "-1";
+                this.lbImpacto.SelectedValue = _prueba.impacto != null ? Convert.ToString(_prueba.impacto) : "-1";
+                this.lbSalina1.SelectedValue = _prueba.salina1 != null ? Convert.ToString(_prueba.salina1) : "-1";
+                this.lbSalina2.SelectedValue = _prueba.salina2 != null ? Convert.ToString(_prueba.salina2) : "-1";
                 this.txtAdherencia.Text = Convert.ToString(_prueba.adherencia);
                 this.txtEspesor.Text = Convert.ToString(_prueba.espesorvalor);
 
@@ -209,6 +219,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public void ActualizarEntidad()
         {
+            _prueba.color = lbColor.SelectedValue;
             _prueba.espesor1 = UtilNumeros.StringToBytes(lbEspesor1.SelectedValue);
             _prueba.espesor2 = UtilNumeros.StringToBytes(lbEspesor2.SelectedValue);
             _prueba.impacto = UtilNumeros.StringToBytes(lbImpacto.SelectedValue);

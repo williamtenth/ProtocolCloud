@@ -37,13 +37,23 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="e"></param>
         public void Page_Load(object sender, EventArgs e)
         {
-            CargarListas();
-            ActivarControles(true);
+            if (!Page.IsPostBack)
+            {
+                CargarListas();
+                CargarSesion();
+                ActivarControles(true);
+            }
         }
 
         public void CargarListas()
         {
 
+        }
+
+        protected void CargarSesion()
+        {
+            _pedido = (cli_pedido)Session[VariablesGlobales.SESION_CLIENTE_PEDIDO];
+            _transformador = (tfr_transformador)Session[VariablesGlobales.SESSION_TRANSFORMADOR];
         }
 
         /// 
@@ -54,9 +64,9 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             int index = Convert.ToInt32((e as GridViewCommandEventArgs).CommandArgument);
 
             GridViewRow row = gvPruebas.Rows[index];
-            EntityObject tipoSolicitud = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
+            EntityObject pruebaSeleccionada = gvPruebas.DataKeys[row.RowIndex].Values[0] as EntityObject;
             string etiquetaPrueba = (gvPruebas.DataKeys[row.RowIndex].Values[1] as string);
-            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = tipoSolicitud;
+            Session[VariablesGlobales.PRUEBA_SELECCIONADA] = pruebaSeleccionada;
 
             if (etiquetaPrueba.Equals(VariablesGlobales.PRUEBA_NTC1005))
                 MostrarControl(0);
@@ -83,9 +93,14 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             {
                 control.Visible = false;
                 if (i == valor)
+                {
                     control.Visible = true;
+                    ((GenericoProtocoloComponente)control).CargarPrueba();
+                }
                 i++;
             }
+
+
         }
 
         private void MostrarControl(Control control)
@@ -110,9 +125,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 _gestorProceso.ListaElementos = Session[VariablesGlobales.SESION_PROCESO_LISTA_PRUEBAS] as pro_elementoprueba[];
 
             if (_gestorProceso.Proceso != null && _gestorProceso.Terminar() && _gestorProceso.ListaElementos != null)
+            {
                 EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha terminado el proceso de pruebas");
+                ActivarControles(false);
+            }
             else
-                EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas tiene resultado (Exitosa/No Exitosa)");
+                EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas estén cerradas con resultado (Exitosa/No Exitosa)");
         }
 
         /// 

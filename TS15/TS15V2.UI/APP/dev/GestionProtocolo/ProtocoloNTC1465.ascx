@@ -29,7 +29,7 @@
                     <label>
                         Liquido Aislante*
                     </label>
-                    <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False">
+                    <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                     </asp:DropDownList>
                     &nbsp;</div>
             </div>
@@ -38,7 +38,7 @@
                     <label>
                         Referencia*
                     </label>
-                    <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False">
+                    <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                     </asp:DropDownList>
                     &nbsp;</div>
             </div>
@@ -59,7 +59,7 @@
                     <label>
                         Método*
                     </label>
-                    <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False">
+                    <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
                     </asp:DropDownList>
                     &nbsp;</div>
             </div>

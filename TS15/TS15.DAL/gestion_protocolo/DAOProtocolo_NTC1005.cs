@@ -55,6 +55,8 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.impedancia85gar = _entidad.impedancia85gar;
                 resultado.regulacion = _entidad.regulacion;
                 resultado.eficiencia = _entidad.eficiencia;
+                resultado.pf_eficiencia = _entidad.pf_eficiencia;
+                resultado.pf_regulacion = _entidad.pf_regulacion;
 
                 SingletonDatos.Contexto.SaveChanges();
                 return true;
@@ -105,7 +107,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc1005 prueba = SingletonDatos.Contexto.pro_ntc1005.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba.estado, prueba);
                 return elemento;
             }
             return null;

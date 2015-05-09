@@ -58,15 +58,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public override void CargarPrueba()
         {
-            if (Transformador != null)
+            CargarSesion();
+            CargarListas();
+            if (Pedido != null && Transformador != null && Proceso != null)
             {
-                object[] pruebaDetalle = _BOntc471Object.ObtenerUltimaPruebaDetalle(Transformador);
+                _prueba = (pro_ntc471)Session[VariablesGlobales.PRUEBA_SELECCIONADA];
+                object[] pruebaDetalle = _BOntc471Object.ObtenerPruebaDetalle(_prueba);
                 //_prueba = (pro_ntc471)_BOntc471Object.ObtenerUltimaPrueba(Transformador);
                 if (pruebaDetalle != null)
                 {
-                    _prueba = (pro_ntc471) pruebaDetalle[0];
                     _listPruebaDetalle = (List<pro_ntc471_has_relacion>)pruebaDetalle[1];
                     CargarEntidad();
+                    ActivarControles(false);
                 }
                 
             }
@@ -139,7 +142,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 this.txtFaseNeutro.Text = Convert.ToString(_prueba.fase_neutro);
                 this.txtPolaridad.Text = Convert.ToString(_prueba.polaridad);
                 this.txtGrupoConexion.Text = Convert.ToString(Transformador.trfgrpconex);
-                this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
+                this.lbResultado.SelectedValue = _prueba.resultado != null ? Convert.ToString(_prueba.resultado) : "-1";
                 // Detalle relación
                 
                 Session[VariablesGlobales.SESION_PRUEBA_NTC471] = _prueba;
@@ -184,6 +187,10 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             this.txtPolaridad.Enabled = valorEnable;
             
             this.lbResultado.Enabled = valorEnable;
+
+            // Se oculta la botonera si la prueba tiene resultado
+            if (_prueba != null && _prueba.estado != null && _prueba.estado.Equals(VariablesGlobales.ESTADO_TERMINADO))
+                pnlBotonera.Visible = false;
             pnlInicial.Visible = !valorEnable;
             pnlGuardar.Visible = valorEnable;
         }

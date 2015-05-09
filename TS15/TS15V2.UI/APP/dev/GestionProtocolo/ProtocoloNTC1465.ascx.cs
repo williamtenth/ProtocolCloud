@@ -127,10 +127,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public override void CargarPrueba()
         {
-            if (Transformador != null)
+            CargarSesion();
+            CargarListas();
+            if (Pedido != null && Transformador != null && Proceso != null)
             {
-                _prueba = (pro_ntc1465)_BOntc1465Object.ObtenerUltimaPrueba(Transformador);
+                _prueba = (pro_ntc1465)Session[VariablesGlobales.PRUEBA_SELECCIONADA];
                 CargarEntidad();
+                ActivarControles(false);
             }
             else
             {
@@ -143,11 +146,11 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (_prueba != null)
             {
-                this.lbLiquidoAislante.SelectedValue = Convert.ToString(_prueba.tipaislante);
-                this.lbReferencia.SelectedValue = Convert.ToString(_prueba.refaislante);
+                this.lbLiquidoAislante.SelectedValue = _prueba.tipaislante != null ? Convert.ToString(_prueba.tipaislante) : "1";
+                this.lbReferencia.SelectedValue = _prueba.refaislante != null ? Convert.ToString(_prueba.refaislante)  : "1";
                 this.txtRuptura.Text = Convert.ToString(_prueba.ruptura);
-                this.lbMetodo.SelectedValue = Convert.ToString(_prueba.metaislante);
-                this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
+                this.lbMetodo.SelectedValue = _prueba.metaislante != null ? Convert.ToString(_prueba.metaislante) : "1";
+                this.lbResultado.SelectedValue = _prueba.resultado != null ? Convert.ToString(_prueba.resultado) : "-1";
 
                 Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = _prueba;
             }
@@ -176,6 +179,10 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             this.txtRuptura.Enabled = valorEnable;
             this.lbResultado.Enabled = valorEnable;
+
+            // Se oculta la botonera si la prueba tiene resultado
+            if (_prueba != null && _prueba.estado != null && _prueba.estado.Equals(VariablesGlobales.ESTADO_TERMINADO))
+                pnlBotonera.Visible = false;
             pnlInicial.Visible = !valorEnable;
             pnlGuardar.Visible = valorEnable;
         }
@@ -237,6 +244,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             if (sender == lbResultado)
                 lbResultado.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbLiquidoAislante)
+                lbLiquidoAislante.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbMetodo)
+                lbMetodo.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+            if (sender == lbReferencia)
+                lbReferencia.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+
         }
     }
 }

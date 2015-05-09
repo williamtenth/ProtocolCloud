@@ -3,13 +3,13 @@
     EnableSessionState="true" %>
 
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc0" %>
-<%@ Register Src="ProtocoloNTC1005.ascx" TagName="ProtocoloNTC1005" TagPrefix="uc2" %>
+<%@ Register Src="ProtocoloNTC1005.ascx" TagName="ProtocoloNTC1005" TagPrefix="uc1" %>
 <%@ Register Src="ProtocoloNTC1031.ascx" TagName="ProtocoloNTC1031" TagPrefix="uc2" %>
-<%@ Register Src="ProtocoloNTC1465.ascx" TagName="ProtocoloNTC1465" TagPrefix="uc2" %>
-<%@ Register Src="ProtocoloNTC3396.ascx" TagName="ProtocoloNTC3396" TagPrefix="uc2" %>
-<%@ Register Src="ProtocoloNTC375.ascx" TagName="ProtocoloNTC375" TagPrefix="uc2" %>
-<%@ Register Src="ProtocoloNTC837.ascx" TagName="ProtocoloNTC837" TagPrefix="uc2" %>
-<%@ Register Src="ProtocoloNTC471.ascx" TagName="ProtocoloNTC471" TagPrefix="uc2" %>
+<%@ Register Src="ProtocoloNTC1465.ascx" TagName="ProtocoloNTC1465" TagPrefix="uc3" %>
+<%@ Register Src="ProtocoloNTC3396.ascx" TagName="ProtocoloNTC3396" TagPrefix="uc4" %>
+<%@ Register Src="ProtocoloNTC375.ascx" TagName="ProtocoloNTC375" TagPrefix="uc5" %>
+<%@ Register Src="ProtocoloNTC837.ascx" TagName="ProtocoloNTC837" TagPrefix="uc6" %>
+<%@ Register Src="ProtocoloNTC471.ascx" TagName="ProtocoloNTC471" TagPrefix="uc7" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
@@ -188,13 +188,13 @@
         <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
     </asp:GridView>
     <div class="row-fluid sortable ui-sortable">
+        <uc1:ProtocoloNTC1005 ID="ucProtocoloNTC1005" runat="server" Visible="false" />
         <uc2:ProtocoloNTC1031 ID="ucProtocoloNTC1031" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC1465 ID="ucProtocoloNTC1465" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC3396 ID="ucProtocoloNTC3396" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC375 ID="ucProtocoloNTC375" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC837 ID="ucProtocoloNTC837" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC471 ID="ucProtocoloNTC471" runat="server" Visible="false" />
-        <uc2:ProtocoloNTC1005 ID="ucProtocoloNTC1005" runat="server" Visible="false" />
+        <uc3:ProtocoloNTC1465 ID="ucProtocoloNTC1465" runat="server" Visible="false" />
+        <uc4:ProtocoloNTC3396 ID="ucProtocoloNTC3396" runat="server" Visible="false" />
+        <uc5:ProtocoloNTC375 ID="ucProtocoloNTC375" runat="server" Visible="false" />
+        <uc6:ProtocoloNTC837 ID="ucProtocoloNTC837" runat="server" Visible="false" />
+        <uc7:ProtocoloNTC471 ID="ucProtocoloNTC471" runat="server" Visible="false" />
     </div>
     <uc0:ModalMsj ID="MsjConfirmacion" runat="server" />
     <!-- start: JavaScript-->

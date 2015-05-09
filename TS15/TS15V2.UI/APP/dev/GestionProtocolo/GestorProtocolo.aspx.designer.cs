@@ -157,6 +157,15 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.GridView gvPruebas;
         
         /// <summary>
+        /// ucProtocoloNTC1005 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005Componente ucProtocoloNTC1005;
+        
+        /// <summary>
         /// ucProtocoloNTC1031 control.
         /// </summary>
         /// <remarks>
@@ -209,15 +218,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471C ucProtocoloNTC471;
-        
-        /// <summary>
-        /// ucProtocoloNTC1005 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005Componente ucProtocoloNTC1005;
         
         /// <summary>
         /// MsjConfirmacion control.

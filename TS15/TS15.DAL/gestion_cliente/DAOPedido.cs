@@ -28,8 +28,12 @@ namespace TS15.DAL.gestion_cliente
         {
             var a = (from p in SingletonDatos.Contexto.cli_pedido
                      select p.consecutivo).Max();
+            
+            Int32 consecutivo = Convert.ToInt32(a);
 
-            return Convert.ToInt32(a) + 1;
+            return consecutivo != null ? consecutivo + 1 : 0;
+
+            //return Convert.ToInt32(a) + 1;
         }
 
         public EntityObject ConsultarXId(int idSolicitud)

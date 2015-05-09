@@ -46,6 +46,7 @@ namespace TS15.DAL.gestion_protocolo
                 resultado.garantia = _entidad.garantia;
                 resultado.po_medida = _entidad.po_medida;
                 resultado.po_garantizado = _entidad.po_garantizado;
+                resultado.resultado = _entidad.resultado;
                 // Fecha de modificación
                 resultado.fecha = DateTime.Now;
 
@@ -98,7 +99,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc1031 prueba = SingletonDatos.Contexto.pro_ntc1031.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba.estado, prueba);
                 return elemento;
             }
             return null;

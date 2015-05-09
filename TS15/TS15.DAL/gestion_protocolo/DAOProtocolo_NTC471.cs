@@ -39,10 +39,12 @@ namespace TS15.DAL.gestion_protocolo
             if (resultado != null && _entidad != null)
             {
                 // Encabezado
+                resultado.resultado = _entidad.resultado;
                 resultado.relacion = _entidad.relacion;
                 resultado.fase_fase = _entidad.fase_fase;
                 resultado.fase_neutro = _entidad.fase_neutro;
                 resultado.polaridad = _entidad.polaridad;
+                resultado.resultado = _entidad.resultado;
                 resultado.fecha = DateTime.Now;
                 
                 SingletonDatos.Contexto.SaveChanges();
@@ -93,7 +95,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc471 prueba = SingletonDatos.Contexto.pro_ntc471.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba.estado, prueba);
                 return elemento;
             }
             return null;

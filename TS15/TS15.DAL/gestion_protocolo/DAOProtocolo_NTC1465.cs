@@ -37,6 +37,9 @@ namespace TS15.DAL.gestion_protocolo
             {
                 resultado.ruptura = (entidad as pro_ntc1465).ruptura;
                 resultado.resultado = (entidad as pro_ntc1465).resultado;
+                resultado.tipaislante = (entidad as pro_ntc1465).tipaislante;
+                resultado.refaislante = (entidad as pro_ntc1465).refaislante;
+                resultado.metaislante = (entidad as pro_ntc1465).metaislante;
                 // Fecha
                 resultado.fecha = DateTime.Now;
                 SingletonDatos.Contexto.SaveChanges();
@@ -112,7 +115,7 @@ namespace TS15.DAL.gestion_protocolo
             pro_ntc1465 prueba = SingletonDatos.Contexto.pro_ntc1465.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)
             {
-                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba);
+                pro_elementoprueba elemento = new pro_elementoprueba(nombrePrueba, prueba.fecha, prueba.resultado, prueba.estado, prueba);
                 return elemento;
             }
             return null;

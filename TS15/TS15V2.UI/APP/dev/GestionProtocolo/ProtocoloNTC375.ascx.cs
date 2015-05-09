@@ -64,10 +64,13 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// </summary>
         public override void CargarPrueba()
         {
-            if (Transformador != null)
+            CargarSesion();
+            CargarListas();
+            if (Pedido != null && Transformador != null && Proceso != null)
             {
-                _prueba = (pro_ntc375)_BOntc375Object.ObtenerUltimaPrueba(Transformador);
+                _prueba = (pro_ntc375)Session[VariablesGlobales.PRUEBA_SELECCIONADA];
                 CargarEntidad();
+                ActivarControles(false);
             }
             else
             {
@@ -137,7 +140,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 this.txtAT_T.Text = Convert.ToString(_prueba.at_t);
                 this.txtBT_T.Text = Convert.ToString(_prueba.bt_t);
                 this.txtAT_BT_T.Text = Convert.ToString(_prueba.at_bt_t);
-                this.lbResultado.SelectedValue = Convert.ToString(_prueba.resultado);
+                this.lbResultado.SelectedValue = _prueba.resultado != null ? Convert.ToString(_prueba.resultado) : "-1";
                 // Detalle resistencia
 
                 Session[VariablesGlobales.SESION_PRUEBA_NTC375] = _prueba;
@@ -175,6 +178,10 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             this.txtBT_T.Enabled = valorEnable;
             this.txtAT_BT_T.Enabled = valorEnable;
             this.lbResultado.Enabled = valorEnable;
+
+            // Se oculta la botonera si la prueba tiene resultado
+            if (_prueba != null && _prueba.estado != null && _prueba.estado.Equals(VariablesGlobales.ESTADO_TERMINADO))
+                pnlBotonera.Visible = false;
             pnlInicial.Visible = !valorEnable;
             pnlGuardar.Visible = valorEnable;
         }
