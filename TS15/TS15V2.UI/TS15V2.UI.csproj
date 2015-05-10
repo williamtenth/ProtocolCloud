@@ -153,8 +153,6 @@
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\GestionarPedidos.aspx" />
-    <Content Include="APP\dev\GestionCliente\Prueba.aspx" />
-    <Content Include="APP\dev\GestionCliente\WebForm1.aspx" />
     <Content Include="APP\dev\GestionProtocolo\GestorProtocolo.aspx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1005.ascx" />
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC1465.ascx" />
@@ -173,7 +171,7 @@
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\GestionBodega.aspx" />
-    <Content Include="APP\dev\GestionUsuarios\CrearUsuario.aspx" />
+    <Content Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
     <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -359,13 +357,6 @@
     <Compile Include="APP\dev\GestionCliente\GestionarPedidos.aspx.designer.cs">
       <DependentUpon>GestionarPedidos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\dev\GestionCliente\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="APP\dev\GestionProtocolo\GenericoProtocoloComponente.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -492,12 +483,12 @@
     <Compile Include="APP\dev\GestionTransformador\GestionBodega.aspx.designer.cs">
       <DependentUpon>GestionBodega.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.cs">
-      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx.cs">
+      <DependentUpon>GestionarCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="APP\dev\GestionUsuarios\CrearUsuario.aspx.designer.cs">
-      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    <Compile Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx.designer.cs">
+      <DependentUpon>GestionarCuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
@@ -543,13 +534,6 @@
     </Compile>
     <Compile Include="APP\dev\GestionCliente\CrearSolicitud.aspx.designer.cs">
       <DependentUpon>CrearSolicitud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\dev\GestionCliente\Prueba.aspx.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\dev\GestionCliente\Prueba.aspx.designer.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx.cs">
       <DependentUpon>BusquedaTransformador.aspx</DependentUpon>

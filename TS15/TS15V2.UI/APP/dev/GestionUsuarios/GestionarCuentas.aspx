@@ -1,10 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="Prueba.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.Prueba"
-    EnableEventValidation="false" %>
+    AutoEventWireup="true" CodeBehind="GestionarCuentas.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionUsuarios.GestionarCuentas" %>
 
 <%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
-<%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
-    TagPrefix="uc2" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
@@ -98,19 +96,79 @@
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Gestionar Cuentas</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+        <div class="box span12">
+            <div data-original-title="" class="box-header">
+                <h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Crear Usuario</h2>
+                <div class="box-icon">
+                    <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a><a class="btn-minimize"
+                        href="#"><i class="halflings-icon chevron-up"></i></a><a class="btn-close" href="#">
+                            <i class="halflings-icon remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="txtNombreUsuario">
+                                Nombre Usuario:</label>
+                            <div class="controls">
+                                <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="form-control" MaxLength="16"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfv_txtNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
+                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="txtMail">
+                                E-Mail:</label>
+                            <div class="controls">
+                                <asp:TextBox runat="server" ID="txtMail" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtMail" ControlToValidate="txtMail"
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="txtPass">
+                                Contraseña:</label>
+                            <div class="controls">
+                                <asp:TextBox runat="server" ID="txtPass" MaxLength="16" TextMode="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtPass" ControlToValidate="txtPass"
+                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="txtConfirmPass">
+                                Confirmar Contraseña:</label>
+                            <div class="controls">
+                                <asp:TextBox ID="txtConfirmPass" runat="server" TextMode="Password" CssClass="form-control"
+                                    MaxLength="16"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfv_txtConfirmPass" runat="server" ControlToValidate="txtConfirmPass"
+                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="txtPass"
+                                    ControlToValidate="txtConfirmPass" ErrorMessage="*" ForeColor="Red" Font-Bold="true"
+                                    ValidationGroup="VGRegistrarUsuario"></asp:CompareValidator>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="ddlCliente">
+                                Cliente:</label>
+                            <div class="controls">
+                                <asp:DropDownList runat="server" ID="ddlCliente" CssClass="form-control" OnDataBound="ddlCliente_DataBound">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <asp:Button runat="server" ID="btnRegistrarUsuario" CssClass="btn btn-primary" Text="Registrar Usuario"
+                                OnClick="btnRegistrarUsuario_Click" CausesValidation="true" ValidationGroup="VGRegistrarUsuario" />
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row-fluid sortable ui-sortable">
-        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" />
-    </div>
-    <asp:UpdatePanel runat="server">
-        <ContentTemplate>
-            <asp:Button runat="server" ID="btnEnviar" Text="Prueba" OnClick="btnEnviar_Click" />
-        </ContentTemplate>
-    </asp:UpdatePanel>
     <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
