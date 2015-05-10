@@ -15,6 +15,7 @@ using TS15.Common.IService;
 using TS15.BL.gestion_protocolo;
 using System.Data.Objects.DataClasses;
 using TS15.Common.util;
+using TS15.BL.gestion_transformador;
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
     public class GestorProceso
@@ -24,6 +25,8 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private EntityObject[] _listaPruebas;
         private pro_elementoprueba[] _listaElementos;
         private BOProceso _BOProcesoObject;
+        private BOTransformador _BOTransformadorObject;
+        private BOOrdenTrabajo _BOOrdenTrabajoObject;
         private BOProtocolo_NTC1005 _BOntc1005Object;
         private BOProtocolo_NTC1031 _BOntc1031Object;
         private BOProtocolo_NTC1465 _BOntc1465Object;
@@ -40,6 +43,8 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         public GestorProceso()
         {
             _BOProcesoObject = new BOProceso();
+            _BOTransformadorObject = new BOTransformador();
+            _BOOrdenTrabajoObject = new BOOrdenTrabajo();
             _BOntc1005Object = new BOProtocolo_NTC1005();
             _BOntc1031Object = new BOProtocolo_NTC1031();
             _BOntc1465Object = new BOProtocolo_NTC1465();
@@ -71,7 +76,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="pedido"></param>
         public bool ConsultarProceso(int pedido)
         {
-            _proceso = _BOProcesoObject.ObternerProcesoXPedido(pedido);
+            _proceso = _BOProcesoObject.ObternerProcesoActivoXPedido(pedido);
 
             if (_proceso != null)
             {
@@ -105,12 +110,12 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         {
             int resultado = 0;
             int estado = 0;
-            
+
             foreach (pro_elementoprueba elemento in _listaElementos)
             {
                 if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA_LABEL))
                     resultado++;
-                if (elemento.Estado.Equals(VariablesGlobales.ESTADO_TERMINADO_LABEL)) 
+                if (elemento.Estado.Equals(VariablesGlobales.ESTADO_TERMINADO_LABEL))
                     estado++;
             }
 
@@ -119,18 +124,25 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 // Si el valor de resultado es igual al tamaño del arreglo, el resultado del proceso es exitoso.
                 _proceso.resultado = resultado == _listaElementos.Length ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA;
 
-                //if (_proceso.resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA))
-                //{
-                //    _proceso.cli_pedido.estado = VariablesGlobales.ESTADO_TERMINADO;
-                //    _BOProcesoObject.Modificar(_proceso.cli_pedido);
-                //    cli_pedido pedido = new cli_pedido();
-                //    pedido.tipsolicitud = VariablesGlobales.CLI_TIPO_SOLICITUD_REPARACION;
-                //    pedido.cliente_id = _proceso.cli_pedido.cliente_id;
-                //    pedido.fechasolicitud = new System.DateTime();
-                //    pedido.transformador_id = 
+                if (_proceso.resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA))
+                {
+                    // Proceso con resultado "No aprobado"
 
-                //}
-                
+
+                    _proceso.cli_pedido.estado = VariablesGlobales.ESTADO_TERMINADO;
+                    _BOProcesoObject.Modificar(_proceso.cli_pedido);
+                    _BOProcesoObject.CrearProceso(_proceso.cli_pedido, VariablesGlobales.TIPO_PROCESO_PROTOCOLO); 
+
+                }
+                else
+                {
+                    // Proceso con resultado "No aprobado"
+                    string error = string.Empty;
+                    _BOTransformadorObject.EnviarBodegaEntrega(_proceso.cli_pedido.tfr_transformador, out error);
+                    tfr_ordentrabajo oTrabajo = _BOOrdenTrabajoObject.ConsultarXPedido((int)_proceso.pedido_id);
+                    _BOOrdenTrabajoObject.CerrarOrdenTrabajoXPedido((int)oTrabajo.pedido_id);
+                }
+
                 return true;
             }
             else
@@ -139,7 +151,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         public bool Terminar()
         {
-            if(ValidarProceso())
+            if (ValidarProceso())
                 return _BOProcesoObject.Terminar(_proceso);
             return false;
         }

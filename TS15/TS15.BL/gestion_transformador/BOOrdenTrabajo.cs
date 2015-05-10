@@ -6,6 +6,8 @@ using TS15.BL.abstractBL;
 using TS15.Common.IService;
 using System.Data.Objects.DataClasses;
 using TS15.DAL.gestion_transformador;
+using TS15.Common.Generated;
+using TS15.Common.util;
 
 namespace TS15.BL.gestion_transformador
 {
@@ -18,12 +20,24 @@ namespace TS15.BL.gestion_transformador
 
         public EntityObject ConsultarXId(int id)
         {
-            throw new NotImplementedException();
+            return ((DAOOrdenTrabajo)GenericoDAO).ConsultarXId(id);
+        }
+
+        public tfr_ordentrabajo ConsultarXPedido(int pedido)
+        {
+            return ((DAOOrdenTrabajo)GenericoDAO).ConsultarXPedido(pedido);
         }
 
         public bool Modificar(EntityObject entidad)
         {
-            throw new NotImplementedException();
+            return ((DAOOrdenTrabajo)GenericoDAO).Modificar(entidad);
+        }
+
+        public bool CerrarOrdenTrabajoXPedido(int pedido)
+        {
+            tfr_ordentrabajo orden = ((DAOOrdenTrabajo)GenericoDAO).ConsultarXPedido(pedido);
+            orden.estado = VariablesGlobales.ESTADO_TERMINADO;
+            return Modificar(orden);
         }
 
         public bool Eliminar(EntityObject entidad)

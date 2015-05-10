@@ -39,6 +39,18 @@ namespace TS15.BL.gestion_protocolo
             return ((DAOProceso)GenericoDAO).Crear(entidad);
         }
 
+        public bool CrearProceso(cli_pedido pedido, byte tipoProceso)
+        {
+            //CREA PROCESO DE PRUEBAS
+            pro_proceso proceso = new pro_proceso();
+            proceso.pedido_id = pedido.id;
+            proceso.tipprocesop = tipoProceso;
+            proceso.fecha = DateTime.Now;
+            proceso.estado = 1; //Estado Activo
+                                    
+            return Crear(proceso);
+        }
+
         public List<EntityObject> Consultar()
         {
             throw new NotImplementedException();
@@ -47,6 +59,11 @@ namespace TS15.BL.gestion_protocolo
         public pro_proceso ObternerProcesoXPedido(int pedido)
         {
             return ((DAOProceso)GenericoDAO).ObternerProcesoXPedido(pedido);
+        }
+
+        public pro_proceso ObternerProcesoActivoXPedido(int pedido)
+        {
+            return ((DAOProceso)GenericoDAO).ObternerProcesoActivoXPedido(pedido);
         }
 
         public bool Terminar(EntityObject entidad)
@@ -63,5 +80,7 @@ namespace TS15.BL.gestion_protocolo
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
