@@ -170,5 +170,10 @@ namespace TS15.BL.gestion_transformador
         {
             ((DAOTransformador)GenericoDAO).AsignarBodegaEntrega(bodegaObject);
         }
+
+        public void EliminarEnBodega(tfr_bodega bodegaObject)
+        {
+            ((DAOTransformador)GenericoDAO).EliminarEnBodega(bodegaObject);
+        }
     }
 }

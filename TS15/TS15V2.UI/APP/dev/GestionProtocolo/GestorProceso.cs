@@ -76,7 +76,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         /// <param name="pedido"></param>
         public bool ConsultarProceso(int pedido)
         {
-            _proceso = _BOProcesoObject.ObternerProcesoActivoXPedido(pedido);
+            _proceso = _BOProcesoObject.ObtenerProcesoActivoXPedido(pedido);
 
             if (_proceso != null)
             {
@@ -90,19 +90,19 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private void GenerarElementos()
         {
             // ntc 1005
-            _listaElementos[0] = _BOntc1005Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[0] = _BOntc1005Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 1031
-            _listaElementos[1] = _BOntc1031Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[1] = _BOntc1031Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 1465
-            _listaElementos[2] = _BOntc1465Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[2] = _BOntc1465Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 3396
-            _listaElementos[3] = _BOntc3396Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[3] = _BOntc3396Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 375
-            _listaElementos[4] = _BOntc375Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[4] = _BOntc375Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 471
-            _listaElementos[5] = _BOntc471Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[5] = _BOntc471Object.ObtenerPruebasXProceso(_proceso.id);
             // ntc 837
-            _listaElementos[6] = _BOntc837Object.ObternerPruebasXProceso(_proceso.id);
+            _listaElementos[6] = _BOntc837Object.ObtenerPruebasXProceso(_proceso.id);
 
         }
 
@@ -111,6 +111,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             int resultado = 0;
             int estado = 0;
 
+            // Se recorren los elementos para validar el resultado de cada prueba.
             foreach (pro_elementoprueba elemento in _listaElementos)
             {
                 if (elemento.Resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA_LABEL))
@@ -124,28 +125,31 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 // Si el valor de resultado es igual al tamaño del arreglo, el resultado del proceso es exitoso.
                 _proceso.resultado = resultado == _listaElementos.Length ? VariablesGlobales.RESULTADO_PRUEBAS_EXITOSA : VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA;
 
-                if (_proceso.resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA))
+                if (_proceso.tipprocesop != VariablesGlobales.TIPO_PROCESO_PRELIMINARES)
                 {
-                    // Proceso con resultado "No aprobado"
+                    _proceso.estado = VariablesGlobales.ESTADO_TERMINADO; // Se termina el proceso de pruebas actual
+                    _BOProcesoObject.Modificar(_proceso);
 
-
-                    _proceso.cli_pedido.estado = VariablesGlobales.ESTADO_TERMINADO;
-                    _BOProcesoObject.Modificar(_proceso.cli_pedido);
-                    _BOProcesoObject.CrearProceso(_proceso.cli_pedido, VariablesGlobales.TIPO_PROCESO_PROTOCOLO); 
-
+                    // Proceso de protocolo
+                    if (_proceso.resultado.Equals(VariablesGlobales.RESULTADO_PRUEBAS_NO_EXITOSA))
+                    {
+                        // Proceso con resultado "No aprobado"
+                        _BOProcesoObject.CrearProceso(_proceso.cli_pedido, VariablesGlobales.TIPO_PROCESO_PROTOCOLO); // Se crea proceso de prueba para reparación
+                    }
+                    else
+                    {
+                        // Proceso con resultado "Aprobado"
+                        string error = string.Empty;
+                        _BOTransformadorObject.EnviarBodegaEntrega(_proceso.cli_pedido.tfr_transformador, out error); // Se envía a bodega de entrega
+                        tfr_ordentrabajo oTrabajo = _BOOrdenTrabajoObject.ConsultarXPedido((int)_proceso.pedido_id);
+                        _BOOrdenTrabajoObject.CerrarOrdenTrabajoXPedido((int)oTrabajo.pedido_id);// Se cierra la orden de trabajo actual
+                    }
                 }
-                else
-                {
-                    // Proceso con resultado "No aprobado"
-                    string error = string.Empty;
-                    _BOTransformadorObject.EnviarBodegaEntrega(_proceso.cli_pedido.tfr_transformador, out error);
-                    tfr_ordentrabajo oTrabajo = _BOOrdenTrabajoObject.ConsultarXPedido((int)_proceso.pedido_id);
-                    _BOOrdenTrabajoObject.CerrarOrdenTrabajoXPedido((int)oTrabajo.pedido_id);
-                }
-
+                // todas exitosas
                 return true;
             }
             else
+                // por lo menos una no exitosa
                 return false;
         }
 

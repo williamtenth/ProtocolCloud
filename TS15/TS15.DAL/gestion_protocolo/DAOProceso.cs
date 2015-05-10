@@ -127,7 +127,7 @@ namespace TS15.DAL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public pro_elementoprueba ObternerPruebasXProceso(int pedido)
+        public pro_elementoprueba ObtenerPruebasXProceso(int pedido)
         {
             throw new NotImplementedException();
         }

@@ -56,14 +56,17 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public pro_proceso ObternerProcesoXPedido(int pedido)
+        public pro_proceso ObtenerProcesoXPedido(int pedido)
         {
             return ((DAOProceso)GenericoDAO).ObternerProcesoXPedido(pedido);
         }
 
-        public pro_proceso ObternerProcesoActivoXPedido(int pedido)
+        public pro_proceso ObtenerProcesoActivoXPedido(int pedido)
         {
-            return ((DAOProceso)GenericoDAO).ObternerProcesoActivoXPedido(pedido);
+            pro_proceso proceso = ((DAOProceso)GenericoDAO).ObternerProcesoActivoXPedido(pedido);
+            
+            // Si no existe un proceso ACTIVO se retorna el último proceso.
+            return proceso != null ? proceso : ObtenerProcesoXPedido(pedido); 
         }
 
         public bool Terminar(EntityObject entidad)
@@ -76,7 +79,7 @@ namespace TS15.BL.gestion_protocolo
             throw new NotImplementedException();
         }
 
-        public pro_elementoprueba ObternerPruebasXProceso(int pedido)
+        public pro_elementoprueba ObtenerPruebasXProceso(int pedido)
         {
             throw new NotImplementedException();
         }

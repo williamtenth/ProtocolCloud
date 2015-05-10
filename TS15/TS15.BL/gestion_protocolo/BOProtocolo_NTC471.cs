@@ -127,9 +127,9 @@ namespace TS15.BL.gestion_protocolo
             return false;
         }
 
-        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        public pro_elementoprueba ObtenerPruebasXProceso(int proceso)
         {
-            return ((DAOProtocolo_NTC471)GenericoDAO).ObternerPruebasXProceso(proceso);
+            return ((DAOProtocolo_NTC471)GenericoDAO).ObtenerPruebasXProceso(proceso);
         }
     }//end BOProtocolo_NTC1465
 

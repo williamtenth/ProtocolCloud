@@ -110,7 +110,7 @@ namespace TS15.DAL.gestion_protocolo
 
 
 
-        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        public pro_elementoprueba ObtenerPruebasXProceso(int proceso)
         {
             pro_ntc1465 prueba = SingletonDatos.Contexto.pro_ntc1465.Where(p => p.proceso_id == proceso).First();
             if (prueba != null)

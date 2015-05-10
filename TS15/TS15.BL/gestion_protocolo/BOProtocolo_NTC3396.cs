@@ -66,9 +66,9 @@ namespace TS15.BL.gestion_protocolo
         }
 
 
-        public pro_elementoprueba ObternerPruebasXProceso(int proceso)
+        public pro_elementoprueba ObtenerPruebasXProceso(int proceso)
         {
-            return ((DAOProtocolo_NTC3396)GenericoDAO).ObternerPruebasXProceso(proceso);
+            return ((DAOProtocolo_NTC3396)GenericoDAO).ObtenerPruebasXProceso(proceso);
         }
     }
 }
