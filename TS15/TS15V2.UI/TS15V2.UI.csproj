@@ -178,8 +178,6 @@
     <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="APP\font\glyphicons-regular.svg" />
     <Content Include="APP\font\glyphiconshalflings-regular.svg" />
-    <Content Include="APP\Gestion Transformador\Asignar Transformador.aspx" />
-    <Content Include="APP\Gestion Transformador\Busqueda Transformador.aspx" />
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
@@ -543,20 +541,6 @@
     <Compile Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx.designer.cs">
       <DependentUpon>BusquedaTransformador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\Gestion Transformador\Asignar Transformador.aspx.cs">
-      <DependentUpon>Asignar Transformador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Transformador\Asignar Transformador.aspx.designer.cs">
-      <DependentUpon>Asignar Transformador.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.cs">
-      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.designer.cs">
-      <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
-    </Compile>
     <Compile Include="APP\abstractUI\IControlable.cs" />
     <Compile Include="APP\master pages\principal.Master.cs">
       <DependentUpon>principal.Master</DependentUpon>
@@ -624,7 +608,6 @@
     <None Include="APP\font\glyphiconshalflings-regular.eot" />
     <None Include="APP\font\glyphiconshalflings-regular.ttf" />
     <None Include="APP\font\glyphiconshalflings-regular.woff" />
-    <Content Include="APP\Gestion Transformador\Web.config" />
     <None Include="APP\img\gallery\Thumbs.db" />
     <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
   </ItemGroup>
