@@ -172,6 +172,7 @@
     <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\GestionBodega.aspx" />
     <Content Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx" />
+    <Content Include="APP\dev\GestionUsuarios\ModificarContrasenna.aspx" />
     <Content Include="APP\font-awesome\css\font-awesome.css" />
     <Content Include="APP\font-awesome\css\font-awesome.min.css" />
     <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -489,6 +490,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx.designer.cs">
       <DependentUpon>GestionarCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionUsuarios\ModificarContrasenna.aspx.cs">
+      <DependentUpon>ModificarContrasenna.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionUsuarios\ModificarContrasenna.aspx.designer.cs">
+      <DependentUpon>ModificarContrasenna.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\util\ValidadorRol.cs" />
     <Compile Include="APP\util\ValidadorCliente.cs" />
