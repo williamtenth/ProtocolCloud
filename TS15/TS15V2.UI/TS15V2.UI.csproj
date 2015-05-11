@@ -178,14 +178,8 @@
     <Content Include="APP\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="APP\font\glyphicons-regular.svg" />
     <Content Include="APP\font\glyphiconshalflings-regular.svg" />
-    <Content Include="APP\Gestion Cliente\Crear Pedido.aspx" />
-    <Content Include="APP\Gestion Cliente\Detalle Cliente.aspx" />
     <Content Include="APP\Gestion Transformador\Asignar Transformador.aspx" />
     <Content Include="APP\Gestion Transformador\Busqueda Transformador.aspx" />
-    <Content Include="APP\Gestion Transformador\Detalle Transformador.aspx" />
-    <Content Include="APP\Gestion Usuarios\Busqueda Usuario.aspx" />
-    <Content Include="APP\Gestion Usuarios\Crear Usuario.aspx" />
-    <Content Include="APP\Gestion Usuarios\Detalle Usuario.aspx" />
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
@@ -312,7 +306,6 @@
     <Content Include="APP\js\modernizr.js" />
     <Content Include="APP\js\retina.js" />
     <Content Include="APP\Rerefencias\AjaxControlToolkit.dll" />
-    <Content Include="APP\Gestion Cliente\Crear Solicitud.aspx" />
     <Content Include="APP\Home.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -550,20 +543,6 @@
     <Compile Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx.designer.cs">
       <DependentUpon>BusquedaTransformador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\Gestion Cliente\Crear Pedido.aspx.cs">
-      <DependentUpon>Crear Pedido.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Cliente\Crear Pedido.aspx.designer.cs">
-      <DependentUpon>Crear Pedido.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\Gestion Cliente\Detalle Cliente.aspx.cs">
-      <DependentUpon>Detalle Cliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Cliente\Detalle Cliente.aspx.designer.cs">
-      <DependentUpon>Detalle Cliente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="APP\Gestion Transformador\Asignar Transformador.aspx.cs">
       <DependentUpon>Asignar Transformador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -578,45 +557,10 @@
     <Compile Include="APP\Gestion Transformador\Busqueda Transformador.aspx.designer.cs">
       <DependentUpon>Busqueda Transformador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="APP\Gestion Transformador\Detalle Transformador.aspx.cs">
-      <DependentUpon>Detalle Transformador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Transformador\Detalle Transformador.aspx.designer.cs">
-      <DependentUpon>Detalle Transformador.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.cs">
-      <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Busqueda Usuario.aspx.designer.cs">
-      <DependentUpon>Busqueda Usuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.cs">
-      <DependentUpon>Crear Usuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Crear Usuario.aspx.designer.cs">
-      <DependentUpon>Crear Usuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.cs">
-      <DependentUpon>Detalle Usuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Usuarios\Detalle Usuario.aspx.designer.cs">
-      <DependentUpon>Detalle Usuario.aspx</DependentUpon>
-    </Compile>
     <Compile Include="APP\abstractUI\IControlable.cs" />
     <Compile Include="APP\master pages\principal.Master.cs">
       <DependentUpon>principal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Cliente\Crear Solicitud.aspx.cs">
-      <DependentUpon>Crear Solicitud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="APP\Gestion Cliente\Crear Solicitud.aspx.designer.cs">
-      <DependentUpon>Crear Solicitud.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -683,7 +627,6 @@
     <Content Include="APP\Gestion Transformador\Web.config" />
     <None Include="APP\img\gallery\Thumbs.db" />
     <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
-    <Content Include="APP\Gestion Cliente\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TS15.BL\TS15.BL.csproj">

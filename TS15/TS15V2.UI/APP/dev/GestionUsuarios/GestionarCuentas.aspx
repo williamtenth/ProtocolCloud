@@ -22,9 +22,6 @@
     <!--[if IE 9]>
 		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
 	<![endif]-->
-    <!-- start: Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico">
-    <!-- end: Favicon -->
     <style>
         /************** Modal PopUp *****************************************************************************************************/.cerrar
         {

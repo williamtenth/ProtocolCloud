@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
     AutoEventWireup="true" CodeBehind="ModificarContrasenna.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionUsuarios.ModificarContrasenna" %>
 
+<%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -109,64 +112,56 @@
             <div class="box-content">
                 <div class="form-horizontal">
                     <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="txtNombreUsuario">
-                                Nombre Usuario:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="form-control" MaxLength="16"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfv_txtNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="txtMail">
-                                E-Mail:</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtMail" CssClass="form-control" MaxLength="20"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtMail" ControlToValidate="txtMail"
-                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="txtPass">
-                                Contraseña:</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtPass" MaxLength="16" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtPass" ControlToValidate="txtPass"
-                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="txtConfirmPass">
-                                Confirmar Contraseña:</label>
-                            <div class="controls">
-                                <asp:TextBox ID="txtConfirmPass" runat="server" TextMode="Password" CssClass="form-control"
-                                    MaxLength="16"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfv_txtConfirmPass" runat="server" ControlToValidate="txtConfirmPass"
-                                    ErrorMessage="*" ForeColor="Red" Font-Bold="true" ValidationGroup="VGRegistrarUsuario"></asp:RequiredFieldValidator>
-                                <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="txtPass"
-                                    ControlToValidate="txtConfirmPass" ErrorMessage="*" ForeColor="Red" Font-Bold="true"
-                                    ValidationGroup="VGRegistrarUsuario"></asp:CompareValidator>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="ddlCliente">
-                                Cliente:</label>
-                            <div class="controls">
-                                <asp:DropDownList runat="server" ID="ddlCliente" CssClass="form-control" OnDataBound="ddlCliente_DataBound">
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <asp:Button runat="server" ID="btnRegistrarUsuario" CssClass="btn btn-primary" Text="Registrar Usuario"
-                                OnClick="btnRegistrarUsuario_Click" CausesValidation="true" ValidationGroup="VGRegistrarUsuario" />
-                        </div>
+                        <asp:ChangePassword ID="ChangeUserPassword" runat="server" CancelDestinationPageUrl="~/APP/Home.aspx"
+                            EnableViewState="false" RenderOuterTable="false" SuccessText="La contraseña ha sido modificada correctamente.">
+                            <ChangePasswordTemplate>
+                                <span class="failureNotification">
+                                    <asp:Literal ID="FailureText" runat="server"></asp:Literal>
+                                </span>
+                                <div class="accountInfo">
+                                    <fieldset class="changePassword">
+                                        <p>
+                                            <asp:Label ID="CurrentPasswordLabel" runat="server" AssociatedControlID="CurrentPassword">Anitgüa Contraseña:</asp:Label>
+                                            <asp:TextBox ID="CurrentPassword" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="CurrentPasswordRequired" runat="server" ControlToValidate="CurrentPassword"
+                                                CssClass="failureNotification" ErrorMessage="*" ToolTip="Old Password is required."
+                                                ValidationGroup="ChangeUserPasswordValidationGroup" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+                                        </p>
+                                        <p>
+                                            <asp:Label ID="NewPasswordLabel" runat="server" AssociatedControlID="NewPassword">Nueva Contraseña:</asp:Label>
+                                            <asp:TextBox ID="NewPassword" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="NewPasswordRequired" runat="server" ControlToValidate="NewPassword"
+                                                CssClass="failureNotification" ErrorMessage="*" ToolTip="New Password is required."
+                                                ValidationGroup="ChangeUserPasswordValidationGroup" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+                                        </p>
+                                        <p>
+                                            <asp:Label ID="ConfirmNewPasswordLabel" runat="server" AssociatedControlID="ConfirmNewPassword">Confirmar Nueva Contraseña:</asp:Label>
+                                            <asp:TextBox ID="ConfirmNewPassword" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="ConfirmNewPasswordRequired" runat="server" ControlToValidate="ConfirmNewPassword"
+                                                CssClass="failureNotification" Display="Dynamic" ErrorMessage="*" ToolTip="Confirm New Password is required."
+                                                ValidationGroup="ChangeUserPasswordValidationGroup" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+                                            <asp:CompareValidator ID="NewPasswordCompare" runat="server" ControlToCompare="NewPassword"
+                                                ControlToValidate="ConfirmNewPassword" CssClass="failureNotification" Display="Dynamic"
+                                                ErrorMessage="*" ValidationGroup="ChangeUserPasswordValidationGroup" ForeColor="Red"
+                                                Font-Bold="true"></asp:CompareValidator>
+                                        </p>
+                                    </fieldset>
+                                    <p class="submitButton">
+                                        <asp:Button ID="ChangePasswordPushButton" runat="server" CommandName="ChangePassword"
+                                            Text="Cambiar Contraseña" ValidationGroup="ChangeUserPasswordValidationGroup"
+                                            CssClass="btn btn-primary" />
+                                        <asp:Button ID="CancelPushButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                            CssClass="btn btn-primary" Text="Cancelar" />
+                                    </p>
+                                </div>
+                            </ChangePasswordTemplate>
+                        </asp:ChangePassword>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
-    <uc3:modalmsj id="ModalMsj1" runat="server" />
+    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

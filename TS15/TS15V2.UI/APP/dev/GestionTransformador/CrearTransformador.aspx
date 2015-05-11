@@ -29,13 +29,13 @@
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="index.html">Home</a> <i class="icon-angle-right">
         </i></li>
-        <li><i class="icon-edit"></i><a href="#">Crear Pedido</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Gestión Transformador</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
             <div data-original-title="" class="box-header">
                 <h2>
-                    <i class="halflings-icon edit"></i><span class="break"></span>Form Elements</h2>
+                    <i class="halflings-icon edit"></i><span class="break"></span>Crear Transformador</h2>
                 <div class="box-icon">
                     <a class="btn-setting" href="#"><i class="halflings-icon wrench"></i></a><a class="btn-minimize"
                         href="#"><i class="halflings-icon chevron-up"></i></a><a class="btn-close" href="#">
