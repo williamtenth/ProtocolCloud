@@ -609,7 +609,6 @@
     <None Include="APP\font\glyphiconshalflings-regular.ttf" />
     <None Include="APP\font\glyphiconshalflings-regular.woff" />
     <None Include="APP\img\gallery\Thumbs.db" />
-    <None Include="APP\img\iphone-style-checkboxes\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TS15.BL\TS15.BL.csproj">

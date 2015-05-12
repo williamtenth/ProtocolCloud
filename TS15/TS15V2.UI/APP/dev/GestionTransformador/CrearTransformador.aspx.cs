@@ -173,10 +173,22 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            tfr_transformador transformadorEntity = new tfr_transformador();
+            tfr_transformador transformadorEntity;
+
+            if(string.IsNullOrEmpty(this.hfIdTransformador.Value))
+                transformadorEntity = new tfr_transformador();
+
+            else
+                transformadorEntity = _BOTransformador.ConsultarXId(Convert.ToInt32(this.hfIdTransformador.Value)) as tfr_transformador;
+
             ObtenerValores(transformadorEntity);
             _BOTransformador.Crear(transformadorEntity);
+            this.hfIdTransformador.Value = transformadorEntity.id.ToString();
             EnviarAModalMsj(ModalMsj1, "Transformador", "Se ha creado correctamente el transformador");
+
+            ActivasControlesTransformador(false);
+            this.btnGuardar.Visible = false;
+            this.btnModificar.Visible = true;
         }
 
         private void ObtenerValores(tfr_transformador transformadorEntity)
@@ -209,6 +221,35 @@ namespace TS15V2.UI.APP.dev.GestionTransformador
         protected void ddlRefrigeracion_DataBound(object sender, EventArgs e)
         {
             this.ddlRefrigeracion.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            ActivasControlesTransformador(true);
+            this.btnModificar.Visible = false;
+            this.btnGuardar.Visible = true;
+        }
+
+        private void ActivasControlesTransformador(bool estado)
+        {
+            this.ddlFabricante.Enabled = estado;
+            this.txtNumSerie.Enabled = estado;
+            this.txtAltura.Enabled = estado;
+            this.ddlSerieAT.Enabled = estado;
+            this.ddlSerieBT.Enabled = estado;
+            this.ddlCapacidad.Enabled = estado;
+            this.ddlFase.Enabled = estado;
+            this.txtFechaFabricacion.Enabled = estado;
+            this.txtTempDevanado.Enabled = estado;
+            this.ddlAislamiento.Enabled = estado;
+            this.txtFrecuencia.Enabled = estado;
+            this.ddlRefrigeracion.Enabled = estado;
+            this.txtVoltajeEntrada.Enabled = estado;
+            this.txtVoltajeSalida.Enabled = estado;
+            this.txtVoltajeEntDerivada.Enabled = estado;
+            this.txtVoltajeSalDerivada.Enabled = estado;
+            this.txtNumDerivaciones.Enabled = estado;
+            this.ddlGrupoConexion.Enabled = estado;
         }
     }
 }

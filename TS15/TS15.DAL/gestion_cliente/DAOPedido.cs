@@ -21,14 +21,14 @@ namespace TS15.DAL.gestion_cliente
 
         public List<cli_pedido> Consultar()
         {
-            return SingletonDatos.Contexto.cli_pedido.ToList();
+            return SingletonDatos.Contexto.cli_pedido.OrderByDescending(p => p.fechasolicitud).ToList();
         }
 
         public int ObtenerConsecutivo()
         {
             var a = (from p in SingletonDatos.Contexto.cli_pedido
                      select p.consecutivo).Max();
-            
+
             Int32 consecutivo = Convert.ToInt32(a);
 
             return consecutivo != null ? consecutivo + 1 : 0;
@@ -48,7 +48,8 @@ namespace TS15.DAL.gestion_cliente
 
         public List<cli_pedido> ConsultarSolitcitudes(int pIdTransformador, int tipoSolicitud)
         {
-            return SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == pIdTransformador && p.tipsolicitud == tipoSolicitud).ToList();
+            return SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == pIdTransformador && p.tipsolicitud == tipoSolicitud)
+                .OrderByDescending(p => p.fechasolicitud).ToList();
         }
 
         public cli_pedido ConsultarXIdTransformador(int idTransformador)

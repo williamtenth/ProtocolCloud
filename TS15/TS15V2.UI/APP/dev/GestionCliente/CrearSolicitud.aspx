@@ -102,68 +102,78 @@
         <li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
-        <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
     <div class="row-fluid sortable ui-sortable">
-        <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" Visible="false" />
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" Visible="false" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
             <%--TIPO SOLICITUD--%>
             <div class="box-content">
-                <div class="form-horizontal">
-                    <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="ddlFabricante">
-                                Tipo de Solicitud:</label>
-                            <div class="controls">
-                                <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
-                                    OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoSolicitud" ControlToValidate="ddlTipoSolicitud"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-                        <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
-                            <label class="control-label" for="ddlCapacidad">
-                                Capacidad:</label>
-                            <div class="controls">
-                                <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
-                            </div>
-                        </asp:Panel>
-                        <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
-                            <label class="control-label" for="txtVolEntrada">
-                                Voltaje de Entrada:</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
-                            </div>
-                        </asp:Panel>
-                        <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
-                            <label class="control-label" for="txtVolSalida" runat="server">
-                                Voltaje de Salida:</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
-                                    ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
-                            </div>
-                        </asp:Panel>
-                        <div class="form-actions">
-                            <asp:UpdatePanel runat="server">
-                                <ContentTemplate>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <div class="form-horizontal">
+                            <fieldset>
+                                <div class="control-group">
+                                    <label class="control-label" for="ddlFabricante">
+                                        Tipo de Solicitud:</label>
+                                    <div class="controls">
+                                        <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
+                                            OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoSolicitud" ControlToValidate="ddlTipoSolicitud"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
+                                    <label class="control-label" for="ddlCapacidad">
+                                        Capacidad:</label>
+                                    <div class="controls">
+                                        <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
+                                    </div>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
+                                    <label class="control-label" for="txtVolEntrada">
+                                        Voltaje de Entrada:</label>
+                                    <div class="controls">
+                                        <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
+                                    </div>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
+                                    <label class="control-label" for="txtVolSalida" runat="server">
+                                        Voltaje de Salida:</label>
+                                    <div class="controls">
+                                        <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
+                                    </div>
+                                </asp:Panel>
+                                <div class="form-actions">
                                     <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
                                         OnClick="btnCrearSolicitud_Click" ValidationGroup="vgCrearSolicitud" />
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
                                         OnClick="btnCancelar_Click" />
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                                    <asp:Button ID="btnModificar" runat="server" CssClass="btn btn-primary" Text="Modificar"
+                                        OnClick="btnModificar_Click" Visible="false" />
+                                </div>
+                            </fieldset>
                         </div>
-                    </fieldset>
-                </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
     </div>

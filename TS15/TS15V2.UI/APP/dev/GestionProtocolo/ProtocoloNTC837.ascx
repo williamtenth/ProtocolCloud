@@ -2,106 +2,105 @@
     Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC837C" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<ul class="breadcrumb">
-    <li><i class="icon-edit"></i><a href="#">Prueba NTC 837</a> </li>
-</ul>
-<div class="row-fluid sortable ui-sortable">
-    <div class="box span12">
-        <div class="box-header" data-original-title>
-            <h2>
-                <i class="halflings-icon edit"></i><span class="break"></span>Medición de cortocircuito</h2>
-            <%--<div class="box-icon">
+<div class="box span12">
+    <div class="box-header" data-original-title>
+        <h2>
+            <i class="halflings-icon edit"></i><span class="break"></span>Prueba NTC 837 - Medición
+            de Cortocircuito</h2>
+        <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
                             <i class="halflings-icon remove"></i></a>
                 </div>--%>
-        </div>
-        <div class="box-content">
-            <!--Encabezado-->
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+    </div>
+    <div class="box-content">
+        <div class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="txtBt_at_t">
                         BT contra AT y tierra (kV)*
                     </label>
-                    <asp:TextBox runat="server" ID="txtBt_at_t" CssClass="form-control" Enabled="false"
-                        MaxLength="18"></asp:TextBox>
-                    <asp:MaskedEditExtender ID="txtBt_at_t_MaskedEditExtender0" runat="server" TargetControlID="txtBt_at_t"
-                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                        InputDirection="RightToLeft" ClipboardEnabled="true" />
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtBt_at_t" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="txtBt_at_t_MaskedEditExtender0" runat="server" TargetControlID="txtBt_at_t"
+                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                            InputDirection="RightToLeft" ClipboardEnabled="true" />
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtAt_bt_t">
                         AT contra BT y tierra (kV)*
                     </label>
-                    <asp:TextBox runat="server" ID="txtAt_bt_t" CssClass="form-control" Enabled="false"
-                        MaxLength="18"></asp:TextBox>
-                    <asp:MaskedEditExtender ID="txtAt_bt_t_MaskedEditExtender1" runat="server" TargetControlID="txtAt_bt_t"
-                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                        InputDirection="RightToLeft" ClipboardEnabled="true" />
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtAt_bt_t" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:MaskedEditExtender ID="txtAt_bt_t_MaskedEditExtender1" runat="server" TargetControlID="txtAt_bt_t"
+                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                            InputDirection="RightToLeft" ClipboardEnabled="true" />
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtTension">
                         Tensión (V)*
                     </label>
-                    <asp:TextBox runat="server" ID="txtTension" CssClass="form-control" Enabled="false"
-                        MaxLength="18"></asp:TextBox>
-                    <asp:FilteredTextBoxExtender ID="txtTension_FilteredTextBoxExtender" runat="server"
-                        TargetControlID="txtTension" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtTension" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTension_FilteredTextBoxExtender" runat="server"
+                            TargetControlID="txtTension" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtFrecuencia">
                         Frecuencia (Hz)*
                     </label>
-                    <asp:TextBox runat="server" ID="txtFrecuencia" CssClass="form-control" Enabled="false"
-                        MaxLength="18"></asp:TextBox>
-                    <asp:FilteredTextBoxExtender ID="txtFrecuencia_FilteredTextBoxExtender1" runat="server"
-                        TargetControlID="txtFrecuencia" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtFrecuencia" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtFrecuencia_FilteredTextBoxExtender1" runat="server"
+                            TargetControlID="txtFrecuencia" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtTiempo">
                         Tiempo (s)*
                     </label>
-                    <asp:TextBox runat="server" ID="txtTiempo" CssClass="form-control" Enabled="false"
-                        MaxLength="18"></asp:TextBox>
-                    <asp:FilteredTextBoxExtender ID="txtTiempo_FilteredTextBoxExtender2" runat="server"
-                        TargetControlID="txtTiempo" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtTiempo" CssClass="form-control" Enabled="false"
+                            MaxLength="18"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtTiempo_FilteredTextBoxExtender2" runat="server"
+                            TargetControlID="txtTiempo" FilterType="Custom, Numbers" ValidChars="0123456789" />
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="lbResultado">
                         Resultado*
                     </label>
-                    <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <!--Detalle de Perdidas-->
-            <!--Botonera-->
-            <div class="row-fluid">
-                <asp:Panel ID="pnlBotonera" runat="server">
-                    <asp:Panel ID="pnlInicial" runat="server">
-                        <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
-                            OnClick="Modificar" />
-                        <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
-                            OnClick="Terminar" />
+                    <div class="controls">
+                        <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <!--Detalle de Perdidas-->
+                <!--Botonera-->
+                <div class="control-group">
+                    <asp:Panel ID="pnlBotonera" runat="server">
+                        <asp:Panel ID="pnlInicial" runat="server">
+                            <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
+                                OnClick="Modificar" />
+                            <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
+                                OnClick="Terminar" />
+                        </asp:Panel>
+                        <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
+                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
+                                OnClick="Guardar" />
+                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
+                                OnClick="Cancelar" />
+                        </asp:Panel>
                     </asp:Panel>
-                    <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
-                            OnClick="Guardar" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
-                            OnClick="Cancelar" />
-                    </asp:Panel>
-                </asp:Panel>
-            </div>
+                </div>
+            </fieldset>
         </div>
     </div>
 </div>

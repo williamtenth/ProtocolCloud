@@ -22,7 +22,8 @@ namespace TS15.DAL.gestion_transformador
 
         public List<EntityObject> Consultar()
         {
-            List<EntityObject> lstTransformadores = SingletonDatos.Contexto.tfr_transformador.ToList().Cast<EntityObject>().ToList();
+            List<EntityObject> lstTransformadores = SingletonDatos.Contexto.tfr_transformador.OrderByDescending(p => p.id)
+                .ToList().Cast<EntityObject>().ToList();
             return lstTransformadores;
         }
 

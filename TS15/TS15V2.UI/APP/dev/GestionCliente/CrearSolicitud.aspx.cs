@@ -141,6 +141,22 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                 CrearPedidoSuministro();
         }
 
+        private void LimpiarCampos()
+        {
+            this.ucBusquedaCliente.LimpiarCampos();
+            this.ucBusquedaTransformador.LimpiarCampos();
+
+            this.ucBusquedaTransformador.Visible = false;
+            this.pnlCapacidad.Visible = false;
+            this.pnlVolEntrada.Visible = false;
+            this.pnlVolSalida.Visible = false;
+
+            this.ddlTipoSolicitud.SelectedValue = "-1";
+            this.ddlCapacidad.SelectedValue = "-1";
+            this.txtVolEntrada.Text = string.Empty;
+            this.txtVolSalida.Text = string.Empty;
+        }
+
         private void CrearProcesoPruebasPreeliminares()
         {
             if (!string.IsNullOrEmpty(ucBusquedaCliente.IdCliente) && !string.IsNullOrEmpty(ucBusquedaTransformador.IdTransformador))
@@ -161,7 +177,8 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
                         _pedidoBO.CrearProcesoPruebasPreeliminares(pedidoObject);
 
-                        EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado la solicitud correctamente");
+                        EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado la solicitud correctamente <b>No. Solicitud: " + pedidoObject.id + "</b>");
+                        LimpiarCampos();
                     }
                     else
                         EnviarAModalMsj(ModalMsj1, "Error", "No se puede seleccionar transformador, tiene solicitud activa");
@@ -190,6 +207,18 @@ namespace TS15V2.UI.APP.dev.GestionCliente
             _pedidoBO.CrearPedidoSuministro(pedidoObject);
 
             EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado el pedido correctamente");
+            LimpiarCampos();
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            bool estado = true;
+            EnableControles(estado);
+        }
+
+        private void EnableControles(bool estado)
+        {
+
         }
 
         //protected void btnBuscar_Click(object sender, EventArgs e)

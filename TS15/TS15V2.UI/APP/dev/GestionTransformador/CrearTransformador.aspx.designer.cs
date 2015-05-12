@@ -40,6 +40,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         protected global::System.Web.UI.WebControls.TextBox txtNumSerie;
         
         /// <summary>
+        /// hfIdTransformador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdTransformador;
+        
+        /// <summary>
         /// rfv_txtNumSerie control.
         /// </summary>
         /// <remarks>
@@ -344,6 +353,15 @@ namespace TS15V2.UI.APP.dev.GestionTransformador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
+        
+        /// <summary>
+        /// btnModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModificar;
         
         /// <summary>
         /// ModalMsj1 control.

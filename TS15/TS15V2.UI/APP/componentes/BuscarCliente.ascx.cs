@@ -176,5 +176,13 @@ namespace TS15.UI.APP.componentes
             gvClientes.PageIndex = e.NewPageIndex;
             ConsultarClientes();
         }
+
+        internal void LimpiarCampos()
+        {
+            this.ddlTipDocumento.SelectedValue = "-1";
+            this.txtNumDoc.Text = string.Empty;
+            this.txtCliente.Text = string.Empty;
+            this.hfIdCliente.Value = string.Empty;
+        }
     }
 }

@@ -156,5 +156,12 @@ namespace TS15V2.UI.APP.componentes
             gvTransformadores.PageIndex = e.NewPageIndex;
             ConsultarTransformadores();
         }
+
+        internal void LimpiarCampos()
+        {
+            this.ddlFabricante.SelectedValue = "-1";
+            this.txtNumSerie.Text = string.Empty;
+            this.hfIdTransformador.Value = string.Empty;
+        }
     }
 }

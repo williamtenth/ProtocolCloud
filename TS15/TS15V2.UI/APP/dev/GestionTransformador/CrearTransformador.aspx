@@ -60,6 +60,7 @@
                                 Número de Serie:</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                <asp:HiddenField runat="server" ID="hfIdTransformador" />
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumSerie" ControlToValidate="txtNumSerie"
                                     ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
                             </div>
@@ -223,6 +224,8 @@
                         <div class="form-actions">
                             <asp:Button runat="server" ID="btnGuardar" CssClass="btn btn-primary" Text="Guardar"
                                 OnClick="btnGuardar_Click" CausesValidation="true" ValidationGroup="vgCrearTransformador" />
+                            <asp:Button runat="server" ID="btnModificar" CssClass="btn btn-primary" Text="Modificar"
+                                OnClick="btnModificar_Click" />
                         </div>
                     </fieldset>
                 </div>
