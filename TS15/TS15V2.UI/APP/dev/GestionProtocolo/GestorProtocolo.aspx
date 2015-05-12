@@ -150,14 +150,19 @@
                         <div class="form-actions">
                             <asp:Button ID="btnBuscar" runat="server" CssClass="btn btn-primary" OnClick="Buscar"
                                 Text="Buscar" />
-                            <asp:Button ID="btnCrear" runat="server" CssClass="btn btn-primary" OnClick="Crear"
-                                Text="Crear" ValidationGroup="vgCrearSolicitud" />
-                            <%--<asp:Button ID="btnConsultar" runat="server" CssClass="btn btn-primary" OnClick="Consultar"
+                            <asp:Panel ID="pnlBotonera" runat="server" Visible="false">
+                                <asp:Panel ID="pnlCrear" runat="server" Visible="false">
+                                    <asp:Button ID="btnCrear" runat="server" CssClass="btn btn-primary" OnClick="Crear"
+                                        Text="Crear" ValidationGroup="vgCrearSolicitud" />
+                                </asp:Panel>
+                                <asp:Panel ID="pnlEditar" runat="server" Visible="false">
+                                    <%--<asp:Button ID="btnConsultar" runat="server" CssClass="btn btn-primary" OnClick="Consultar"
                                         Text="Consultar" />--%>
-                            <asp:Button ID="btnTerminar" runat="server" CssClass="btn btn-primary" OnClick="Terminar"
-                                Text="Terminar" />
-                            <%--<asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-primary" OnClick="Eliminar"
+                                    <asp:Button ID="btnTerminar" runat="server" CssClass="btn btn-primary" OnClick="Terminar"
+                                        Text="Terminar" />
+                                    <%--<asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-primary" OnClick="Eliminar"
                                         Text="Eliminar" />--%>
+                                </asp:Panel>
                             </asp:Panel>
                         </div>
                     </fieldset>
@@ -182,26 +187,13 @@
         </Columns>
         <SelectedRowStyle Font-Underline="true" Font-Bold="True" ForeColor="#3071A9" />
     </asp:GridView>
-    <br />
     <div class="row-fluid sortable ui-sortable">
         <uc1:ProtocoloNTC1005 ID="ucProtocoloNTC1005" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc2:ProtocoloNTC1031 ID="ucProtocoloNTC1031" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc3:ProtocoloNTC1465 ID="ucProtocoloNTC1465" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc4:ProtocoloNTC3396 ID="ucProtocoloNTC3396" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc5:ProtocoloNTC375 ID="ucProtocoloNTC375" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc6:ProtocoloNTC837 ID="ucProtocoloNTC837" runat="server" Visible="false" />
-    </div>
-    <div class="row-fluid sortable ui-sortable">
         <uc7:ProtocoloNTC471 ID="ucProtocoloNTC471" runat="server" Visible="false" />
     </div>
     <uc0:ModalMsj ID="MsjConfirmacion" runat="server" />

@@ -103,6 +103,24 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
+        /// pnlBotonera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBotonera;
+        
+        /// <summary>
+        /// pnlCrear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCrear;
+        
+        /// <summary>
         /// btnCrear control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCrear;
+        
+        /// <summary>
+        /// pnlEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEditar;
         
         /// <summary>
         /// btnTerminar control.

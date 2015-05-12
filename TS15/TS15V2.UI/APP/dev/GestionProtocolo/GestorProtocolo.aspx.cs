@@ -152,10 +152,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             // se muestra la botonera
             if (activar)
             {
-                //pnlBotonera.Visible = true;
-                btnTerminar.Visible = true;
-                btnCrear.Visible = true;
-
+                pnlBotonera.Visible = true;
                 // Pedido no tiene proceso asignado
                 if (_gestorProceso.Proceso != null && _gestorProceso.Proceso.id != null)
                 {
@@ -163,37 +160,22 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                     if (_gestorProceso.Proceso.estado == VariablesGlobales.ESTADO_ACTIVO)
                     {
                         // Si el proceso tiene estado ACTIVO
-                        btnTerminar.Visible = true;
-                        btnCrear.Visible = false;
-
-                        //pnlEditar.Visible = true;
-                        //pnlCrear.Visible = false;
+                        pnlEditar.Visible = true;
+                        pnlCrear.Visible = false;
                     }
                     else
-                    {
-                        btnTerminar.Visible = false;
-                        btnCrear.Visible = false;
-                        //pnlBotonera.Visible = false;
-                    }
+                        pnlBotonera.Visible = false;
                 }
                 else
                 {
                     // No existe un proceso creado previo
-                    btnTerminar.Visible = false;
-                    btnCrear.Visible = true;
-
-                    //pnlEditar.Visible = false;
-                    //pnlCrear.Visible = true;
+                    pnlEditar.Visible = false;
+                    pnlCrear.Visible = true;
                 }
             }
             else
-            {
                 // Se oculta la botonera
-                btnTerminar.Visible = true;
-                btnCrear.Visible = true;
-
-                //pnlBotonera.Visible = false;
-            }
+                pnlBotonera.Visible = false;
         }
 
         /// 

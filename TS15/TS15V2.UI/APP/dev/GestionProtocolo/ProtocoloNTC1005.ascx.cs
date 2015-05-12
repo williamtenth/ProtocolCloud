@@ -251,8 +251,6 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             {
                 EnviarAModalMsj(MsjConfirmacion, "Error", "No se puede guardar campos vacíos");
             }
-
-            // Delegate the event to the caller
         }
 
         /// 

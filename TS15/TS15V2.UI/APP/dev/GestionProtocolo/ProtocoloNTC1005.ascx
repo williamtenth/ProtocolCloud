@@ -2,228 +2,230 @@
     Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<div class="box span12">
-    <div class="box-header" data-original-title>
-        <h2>
-            <i class="halflings-icon edit"></i><span class="break"></span>Prueba NTC 1005 -
-            Medición de Cortocircuito</h2>
-        <%--<div class="box-icon">
+<ul class="breadcrumb">
+    <li><i class="icon-edit"></i><a href="#">Prueba NTC 1005</a> </li>
+</ul>
+<div class="row-fluid sortable ui-sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2>
+                <i class="halflings-icon edit"></i><span class="break"></span>Medición de cortocircuito</h2>
+            <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
                             <i class="halflings-icon remove"></i></a>
                 </div>--%>
-    </div>
-    <div class="box-content">
-        <div class="form-horizontal">
-            <fieldset>
-                <div class="control-group">
-                    <label class="control-label" for="txtIcc">
+        </div>
+        <div class="box-content">
+            <!--Encabezado-->
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Icc*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtIcc" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtIcc_MaskedEditExtender0" runat="server" TargetControlID="txtIcc"
-                            Mask="99999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtIcc" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtIcc_MaskedEditExtender0" runat="server" TargetControlID="txtIcc"
+                        Mask="99999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtUcc">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Ucc*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtUcc" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtUcc_MaskedEditExtender1" runat="server" TargetControlID="txtUcc"
-                            Mask="99999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtUcc" CssClass="form-control" Enabled="false" MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtUcc_MaskedEditExtender1" runat="server" TargetControlID="txtUcc"
+                        Mask="99999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="lbResultado">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
+                        Resultado*
                     </label>
-                    <div class="controls">
-                        <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <!--Detalle de Perdidas-->
-                <div class="control-group">
-                    <label class="control-label" for="txtPerdidas24">
+                    <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                    </asp:DropDownList>
+                    &nbsp;</div>
+            </div>
+            <!--Detalle de Perdidas-->
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Perdidas a 24 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtPerdidas24" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtPerdidas24_MaskedEditExtender2" runat="server" TargetControlID="txtPerdidas24"
-                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                            InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtPerdidas24" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtPerdidas24_MaskedEditExtender2" runat="server" TargetControlID="txtPerdidas24"
+                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                        InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtPerdidas85">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Perdidas a 85 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtPerdidas85" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtPerdidas85_MaskedEditExtender1" runat="server" TargetControlID="txtPerdidas85"
-                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                            InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtPerdidas85" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtPerdidas85_MaskedEditExtender1" runat="server" TargetControlID="txtPerdidas85"
+                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                        InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtPerdidasGarantizadas">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Perdidas Garantizadas*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtPerdidasGarantizadas" CssClass="form-control"
-                            Enabled="false" MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtPerdidasGarantizadas_MaskedEditExtender1" runat="server"
-                            TargetControlID="txtPerdidasGarantizadas" Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus"
-                            MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtPerdidasGarantizadas" CssClass="form-control"
+                        Enabled="false" MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtPerdidasGarantizadas_MaskedEditExtender1" runat="server"
+                        TargetControlID="txtPerdidasGarantizadas" Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus"
+                        MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <!--Detalle de I2r-->
-                <div class="control-group">
-                    <label class="control-label" for="txtI2R24">
+            </div>
+            <!--Detalle de I2r-->
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         I2R a 24 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtI2R24" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtI2R24_MaskedEditExtender1" runat="server" TargetControlID="txtI2R24"
-                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                            InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtI2R24" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtI2R24_MaskedEditExtender1" runat="server" TargetControlID="txtI2R24"
+                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                        InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtI2R85">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         I2R a 24 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtI2R85" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtI2R85_MaskedEditExtender2" runat="server" TargetControlID="txtI2R85"
-                            Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
-                            InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtI2R85" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtI2R85_MaskedEditExtender2" runat="server" TargetControlID="txtI2R85"
+                        Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number"
+                        InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtI2RGarantizadas">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         I2R Garantizadas
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtI2RGarantizadas" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtI2RGarantizadas_MaskedEditExtender3" runat="server"
-                            TargetControlID="txtI2RGarantizadas" Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus"
-                            MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtI2RGarantizadas" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtI2RGarantizadas_MaskedEditExtender3" runat="server"
+                        TargetControlID="txtI2RGarantizadas" Mask="9999999999999999.99" OnFocusCssClass="MaskedEditFocus"
+                        MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <!--Impedancia-->
-                <div class="control-group">
-                    <label class="control-label" for="txtImpedancia24">
+            </div>
+            <!--Impedancia-->
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Impedancia a 24 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtImpedancia24" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtImpedancia24_MaskedEditExtender1" runat="server" TargetControlID="txtImpedancia24"
-                            Mask="99.999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtImpedancia24" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtImpedancia24_MaskedEditExtender1" runat="server" TargetControlID="txtImpedancia24"
+                        Mask="99.999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtImpedancia85">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Impedancia a 85 °C*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtImpedancia85" CssClass="form-control" Enabled="false"
-                            MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtImpedancia85_MaskedEditExtender1" runat="server" TargetControlID="txtImpedancia85"
-                            Mask="99.999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtImpedancia85" CssClass="form-control" Enabled="false"
+                        MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtImpedancia85_MaskedEditExtender1" runat="server" TargetControlID="txtImpedancia85"
+                        Mask="99.999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtImpedanciaGarantizadas">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Impedancia Garantizada*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtImpedanciaGarantizadas" CssClass="form-control"
-                            Enabled="false" MaxLength="18"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtImpedanciaGarantizadas_MaskedEditExtender2" runat="server"
-                            TargetControlID="txtImpedanciaGarantizadas" Mask="99.999" OnFocusCssClass="MaskedEditFocus"
-                            MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtImpedanciaGarantizadas" CssClass="form-control"
+                        Enabled="false" MaxLength="18"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtImpedanciaGarantizadas_MaskedEditExtender2" runat="server"
+                        TargetControlID="txtImpedanciaGarantizadas" Mask="99.999" OnFocusCssClass="MaskedEditFocus"
+                        MaskType="Number" InputDirection="RightToLeft" ClipboardEnabled="true" />
                 </div>
-                <!--Regulación y eficiencia-->
-                <div class="control-group">
-                    <label class="control-label" for="txtRegulacion">
+            </div>
+            <!--Regulación y eficiencia-->
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Regulación a plena carga*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtRegulacion" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtRegulacion_MaskedEditExtender3" runat="server" TargetControlID="txtRegulacion"
-                            Mask="999999.9999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtRegulacion" CssClass="form-control" Enabled="false"
+                        MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtRegulacion_MaskedEditExtender3" runat="server" TargetControlID="txtRegulacion"
+                        Mask="999999.9999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtRegFP">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         F.P*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtRegFP" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtRegFP_MaskedEditExtender4" runat="server" TargetControlID="txtRegFP"
-                            Mask="0.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtRegFP" CssClass="form-control" Enabled="false"
+                        MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtRegFP_MaskedEditExtender4" runat="server" TargetControlID="txtRegFP"
+                        Mask="0.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtEficiencia">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         Eficiencia a plena carga*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtEficiencia" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtEficiencia_MaskedEditExtender3" runat="server" TargetControlID="txtEficiencia"
-                            Mask="999999.9999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtEficiencia" CssClass="form-control" Enabled="false"
+                        MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtEficiencia_MaskedEditExtender3" runat="server" TargetControlID="txtEficiencia"
+                        Mask="999999.9999" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="txtEfiFP">
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <label>
                         F.P*
                     </label>
-                    <div class="controls">
-                        <asp:TextBox runat="server" ID="txtEfiFP" CssClass="form-control" Enabled="false"
-                            MaxLength="10"></asp:TextBox>
-                        <asp:MaskedEditExtender ID="txtEfiFP_MaskedEditExtender4" runat="server" TargetControlID="txtEfiFP"
-                            Mask="0.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
-                            ClipboardEnabled="true" />
-                    </div>
+                    <asp:TextBox runat="server" ID="txtEfiFP" CssClass="form-control" Enabled="false"
+                        MaxLength="10"></asp:TextBox>
+                    <asp:MaskedEditExtender ID="txtEfiFP_MaskedEditExtender4" runat="server" TargetControlID="txtEfiFP"
+                        Mask="0.99" OnFocusCssClass="MaskedEditFocus" MaskType="Number" InputDirection="RightToLeft"
+                        ClipboardEnabled="true" />
                 </div>
-                <!--Botonera-->
-                <div class="control-group">
-                    <asp:Panel ID="pnlBotonera" runat="server">
-                        <asp:Panel ID="pnlInicial" runat="server">
-                            <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
-                                OnClick="Modificar" />
-                            <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
-                                OnClick="Terminar" />
-                        </asp:Panel>
-                        <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
-                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
-                                OnClick="Guardar" />
-                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
-                                OnClick="Cancelar" />
-                        </asp:Panel>
+            </div>
+            <!--Botonera-->
+            <div class="row-fluid">
+                <asp:Panel ID="pnlBotonera" runat="server">
+                    <asp:Panel ID="pnlInicial" runat="server">
+                        <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
+                            OnClick="Modificar" />
+                        <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
+                            OnClick="Terminar" />
                     </asp:Panel>
-                </div>
-            </fieldset>
+                    <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
+                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
+                            OnClick="Guardar" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
+                            OnClick="Cancelar" />
+                    </asp:Panel>
+                </asp:Panel>
+            </div>
         </div>
     </div>
 </div>
