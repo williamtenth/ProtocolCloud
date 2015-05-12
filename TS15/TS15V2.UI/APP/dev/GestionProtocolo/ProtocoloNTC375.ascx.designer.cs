@@ -10,7 +10,7 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class ProtocoloNTC375C {
+    public partial class ProtocoloNTC375 {
         
         /// <summary>
         /// txtTiempo control.

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC1005.ascx.cs"
-    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005Componente" %>
+    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <div class="box span12">

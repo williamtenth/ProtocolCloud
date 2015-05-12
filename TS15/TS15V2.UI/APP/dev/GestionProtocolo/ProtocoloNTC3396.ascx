@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC3396.ascx.cs"
-    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396C" %>
+    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <div class="box span12">
     <div class="box-header" data-original-title>

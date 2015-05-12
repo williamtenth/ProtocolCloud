@@ -95,7 +95,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 if (i == valor)
                 {
                     control.Visible = true;
-                    ((GenericoProtocoloComponente)control).CargarPrueba();
+                    ((GenericoProtocolo)control).CargarPrueba();
                 }
                 i++;
             }

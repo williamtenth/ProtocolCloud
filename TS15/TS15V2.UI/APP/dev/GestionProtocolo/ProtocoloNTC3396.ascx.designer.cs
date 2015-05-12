@@ -10,7 +10,7 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class ProtocoloNTC3396C {
+    public partial class ProtocoloNTC3396 {
         
         /// <summary>
         /// lbColor control.

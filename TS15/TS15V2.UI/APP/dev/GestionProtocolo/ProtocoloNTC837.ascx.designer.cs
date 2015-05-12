@@ -10,7 +10,7 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class ProtocoloNTC837C {
+    public partial class ProtocoloNTC837 {
         
         /// <summary>
         /// txtBt_at_t control.

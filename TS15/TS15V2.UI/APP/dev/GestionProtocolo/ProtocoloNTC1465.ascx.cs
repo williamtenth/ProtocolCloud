@@ -12,7 +12,7 @@ using TS15.Common.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class ProtocoloNTC1465C : GenericoProtocoloComponente, IGestionable, ITerminable
+    public partial class ProtocoloNTC1465 : GenericoProtocolo, IGestionable, ITerminable
     {
 
         // Datos
@@ -24,7 +24,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         // Constructores
 
-        public ProtocoloNTC1465C()
+        public ProtocoloNTC1465()
         {
             _BOntc1465Object = new BOProtocolo_NTC1465();
         }
