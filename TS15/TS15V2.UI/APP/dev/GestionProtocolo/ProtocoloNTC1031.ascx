@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC1031.ascx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1031C" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC1031.ascx.cs" Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1031" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <ul class="breadcrumb">

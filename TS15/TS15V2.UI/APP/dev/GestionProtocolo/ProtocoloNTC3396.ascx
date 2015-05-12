@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProtocoloNTC3396.ascx.cs"
-    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396C" %>
+    Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <ul class="breadcrumb">
     <li><i class="icon-edit"></i><a href="#">Prueba NTC 3396</a> </li>

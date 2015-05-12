@@ -9,7 +9,7 @@ using TS15.Common.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public abstract class GenericoProtocoloComponente : UIGenericoComponente
+    public abstract class GenericoProtocolo : UIGenericoComponente
     {
         // Datos
         private List<gen_parametrica> _listaParResultados;
@@ -20,7 +20,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private BOTransformador _BOTransformadorObjet;
 
         // Constructores
-        public GenericoProtocoloComponente()
+        public GenericoProtocolo()
         {
             _proceso = new pro_proceso();
             _BOTransformadorObjet = new BOTransformador();

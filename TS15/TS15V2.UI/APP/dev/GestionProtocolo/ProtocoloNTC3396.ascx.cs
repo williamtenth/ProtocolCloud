@@ -12,7 +12,7 @@ using TS15.Common.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class ProtocoloNTC3396C : GenericoProtocoloComponente, IGestionable, ITerminable
+    public partial class ProtocoloNTC3396 : GenericoProtocolo, IGestionable, ITerminable
     {
         // Datos
         private List<gen_parametrica> _listaColores;
@@ -20,7 +20,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private pro_ntc3396 _prueba;
 
         // Constructores
-        public ProtocoloNTC3396C()
+        public ProtocoloNTC3396()
         {
             _BOntc3396Object = new BOProtocolo_NTC3396();
 

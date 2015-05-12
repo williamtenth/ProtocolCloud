@@ -10,7 +10,7 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class ProtocoloNTC1031C {
+    public partial class ProtocoloNTC1031 {
         
         /// <summary>
         /// txtTension control.

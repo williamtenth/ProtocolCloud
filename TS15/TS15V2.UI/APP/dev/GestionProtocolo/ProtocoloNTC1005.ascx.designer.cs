@@ -10,7 +10,7 @@
 namespace TS15V2.UI.APP.dev.GestionProtocolo {
     
     
-    public partial class ProtocoloNTC1005Componente {
+    public partial class ProtocoloNTC1005 {
         
         /// <summary>
         /// txtIcc control.

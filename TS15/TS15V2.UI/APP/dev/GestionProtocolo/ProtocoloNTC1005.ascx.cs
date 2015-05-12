@@ -12,7 +12,7 @@ using TS15.Common.util;
 
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
-    public partial class ProtocoloNTC1005Componente : GenericoProtocoloComponente
+    public partial class ProtocoloNTC1005 : GenericoProtocolo
     {
         // Datos
         private pro_ntc1005 _prueba;
@@ -20,7 +20,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
 
         // Constructores
 
-        public ProtocoloNTC1005Componente()
+        public ProtocoloNTC1005()
         {
             _BOntc1005Object = new BOProtocolo_NTC1005();
         }

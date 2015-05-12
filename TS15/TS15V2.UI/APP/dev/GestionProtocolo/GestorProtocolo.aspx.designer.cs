@@ -163,7 +163,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005Componente ucProtocoloNTC1005;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1005 ucProtocoloNTC1005;
         
         /// <summary>
         /// ucProtocoloNTC1031 control.
@@ -172,7 +172,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1031C ucProtocoloNTC1031;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1031 ucProtocoloNTC1031;
         
         /// <summary>
         /// ucProtocoloNTC1465 control.
@@ -181,7 +181,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465C ucProtocoloNTC1465;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465 ucProtocoloNTC1465;
         
         /// <summary>
         /// ucProtocoloNTC3396 control.
@@ -190,7 +190,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396C ucProtocoloNTC3396;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC3396 ucProtocoloNTC3396;
         
         /// <summary>
         /// ucProtocoloNTC375 control.
@@ -199,7 +199,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375C ucProtocoloNTC375;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC375 ucProtocoloNTC375;
         
         /// <summary>
         /// ucProtocoloNTC837 control.
@@ -208,7 +208,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC837C ucProtocoloNTC837;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC837 ucProtocoloNTC837;
         
         /// <summary>
         /// ucProtocoloNTC471 control.
@@ -217,7 +217,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471C ucProtocoloNTC471;
+        protected global::TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471 ucProtocoloNTC471;
         
         /// <summary>
         /// MsjConfirmacion control.
