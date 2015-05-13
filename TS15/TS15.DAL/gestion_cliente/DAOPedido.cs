@@ -56,5 +56,10 @@ namespace TS15.DAL.gestion_cliente
         {
             return SingletonDatos.Contexto.cli_pedido.Where(p => p.transformador_id == idTransformador).SingleOrDefault();
         }
+
+        public cli_pedido ConsultarXConsecutivo(int consecutivo)
+        {
+            return SingletonDatos.Contexto.cli_pedido.Where(p => p.consecutivo == consecutivo).FirstOrDefault();
+        }
     }
 }

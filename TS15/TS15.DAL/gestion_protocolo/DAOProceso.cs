@@ -137,5 +137,6 @@ namespace TS15.DAL.gestion_protocolo
             pro_proceso resultado = SingletonDatos.Contexto.pro_proceso.Where(p => p.pedido_id == pedido && p.estado == VariablesGlobales.ESTADO_ACTIVO).SingleOrDefault();
             return resultado != null ? resultado : null;
         }
+
     }
 }

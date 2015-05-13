@@ -16,6 +16,7 @@ using TS15.BL.gestion_protocolo;
 using System.Data.Objects.DataClasses;
 using TS15.Common.util;
 using TS15.BL.gestion_transformador;
+using TS15.BL.gestion_cliente;
 namespace TS15V2.UI.APP.dev.GestionProtocolo
 {
     public class GestorProceso
@@ -34,6 +35,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         private BOProtocolo_NTC375 _BOntc375Object;
         private BOProtocolo_NTC471 _BOntc471Object;
         private BOProtocolo_NTC837 _BOntc837Object;
+        private BOPedido _BOPedido;
 
         ~GestorProceso()
         {
@@ -54,6 +56,7 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             _BOntc837Object = new BOProtocolo_NTC837();
             _listaPruebas = new EntityObject[7];
             _listaElementos = new pro_elementoprueba[7];
+            _BOPedido = new BOPedido();
         }
 
         /// 
@@ -73,15 +76,20 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
         }
 
         /// 
-        /// <param name="pedido"></param>
-        public bool ConsultarProceso(int pedido)
+        /// <param name="consecutivoPedido"></param>
+        public bool ConsultarProceso(int consecutivoPedido)
         {
-            _proceso = _BOProcesoObject.ObtenerProcesoActivoXPedido(pedido);
+            cli_pedido pedido = _BOPedido.ConsultarXConsecutivo(consecutivoPedido);
 
-            if (_proceso != null)
+            if (pedido != null)
             {
-                GenerarElementos();
-                return true;
+                _proceso = _BOProcesoObject.ObtenerProcesoActivoXPedido(pedido.id);
+
+                if (_proceso != null)
+                {
+                    GenerarElementos();
+                    return true;
+                }
             }
 
             return false;

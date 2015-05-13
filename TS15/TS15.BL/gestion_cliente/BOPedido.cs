@@ -172,5 +172,10 @@ namespace TS15.BL.gestion_cliente
         {
             return ((DAOPedido)GenericoDAO).ConsultarXIdTransformador(idTransformador);
         }
+
+        public cli_pedido ConsultarXConsecutivo(int consecutivo)
+        {
+            return ((DAOPedido)GenericoDAO).ConsultarXConsecutivo(consecutivo);
+        }
     }
 }
