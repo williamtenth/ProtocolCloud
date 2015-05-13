@@ -2,94 +2,92 @@
     Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC471" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<ul class="breadcrumb">
-    <li><i class="icon-edit"></i><a href="#">Prueba NTC 471</a> </li>
-</ul>
-<div class="row-fluid sortable ui-sortable">
-    <div class="box span12">
-        <div class="box-header" data-original-title>
-            <h2>
-                <i class="halflings-icon edit"></i><span class="break"></span>Medición de cortocircuito</h2>
-            <%--<div class="box-icon">
+<div class="box span12">
+    <div class="box-header" data-original-title>
+        <h2>
+            <i class="halflings-icon edit"></i><span class="break"></span>Prueba NTC 471 - Medición
+            de Cortocircuito</h2>
+        <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
                             <i class="halflings-icon remove"></i></a>
                 </div>--%>
-        </div>
-        <div class="box-content">
-            <!--Encabezado-->
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+    </div>
+    <div class="box-content">
+        <div class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="txtRelacion">
                         Relación de transformación*
                     </label>
-                    <asp:TextBox runat="server" ID="txtRelacion" CssClass="form-control" Enabled="false"
-                        MaxLength="20"></asp:TextBox>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtRelacion" CssClass="form-control" Enabled="false"
+                            MaxLength="20"></asp:TextBox>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtFaseFase">
                         Fase-Fase*
                     </label>
-                    <asp:TextBox runat="server" ID="txtFaseFase" CssClass="form-control" Enabled="false"
-                        MaxLength="20"></asp:TextBox>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtFaseFase" CssClass="form-control" Enabled="false"
+                            MaxLength="20"></asp:TextBox>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtFaseNeutro">
                         Fase- Neutro*
                     </label>
-                    <asp:TextBox runat="server" ID="txtFaseNeutro" CssClass="form-control" Enabled="false"
-                        MaxLength="20"></asp:TextBox>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtFaseNeutro" CssClass="form-control" Enabled="false"
+                            MaxLength="20"></asp:TextBox>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtPolaridad">
                         Polaridad*
                     </label>
-                    <asp:TextBox runat="server" ID="txtPolaridad" CssClass="form-control" Enabled="false"
-                        MaxLength="20"></asp:TextBox>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtPolaridad" CssClass="form-control" Enabled="false"
+                            MaxLength="20"></asp:TextBox>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="txtGrupoConexion">
                         Grupo de conexión*
                     </label>
-                    <asp:TextBox runat="server" ID="txtGrupoConexion" CssClass="form-control" Enabled="false"
-                        MaxLength="20"></asp:TextBox>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtGrupoConexion" CssClass="form-control" Enabled="false"
+                            MaxLength="20"></asp:TextBox>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="lbResultado">
                         Resultado*
                     </label>
-                    <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <!--Detalle de relación-->
-            <!--Botonera-->
-            <div class="row-fluid">
-                <asp:Panel ID="pnlBotonera" runat="server">
-                    <asp:Panel ID="pnlInicial" runat="server">
-                        <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
-                            OnClick="Modificar" />
-                        <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
-                            OnClick="Terminar" />
+                    <div class="controls">
+                        <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <!--Botonera-->
+                <div class="control-group">
+                    <asp:Panel ID="pnlBotonera" runat="server">
+                        <asp:Panel ID="pnlInicial" runat="server">
+                            <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
+                                OnClick="Modificar" />
+                            <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
+                                OnClick="Terminar" />
+                        </asp:Panel>
+                        <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
+                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
+                                OnClick="Guardar" />
+                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
+                                OnClick="Cancelar" />
+                        </asp:Panel>
                     </asp:Panel>
-                    <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
-                            OnClick="Guardar" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
-                            OnClick="Cancelar" />
-                    </asp:Panel>
-                </asp:Panel>
-            </div>
+                </div>
+            </fieldset>
         </div>
     </div>
 </div>

@@ -2,92 +2,85 @@
     Inherits="TS15V2.UI.APP.dev.GestionProtocolo.ProtocoloNTC1465" %>
 <%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<ul class="breadcrumb">
-    <li><i class="icon-edit"></i><a href="#">Prueba NTC 1465</a> </li>
-</ul>
-<div class="row-fluid sortable ui-sortable">
-    <div class="box span12">
-        <div class="box-header" data-original-title>
-            <h2>
-                <i class="halflings-icon edit"></i><span class="break"></span>Información Aceite</h2>
-            <%--<div class="box-icon">
+<div class="box span12">
+    <div class="box-header" data-original-title>
+        <h2>
+            <i class="halflings-icon edit"></i><span class="break"></span>Prueba NTC 1465 -
+            Información Aceite</h2>
+        <%--<div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a><a href="#"
                         class="btn-minimize"><i class="halflings-icon chevron-up"></i></a><a href="#" class="btn-close">
                             <i class="halflings-icon remove"></i></a>
                 </div>--%>
-        </div>
-        <div class="box-content">
-            <%--div class="row-fluid">
-                    <div class="span_3">
-                        <label>
-                            Transformador</label>
-                        <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
-                </div--%>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+    </div>
+    <div class="box-content">
+        <div class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="lbLiquidoAislante">
                         Liquido Aislante*
                     </label>
-                    <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                    <div class="controls">
+                        <asp:DropDownList ID="lbLiquidoAislante" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="lbReferencia">
                         Referencia*
                     </label>
-                    <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                    <div class="controls">
+                        <asp:DropDownList ID="lbReferencia" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="txtRuptura">
                         Ruptura*
                     </label>
-                    <asp:TextBox runat="server" ID="txtRuptura" CssClass="form-control" Enabled="false"
-                        MaxLength="10"></asp:TextBox>
-                    <asp:FilteredTextBoxExtender ID="txtRuptura_FilteredTextBoxExtender" runat="server"
-                        TargetControlID="txtRuptura" ValidChars="1234567890">
-                    </asp:FilteredTextBoxExtender>
+                    <div class="controls">
+                        <asp:TextBox runat="server" ID="txtRuptura" CssClass="form-control" Enabled="false"
+                            MaxLength="10"></asp:TextBox>
+                        <asp:FilteredTextBoxExtender ID="txtRuptura_FilteredTextBoxExtender" runat="server"
+                            TargetControlID="txtRuptura" ValidChars="1234567890">
+                        </asp:FilteredTextBoxExtender>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                <div class="control-group">
+                    <label class="control-label" for="lbMetodo">
                         Método*
                     </label>
-                    <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <label>
+                    <div class="controls">
+                        <asp:DropDownList ID="lbMetodo" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="lbResultado">
                         Resultado*
                     </label>
-                    <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
-                    </asp:DropDownList>
-                    &nbsp;</div>
-            </div>
-            <div class="row-fluid">
-                <asp:Panel ID="pnlBotonera" runat="server">
-                    <asp:Panel ID="pnlInicial" runat="server">
-                        <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
-                            OnClick="Modificar" />
-                        <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
-                            OnClick="Terminar" />
+                    <div class="controls">
+                        <asp:DropDownList ID="lbResultado" runat="server" Enabled="False" OnDataBound="IniciarComponenteLista">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <asp:Panel ID="pnlBotonera" runat="server">
+                        <asp:Panel ID="pnlInicial" runat="server">
+                            <asp:Button ID="btModificar" runat="server" Text="Modificar" class="btn btn-success"
+                                OnClick="Modificar" />
+                            <asp:Button ID="btTerminar" runat="server" Text="Terminar" class="btn btn-success"
+                                OnClick="Terminar" />
+                        </asp:Panel>
+                        <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
+                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
+                                OnClick="Guardar" />
+                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
+                                OnClick="Cancelar" />
+                        </asp:Panel>
                     </asp:Panel>
-                    <asp:Panel ID="pnlGuardar" Visible="false" runat="server">
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-success"
-                            OnClick="Guardar" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-success"
-                            OnClick="Cancelar" />
-                    </asp:Panel>
-                </asp:Panel>
-            </div>
+                </div>
+            </fieldset>
         </div>
     </div>
 </div>
