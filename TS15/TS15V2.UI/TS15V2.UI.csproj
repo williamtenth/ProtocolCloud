@@ -163,6 +163,7 @@
     <Content Include="APP\dev\GestionProtocolo\ProtocoloNTC3396.ascx" />
     <Content Include="APP\dev\GestionTransformador\BusquedaTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\CrearTransformador.aspx" />
+    <Content Include="APP\dev\GestionTransformador\GestionarInfoTransformador.aspx" />
     <Content Include="APP\dev\GestionTransformador\GestionBodega.aspx" />
     <Content Include="APP\dev\GestionUsuarios\GestionarCuentas.aspx" />
     <Content Include="APP\dev\GestionUsuarios\ModificarContrasenna.aspx" />
@@ -408,6 +409,13 @@
     </Compile>
     <Compile Include="APP\dev\GestionTransformador\CrearTransformador.aspx.designer.cs">
       <DependentUpon>CrearTransformador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\GestionarInfoTransformador.aspx.cs">
+      <DependentUpon>GestionarInfoTransformador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionTransformador\GestionarInfoTransformador.aspx.designer.cs">
+      <DependentUpon>GestionarInfoTransformador.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionTransformador\GestionBodega.aspx.cs">
       <DependentUpon>GestionBodega.aspx</DependentUpon>

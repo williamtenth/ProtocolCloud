@@ -39,7 +39,7 @@ namespace TS15V2.UI.APP.componentes
             { }
 
             if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
-                ActivarControles();
+                ActivarControlesBusqueda();
 
             if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableTransformador"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableProtocolo"]))
             { }
@@ -48,7 +48,7 @@ namespace TS15V2.UI.APP.componentes
                 DesactivarControles();
         }
 
-        private void ActivarControles()
+        public void ActivarControlesBusqueda()
         {
             this.ddlFabricante.Enabled = true;
             this.txtNumSerie.Enabled = true;
@@ -119,11 +119,11 @@ namespace TS15V2.UI.APP.componentes
             txtNumSerie.Text = numeroSerie;
             hfIdTransformador.Value = idTransformador.ToString();
 
-            // Delegate the event to the caller
-            if (this.TransformadorChange != null) this.TransformadorChange(sender, e);
-
             tfr_transformador transformadorObject = _BOTransformadorObject.ConsultarXId(idTransformador) as tfr_transformador;
             Session[VariablesGlobales.SESSION_TRANSFORMADOR] = transformadorObject;
+
+            // Delegate the event to the caller
+            if (this.TransformadorChange != null) this.TransformadorChange(sender, e);
         }
 
         protected void gvTransformadores_RowDataBound(object sender, GridViewRowEventArgs e)

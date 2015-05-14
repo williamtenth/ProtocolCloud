@@ -152,5 +152,10 @@ namespace TS15.DAL.gestion_transformador
             SingletonDatos.Contexto.tfr_bodega.DeleteObject(bodegaObject);
             SingletonDatos.Contexto.SaveChanges();
         }
+
+        public List<vw_solicitudes_transformador> ConsultarSolicitudes(int pIdTransformador)
+        {
+            return SingletonDatos.Contexto.vw_solicitudes_transformador.Where(p => p.id == pIdTransformador).OrderBy(p => p.fecfabricacion).ToList();
+        }
     }
 }

@@ -123,7 +123,7 @@
                                     <asp:BoundField DataField="numserie" HeaderText="Número de Serie" />
                                     <asp:BoundField DataField="tfrcapacidad" HeaderText="Capacidad" />
                                     <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" />
-                                    <asp:BoundField DataField="fecentrada" HeaderText="Fecha" />
+                                    <asp:BoundField DataField="fecentrada" HeaderText="Fecha" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="tipsolicitud" HeaderText="Tipo Solicitud" />
                                     <asp:BoundField DataField="" HeaderText="Observación" />
                                 </Columns>

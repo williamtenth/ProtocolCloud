@@ -175,5 +175,10 @@ namespace TS15.BL.gestion_transformador
         {
             ((DAOTransformador)GenericoDAO).EliminarEnBodega(bodegaObject);
         }
+
+        public List<vw_solicitudes_transformador> ConsultarSolicitudes(int pIdTransformador)
+        {
+            return ((DAOTransformador)GenericoDAO).ConsultarSolicitudes(pIdTransformador);
+        }
     }
 }

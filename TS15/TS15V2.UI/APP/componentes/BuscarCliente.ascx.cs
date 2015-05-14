@@ -54,7 +54,7 @@ namespace TS15.UI.APP.componentes
             }
         }
 
-        private void ActivarControles()
+        public void ActivarControlesBusqueda()
         {
             this.ddlTipDocumento.Enabled = true;
             this.txtNumDoc.Enabled = true;

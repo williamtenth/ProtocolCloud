@@ -38,17 +38,17 @@ namespace TS15V2.UI.APP.abstractUI
 
         public void ActivarControles()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void DesactivarControles()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void CargarListas()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public Boolean Enable

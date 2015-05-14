@@ -45,12 +45,12 @@ namespace TS15V2.UI.APP.abstractUI
 
         public void DesactivarControles()
         {
-            throw new NotImplementedException();
+
         }
 
         public void CargarListas()
         {
-            throw new NotImplementedException();
+
         }
 
         public void EnviarAModalMsj(ModalMsj modal)
