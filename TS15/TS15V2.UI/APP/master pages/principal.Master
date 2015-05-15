@@ -72,19 +72,17 @@
                                     <i class="icon-file-alt"></i><span class="hidden-tablet">Realizar Busqueda</span></a></li>
                                 <li><a class="submenu" href="/APP/dev/GestionTransformador/CrearTransformador.aspx">
                                     <i class="icon-file-alt"></i><span class="hidden-tablet">Crear Transformador</span></a></li>
-                                <li><a class="submenu" href="#"><i class="icon-file-alt"></i><span class="hidden-tablet">
-                                    Gestionar Información Transformador</span></a></li>
+                                <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionarInfoTransformador.aspx">
+                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Información Transformador</span></a></li>
                                 <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionBodega.aspx"><i
                                     class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Bodega</span></a></li>
                             </ul>
                         </li>
                         <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">
-                            Gestión Protocolo</span><span class="label label-important"> 2 </span></a>
+                            Gestión Protocolo</span><span class="label label-important"> 1 </span></a>
                             <ul>
                                 <li><a class="submenu" href="/APP/dev/GestionProtocolo/GestorProtocolo.aspx"><i class="icon-file-alt">
                                 </i><span class="hidden-tablet">Gestor Protocolo</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionTransformador/CrearTransformador.aspx">
-                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Generar Protocolo</span></a></li>
                             </ul>
                         </li>
                         <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">
