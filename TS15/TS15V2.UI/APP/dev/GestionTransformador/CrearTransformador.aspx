@@ -62,7 +62,8 @@
                                 <asp:TextBox runat="server" ID="txtNumSerie" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                 <asp:HiddenField runat="server" ID="hfIdTransformador" />
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumSerie" ControlToValidate="txtNumSerie"
-                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
+                                    ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador" SetFocusOnError="true"
+                                    EnableClientScript="true"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="control-group">

@@ -15,17 +15,6 @@
     <link id="base-style" href="css/style.css" rel="stylesheet" />
     <link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet" />
     <!-- end: CSS -->
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-    <!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-    <!-- start: Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico">
-    <!-- end: Favicon -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
