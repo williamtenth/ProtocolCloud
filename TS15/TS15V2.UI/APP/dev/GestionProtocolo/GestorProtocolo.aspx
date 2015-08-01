@@ -33,30 +33,29 @@
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <!-- end: Favicon -->
     <style>
-        /************** Modal PopUp *****************************************************************************************************/.cerrar
-        {
+        /************** Modal PopUp *****************************************************************************************************/ .cerrar {
             float: right;
             margin-right: -30px;
             margin-top: -20px;
             z-index: 20;
         }
-        .detalles
-        {
+
+        .detalles {
             width: 320px;
             margin: auto;
             height: 55px;
             padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
         }
-        .detalles p
-        {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'Museo' , Arial, sans-serif;
-            height: auto;
-            margin: auto;
-        }
-        .modalPopup
-        {
+
+            .detalles p {
+                font-size: 35px;
+                text-align: center;
+                font-family: 'Museo', Arial, sans-serif;
+                height: auto;
+                margin: auto;
+            }
+
+        .modalPopup {
             font-size: 10pt;
             border-radius: 10px;
             -ms-border-radius: 10px;
@@ -66,8 +65,8 @@
             padding: 10px 20px;
             width: 500px;
         }
-        .modalPopup2
-        {
+
+        .modalPopup2 {
             font-size: 10pt;
             border-radius: 10px;
             -ms-border-radius: 10px;
@@ -78,21 +77,21 @@
             width: 600px;
             z-index: 10001 !important;
         }
-        .modalBackGround
-        {
+
+        .modalBackGround {
             background: url(../../img/overlay.png) repeat 0 0;
             filter: alpha(opacity=70);
             opacity: 0.7;
         }
-        .modalBackgroundCargando
-        {
+
+        .modalBackgroundCargando {
             background-color: Black;
             filter: alpha(opacity=55);
             opacity: 0.50;
             z-index: 10100 !important;
         }
-        .imgFinca
-        {
+
+        .imgFinca {
             max-width: 100%;
             max-height: 300px;
         }
@@ -101,8 +100,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
-        <li><i class="icon-home"></i><a href="../../Home.aspx">Home</a> <i class="icon-angle-right">
-        </i></li>
+        <li><i class="icon-home"></i><a href="../../Home.aspx">Home</a> <i class="icon-angle-right"></i></li>
         <li><i class="icon-edit"></i><a href="#">Gestión Protocolo</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
@@ -158,7 +156,6 @@
                                 Text="Terminar" />
                             <%--<asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-primary" OnClick="Eliminar"
                                         Text="Eliminar" />--%>
-                            </asp:Panel>
                         </div>
                     </fieldset>
                 </div>
@@ -166,7 +163,7 @@
         </div>
     </div>
     <asp:GridView runat="server" ID="gvPruebas" DataKeyNames="Prueba, Nombre" AutoGenerateColumns="false"
-        CssClass="table table-striped" OnRowCommand="Consultar">
+        CssClass="table table-bordered table-striped table-condensed" OnRowCommand="Consultar">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" ItemStyle-HorizontalAlign="Center" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:d}" />

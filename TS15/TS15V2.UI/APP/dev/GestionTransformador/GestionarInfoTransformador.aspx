@@ -117,7 +117,7 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
-    <asp:Panel runat="server" ID="pnlTabs" class="row-fluid" Visible="false">
+    <asp:Panel runat="server" ID="pnlTabs" CssClass="row-fluid" Visible="false">
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <div class="box span12">
@@ -134,11 +134,11 @@
                             <div class="tab-pane" id="historial">
                                 <div class="box-content">
                                     <asp:GridView runat="server" ID="gvSolicitudesTransformador" AutoGenerateColumns="false"
-                                        CssClass="table table-striped">
+                                        CssClass="table table-bordered table-striped table-condensed">
                                         <Columns>
                                             <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" />
                                             <asp:BoundField DataField="fechasolicitud" HeaderText="Fecha" DataFormatString="{0:d}" />
-                                            <asp:BoundField DataField="tipoSolicitud" HeaderText="Tipo Solicitud" />
+                                            <asp:BoundField DataField="tipSolicitud" HeaderText="Tipo Solicitud" />
                                             <asp:BoundField DataField="nombre" HeaderText="Nombre Fabricante" />
                                             <asp:BoundField DataField="numserie" HeaderText="Número de Serie" />
                                             <asp:BoundField DataField="tfrcapacidad" HeaderText="Capacidad" />

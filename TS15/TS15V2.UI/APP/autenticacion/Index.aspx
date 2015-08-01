@@ -50,73 +50,72 @@
 </head>
 <body style="background-image: url('../img/bg.jpg')">
     <form id="form1" runat="server">
-    <asp:Login runat="server" ID="loginSystem" FailureText="* Por favor valide su nombre de usuario y contraseña."
-        FailureTextStyle-Font-Bold="true" FailureTextStyle-ForeColor="Red" DestinationPageUrl="~/APP/Home.aspx">
-        <LayoutTemplate>
-            <div class="ch-container">
-                <div class="row">
+        <asp:Login runat="server" ID="loginSystem" FailureText="* Por favor valide su nombre de usuario y contraseña."
+            FailureTextStyle-Font-Bold="true" FailureTextStyle-ForeColor="Red" DestinationPageUrl="~/APP/Home.aspx" align="center">
+            <LayoutTemplate>
+                <div class="ch-container">
                     <div class="row">
-                        <div class="col-md-12 center login-header">
-                            <h2 style="color: White; font-weight: bolder;">
-                                Protocolo de Pruebas Transformadores Serie 15Kv
-                            </h2>
-                        </div>
-                        <!--/span-->
-                    </div>
-                    <!--/row-->
-                    <div class="row">
-                        <div class="well col-md-5 center login-box">
-                            <div class="alert alert-info" style="font-weight: bold;">
-                                Por favor ingrese con su nombre de usuario y contraseña.
+                        <div class="row">
+                            <div class="col-md-12 center login-header">
+                                <h2 style="color: White; font-weight: bolder;">Protocolo de Pruebas Transformadores Serie 15Kv
+                                </h2>
                             </div>
-                            <fieldset>
-                                <div class="input-group input-group-lg">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                                    <asp:TextBox ID="UserName" runat="server" CssClass="form-control" placeholder="Username"></asp:TextBox>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="well col-md-5 center login-box">
+                                <div class="alert alert-info" style="font-weight: bold;">
+                                    Por favor ingrese con su nombre de usuario y contraseña.
                                 </div>
-                                <div class="clearfix">
-                                </div>
-                                <br>
-                                <div class="input-group input-group-lg">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                                    <asp:TextBox ID="Password" runat="server" TextMode="Password" placeholder="Password"
-                                        CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                                <div class="input-prepend">
-                                    <!--<label class="remember" for="remember">
+                                <fieldset>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                                        <asp:TextBox ID="UserName" runat="server" CssClass="form-control" placeholder="Username"></asp:TextBox>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                    <br>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                                        <asp:TextBox ID="Password" runat="server" TextMode="Password" placeholder="Password"
+                                            CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                    <div class="input-prepend">
+                                        <!--<label class="remember" for="remember">
                                 <input type="checkbox" id="remember">
                                 Remember me</label>-->
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                                <p class="center col-md-5">
-                                    <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary" CommandName="Login"
-                                        Text="Ingresar" ValidationGroup="loginSystem" />
-                                </p>
-                                <p class="center col-md-5" style="width: 400px; color: Red">
-                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
-                                        ErrorMessage="* Por favor ingrese su usuario." ValidationGroup="loginSystem"
-                                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    <br />
-                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                        ErrorMessage="* Por favor ingrese su contraseña." ValidationGroup="loginSystem"
-                                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    <br />
-                                    <asp:Literal ID="FailureText" runat="server"></asp:Literal>
-                                </p>
-                            </fieldset>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                    <p class="center col-md-5">
+                                        <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary" CommandName="Login"
+                                            Text="Ingresar" ValidationGroup="loginSystem" />
+                                    </p>
+                                    <p class="center col-md-5" style="width: 400px; color: Red">
+                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                            ErrorMessage="* Por favor ingrese su usuario." ValidationGroup="loginSystem"
+                                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                            ErrorMessage="* Por favor ingrese su contraseña." ValidationGroup="loginSystem"
+                                            Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:Literal ID="FailureText" runat="server"></asp:Literal>
+                                    </p>
+                                </fieldset>
+                            </div>
+                            <!--/span-->
                         </div>
-                        <!--/span-->
+                        <!--/row-->
                     </div>
-                    <!--/row-->
+                    <!--/fluid-row-->
                 </div>
-                <!--/fluid-row-->
-            </div>
-        </LayoutTemplate>
-        <FailureTextStyle Font-Bold="True"></FailureTextStyle>
-    </asp:Login>
+            </LayoutTemplate>
+            <FailureTextStyle Font-Bold="True"></FailureTextStyle>
+        </asp:Login>
     </form>
 </body>
 </html>

@@ -113,7 +113,7 @@
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <asp:GridView runat="server" ID="gvSolicitudesCliente" DataKeyNames="tipSolicitud,idpedido,transformador_id"
-                            AutoGenerateColumns="false" CssClass="table table-striped" OnRowCommand="gvSolicitudesCliente_RowCommand"
+                            AutoGenerateColumns="false" CssClass="table table-bordered table-striped table-condensed" OnRowCommand="gvSolicitudesCliente_RowCommand"
                             OnSelectedIndexChanged="gvSolicitudesCliente_SelectedIndexChanged">
                             <Columns>
                                 <asp:BoundField DataField="consecutivo" HeaderText="Consecutivo" ItemStyle-HorizontalAlign="Center" />

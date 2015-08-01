@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="principal.master.cs"
+﻿<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="principal.master.cs"
     Inherits="TS15.UI.APP.master_pages.principal" %>
 
 <!DOCTYPE html>

@@ -35,13 +35,13 @@ namespace TS15.UI.APP.componentes
 
             if (ValidadorRol.ContieneRol(ValidadorRol.ROL_CLIENTE))
             {
-                ActivarControles();
+                ActivarControlesBusqueda();
                 CargarCliente();
             }
 
             if (ValidadorRol.ContieneRol(ValidadorRol.ROL_RESPONSABLECLIENTE))
             {
-                ActivarControles();
+                ActivarControlesBusqueda();
                 Session["Cliente"] = null;
             }
 
@@ -83,7 +83,7 @@ namespace TS15.UI.APP.componentes
             {
                 Session["Cliente"] = null;
                 CargarListas();
-                ValidarRoles();
+                //ValidarRoles();
             }
         }
 

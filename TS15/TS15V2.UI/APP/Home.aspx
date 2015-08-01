@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TS15.UI.APP.systems.Home" %>
+    AutoEventWireup="True" CodeBehind="Home.aspx.cs" Inherits="TS15.UI.APP.systems.Home" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS15.Common", "TS15.Common\TS15.Common.csproj", "{C22F7BEB-BA0D-4C8B-8F1E-094B51187938}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS15.BL", "TS15.BL\TS15.BL.csproj", "{88422ED0-7C3E-4F5E-8A73-C45D30CA13C3}"

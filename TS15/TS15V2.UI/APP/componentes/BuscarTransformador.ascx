@@ -61,8 +61,7 @@
             <div class="cerrar">
                 <asp:ImageButton ID="btnCerrarTransformador" runat="server" ImageUrl="~/APP/img/close_link.png" />
             </div>
-            <h3 style="color: #72c014; border-bottom: 1px dotted black; padding-bottom: 5px;">
-                Seleccione</h3>
+            <h3 style="color: #72c014; border-bottom: 1px dotted black; padding-bottom: 5px;">Seleccione</h3>
             <div style="text-align: left">
                 <table width="100%">
                     <tr>
@@ -71,8 +70,8 @@
                                 <ContentTemplate>
                                     <asp:GridView runat="server" ID="gvTransformadores" AutoGenerateColumns="false" AllowPaging="true"
                                         DataKeyNames="id,numserie,fabricante_id" PageSize="10" OnRowDataBound="gvTransformadores_RowDataBound"
-                                        OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged" CssClass="table table-condensed"
-                                        OnPageIndexChanging="gvTransformadores_PageIndexChanging">
+                                        OnSelectedIndexChanged="gvTransformadores_SelectedIndexChanged" CssClass="table table-bordered table-striped table-condensed"
+                                        OnPageIndexChanging="gvTransformadores_PageIndexChanging" PagerStyle-CssClass="pagination pagination-centered">
                                         <Columns>
                                             <asp:BoundField DataField="numserie" HeaderText="Número de Serie">
                                                 <ItemStyle HorizontalAlign="Justify" />
@@ -91,7 +90,7 @@
                                             <asp:Label runat="server" ID="lblMensaje" Text="No se encontraron datos." ForeColor="Red"
                                                 Font-Bold="true" Style="text-align: center"></asp:Label>
                                         </EmptyDataTemplate>
-                                        <PagerStyle HorizontalAlign="Center" CssClass="pager" BorderWidth="0px" />
+                                        <PagerStyle HorizontalAlign="Center" CssClass="pagination pagination-centered" />
                                         <AlternatingRowStyle BackColor="#ebf3de" />
                                         <HeaderStyle CssClass="grilla" />
                                         <RowStyle CssClass="grilla" />

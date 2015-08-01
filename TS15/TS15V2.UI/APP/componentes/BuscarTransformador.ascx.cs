@@ -36,13 +36,13 @@ namespace TS15V2.UI.APP.componentes
             string[] roles = ValidadorRol.ValidarRoles();
 
             if (roles.Contains(WebConfigurationManager.AppSettings["Cliente"]))
-            { }
+                ActivarControlesBusqueda();
 
             if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]))
                 ActivarControlesBusqueda();
 
             if (roles.Contains(WebConfigurationManager.AppSettings["ResponsableCliente"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableTransformador"]) || roles.Contains(WebConfigurationManager.AppSettings["ResponsableProtocolo"]))
-            { }
+                ActivarControlesBusqueda();
 
             else
                 DesactivarControles();

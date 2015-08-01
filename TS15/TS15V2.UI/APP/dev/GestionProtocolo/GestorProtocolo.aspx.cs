@@ -42,7 +42,14 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
                 CargarListas();
                 CargarSesion();
                 ActivarControles(true);
+                //LimpiarVariables();
+                
             }
+        }
+
+        private void LimpiarVariables()
+        {
+            Session.Remove(VariablesGlobales.PRUEBA_SELECCIONADA);
         }
 
         public void CargarListas()

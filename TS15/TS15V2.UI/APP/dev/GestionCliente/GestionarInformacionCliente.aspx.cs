@@ -29,6 +29,23 @@ namespace TS15V2.UI.APP.dev.GestionCliente
                 ucBusquedaCliente.ValidationGroupControles(string.Empty, false);
                 CargarListasCliente();
                 ConsultarHistorial();
+                ConsultarInformacionGeneral();
+            }
+        }
+
+        private void ConsultarInformacionGeneral()
+        {
+            if (Session[VariablesGlobales.SESION_CLIENTE] != null)
+            {
+                cli_cliente clienteObject = (cli_cliente)Session[VariablesGlobales.SESION_CLIENTE];
+
+                ddlTipoDocumento.SelectedValue = clienteObject.tipdoc.ToString();
+                txtNumeroDocumento.Text = clienteObject.numdocumento;
+                txtNombre.Text = clienteObject.nombre;
+                txtDireccion.Text = clienteObject.direccion;
+                txtTelefono.Text = clienteObject.telefono;
+                ddlTipoCliente.SelectedValue = clienteObject.tiptercero.ToString();
+
             }
         }
 
@@ -41,6 +58,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
         private void Page_LoadComplete(object sender, EventArgs e)
         {
             ConsultarHistorial();
+            ConsultarInformacionGeneral();
         }
 
         private void ConsultarHistorial()

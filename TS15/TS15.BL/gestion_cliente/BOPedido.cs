@@ -50,6 +50,7 @@ namespace TS15.BL.gestion_cliente
             transformadorObject.frecuencia = 60;
             transformadorObject.volentrada = pedidoObject.volentrada;
             transformadorObject.volsalida = pedidoObject.volsalida;
+            transformadorObject.trfrefrigeracion = 1; //POR DEFECTO ES NATURAL
             transformadorObject.derivaciones = 5;
             transformadorObject.trfgrpconex = 1;
             _DAOTransformador.Crear(transformadorObject);

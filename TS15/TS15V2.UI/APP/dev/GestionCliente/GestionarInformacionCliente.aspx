@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- end: Mobile Specific -->
     <!-- start: CSS -->
-    <link id="bootstrap-style" href="../../css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link id="base-style" href="../../css/style.css" rel="stylesheet" />
-    <link id="base-style-responsive" href="../../css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-responsive.min.css" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/style-responsive.css" rel="stylesheet" />
     <!-- end: CSS -->
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -27,30 +27,29 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- end: Favicon -->
     <style>
-        /************** Modal PopUp *****************************************************************************************************/.cerrar
-        {
+        /************** Modal PopUp *****************************************************************************************************/ .cerrar {
             float: right;
             margin-right: -30px;
             margin-top: -20px;
             z-index: 20;
         }
-        .detalles
-        {
+
+        .detalles {
             width: 320px;
             margin: auto;
             height: 55px;
             padding-top: 15px; /* background-image: url(../img/bg_detalles.png); background-position: top center; background-repeat: no-repeat;*/
         }
-        .detalles p
-        {
-            font-size: 35px;
-            text-align: center;
-            font-family: 'Museo' , Arial, sans-serif;
-            height: auto;
-            margin: auto;
-        }
-        .modalPopup
-        {
+
+            .detalles p {
+                font-size: 35px;
+                text-align: center;
+                font-family: 'Museo', Arial, sans-serif;
+                height: auto;
+                margin: auto;
+            }
+
+        .modalPopup {
             font-size: 10pt;
             border-radius: 10px;
             -ms-border-radius: 10px;
@@ -60,8 +59,8 @@
             padding: 10px 20px;
             width: 500px;
         }
-        .modalPopup2
-        {
+
+        .modalPopup2 {
             font-size: 10pt;
             border-radius: 10px;
             -ms-border-radius: 10px;
@@ -72,21 +71,21 @@
             width: 600px;
             z-index: 10001 !important;
         }
-        .modalBackGround
-        {
+
+        .modalBackGround {
             background: url(../../img/overlay.png) repeat 0 0;
             filter: alpha(opacity=70);
             opacity: 0.7;
         }
-        .modalBackgroundCargando
-        {
+
+        .modalBackgroundCargando {
             background-color: Black;
             filter: alpha(opacity=55);
             opacity: 0.50;
             z-index: 10100 !important;
         }
-        .imgFinca
-        {
+
+        .imgFinca {
             max-width: 100%;
             max-height: 300px;
         }
@@ -95,14 +94,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
-        <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right">
-        </i></li>
+        <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right"></i></li>
         <li><i class="icon-edit"></i><a href="#">Gestionar Información Cliente</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
         <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" OnClienteChange="ucBusquedaCliente_ClienteChange" />
     </div>
-    <asp:Panel runat="server" ID="pnlTabs" class="row-fluid" Visible="false">
+    <asp:Panel runat="server" ID="pnlTabs" CssClass="row-fluid" Visible="false">
         <div class="box span12">
             <div class="box-header">
                 <h2>
@@ -117,7 +115,7 @@
                     <div class="tab-pane" id="historial">
                         <div class="box-content">
                             <asp:GridView runat="server" ID="gvSolicitudesCliente" AutoGenerateColumns="false"
-                                CssClass="table table-striped">
+                                CssClass="table table-bordered table-striped table-condensed">
                                 <Columns>
                                     <asp:BoundField DataField="nombreFabricante" HeaderText="Nombre Fabricante" />
                                     <asp:BoundField DataField="numserie" HeaderText="Número de Serie" />
