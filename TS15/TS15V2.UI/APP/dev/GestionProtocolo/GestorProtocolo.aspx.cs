@@ -135,6 +135,18 @@ namespace TS15V2.UI.APP.dev.GestionProtocolo
             {
                 EnviarAModalMsj(MsjConfirmacion, "Confirmación", "Se ha terminado el proceso de pruebas");
                 ActivarControles(false);
+                Session[VariablesGlobales.SESION_PROCESO_PRUEBA] = null;
+                Session[VariablesGlobales.SESION_PROCESO_LISTA_PRUEBAS] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC1005] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC1031] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC3396] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC375] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC471] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC471_DETALLE] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC837] = null;
+                Session[VariablesGlobales.SESION_PRUEBA_NTC1465] = null;
+                Response.Redirect("~/APP/dev/GestionProtocolo/GestorProtocolo.aspx");
+
             }
             else
                 EnviarAModalMsj(MsjConfirmacion, "Error", "Error al terminar proceso, verifique si todos las pruebas estén cerradas con resultado (Exitosa/No Exitosa)");
