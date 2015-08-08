@@ -97,7 +97,7 @@ namespace TS15.DAL.gestion_transformador
 
         public List<tfr_transformador> ConsultarTransformadoresFabricante()
         {
-            return SingletonDatos.Contexto.tfr_transformador.ToList();
+            return SingletonDatos.Contexto.tfr_transformador.OrderByDescending(p => p.id).ToList();
         }
 
         public bool ValidarAsignacionCliente(int pIdTransformador)

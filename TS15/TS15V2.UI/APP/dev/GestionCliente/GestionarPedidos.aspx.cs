@@ -74,7 +74,6 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
             if (tipoSolicitud == "2")
             {
-                //TOD: Preguntar a William
                 //this.txtCantidad.Enabled = true; //
                 this.ddlCapacidad.Enabled = true;
                 this.txtVolEntrada.Enabled = true;

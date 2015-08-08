@@ -27,8 +27,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
-        <li><i class="icon-home"></i><a href="index.html">Home</a> <i class="icon-angle-right">
-        </i></li>
+        <li><i class="icon-home"></i><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
         <li><i class="icon-edit"></i><a href="#">Gestión Transformador</a> </li>
     </ul>
     <div class="row-fluid sortable ui-sortable">
@@ -124,6 +123,7 @@
                                     <asp:TextBox runat="server" ID="txtFechaFabricacion" CssClass="span11 datepicker"
                                         MaxLength="10"></asp:TextBox>
                                     <span class="add-on"><i class="icon-calendar"></i></span>
+
                                 </div>
                                 <asp:RequiredFieldValidator runat="server" ID="rfv_txtFechaFabricacion" ControlToValidate="txtFechaFabricacion"
                                     ErrorMessage="*" ForeColor="Red" ValidationGroup="vgCrearTransformador"></asp:RequiredFieldValidator>
@@ -265,5 +265,10 @@
     <script type="text/javascript" src="../../js/counter.js"></script>
     <script type="text/javascript" src="../../js/retina.js"></script>
     <script type="text/javascript" src="../../js/custom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#<%= txtFechaFabricacion.ClientID %>").datepicker("option", "dateFormat", "dd/mm/yy");
+        });
+    </script>
     <!-- end: JavaScript-->
 </asp:Content>
