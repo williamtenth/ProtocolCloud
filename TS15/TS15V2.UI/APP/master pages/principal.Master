@@ -15,122 +15,113 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager runat="server" ID="smGeneral">
-    </asp:ScriptManager>
-    <!-- start: Header -->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
-                    </span></a><a class="brand" href="index.html"><span><b>Protocolo de Pruebas Para Transformadores
+        <asp:ScriptManager runat="server" ID="smGeneral">
+        </asp:ScriptManager>
+        <!-- start: Header -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="index.html"><span><b>Protocolo de Pruebas Para Transformadores
                         Serie 15KV</b> </span></a>
-                <!-- start: Header Menu -->
-                <div class="nav-no-collapse header-nav">
-                    <ul class="nav pull-right">
-                        <%--<li><a class="btn" href="#"><i class="halflings-icon white wrench"></i></a></li>--%>
-                        <!-- start: User Dropdown -->
-                        <li class="dropdown"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="halflings-icon white user"></i>Usuario de Pruebas <span class="caret">
-                            </span></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-menu-title"><span>Gestionar Cuenta</span> </li>
-                                <li><a href="#"><i class="halflings-icon user"></i>Perfil</a></li>
-                                <li><a href="login.html"><i class="halflings-icon off"></i>Salir</a></li>
-                            </ul>
-                        </li>
-                        <!-- end: User Dropdown -->
-                    </ul>
-                </div>
-                <!-- end: Header Menu -->
-            </div>
-        </div>
-    </div>
-    <!-- start: Header -->
-    <div class="container-fluid-full">
-        <div class="row-fluid">
-            <!-- start: Main Menu -->
-            <div id="sidebar-left" class="span2">
-                <div class="nav-collapse sidebar-nav">
-                    <ul class="nav nav-tabs nav-stacked main-menu">
-                        <li><a href="/APP/Home.aspx"><i class="icon-home"></i><span class="hidden-tablet">Inicio</span></a></li>
-                        <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">
-                            Gestión Cliente</span><span class="label label-important"> 4 </span></a>
-                            <ul>
-                                <li><a class="submenu" href="/APP/dev/GestionCliente/GestionarInformacionCliente.aspx">
-                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Información del Cliente</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionCliente/CrearSolicitud.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Crear Solicitud</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionCliente/GestionarPedidos.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Gestionar Pedidos</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">
-                            Gestión Transformador</span><span class="label label-important"> 4 </span></a>
-                            <ul>
-                                <li><a class="submenu" href="/APP/dev/GestionTransformador/BusquedaTransformador.aspx">
-                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Realizar Busqueda</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionTransformador/CrearTransformador.aspx">
-                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Crear Transformador</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionarInfoTransformador.aspx">
-                                    <i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Información Transformador</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionBodega.aspx"><i
-                                    class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Bodega</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">
-                            Gestión Protocolo</span><span class="label label-important"> 1 </span></a>
-                            <ul>
-                                <li><a class="submenu" href="/APP/dev/GestionProtocolo/GestorProtocolo.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Gestor Protocolo</span></a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">
-                            Gestión Usuarios</span><span class="label label-important"> 2 </span></a>
-                            <ul>
-                                <li><a class="submenu" href="/APP/dev/GestionUsuarios/GestionarCuentas.aspx"><i class="icon-file-alt">
-                                </i><span class="hidden-tablet">Gestionar Cuentas</span></a></li>
-                                <li><a class="submenu" href="/APP/dev/GestionUsuarios/ModificarContrasenna.aspx"><i
-                                    class="icon-file-alt"></i><span class="hidden-tablet">Modificar Contraseña</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <!-- start: Header Menu -->
+                    <div class="nav-no-collapse header-nav">
+                        <ul class="nav pull-right">
+                            <%--<li><a class="btn" href="#"><i class="halflings-icon white wrench"></i></a></li>--%>
+                            <!-- start: User Dropdown -->
+                            <li class="dropdown"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="halflings-icon white user"></i>Usuario de Pruebas <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-title"><span>Gestionar Cuenta</span> </li>
+                                    <li><a href="#"><i class="halflings-icon user"></i>Perfil</a></li>
+                                    <li><a href="login.html"><i class="halflings-icon off"></i>Salir</a></li>
+                                </ul>
+                            </li>
+                            <!-- end: User Dropdown -->
+                        </ul>
+                    </div>
+                    <!-- end: Header Menu -->
                 </div>
             </div>
-            <div id="content" class="span10">
-                <asp:ContentPlaceHolder runat="server" ID="cphPrincipal">
-                </asp:ContentPlaceHolder>
+        </div>
+        <!-- start: Header -->
+        <div class="container-fluid-full">
+            <div class="row-fluid">
+                <!-- start: Main Menu -->
+                <div id="sidebar-left" class="span2">
+                    <div class="nav-collapse sidebar-nav">
+                        <ul class="nav nav-tabs nav-stacked main-menu">
+                            <li><a href="/APP/Home.aspx"><i class="icon-home"></i><span class="hidden-tablet">Inicio</span></a></li>
+                            <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">Gestión Cliente</span><span class="label label-important"> 4 </span></a>
+                                <ul>
+                                    <li><a class="submenu" href="/APP/dev/GestionCliente/CrearCliente.aspx">
+                                        <i class="icon-file-alt"></i><span class="hidden-tablet">Crear Cliente</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionCliente/GestionarInformacionCliente.aspx">
+                                        <i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Información del Cliente</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionCliente/CrearSolicitud.aspx"><i class="icon-file-alt"></i><span class="hidden-tablet">Crear Solicitud</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionCliente/GestionarPedidos.aspx"><i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Pedidos</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">Gestión Transformador</span><span class="label label-important"> 4 </span></a>
+                                <ul>
+                                    <li><a class="submenu" href="/APP/dev/GestionTransformador/BusquedaTransformador.aspx">
+                                        <i class="icon-file-alt"></i><span class="hidden-tablet">Realizar Busqueda</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionTransformador/CrearTransformador.aspx">
+                                        <i class="icon-file-alt"></i><span class="hidden-tablet">Crear Transformador</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionarInfoTransformador.aspx">
+                                        <i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Información Transformador</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionTransformador/GestionBodega.aspx"><i
+                                        class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Bodega</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropmenu" href="#"><i class="icon-list-alt"></i><span class="hidden-tablet">Gestión Protocolo</span><span class="label label-important"> 1 </span></a>
+                                <ul>
+                                    <li><a class="submenu" href="/APP/dev/GestionProtocolo/GestorProtocolo.aspx"><i class="icon-file-alt"></i><span class="hidden-tablet">Gestor Protocolo</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropmenu" href="#"><i class="icon-user"></i><span class="hidden-tablet">Gestión Usuarios</span><span class="label label-important"> 2 </span></a>
+                                <ul>
+                                    <li><a class="submenu" href="/APP/dev/GestionUsuarios/GestionarCuentas.aspx"><i class="icon-file-alt"></i><span class="hidden-tablet">Gestionar Cuentas</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/GestionUsuarios/ModificarContrasenna.aspx"><i
+                                        class="icon-file-alt"></i><span class="hidden-tablet">Modificar Contraseña</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="content" class="span10">
+                    <asp:ContentPlaceHolder runat="server" ID="cphPrincipal">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!--/.fluid-container-->
+                <!-- end: Content -->
             </div>
-            <!--/.fluid-container-->
-            <!-- end: Content -->
+            <!--/#content.span10-->
         </div>
-        <!--/#content.span10-->
-    </div>
-    <!--/fluid-row-->
-    <div class="modal hide fade" id="myModal">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-                ×</button>
-            <h3>
-                Settings</h3>
+        <!--/fluid-row-->
+        <div class="modal hide fade" id="myModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    ×</button>
+                <h3>Settings</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Here settings can be configured...
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a> <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
         </div>
-        <div class="modal-body">
+        <div class="clearfix">
+        </div>
+        <footer>
             <p>
-                Here settings can be configured...</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn" data-dismiss="modal">Close</a> <a href="#" class="btn btn-primary">
-                Save changes</a>
-        </div>
-    </div>
-    <div class="clearfix">
-    </div>
-    <footer>
-        <p>
-            <span style="text-align: left; float: left">&copy; 2015 <a href="#">Protocolo de Pruebas
+                <span style="text-align: left; float: left">&copy; 2015 <a href="#">Protocolo de Pruebas
                 Para Transformadores Serie 15KV</a></span>
-        </p>
-    </footer>
+            </p>
+        </footer>
     </form>
 </body>
 </html>

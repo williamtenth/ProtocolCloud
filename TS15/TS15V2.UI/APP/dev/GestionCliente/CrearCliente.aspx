@@ -1,12 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master"
-    AutoEventWireup="true" CodeBehind="CrearSolicitud.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.CrearSolicitud"
-    EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/APP/master pages/principal.Master" AutoEventWireup="true" CodeBehind="CrearCliente.aspx.cs" Inherits="TS15V2.UI.APP.dev.GestionCliente.CrearCliente" %>
 
-<%@ Register Src="../../componentes/BuscarCliente.ascx" TagName="BuscarCliente" TagPrefix="uc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<%@ Register Src="../../componentes/BuscarTransformador.ascx" TagName="BuscarTransformador"
-    TagPrefix="uc2" %>
-<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc3" %>
+<%@ Register Src="../../componentes/ModalMsj.ascx" TagName="ModalMsj" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- start: Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -94,27 +90,12 @@
         /***********************************************************************************************************************/
     </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPrincipal" runat="server">
     <ul class="breadcrumb">
         <li><i class="icon-home"></i><a href="../Home.aspx">Home</a> <i class="icon-angle-right"></i></li>
-        <li><i class="icon-edit"></i><a href="#">Crear Solicitud</a> </li>
+        <li><i class="icon-edit"></i><a href="#">Crear Cliente</a> </li>
     </ul>
-
-    <div class="row-fluid sortable ui-sortable">
-        <asp:UpdatePanel runat="server">
-            <ContentTemplate>
-                <uc1:BuscarCliente ID="ucBusquedaCliente" runat="server" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
-
-    <div class="row-fluid sortable ui-sortable">
-        <asp:UpdatePanel runat="server">
-            <ContentTemplate>
-                <uc2:BuscarTransformador ID="ucBusquedaTransformador" runat="server" Visible="false" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
 
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
@@ -125,61 +106,80 @@
                         <div class="form-horizontal">
                             <fieldset>
                                 <div class="control-group">
-                                    <label class="control-label" for="ddlFabricante">
-                                        Tipo de Solicitud:</label>
+                                    <label class="control-label" for="txtNombreCliente">
+                                        Nombre:</label>
                                     <div class="controls">
-                                        <asp:DropDownList runat="server" ID="ddlTipoSolicitud" CssClass="form-control" OnDataBound="ddlTipoSolicitud_DataBound"
-                                            OnSelectedIndexChanged="ddlTipoSolicitud_SelectedIndexChanged" AutoPostBack="true">
-                                        </asp:DropDownList>
-                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoSolicitud" ControlToValidate="ddlTipoSolicitud"
-                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
+                                        <asp:TextBox runat="server" ID="txtNombreCliente" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtNombreCliente" ControlToValidate="txtNombreCliente"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
-                                <asp:Panel runat="server" ID="pnlCapacidad" CssClass="control-group" Visible="false">
-                                    <label class="control-label" for="ddlCapacidad">
-                                        Capacidad:</label>
+                                <div class="control-group">
+                                    <label class="control-label" for="ddlTipDocumento">
+                                        Tipo de Documento:</label>
                                     <div class="controls">
-                                        <asp:DropDownList runat="server" ID="ddlCapacidad" CssClass="form-control" OnDataBound="ddlCapacidad_DataBound">
+                                        <asp:DropDownList runat="server" ID="ddlTipDocumento" CssClass="form-control" OnDataBound="ddlTipDocumento_DataBound">
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlCapacidad" ControlToValidate="ddlCapacidad"
-                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud" InitialValue="-1"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipDocumento" ControlToValidate="ddlTipDocumento"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente" InitialValue="-1"></asp:RequiredFieldValidator>
                                     </div>
-                                </asp:Panel>
-                                <asp:Panel runat="server" ID="pnlVolEntrada" CssClass="control-group" Visible="false">
-                                    <label class="control-label" for="txtVolEntrada">
-                                        Voltaje de Entrada:</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="txtNumDoc">
+                                        Número de Documento:</label>
                                     <div class="controls">
-                                        <asp:TextBox runat="server" ID="txtVolEntrada" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolEntrada" ControlToValidate="txtVolEntrada"
-                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
+                                        <asp:TextBox runat="server" ID="txtNumDoc" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtNumDoc" ControlToValidate="txtNumDoc"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente"></asp:RequiredFieldValidator>
                                     </div>
-                                </asp:Panel>
-                                <asp:Panel runat="server" ID="pnlVolSalida" CssClass="control-group" Visible="false">
-                                    <label class="control-label" for="txtVolSalida" runat="server">
-                                        Voltaje de Salida:</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="txtDireccion">
+                                        Dirección:</label>
                                     <div class="controls">
-                                        <asp:TextBox runat="server" ID="txtVolSalida" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtVolSalida" ControlToValidate="txtVolSalida"
-                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearSolicitud"></asp:RequiredFieldValidator>
+                                        <asp:TextBox runat="server" ID="txtDireccion" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtDireccion" ControlToValidate="txtDireccion"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente"></asp:RequiredFieldValidator>
                                     </div>
-                                </asp:Panel>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="txtTelefono">
+                                        Teléfono:</label>
+                                    <div class="controls">
+                                        <asp:TextBox runat="server" ID="txtTelefono" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_txtTelefono" ControlToValidate="txtTelefono"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="ddlTipoCliente">
+                                        Tipo de Cliente:</label>
+                                    <div class="controls">
+                                        <asp:DropDownList runat="server" ID="ddlTipoCliente" CssClass="form-control" OnDataBound="ddlTipoCliente_DataBound">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server" ID="rfv_ddlTipoCliente" ControlToValidate="ddlTipoCliente"
+                                            ErrorMessage="*" ForeColor="red" ValidationGroup="vgCrearCliente" InitialValue="-1"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
                                 <div class="form-actions">
-                                    <asp:Button ID="btnCrearSolicitud" runat="server" CssClass="btn btn-primary" Text="Crear Solicitud"
-                                        OnClick="btnCrearSolicitud_Click" ValidationGroup="vgCrearSolicitud" />
-                                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
+                                    <asp:Button ID="btnCrearCliente" runat="server" CssClass="btn btn-primary" Text="Crear Cliente"
+                                        OnClick="btnCrearCliente_Click" ValidationGroup="vgCrearCliente" />
+                                    <%--<asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-primary" Text="Cancelar"
                                         OnClick="btnCancelar_Click" />
                                     <asp:Button ID="btnModificar" runat="server" CssClass="btn btn-primary" Text="Modificar"
-                                        OnClick="btnModificar_Click" Visible="false" />
+                                        OnClick="btnModificar_Click" Visible="false" />--%>
                                 </div>
                             </fieldset>
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
+
         </div>
     </div>
 
-    <uc3:ModalMsj ID="ModalMsj1" runat="server" />
+    <uc1:ModalMsj ID="ModalMsj1" runat="server" />
+
     <!-- start: JavaScript-->
     <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-migrate-1.0.0.min.js"></script>

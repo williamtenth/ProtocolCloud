@@ -160,6 +160,7 @@
     <Content Include="APP\css\uniform.default.css" />
     <Content Include="APP\css\uploadify.css" />
     <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
+    <Content Include="APP\dev\GestionCliente\CrearCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
     <Content Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\GestionarPedidos.aspx" />
@@ -335,6 +336,13 @@
     </Compile>
     <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\CrearCliente.aspx.cs">
+      <DependentUpon>CrearCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\GestionCliente\CrearCliente.aspx.designer.cs">
+      <DependentUpon>CrearCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionCliente\GestionarInformacionCliente.aspx.cs">
       <DependentUpon>GestionarInformacionCliente.aspx</DependentUpon>

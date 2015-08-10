@@ -131,6 +131,7 @@
             </div>
         </div>
     </div>
+
     <div class="row-fluid sortable ui-sortable">
         <div class="box span12">
             <div class="box-header" data-original-title="">
