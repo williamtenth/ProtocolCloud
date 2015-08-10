@@ -177,7 +177,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
                         _pedidoBO.CrearProcesoPruebasPreeliminares(pedidoObject);
 
-                        EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado la solicitud correctamente <b>No. Solicitud: " + pedidoObject.id + "</b>");
+                        EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado la solicitud correctamente <b>No. Solicitud: " + pedidoObject.consecutivo + "</b>");
                         LimpiarCampos();
                     }
                     else
@@ -206,7 +206,7 @@ namespace TS15V2.UI.APP.dev.GestionCliente
 
             _pedidoBO.CrearPedidoSuministro(pedidoObject);
 
-            EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado el pedido correctamente <b>No. Solicitud: " + pedidoObject.id + "</b>");
+            EnviarAModalMsj(ModalMsj1, "Solicitud", "Se ha creado el pedido correctamente <b>No. Solicitud: " + pedidoObject.consecutivo + "</b>");
             LimpiarCampos();
         }
 

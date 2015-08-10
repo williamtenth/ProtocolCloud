@@ -159,6 +159,9 @@
     <Content Include="APP\css\style.css" />
     <Content Include="APP\css\uniform.default.css" />
     <Content Include="APP\css\uploadify.css" />
+    <Content Include="APP\dev\Azure\Despliegue.aspx" />
+    <Content Include="APP\dev\Azure\IntroAzure.aspx" />
+    <Content Include="APP\dev\Azure\PlataformaAzure.aspx" />
     <Content Include="APP\dev\GestionCliente\BusquedaCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearCliente.aspx" />
     <Content Include="APP\dev\GestionCliente\CrearSolicitud.aspx" />
@@ -186,6 +189,10 @@
     <Content Include="APP\img\arrows-active.png" />
     <Content Include="APP\img\arrows-normal.png" />
     <Content Include="APP\img\avatar.jpg" />
+    <Content Include="APP\img\azure\Azure Intro.png" />
+    <Content Include="APP\img\azure\ModeloDespliegue.jpg" />
+    <Content Include="APP\img\azure\ModeloDespliegue1.jpg" />
+    <Content Include="APP\img\azure\PlataformaAzure.png" />
     <Content Include="APP\img\basica_odd.png" />
     <Content Include="APP\img\bg-input-focus.png" />
     <Content Include="APP\img\bg-input.png" />
@@ -336,6 +343,27 @@
     </Compile>
     <Compile Include="APP\componentes\ModalMsj.ascx.designer.cs">
       <DependentUpon>ModalMsj.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\Azure\Despliegue.aspx.cs">
+      <DependentUpon>Despliegue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\Azure\Despliegue.aspx.designer.cs">
+      <DependentUpon>Despliegue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\Azure\IntroAzure.aspx.cs">
+      <DependentUpon>IntroAzure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\Azure\IntroAzure.aspx.designer.cs">
+      <DependentUpon>IntroAzure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APP\dev\Azure\PlataformaAzure.aspx.cs">
+      <DependentUpon>PlataformaAzure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APP\dev\Azure\PlataformaAzure.aspx.designer.cs">
+      <DependentUpon>PlataformaAzure.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP\dev\GestionCliente\CrearCliente.aspx.cs">
       <DependentUpon>CrearCliente.aspx</DependentUpon>
@@ -579,6 +607,8 @@
     <None Include="APP\font\glyphiconshalflings-regular.ttf" />
     <None Include="APP\font\glyphiconshalflings-regular.woff" />
     <None Include="APP\img\gallery\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\protocolotrfs15 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\protocolotrfs15 - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TS15.BL\TS15.BL.csproj">
