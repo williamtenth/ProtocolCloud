@@ -86,6 +86,15 @@
                                         class="icon-file-alt"></i><span class="hidden-tablet">Modificar Contraseña</span></a></li>
                                 </ul>
                             </li>
+                            <li><a class="dropmenu" href="#"><i class="icon-pencil"></i><span class="hidden-tablet">Azure</span><span class="label label-important"> 2 </span></a>
+                                <ul>
+                                    <li><a class="submenu" href="/APP/dev/Azure/IntroAzure.aspx"><i class="icon-ok-circle"></i><span class="hidden-tablet">Introducción</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/Azure/PlataformaAzure.aspx"><i
+                                        class="icon-ok-circle"></i><span class="hidden-tablet">Plataforma</span></a></li>
+                                    <li><a class="submenu" href="/APP/dev/Azure/Despliegue.aspx"><i
+                                        class="icon-ok-circle"></i><span class="hidden-tablet">Despliegue</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
